@@ -7,16 +7,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_BASE] = LAYOUT(
 KC_ESC , _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_MPLY, _______,       KC_F5  , KC_F6,   KC_F7,   KC_F8,   _______, KC_F9,   KC_F10,  KC_F11,  KC_F12 ,
 _______, KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_MPRV, _______,       _______, KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL , KC_BSPC,
-_______, KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_MNXT, _______,       KC_PGUP, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_BSLS,
-_______, KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_VOLU, _______,       KC_PGDN, KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, KC_ENT , _______,
-_______, KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_VOLD, _______,       _______, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, _______, _______,
-_______, KC_LCTL, KC_LGUI, _______, KC_LALT, KC_LALT, KC_ENT , KC_DEL , _______,       KC_BSPC, KC_SPC,  KC_RCTL, KC_HOME, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_END
+_______, KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_MNXT, _______,       _______, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_BSLS,
+_______, KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_VOLU, _______,       _______, KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, KC_ENT , KC_PGUP,
+_______, KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_VOLD, _______,       _______, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, KC_UP  , KC_PGDN,
+_______, _______, _______, _______, KC_LGUI, KC_LALT, KC_ENT , KC_DEL , _______,       KC_BSPC, KC_SPC,  KC_RCTL, _______, KC_HOME, KC_END , KC_LEFT, KC_DOWN, KC_RGHT
 )
 };
 
 
 
-
+/*
+MT(mod, kc)		mod when held, kc when tapped
+LCTL_T(kc)	CTL_T(kc)	Left Control when held, kc when tapped
+LSFT_T(kc)	SFT_T(kc)	Left Shift when held, kc when tapped
+LALT_T(kc)	LOPT_T(kc), ALT_T(kc), OPT_T(kc)	Left Alt when held, kc when tapped
+LGUI_T(kc)	LCMD_T(kc), LWIN_T(kc), GUI_T(kc), CMD_T(kc), WIN_T(kc)	Left GUI when held, kc when tapped
+*/
 
 
 
