@@ -24,7 +24,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 _______, _______, KC_Q,LT(_NV,KC_W),LT(_NV,KC_E),    KC_R,    KC_T,    _______, _______,                _______, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_BSLS,
 _______, TG(_NV), CT(KC_A), AT(KC_S), GT(KC_D), LT(_NV, KC_F), LT(_MS,KC_G),_______,_______,       _______, KC_H,    KC_J,    GT(KC_K), AT(KC_L), CT(KC_SCLN), KC_QUOT, KC_ENT , _______,
         _______, TO(_BL), KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,  _______, _______,                _______, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, KC_UP  , _______,
-        _______, LT(_MZ,KC_MPLY),KC_MUTE,KC_MPRV,KC_MNXT,KC_TAB,ST(KC_ENT),KC_DEL,_______,            KC_BSPC, ST(KC_SPC),KC_TAB,_______, _______, _______, KC_LEFT, KC_DOWN, KC_RGHT
+        _______, LT(_MZ,KC_MPLY),KC_MPRV,KC_MNXT,_______,KC_TAB,ST(KC_ENT),KC_DEL,_______,            KC_BSPC, ST(KC_SPC),KC_TAB,_______, _______, _______, KC_LEFT, KC_DOWN, KC_RGHT
 ),
 
 [_NV] = LAYOUT(
