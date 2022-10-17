@@ -21,7 +21,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, KC_GRV,   KC_Q,    KC_W,   LT(_MS,KC_E),    KC_R,    KC_T,    _______, _______,        _______,    KC_Y,    KC_U,         KC_I,    KC_O,    KC_P,    _______, _______, _______,
         _______, KC_TAB,CT(KC_A),AT(KC_S),   GT(KC_D),LT(_NV,KC_F),ST(KC_G),   _______, _______,        _______, ST(KC_H),   KC_J,      GT(KC_K),AT(KC_L),CT(KC_SCLN), KC_QUOT, _______, _______,
         _______, TO(_BL),  KC_Z,    KC_X,        KC_C, LT(_MS,KC_V),  KC_B,    _______, _______,        _______,    KC_N,    KC_M,         KC_COMM, KC_DOT,  KC_SLSH, _______, _______, _______,
-_______,LT(_SD,KC_MPLY), KC_MPRV,KC_MNXT,_______,LT(_FN,KC_TAB),ST(KC_ENT),    KC_DEL,  _______,        KC_BSPC, ST(KC_SPC),LT(_FN,KC_ESC),_______, TO(_NV), TO(_FN), _______, _______, _______
+_______,LT(_SD,KC_MPLY), KC_MPRV,KC_MNXT,_______,LT(_FN,KC_TAB),ST(KC_ENT),    KC_DEL,  _______,        KC_BSPC, ST(KC_SPC),LT(_FN,KC_ESC),_______, TO(_NV), TO(_FN), KC_PSCR, _______, _______
 ),
 [_FN] = LAYOUT(
         _______, _______, _______, _______, _______, _______, _______, _______, _______,                _______, _______, _______, _______, _______, _______, _______, _______, _______,
