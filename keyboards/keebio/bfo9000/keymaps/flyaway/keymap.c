@@ -220,27 +220,59 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 enum combos {
+    CB_BOOT,
     CB_QW_ESC,
     CB_LSemi_ENT,
     CB_CommDot_ENT,
+    CB_PID,
+    CB_Pass,
+    CB_AS_TAB,
     CB_LENGTH
 };
 
 uint16_t COMBO_LEN = CB_LENGTH;
 
-
-const uint16_t PROGMEM QW_ESC[] = {KC_Q, PT_W, COMBO_END};
-const uint16_t PROGMEM LSemi_ENT[] = {AT_L, CT_SCLN, COMBO_END};
-const uint16_t PROGMEM CommDot_ENT[] = {KC_COMM, KC_DOT, COMBO_END};
+const uint16_t PROGMEM BOOT[] =       {KC_B, KC_O, COMBO_END};
+const uint16_t PROGMEM QW_ESC[] =       {KC_Q, PT_W, COMBO_END};
+const uint16_t PROGMEM LSemi_ENT[] =    {AT_L, CT_SCLN, COMBO_END};
+const uint16_t PROGMEM CommDot_ENT[] =  {KC_COMM, KC_DOT, COMBO_END};
+const uint16_t PROGMEM PID[] =          {KC_I, KC_P, COMBO_END};
+const uint16_t PROGMEM Pass[] =         {CT_A, KC_P, COMBO_END};
+const uint16_t PROGMEM AS_TAB[] =       {CT_A, AT_S, COMBO_END};
 
 
 combo_t key_combos[] = {
-    [CB_QW_ESC] = COMBO(QW_ESC, KC_ESC),
-    [CB_LSemi_ENT] = COMBO(LSemi_ENT, KC_ENT),
-    [CB_CommDot_ENT] = COMBO(CommDot_ENT, KC_ENT),
+    [CB_BOOT] =         COMBO(BOOT, QK_BOOTLOADER),
+    [CB_QW_ESC] =       COMBO(QW_ESC, KC_ESC),
+    [CB_LSemi_ENT] =    COMBO(LSemi_ENT, KC_ENT),
+    [CB_CommDot_ENT] =  COMBO(CommDot_ENT, KC_ENT),
+    [CB_PID] =          COMBO_ACTION(PID),
+    [CB_Pass] =         COMBO_ACTION(Pass),
+    [CB_AS_TAB] =       COMBO(AS_TAB, KC_TAB),
 };
 
 
+void process_combo_event(uint16_t combo_index, bool pressed) {
+  switch(combo_index) {
+    case CB_PID:
+      if (pressed) {
+        SEND_STRING("P3101621");
+      }
+      break;
+    case CB_Pass:
+      if (pressed) {
+        SEND_STRING("work124&");
+      }
+      break;
+//     case BSPC_LSFT_CLEAR:
+//       if (pressed) {
+//         tap_code16(KC_END);
+//         tap_code16(S(KC_HOME));
+//         tap_code16(KC_BSPC);
+//       }
+//       break;
+  }
+}
 
 
 
