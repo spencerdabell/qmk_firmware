@@ -30,10 +30,10 @@ enum {
 #define TO_SD   TO(L_SD)
 #define TO_NU   TO(L_NU)
 #define TO_SY   TO(L_SY)
-#define TO_NGRM TO(L_NGRM)
+// #define TO_NGRM TO(L_NGRM)
 #define TO_MRGN TO(L_MRGN)
-#define TO_CLMK TO(L_CLMK)
-#define TO_ISRT TO(L_ISRT)
+// #define TO_CLMK TO(L_CLMK)
+// #define TO_ISRT TO(L_ISRT)
 
 
 
@@ -213,11 +213,34 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         U______, U______, U______, U______, U______, U______, U______, U______, B______,        U______, U______, U______, U______, U______, U______, U______, U______, B______,
         U______, U______, U______, U______, U______, U______, U______, U______, B______,        U______, U______, U______, U______, U______, U______, U______, U______, B______,
         U______, _______, _______, _______, _______, _______, _______, U______, B______,        U______, U______, _______, KC_MSTP, _______, _______, U______, U______, B______,
-        U______, _______, _______, _______, _______, _______, _______, U______, B______,        U______, U______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, U______, U______, B______,
+        U______, _______, _______, KC_BTN1, KC_BTN2, _______, _______, U______, B______,        U______, U______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, U______, U______, B______,
         U______, _______, _______, _______, _______, _______, _______, U______, B______,        U______, U______, KC_MRWD, KC_MUTE, _______, KC_MFFD, U______, U______, B______,
         U______, _______, _______, _______, U______, _______, _______, _______, B______,        _______, _______, _______, U______, U______, U______, U______, U______, B______
 )
 };
+
+enum combos {
+    CB_QW_ESC,
+    CB_LSemi_ENT,
+    CB_CommDot_ENT,
+    CB_LENGTH
+};
+
+uint16_t COMBO_LEN = CB_LENGTH;
+
+
+const uint16_t PROGMEM QW_ESC[] = {KC_Q, PT_W, COMBO_END};
+const uint16_t PROGMEM LSemi_ENT[] = {AT_L, CT_SCLN, COMBO_END};
+const uint16_t PROGMEM CommDot_ENT[] = {KC_COMM, KC_DOT, COMBO_END};
+
+
+combo_t key_combos[] = {
+    [CB_QW_ESC] = COMBO(QW_ESC, KC_ESC),
+    [CB_LSemi_ENT] = COMBO(LSemi_ENT, KC_ENT),
+    [CB_CommDot_ENT] = COMBO(CommDot_ENT, KC_ENT),
+};
+
+
 
 
 
