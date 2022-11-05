@@ -9,8 +9,7 @@
 
 enum {
     L_BS = 0
-//     , L_NGRM
-    , L_MRGN
+    , L_NGRM // engram layout mirrored
 //     , L_CLMK
 //     , L_ISRT
     , L_PT
@@ -30,8 +29,7 @@ enum {
 #define TO_SD   TO(L_SD)
 #define TO_NU   TO(L_NU)
 #define TO_SY   TO(L_SY)
-// #define TO_NGRM TO(L_NGRM)
-#define TO_MRGN TO(L_MRGN)
+#define TO_NGRM TO(L_NGRM)
 // #define TO_CLMK TO(L_CLMK)
 // #define TO_ISRT TO(L_ISRT)
 
@@ -50,6 +48,7 @@ enum {
 #define MS_V    LT(L_MS, KC_V)
 #define NV_J    LT(L_NV, KC_J)
 #define SD_MPLY LT(L_SD, KC_MPLY)
+#define SD_Z    LT(L_SD, KC_Z)
 #define NU_TAB  LT(L_NU, KC_TAB)
 
 // shift hold, enter tap
@@ -130,28 +129,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         U______, U______, U______, U______, U______, U______, U______, U______, B______,        U______, U______, U______, U______, U______, U______, U______, U______, B______,
         U______, KC_ESC,  KC_Q,    PT_W,    SY_E,    KC_R,    KC_T,    U______, B______,        U______, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    TO_BS,   U______, B______,
         U______, KC_ENT,  CT_A,    AT_S,    GT_D,    NV_F,    KC_G,    U______, B______,        U______, KC_H,    NV_J,    GT_K,    AT_L,    CT_SCLN, KC_QUOT, U______, B______,
-        U______, TO_PT,   KC_Z,    KC_X,    KC_C,    MS_V,    KC_B,    U______, B______,        U______, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,  U______, B______,
-        U______, SD_MPLY, KC_MPRV, KC_MNXT, U______, NU_TAB,  OSM_SFT, SY_DEL,  B______,        KC_BSPC, ST_SPC,  SY_GRV,  U______, U______, U______, U______, U______, B______
+        U______, TO_PT,   SD_Z,    KC_X,    KC_C,    MS_V,    KC_B,    U______, B______,        U______, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT,  U______, B______,
+        U______, U______, U______, U______, U______, NU_TAB,  OSM_SFT, SY_DEL,  B______,        KC_BSPC, ST_SPC,  SY_GRV,  U______, U______, U______, U______, U______, B______
 ),
-
-//       B   Y   O   U           L   D   W   V    Z
-//       C   I   E   A           H   T   S   N    Q
-//       G   X   J   K           R   M   F   P
-// [L_NGRM] = LAYOUT(
-//         U______, U______, U______, U______, U______, U______, U______, U______, B______,        U______, U______, U______, U______, U______, U______, U______, U______, B______,
-//         U______, U______, U______, U______, U______, U______, U______, U______, B______,        U______, U______, U______, U______, U______, U______, U______, U______, B______,
-//         U______, _______, KC_B,    KC_Y,    KC_O,    KC_U,    U______, U______, B______,        U______, U______, KC_L,    KC_D,    KC_W,    KC_V,    KC_Z,    U______, B______,
-//         U______, _______, CT_C,    AT_I,    GT_E,    NV_A,    U______, U______, B______,        U______, U______, KC_H,    GT_T,    AT_S,    CT_N,    _______, U______, B______,
-//         U______, _______, KC_G,    KC_X,    KC_J,    MS_K,    U______, U______, B______,        U______, U______, KC_R,    KC_M,    KC_F,    KC_P,    KC_Q,    U______, B______,
-//         U______, _______, _______, _______, U______, _______, _______, _______, B______,        _______, _______, _______, U______, U______, U______, U______, U______, B______
-// ),
-[L_MRGN] = LAYOUT(
+[L_NGRM] = LAYOUT(
         U______, U______, U______, U______, U______, U______, U______, U______, B______,        U______, U______, U______, U______, U______, U______, U______, U______, B______,
         U______, U______, U______, U______, U______, U______, U______, U______, B______,        U______, U______, U______, U______, U______, U______, U______, U______, B______,
         U______, _______, KC_V,    PT_W,    SY_D,    KC_L,    U______, U______, B______,        U______, U______, KC_U,    KC_O,    KC_Y,    KC_B,    _______, U______, B______,
         U______, _______, CT_N,    AT_S,    GT_T,    NV_H,    U______, U______, B______,        U______, U______, KC_A,    GT_E,    AT_I,    CT_C,    _______, U______, B______,
         U______, _______, KC_P,    KC_F,    KC_M,    MS_R,    U______, U______, B______,        U______, U______, KC_K,    KC_J,    KC_X,    KC_G,    _______, U______, B______,
-        U______, _______, _______, _______, U______, _______, _______, _______, B______,        _______, _______, _______, U______, U______, U______, U______, U______, B______
+        U______, U______, U______, U______, U______, _______, _______, _______, B______,        _______, _______, _______, U______, U______, U______, U______, U______, B______
 ),
 // [L_CLMK] = LAYOUT(
 //         U______, U______, U______, U______, U______, U______, U______, U______, B______,        U______, U______, U______, U______, U______, U______, U______, U______, B______,
@@ -172,10 +159,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [L_PT] = LAYOUT(
         U______, U______, U______, U______, U______, U______, U______, U______, B______,        U______, U______, U______, U______, U______, U______, U______, U______, B______,
         U______, U______, U______, U______, U______, U______, U______, U______, B______,        U______, U______, U______, U______, U______, U______, U______, U______, B______,
-        U______, _______, _______, _______, TO_MRGN, TO_SD,   _______, U______, B______,        U______, U______, KC_COLN, KC_SCLN, KC_DQUO, KC_EXLM, _______, U______, B______,
-        U______, _______, TO_SY,   TO_NU,   TO_BS,   TO_NV,   _______, U______, B______,        U______, U______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES, _______, U______, B______,
-        U______, _______, _______, _______, _______, TO_MS,   _______, U______, B______,        U______, U______, KC_MINS, KC_PLUS, _______, KC_EQL,  _______, U______, B______,
-        U______, _______, _______, _______, U______, _______, _______, _______, B______,        _______, KC_UNDS, _______, U______, U______, U______, U______, U______, B______
+        U______, _______, _______, _______, TO_NGRM, TO_SD,   U______, U______, B______,        U______, U______, KC_COLN, KC_SCLN, KC_DQUO, KC_EXLM, _______, U______, B______,
+        U______, _______, TO_SY,   TO_NU,   TO_BS,   TO_NV,   U______, U______, B______,        U______, U______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES, _______, U______, B______,
+        U______, _______, _______, _______, _______, TO_MS,   U______, U______, B______,        U______, U______, KC_MINS, KC_PLUS, _______, KC_EQL,  _______, U______, B______,
+        U______, U______, U______, U______, U______, _______, _______, _______, B______,        _______, KC_UNDS, _______, U______, U______, U______, U______, U______, B______
 ),
 [L_NV] = LAYOUT(
         U______, U______, U______, U______, U______, U______, U______, U______, B______,        U______, U______, U______, U______, U______, U______, U______, U______, B______,
@@ -188,9 +175,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [L_NU] = LAYOUT(
         U______, U______, U______, U______, U______, U______, U______, U______, B______,        U______, U______, U______, U______, U______, U______, U______, U______, B______,
         U______, U______, U______, U______, U______, U______, U______, U______, B______,        U______, U______, U______, U______, U______, U______, U______, U______, B______,
-        U______, _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   U______, U______, B______,        U______, U______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  U______, U______, B______,
-        U______, _______, CT_1,    AT_2,    GT_3,    KC_4,    U______, U______, B______,        U______, U______, KC_7,    GT_8,    AT_9,    CT_0,    U______, U______, B______,
-        U______, _______, KC_F11,  KC_F12,  KC_F5,   KC_5,    U______, U______, B______,        U______, U______, KC_6,    KC_F6,   KC_CAPS, KC_PSCR, U______, U______, B______,
+        U______, U______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   U______, U______, B______,        U______, U______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  U______, U______, B______,
+        U______, U______, CT_1,    AT_2,    GT_3,    KC_4,    U______, U______, B______,        U______, U______, KC_7,    GT_8,    AT_9,    CT_0,    U______, U______, B______,
+        U______, U______, KC_F11,  KC_F12,  KC_F5,   KC_5,    U______, U______, B______,        U______, U______, KC_6,    KC_F6,   KC_CAPS, KC_PSCR, U______, U______, B______,
         U______, U______, U______, U______, U______, _______, _______, _______, B______,        _______, _______, _______, U______, U______, U______, U______, U______, B______
 ),
 [L_SY] = LAYOUT(
@@ -198,7 +185,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         U______, U______, U______, U______, U______, U______, U______, U______, B______,        U______, U______, U______, U______, U______, U______, U______, U______, B______,
         U______, U______, _______, _______, _______, _______, U______, U______, B______,        U______, U______, KC_LT,   KC_GT,   KC_LBRC, KC_RBRC, _______, U______, B______,
         U______, U______, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  U______, U______, B______,        U______, U______, KC_LPRN, KC_RPRN, KC_LCBR, KC_RCBR, KC_DEL,  U______, B______,
-        U______, U______, _______, _______, _______, KC_PERC, U______, U______, B______,        U______, U______, KC_SLSH, KC_BSLS, E______, KC_PIPE, _______, U______, B______,
+        U______, U______, _______, _______, _______, KC_PERC, U______, U______, B______,        U______, U______, KC_UNDS, KC_PIPE, KC_BSLS, KC_SLSH, _______, U______, B______,
         U______, U______, U______, U______, U______, _______, _______, _______, B______,        _______, KC_UNDS, _______, U______, U______, U______, U______, U______, B______
 ),
 [L_MS] = LAYOUT(
@@ -212,10 +199,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [L_SD] = LAYOUT(
         U______, U______, U______, U______, U______, U______, U______, U______, B______,        U______, U______, U______, U______, U______, U______, U______, U______, B______,
         U______, U______, U______, U______, U______, U______, U______, U______, B______,        U______, U______, U______, U______, U______, U______, U______, U______, B______,
-        U______, _______, _______, _______, _______, _______, _______, U______, B______,        U______, U______, _______, KC_MSTP, _______, _______, U______, U______, B______,
-        U______, _______, _______, KC_BTN1, KC_BTN2, _______, _______, U______, B______,        U______, U______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, U______, U______, B______,
-        U______, _______, _______, _______, _______, _______, _______, U______, B______,        U______, U______, KC_MRWD, KC_MUTE, _______, KC_MFFD, U______, U______, B______,
-        U______, _______, _______, _______, U______, _______, _______, _______, B______,        _______, _______, _______, U______, U______, U______, U______, U______, B______
+        U______, U______, _______, _______, _______, _______, _______, U______, B______,        U______, U______, _______, KC_MSTP, _______, _______, U______, U______, B______,
+        U______, U______, _______, KC_BTN1, KC_BTN2, _______, _______, U______, B______,        U______, U______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, U______, U______, B______,
+        U______, U______, _______, KC_MPLY, KC_MPRV, KC_MNXT, _______, U______, B______,        U______, U______, KC_MRWD, KC_MUTE, _______, KC_MFFD, U______, U______, B______,
+        U______, U______, U______, U______, U______, _______, _______, _______, B______,        _______, _______, _______, U______, U______, U______, U______, U______, B______
 )
 };
 
@@ -227,19 +214,21 @@ enum combos {
     CB_PID,
     CB_Pass,
     CB_AS_TAB,
+    CB_IO_QUOT,
     CB_LENGTH
 };
 
 uint16_t COMBO_LEN = CB_LENGTH;
 
-const uint16_t PROGMEM BOOT[] =       {KC_B, KC_O, COMBO_END};
+const uint16_t PROGMEM BOOT[] =         {KC_B, KC_O, COMBO_END};
 const uint16_t PROGMEM QW_ESC[] =       {KC_Q, PT_W, COMBO_END};
 const uint16_t PROGMEM LSemi_ENT[] =    {AT_L, CT_SCLN, COMBO_END};
 const uint16_t PROGMEM CommDot_ENT[] =  {KC_COMM, KC_DOT, COMBO_END};
 const uint16_t PROGMEM PID[] =          {KC_I, KC_P, COMBO_END};
 const uint16_t PROGMEM Pass[] =         {CT_A, KC_P, COMBO_END};
 const uint16_t PROGMEM AS_TAB[] =       {CT_A, AT_S, COMBO_END};
-
+const uint16_t PROGMEM IO_QUOT[] =      {KC_I, KC_O, COMBO_END}; // hmm chording tends to move the keyboard quite a bit ...
+// KC_I,    KC_O
 
 combo_t key_combos[] = {
     [CB_BOOT] =         COMBO(BOOT, QK_BOOTLOADER),
@@ -249,7 +238,9 @@ combo_t key_combos[] = {
     [CB_PID] =          COMBO_ACTION(PID),
     [CB_Pass] =         COMBO_ACTION(Pass),
     [CB_AS_TAB] =       COMBO(AS_TAB, KC_TAB),
+    [CB_IO_QUOT] =      COMBO(IO_QUOT, KC_QUOT),
 };
+
 
 
 void process_combo_event(uint16_t combo_index, bool pressed) {
@@ -273,6 +264,11 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
 //       break;
   }
 }
+
+
+
+
+
 
 
 
