@@ -1,1 +1,19 @@
 MOUSEKEY_ENABLE = yes
+
+# don't disable this will turn off media keys
+# EXTRAKEY_ENABLE = no
+
+LTO_ENABLE = no
+
+# CONSOLE_ENABLE = no
+# COMMAND_ENABLE = no
+
+# SPACE_CADET_ENABLE = no
+# GRAVE_ESC_ENABLE = no 
+# MAGIC_ENABLE = no
+# BACKLIGHT_ENABLE = no
+# RGBLIGHT_ENABLE	= no
+# MIDI_ENABLE	= no
+# UNICODE_ENABLE = no
+# BLUETOOTH_ENABLE = no
+# AUDIO_ENABLE = no
