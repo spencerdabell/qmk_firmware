@@ -227,7 +227,7 @@ enum combos {
 //     CB_CommDot_ENT,
     CB_PID,
     CB_Pass,
-//     CB_AS_TAB,
+    CB_WE_TAB,
     CB_IO_QUOT,
     CB_LENGTH
 };
@@ -240,7 +240,7 @@ const uint16_t PROGMEM LSemi_ENT[] =    {AT_L, CT_SCLN, COMBO_END};
 const uint16_t PROGMEM CommDot_ENT[] =  {KC_COMM, KC_DOT, COMBO_END};
 const uint16_t PROGMEM PID[] =          {KC_I, KC_P, COMBO_END};
 const uint16_t PROGMEM Pass[] =         {CT_A, KC_P, COMBO_END};
-const uint16_t PROGMEM AS_TAB[] =       {CT_A, AT_S, COMBO_END};
+const uint16_t PROGMEM WE_TAB[] =       {SY_W, PT_E, COMBO_END};
 const uint16_t PROGMEM IO_QUOT[] =      {KC_I, KC_O, COMBO_END}; // hmm chording tends to move the keyboard quite a bit ...
 // KC_I,    KC_O
 
@@ -251,10 +251,9 @@ combo_t key_combos[] = {
 //     [CB_CommDot_ENT] =  COMBO(CommDot_ENT, KC_ENT),
     [CB_PID] =          COMBO_ACTION(PID),
     [CB_Pass] =         COMBO_ACTION(Pass),
-//     [CB_AS_TAB] =       COMBO(AS_TAB, KC_TAB),
+    [CB_WE_TAB] =       COMBO(WE_TAB, KC_TAB),
     [CB_IO_QUOT] =      COMBO(IO_QUOT, KC_QUOT),
 };
-
 
 
 void process_combo_event(uint16_t combo_index, bool pressed) {
