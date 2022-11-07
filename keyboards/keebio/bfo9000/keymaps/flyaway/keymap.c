@@ -223,11 +223,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 enum combos {
     CB_BOOT,
     CB_QW_ESC,
-    CB_LSemi_ENT,
-    CB_CommDot_ENT,
+//     CB_LSemi_ENT,
+//     CB_CommDot_ENT,
     CB_PID,
     CB_Pass,
-    CB_AS_TAB,
+//     CB_AS_TAB,
     CB_IO_QUOT,
     CB_LENGTH
 };
@@ -247,11 +247,11 @@ const uint16_t PROGMEM IO_QUOT[] =      {KC_I, KC_O, COMBO_END}; // hmm chording
 combo_t key_combos[] = {
     [CB_BOOT] =         COMBO(BOOT, QK_BOOTLOADER),
     [CB_QW_ESC] =       COMBO(QW_ESC, KC_ESC),
-    [CB_LSemi_ENT] =    COMBO(LSemi_ENT, KC_ENT),
-    [CB_CommDot_ENT] =  COMBO(CommDot_ENT, KC_ENT),
+//     [CB_LSemi_ENT] =    COMBO(LSemi_ENT, KC_ENT),
+//     [CB_CommDot_ENT] =  COMBO(CommDot_ENT, KC_ENT),
     [CB_PID] =          COMBO_ACTION(PID),
     [CB_Pass] =         COMBO_ACTION(Pass),
-    [CB_AS_TAB] =       COMBO(AS_TAB, KC_TAB),
+//     [CB_AS_TAB] =       COMBO(AS_TAB, KC_TAB),
     [CB_IO_QUOT] =      COMBO(IO_QUOT, KC_QUOT),
 };
 
