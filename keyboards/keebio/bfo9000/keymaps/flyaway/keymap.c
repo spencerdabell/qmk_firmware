@@ -136,7 +136,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         U______, KC_ESC,  KC_Q,    SY_W,    PT_E,    NU_R,    KC_T,    U______, B______,        U______, KC_Y,    NU_U,    KC_I,    SY_O,    KC_P,    U______, U______, B______,
         U______, TO_PT,   CT_A,    AT_S,    GT_D,    NV_F,    KC_G,    U______, B______,        U______, KC_H,    NV_J,    GT_K,    AT_L,    CT_SCLN, KC_QUOT,  U______, B______,
         U______, U______, SD_Z,    KC_X,    ST_C,    MS_V,    KC_B,    U______, B______,        U______, KC_N,    KC_M,    ST_COMM, KC_DOT,  KC_SLSH, U______, U______, B______,
-        U______, U______, U______, U______, U______, KC_TAB,  KC_ENT,  KC_DEL,  B______,        KC_BSPC, KC_SPC,  KC_GRV,  U______, U______, U______, U______, U______, B______,
+        U______, U______, U______, U______, U______, KC_TAB,  ST_ENT,  KC_DEL,  B______,        KC_BSPC, ST_SPC,  KC_GRV,  U______, U______, U______, U______, U______, B______,
         U______, U______, U______, U______, U______, _______, _______, _______, B______,        _______, _______, _______, U______, U______, U______, U______, U______, B______,
         B______, B______, B______, B______, B______, B______, B______, B______, B______,        B______, B______, B______, B______, B______, B______, B______, B______, B______
 ),
@@ -170,6 +170,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
 [L_PT] = LAYOUT(
+        // U______, _______, U______, TO_SY,   U______, TO_NU,   U______, U______, B______,        U______, U______, KC_COLN, KC_SCLN, KC_DQUO, KC_EXLM, _______, U______, B______,
+        // U______, _______, U______, U______, TO_BS,   TO_NV,   U______, U______, B______,        U______, U______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES, _______, U______, B______,
+        // U______, _______, TO_SD,   U______, U______, TO_MS,   U______, U______, B______,        U______, U______, KC_MINS, KC_PLUS, _______, KC_EQL,  _______, U______, B______,
         U______, _______, U______, TO_SY,   U______, TO_NU,   U______, U______, B______,        U______, U______, KC_COLN, KC_SCLN, KC_DQUO, KC_EXLM, _______, U______, B______,
         U______, _______, U______, U______, TO_BS,   TO_NV,   U______, U______, B______,        U______, U______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES, _______, U______, B______,
         U______, _______, TO_SD,   U______, U______, TO_MS,   U______, U______, B______,        U______, U______, KC_MINS, KC_PLUS, _______, KC_EQL,  _______, U______, B______,
