@@ -50,7 +50,9 @@ enum {
 #define NV_F    LT(L_NV, KC_F)
 #define MS_V    LT(L_MS, KC_V)
 #define NV_J    LT(L_NV, KC_J)
-
+#define NU_R    LT(L_NU, KC_R)
+#define NU_U    LT(L_NU, KC_U)
+#define SY_O    LT(L_SY, KC_O)
 
 
 #define SD_MPLY LT(L_SD, KC_MPLY)
@@ -131,7 +133,7 @@ enum {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [L_BS] = LAYOUT(
-        U______, KC_ESC,  KC_Q,    SY_W,    PT_E,    KC_R,    KC_T,    U______, B______,        U______, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    U______, U______, B______,
+        U______, KC_ESC,  KC_Q,    SY_W,    PT_E,    NU_R,    KC_T,    U______, B______,        U______, KC_Y,    NU_U,    KC_I,    SY_O,    KC_P,    U______, U______, B______,
         U______, TO_PT,   CT_A,    AT_S,    GT_D,    NV_F,    KC_G,    U______, B______,        U______, KC_H,    NV_J,    GT_K,    AT_L,    CT_SCLN, KC_QUOT,  U______, B______,
         U______, U______, SD_Z,    KC_X,    ST_C,    MS_V,    KC_B,    U______, B______,        U______, KC_N,    KC_M,    ST_COMM, KC_DOT,  KC_SLSH, U______, U______, B______,
         U______, U______, U______, U______, U______, KC_TAB,  KC_ENT,  KC_DEL,  B______,        KC_BSPC, KC_SPC,  KC_GRV,  U______, U______, U______, U______, U______, B______,
