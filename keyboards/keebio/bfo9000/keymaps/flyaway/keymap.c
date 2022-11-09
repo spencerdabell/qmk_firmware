@@ -9,7 +9,7 @@
 
 enum {
     L_BS = 0
-    , L_NGRM // engram layout mirrored
+//     , L_NGRM // engram layout mirrored
 //     , L_CLMK
 //     , L_ISRT
     , L_PT
@@ -29,7 +29,7 @@ enum {
 #define TO_SD   TO(L_SD)
 #define TO_NU   TO(L_NU)
 #define TO_SY   TO(L_SY)
-#define TO_NGRM TO(L_NGRM)
+// #define TO_NGRM TO(L_NGRM)
 // #define TO_CLMK TO(L_CLMK)
 // #define TO_ISRT TO(L_ISRT)
 
@@ -38,9 +38,12 @@ enum {
 // QWERTY
 #define CT_A    CTL_T(KC_A)
 #define AT_S    ALT_T(KC_S)
-#define GT_D    GUI_T(KC_D)
+#define ST_D    SFT_T(KC_D)
+#define GT_C    GUI_T(KC_C)
 
-#define GT_K    GUI_T(KC_K)
+
+#define ST_K    SFT_T(KC_K)
+#define GT_COMM GUI_T(KC_COMM)
 #define AT_L    ALT_T(KC_L)
 #define CT_SCLN CTL_T(KC_SCLN)
 
@@ -64,7 +67,6 @@ enum {
 #define PT_E    LT(L_PT, KC_E)
 #define SY_D    LT(L_SY, KC_D)
 #define SY_GRV  LT(L_SY, KC_GRV)
-
 #define SY_W    LT(L_SY, KC_W)
 
 #define CT_1    CTL_T(KC_1)
@@ -107,6 +109,8 @@ enum {
 #define APP_FWD KC_LGUI
 #define APP_BCK KC_LALT
 
+
+
 /*
 
 #define C(kc) LCTL(kc)
@@ -115,29 +119,32 @@ enum {
 #define G(kc) LGUI(kc)
 
 */
-#define OSM_SFT OSM(MOD_LSFT)
+#define OSM_LST OSM(MOD_LSFT)
+#define OSM_RST OSM(MOD_RSFT)
+
+
 // CAPS_WORD	CAPSWRD	Toggles Caps Word
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [L_BS] = LAYOUT(
         U______, KC_ESC,  KC_Q,    SY_W,    PT_E,    KC_R,    KC_T,    U______, B______,        U______, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    U______, U______, B______,
-        U______, TO_PT,   CT_A,    AT_S,    GT_D,    NV_F,    KC_G,    U______, B______,        U______, KC_H,    NV_J,    GT_K,    AT_L,    CT_SCLN, KC_ENT,  U______, B______,
-        U______, _______, SD_Z,    KC_X,    KC_C,    MS_V,    KC_B,    U______, B______,        U______, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, U______, U______, B______,
-        U______, U______, U______, U______, U______, NU_TAB,  OSM_SFT, SY_DEL,  B______,        KC_BSPC, ST_SPC,  SY_GRV,  U______, U______, U______, U______, U______, B______,
+        U______, TO_PT,   CT_A,    AT_S,    ST_D,    NV_F,    KC_G,    U______, B______,        U______, KC_H,    NV_J,    ST_K,    AT_L,    CT_SCLN, KC_QUOT,  U______, B______,
+        U______, KC_LSFT, SD_Z,    KC_X,    GT_C,    MS_V,    KC_B,    U______, B______,        U______, KC_N,    KC_M,    GT_COMM, KC_DOT,  KC_SLSH, KC_RSFT, U______, B______,
+        U______, U______, U______, U______, U______, KC_TAB,  KC_ENT,  KC_DEL,  B______,        KC_BSPC, KC_SPC,  KC_GRV,  U______, U______, U______, U______, U______, B______,
         U______, U______, U______, U______, U______, _______, _______, _______, B______,        _______, _______, _______, U______, U______, U______, U______, U______, B______,
         B______, B______, B______, B______, B______, B______, B______, B______, B______,        B______, B______, B______, B______, B______, B______, B______, B______, B______
 ),
 
 
-[L_NGRM] = LAYOUT(
-        U______, _______, KC_V,    SY_W,    SY_D,    KC_L,    U______, U______, B______,        U______, U______, KC_U,    KC_O,    KC_Y,    KC_B,    _______, U______, B______,
-        U______, _______, CT_N,    AT_S,    GT_T,    NV_H,    U______, U______, B______,        U______, U______, KC_A,    GT_E,    AT_I,    CT_C,    _______, U______, B______,
-        U______, _______, KC_P,    KC_F,    KC_M,    MS_R,    U______, U______, B______,        U______, U______, KC_K,    KC_J,    KC_X,    KC_G,    _______, U______, B______,
-        U______, U______, U______, U______, U______, _______, _______, _______, B______,        _______, _______, _______, U______, U______, _______, _______, U______, B______,
-        U______, U______, U______, U______, U______, _______, _______, _______, B______,        _______, _______, _______, U______, U______, U______, U______, U______, B______,
-        B______, B______, B______, B______, B______, B______, B______, B______, B______,        B______, B______, B______, B______, B______, B______, B______, B______, B______
-),
+// [L_NGRM] = LAYOUT(
+//         U______, _______, KC_V,    SY_W,    SY_D,    KC_L,    U______, U______, B______,        U______, U______, KC_U,    KC_O,    KC_Y,    KC_B,    _______, U______, B______,
+//         U______, _______, CT_N,    AT_S,    GT_T,    NV_H,    U______, U______, B______,        U______, U______, KC_A,    GT_E,    AT_I,    CT_C,    _______, U______, B______,
+//         U______, _______, KC_P,    KC_F,    KC_M,    MS_R,    U______, U______, B______,        U______, U______, KC_K,    KC_J,    KC_X,    KC_G,    _______, U______, B______,
+//         U______, U______, U______, U______, U______, _______, _______, _______, B______,        _______, _______, _______, U______, U______, _______, _______, U______, B______,
+//         U______, U______, U______, U______, U______, _______, _______, _______, B______,        _______, _______, _______, U______, U______, U______, U______, U______, B______,
+//         B______, B______, B______, B______, B______, B______, B______, B______, B______,        B______, B______, B______, B______, B______, B______, B______, B______, B______
+// ),
 
 // [L_CLMK] = LAYOUT(
 //         U______, U______, U______, KC_W,    KC_F,    KC_P,    KC_B,    U______, B______,        U______, KC_J,    KC_L,    KC_U,    KC_Y,    U______, U______, U______, B______,
@@ -158,11 +165,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
 [L_PT] = LAYOUT(
-        U______, _______, TO_NU,   TO_SY,   _______, _______, U______, U______, B______,        U______, U______, KC_COLN, KC_SCLN, KC_DQUO, KC_EXLM, _______, U______, B______,
-        U______, _______, _______, _______, TO_BS,   TO_NV,   U______, U______, B______,        U______, U______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES, _______, U______, B______,
-        U______, _______, TO_SD,   _______, TO_NGRM, TO_MS,   U______, U______, B______,        U______, U______, KC_MINS, KC_PLUS, _______, KC_EQL,  _______, U______, B______,
-        U______, _______, _______, U______, U______, TO_NU,   _______, _______, B______,        _______, KC_UNDS, _______, U______, U______, _______, _______, U______, B______,
-        U______, U______, U______, U______, U______, _______, _______, _______, B______,        _______, KC_UNDS, _______, U______, U______, U______, U______, U______, B______,
+        U______, _______, U______, TO_SY,   U______, TO_NU,   U______, U______, B______,        U______, U______, KC_COLN, KC_SCLN, KC_DQUO, KC_EXLM, _______, U______, B______,
+        U______, _______, U______, U______, TO_BS,   TO_NV,   U______, U______, B______,        U______, U______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES, _______, U______, B______,
+        U______, _______, TO_SD,   U______, U______, TO_MS,   U______, U______, B______,        U______, U______, KC_MINS, KC_PLUS, _______, KC_EQL,  _______, U______, B______,
+        U______, _______, U______, U______, U______, _______, _______, _______, B______,        _______, KC_UNDS, _______, U______, U______, _______, _______, U______, B______,
+        U______, U______, U______, U______, U______, _______, _______, _______, B______,        _______, _______, _______, U______, U______, U______, U______, U______, B______,
         B______, B______, B______, B______, B______, B______, B______, B______, B______,        B______, B______, B______, B______, B______, B______, B______, B______, B______
 ),
 
