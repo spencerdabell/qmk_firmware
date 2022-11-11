@@ -62,10 +62,11 @@ enum {
 
 
 
-// shift hold, enter tap
 #define ST_ENT  SFT_T(KC_ENT)
-// shift hold, space tap
 #define ST_SPC  SFT_T(KC_SPC)
+#define ST_UNDS SFT_T(KC_UNDS)
+
+
 
 // shift hold, osm tap
 #define SY_DEL  LT(L_SY, KC_DEL)
@@ -141,7 +142,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         B______, B______, B______, B______, B______, B______, B______, B______, B______,        B______, B______, B______, B______, B______, B______, B______, B______, B______
 ),
 
-
 // [L_NGRM] = LAYOUT(
 //         U______, _______, KC_V,    SY_W,    SY_D,    KC_L,    U______, U______, B______,        U______, U______, KC_U,    KC_O,    KC_Y,    KC_B,    _______, U______, B______,
 //         U______, _______, CT_N,    AT_S,    GT_T,    NV_H,    U______, U______, B______,        U______, U______, KC_A,    GT_E,    AT_I,    CT_C,    _______, U______, B______,
@@ -176,7 +176,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         U______, _______, U______, TO_SY,   U______, TO_NU,   U______, U______, B______,        U______, U______, KC_COLN, KC_SCLN, KC_DQUO, KC_EXLM, _______, U______, B______,
         U______, _______, U______, U______, TO_BS,   TO_NV,   U______, U______, B______,        U______, U______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES, _______, U______, B______,
         U______, _______, TO_SD,   U______, U______, TO_MS,   U______, U______, B______,        U______, U______, KC_MINS, KC_PLUS, _______, KC_EQL,  _______, U______, B______,
-        U______, _______, U______, U______, U______, _______, _______, _______, B______,        _______, KC_UNDS, _______, U______, U______, _______, _______, U______, B______,
+        U______, _______, U______, U______, U______, _______, _______, _______, B______,        _______, ST_UNDS, _______, U______, U______, _______, _______, U______, B______,
         U______, U______, U______, U______, U______, _______, _______, _______, B______,        _______, _______, _______, U______, U______, U______, U______, U______, B______,
         B______, B______, B______, B______, B______, B______, B______, B______, B______,        B______, B______, B______, B______, B______, B______, B______, B______, B______
 ),
@@ -184,7 +184,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [L_NV] = LAYOUT(
         U______, _______, _______, Ct_PGUP, Ct_PGDN, _______, _______, U______, B______,        U______, U______, Ct_PGUP, KC_PGDN, KC_PGUP, Ct_PGDN, _______, U______, B______,
-        U______, _______, KC_LCTL, KC_DEL,  KC_BSPC, _______, _______, U______, B______,        U______, KC_HOME, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_END,  U______, B______,
+        U______, _______, KC_LCTL, _______, _______, _______, _______, U______, B______,        U______, KC_HOME, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_END,  U______, B______,
         U______, _______, _______, DESK_LT, DESK_RT, _______, _______, U______, B______,        U______, U______, Ct_LEFT, KC_WH_D, KC_WH_U, Ct_RGHT, _______, U______, B______,
         U______, _______, _______, U______, U______, _______, _______, _______, B______,        _______, _______, _______,  U______, U______, _______, _______, U______, B______,
         U______, U______, U______, U______, U______, _______, _______, _______, B______,        _______, _______, _______, U______, U______, U______, U______, U______, B______,
@@ -196,7 +196,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         U______, _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   U______, U______, B______,        U______, U______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  _______, U______, B______,
         U______, _______, CT_1,    AT_2,    GT_3,    KC_4,    U______, U______, B______,        U______, U______, KC_7,    GT_8,    AT_9,    CT_0,    _______, U______, B______,
         U______, _______, KC_F11,  KC_F12,  KC_F5,   KC_5,    U______, U______, B______,        U______, U______, KC_6,    KC_F6,   KC_CAPS, KC_PSCR, _______, U______, B______,
-        U______, _______, _______, U______, U______, _______, _______, _______, B______,        _______, KC_UNDS, _______, U______, U______, _______, _______, U______, B______,
+        U______, _______, _______, U______, U______, _______, _______, _______, B______,        _______, ST_UNDS, _______, U______, U______, _______, _______, U______, B______,
         U______, U______, U______, U______, U______, _______, _______, _______, B______,        _______, _______, _______, U______, U______, U______, U______, U______, B______,
         B______, B______, B______, B______, B______, B______, B______, B______, B______,        B______, B______, B______, B______, B______, B______, B______, B______, B______
 ),
@@ -206,7 +206,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         U______, _______, _______, _______, _______, _______, U______, U______, B______,        U______, U______, KC_LT,   KC_GT,   KC_LBRC, KC_RBRC, _______, U______, B______,
         U______, _______, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  U______, U______, B______,        U______, U______, KC_LPRN, KC_RPRN, KC_LCBR, KC_RCBR, _______, U______, B______,
         U______, _______, _______, _______, _______, KC_PERC, U______, U______, B______,        U______, U______, KC_UNDS, KC_PIPE, KC_BSLS, KC_SLSH, _______, U______, B______,
-        U______, _______, _______, U______, U______, _______, _______, _______, B______,        _______, KC_UNDS, _______, U______, U______, _______, _______, U______, B______,
+        U______, _______, _______, U______, U______, _______, _______, _______, B______,        _______, ST_UNDS, _______, U______, U______, _______, _______, U______, B______,
         U______, U______, U______, U______, U______, _______, _______, _______, B______,        _______, _______, _______, U______, U______, U______, U______, U______, B______,
         B______, B______, B______, B______, B______, B______, B______, B______, B______,        B______, B______, B______, B______, B______, B______, B______, B______, B______
 ),
@@ -249,14 +249,14 @@ enum combos {
 
 uint16_t COMBO_LEN = CB_LENGTH;
 
-const uint16_t PROGMEM BOOT[] =         {KC_B, KC_O, COMBO_END};
+const uint16_t PROGMEM BOOT[] =         {KC_B, SY_O, COMBO_END};
 const uint16_t PROGMEM QW_ESC[] =       {KC_Q, SY_W, COMBO_END};
 const uint16_t PROGMEM LSemi_ENT[] =    {AT_L, CT_SCLN, COMBO_END};
 const uint16_t PROGMEM CommDot_ENT[] =  {KC_COMM, KC_DOT, COMBO_END};
 const uint16_t PROGMEM PID[] =          {KC_I, KC_P, COMBO_END};
 const uint16_t PROGMEM Pass[] =         {CT_A, KC_P, COMBO_END};
 const uint16_t PROGMEM WE_TAB[] =       {SY_W, PT_E, COMBO_END};
-const uint16_t PROGMEM IO_QUOT[] =      {KC_I, KC_O, COMBO_END}; // hmm chording tends to move the keyboard quite a bit ...
+const uint16_t PROGMEM IO_QUOT[] =      {KC_I, SY_O, COMBO_END}; // hmm chording tends to move the keyboard quite a bit ...
 // KC_I,    KC_O
 
 combo_t key_combos[] = {
