@@ -60,6 +60,7 @@ enum {
 
 
 #define SD_MPLY LT(L_SD, KC_MPLY)
+#define SD_Q    LT(L_SD, KC_Q)
 #define SD_Z    LT(L_SD, KC_Z)
 #define NU_TAB  LT(L_NU, KC_TAB)
 #define PT_BSPC LT(L_PT, KC_BSPC)
@@ -138,9 +139,9 @@ enum {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [L_BS] = LAYOUT(
-        U______, KC_ESC,  KC_Q,    SY_W,    PT_E,    NU_R,    KC_T,    U______, B______,        U______, KC_Y,    NU_U,    KC_I,    SY_O,    KC_P,    _______, U______, B______,
+        U______, KC_ESC,  SD_Q,    SY_W,    PT_E,    NU_R,    KC_T,    U______, B______,        U______, KC_Y,    NU_U,    KC_I,    SY_O,    KC_P,    _______, U______, B______,
         U______, TO_PT,   CT_A,    AT_S,    GT_D,    NV_F,    KC_G,    U______, B______,        U______, KC_H,    NV_J,    GT_K,    AT_L,    CT_SCLN, KC_QUOT,  U______, B______,
-        U______, U______, SD_Z,    KC_X,    ST_C,    MS_V,    KC_B,    U______, B______,        U______, KC_N,    KC_M,    ST_COMM, KC_DOT,  KC_SLSH, U______, U______, B______,
+        U______, U______, KC_Z,    KC_X,    ST_C,    MS_V,    KC_B,    U______, B______,        U______, KC_N,    KC_M,    ST_COMM, KC_DOT,  KC_SLSH, U______, U______, B______,
         U______, U______, U______, U______, U______, KC_TAB,  ST_ENT,  KC_DEL,  B______,        KC_BSPC, ST_SPC,  KC_GRV,  U______, U______, U______, U______, U______, B______,
         U______, U______, U______, U______, U______, _______, _______, _______, B______,        _______, _______, _______, U______, U______, U______, U______, U______, B______,
         B______, B______, B______, B______, B______, B______, B______, B______, B______,        B______, B______, B______, B______, B______, B______, B______, B______, B______
@@ -201,12 +202,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         U______, U______, U______, U______, U______, U______, U______, U______, B______,        U______, U______, U______, U______, U______, U______, U______, U______, B______,
         B______, B______, B______, B______, B______, B______, B______, B______, B______,        B______, B______, B______, B______, B______, B______, B______, B______, B______
 ),
-
-
-  
-
- 
-
 
 
 [L_PT] = LAYOUT(
