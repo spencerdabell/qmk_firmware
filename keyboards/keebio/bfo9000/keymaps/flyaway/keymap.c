@@ -14,6 +14,7 @@ enum {
     , L_ISRT
     , L_SEMI
     , L_WHRF
+    , L_APT3    
     , L_PT
     , L_NV
     , L_NU
@@ -36,6 +37,7 @@ enum {
 #define TO_ISRT TO(L_ISRT)
 #define TO_SEMI TO(L_SEMI)
 #define TO_WHRF TO(L_WHRF)
+#define TO_APT3 TO(L_APT3)
 
 
 
@@ -178,7 +180,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // f l h v z ' w u o y
 // s r n t k c d e a i
 // x j b m q p g , . /
-
 [L_SEMI] = LAYOUT(
         U______, _______, KC_F,    KC_L,    KC_H,    KC_V,    KC_Z,    U______, B______,        U______, KC_QUOT, KC_W,    KC_U,    KC_O,    KC_Y,    _______, U______, B______,
         U______, _______, KC_S,    KC_R,    KC_N,    KC_T,    KC_K,    U______, B______,        U______, KC_C,    KC_D,    KC_E,    KC_A,    KC_I,    _______, U______, B______,
@@ -192,8 +193,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // f l h d m  v w o u ,
 // s r n t k  g y a e i
 // x j b z q  p c ' ; .
-
-
 [L_WHRF] = LAYOUT(
         U______, _______, KC_F,    KC_L,    KC_H,    KC_D,    KC_M,    U______, B______,        U______, KC_V,    KC_W,    KC_O,    KC_U,    KC_COMM, _______, U______, B______,
         U______, _______, KC_S,    KC_R,    KC_N,    KC_T,    KC_K,    U______, B______,        U______, KC_G,    KC_Y,    KC_A,    KC_E,    KC_I,    KC_SLSH, U______, B______,
@@ -203,11 +202,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         B______, B______, B______, B______, B______, B______, B______, B______, B______,        B______, B______, B______, B______, B______, B______, B______, B______, B______
 ),
 
+// w g d f b  q l u o y
+// r s t h k  j n e a i ;
+// x c m p v  z , . ' /
+[L_APT3] = LAYOUT(
+        U______, _______, KC_W,    KC_G,    KC_D,    KC_F,    KC_B,    U______, B______,        U______, KC_Q,    KC_L,    KC_U,    KC_O,    KC_Y,    _______, U______, B______,
+        U______, _______, KC_R,    KC_S,    KC_T,    KC_H,    KC_K,    U______, B______,        U______, KC_J,    KC_N,    KC_E,    KC_A,    KC_I,    _______, U______, B______,
+        U______, _______, KC_X,    KC_C,    KC_M,    KC_P,    KC_V,    U______, B______,        U______, KC_Z,    KC_COMM, KC_DOT,  KC_QUOT, KC_SCLN, _______, U______, B______,
+        U______, U______, U______, U______, U______, _______, _______, _______, B______,        _______, _______, _______, U______, U______, U______, U______, U______, B______,
+        U______, U______, U______, U______, U______, U______, U______, U______, B______,        U______, U______, U______, U______, U______, U______, U______, U______, B______,
+        B______, B______, B______, B______, B______, B______, B______, B______, B______,        B______, B______, B______, B______, B______, B______, B______, B______, B______
+),
 
 [L_PT] = LAYOUT(
         U______, _______, TO_SD,   TO_SY,   U______, TO_NU,   U______, U______, B______,        U______, U______, KC_COLN, KC_SCLN, KC_DQUO, KC_EXLM, _______, U______, B______,
         U______, _______, TO_CLMK, TO_ISRT, TO_BS,   TO_NV,   U______, U______, B______,        U______, U______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES, _______, U______, B______,
-        U______, _______, TO_SEMI, TO_WHRF, U______, TO_MS,   U______, U______, B______,        U______, U______, KC_MINS, KC_PLUS, _______, KC_EQL,  _______, U______, B______,
+        U______, _______, TO_SEMI, TO_WHRF, TO_APT3, TO_MS,   U______, U______, B______,        U______, U______, KC_MINS, KC_PLUS, _______, KC_EQL,  _______, U______, B______,
         U______, _______, U______, U______, U______, _______, _______, _______, B______,        _______, ST_UNDS, _______, U______, U______, _______, _______, U______, B______,
         U______, U______, U______, U______, U______, _______, _______, _______, B______,        _______, _______, _______, U______, U______, U______, U______, U______, B______,
         B______, B______, B______, B______, B______, B______, B______, B______, B______,        B______, B______, B______, B______, B______, B______, B______, B______, B______
