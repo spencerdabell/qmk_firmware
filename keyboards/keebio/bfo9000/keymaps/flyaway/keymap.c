@@ -44,14 +44,17 @@ enum {
 // QWERTY
 #define CT_A    CTL_T(KC_A)
 #define AT_S    ALT_T(KC_S)
-#define GT_D    GUI_T(KC_D)
+// #define GT_D    GUI_T(KC_D)
+#define GT_Z    GUI_T(KC_Z)
 #define ST_C    SFT_T(KC_C)
 
 
-#define GT_K    GUI_T(KC_K)
+// #define GT_K    GUI_T(KC_K)
 #define ST_COMM SFT_T(KC_COMM)
 #define AT_L    ALT_T(KC_L)
 #define CT_SCLN CTL_T(KC_SCLN)
+#define GT_SLSH GUI_T(KC_SLSH)
+
 
 #define NV_F    LT(L_NV, KC_F)
 #define MS_V    LT(L_MS, KC_V)
@@ -142,8 +145,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [L_BS] = LAYOUT(
         U______, KC_ESC,  SD_Q,    SY_W,    PT_E,    NU_R,    KC_T,    U______, B______,        U______, KC_Y,    NU_U,    KC_I,    SY_O,    KC_P,    _______, U______, B______,
-        U______, TO_PT,   CT_A,    AT_S,    GT_D,    NV_F,    KC_G,    U______, B______,        U______, KC_H,    NV_J,    GT_K,    AT_L,    CT_SCLN, KC_QUOT,  U______, B______,
-        U______, U______, KC_Z,    KC_X,    ST_C,    MS_V,    KC_B,    U______, B______,        U______, KC_N,    KC_M,    ST_COMM, KC_DOT,  KC_SLSH, U______, U______, B______,
+        U______, TO_PT,   CT_A,    AT_S,    KC_D,    NV_F,    KC_G,    U______, B______,        U______, KC_H,    NV_J,    KC_K,    AT_L,    CT_SCLN, KC_QUOT,  U______, B______,
+        U______, U______, GT_Z,    KC_X,    ST_C,    MS_V,    KC_B,    U______, B______,        U______, KC_N,    KC_M,    ST_COMM, KC_DOT,  GT_SLSH, U______, U______, B______,
         U______, U______, U______, U______, U______, KC_TAB,  ST_ENT,  KC_DEL,  B______,        KC_BSPC, ST_SPC,  KC_GRV,  U______, U______, U______, U______, U______, B______,
         U______, U______, U______, U______, U______, _______, _______, _______, B______,        _______, _______, _______, U______, U______, U______, U______, U______, B______,
         B______, B______, B______, B______, B______, B______, B______, B______, B______,        B______, B______, B______, B______, B______, B______, B______, B______, B______
