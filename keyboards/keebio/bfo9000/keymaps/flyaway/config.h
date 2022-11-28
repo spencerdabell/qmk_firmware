@@ -31,3 +31,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define IGNORE_MOD_TAP_INTERRUPT
 
 #define COMBO_TERM 10
+
+
+#define MK_3_SPEED
+#define MK_MOMENTARY_ACCEL
+// #define MK_COMBINED
+
+
+
+
