@@ -148,7 +148,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [L_BS] = LAYOUT(
         U______, KC_ESC,  SD_Q,    SY_W,    PT_E,    NU_R,    KC_T,    U______, B______,        U______, KC_Y,    NU_U,    KC_I,    SY_O,    KC_P,    _______, U______, B______,
         U______, TO_PT,   CT_A,    AT_S,    KC_D,    NV_F,    KC_G,    U______, B______,        U______, KC_H,    KC_J,    KC_K,    AT_L,    CT_SCLN, KC_QUOT,  U______, B______,
-        U______, U______, GT_Z,    KC_X,    ST_C,    MS_V,    KC_B,    U______, B______,        U______, KC_N,    KC_M,    ST_COMM, KC_DOT,  GT_SLSH, U______, U______, B______,
+        U______, KC_LSFT, GT_Z,    KC_X,    ST_C,    MS_V,    KC_B,    U______, B______,        U______, KC_N,    KC_M,    ST_COMM, KC_DOT,  GT_SLSH, KC_RSFT, U______, B______,
         U______, U______, U______, U______, U______, KC_TAB,  ST_ENT,  KC_DEL,  B______,        KC_BSPC, ST_SPC,  KC_GRV,  U______, U______, U______, U______, U______, B______,
         U______, U______, U______, U______, U______, _______, _______, _______, B______,        _______, _______, _______, U______, U______, U______, U______, U______, B______,
         B______, B______, B______, B______, B______, B______, B______, B______, B______,        B______, B______, B______, B______, B______, B______, B______, B______, B______
@@ -228,20 +228,36 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         B______, B______, B______, B______, B______, B______, B______, B______, B______,        B______, B______, B______, B______, B______, B______, B______, B______, B______
 ),
 
-// mlcgk ;whuq
-// rnstp jeaoi
-// vxfdb zy,./
+// mlcdk ;whuq
+// rnstg jeaoi
+// vxfpb zy,./
+
+/*
+qwfpb jluy;
+arstg mneio
+zxcdv kh,./
+
+yclmk zfu,'
+isrtg pneao
+qvwdj bh/.x
+
+flhvz 'wuoy
+srntk cdeai
+xjbmq pg,./
+
+*/
 [L_SVEN] = LAYOUT(
-        U______, _______, KC_M,    KC_L,    KC_C,    KC_G,    KC_K,    U______, B______,        U______, KC_SCLN, KC_W,    KC_H,    KC_U,    KC_Q,    _______, U______, B______,
-        U______, _______, KC_R,    KC_N,    KC_S,    KC_T,    KC_P,    U______, B______,        U______, KC_J,    KC_E,    KC_A,    KC_O,    KC_I,    _______, U______, B______,
-        U______, _______, KC_V,    KC_X,    KC_F,    KC_D,    KC_B,    U______, B______,        U______, KC_Z,    KC_Y,    KC_COMM, KC_DOT,  KC_SLSH, _______, U______, B______,
+        U______, _______, KC_M,    KC_L,    KC_C,    KC_P,    KC_B,    U______, B______,        U______, KC_SCLN, KC_W,    KC_H,    KC_U,    KC_Q,    _______, U______, B______,
+        U______, _______, KC_R,    KC_N,    KC_S,    KC_T,    KC_G,    U______, B______,        U______, KC_J,    KC_E,    KC_A,    KC_O,    KC_I,    _______, U______, B______,
+        U______, _______, KC_V,    KC_X,    KC_F,    KC_D,    KC_K,    U______, B______,        U______, KC_Z,    KC_Y,    KC_COMM, KC_DOT,  KC_SLSH, _______, U______, B______,
         U______, U______, U______, U______, U______, _______, _______, _______, B______,        _______, _______, _______, U______, U______, U______, U______, U______, B______,
         U______, U______, U______, U______, U______, U______, U______, U______, B______,        U______, U______, U______, U______, U______, U______, U______, U______, B______,
         B______, B______, B______, B______, B______, B______, B______, B______, B______,        B______, B______, B______, B______, B______, B______, B______, B______, B______
 ),
 
-
 /*
+is there a principle that 
+
 
 here is some text with some terrible rolls
 
