@@ -149,10 +149,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         U______, KC_ESC,  SD_Q,    SY_W,    PT_E,    NU_R,    KC_T,    U______, B______,        U______, KC_Y,    NU_U,    KC_I,    SY_O,    KC_P,    _______, U______, B______,
         U______, TO_PT,   CT_A,    AT_S,    KC_D,    NV_F,    KC_G,    U______, B______,        U______, KC_H,    KC_J,    KC_K,    AT_L,    CT_SCLN, KC_QUOT,  U______, B______,
         U______, KC_LSFT, GT_Z,    KC_X,    ST_C,    MS_V,    KC_B,    U______, B______,        U______, KC_N,    KC_M,    ST_COMM, KC_DOT,  GT_SLSH, KC_RSFT, U______, B______,
-        U______, U______, U______, U______, U______, KC_TAB,  ST_ENT,  KC_DEL,  B______,        KC_BSPC, ST_SPC,  KC_GRV,  U______, U______, U______, U______, U______, B______,
+        U______, U______, U______, U______, U______, KC_TAB,  KC_ENT,  KC_DEL,  B______,        KC_BSPC, KC_SPC,  KC_GRV,  U______, U______, U______, U______, U______, B______,
         U______, U______, U______, U______, U______, _______, _______, _______, B______,        _______, _______, _______, U______, U______, U______, U______, U______, B______,
         B______, B______, B______, B______, B______, B______, B______, B______, B______,        B______, B______, B______, B______, B______, B______, B______, B______, B______
 ),
+
+// okay how do i make underscores now?
+
 
 // [L_NGRM] = LAYOUT(
 //         U______, _______, KC_V,    SY_W,    SY_D,    KC_L,    U______, U______, B______,        U______, U______, KC_U,    KC_O,    KC_Y,    KC_B,    _______, U______, B______,
@@ -339,6 +342,7 @@ enum combos {
 //     CB_CommDot_ENT,
     CB_PID,
     CB_Pass,
+    CB_PassAdm,
     CB_WE_TAB,
     CB_IO_QUOT,
     CB_LENGTH
@@ -352,6 +356,7 @@ const uint16_t PROGMEM LSemi_ENT[] =    {AT_L, CT_SCLN, COMBO_END};
 const uint16_t PROGMEM CommDot_ENT[] =  {KC_COMM, KC_DOT, COMBO_END};
 const uint16_t PROGMEM PID[] =          {KC_I, KC_P, COMBO_END};
 const uint16_t PROGMEM Pass[] =         {CT_A, KC_P, COMBO_END};
+const uint16_t PROGMEM PassAdm[] =      {AT_S, KC_P, COMBO_END};
 const uint16_t PROGMEM WE_TAB[] =       {SY_W, PT_E, COMBO_END};
 const uint16_t PROGMEM IO_QUOT[] =      {KC_I, SY_O, COMBO_END}; // hmm chording tends to move the keyboard quite a bit ...
 // KC_I,    KC_O
@@ -363,6 +368,7 @@ combo_t key_combos[] = {
 //     [CB_CommDot_ENT] =  COMBO(CommDot_ENT, KC_ENT),
     [CB_PID] =          COMBO_ACTION(PID),
     [CB_Pass] =         COMBO_ACTION(Pass),
+    [CB_PassAdm] =      COMBO_ACTION(PassAdm),
     [CB_WE_TAB] =       COMBO(WE_TAB, KC_TAB),
     [CB_IO_QUOT] =      COMBO(IO_QUOT, KC_QUOT),
 };
@@ -378,6 +384,11 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
     case CB_Pass:
       if (pressed) {
         SEND_STRING("work124&");
+      }
+      break;
+    case CB_PassAdm:
+      if (pressed) {
+        SEND_STRING("Gong124&");
       }
       break;
 //     case BSPC_LSFT_CLEAR:
@@ -500,6 +511,8 @@ okay so like 10% reduction
 
 
 
+
+https://docs.qmk.fm/#/keycodes
 
 
 */
