@@ -14,7 +14,7 @@ enum {
     , L_ISRT
     , L_SEMI
 //     , L_WHRF
-    , L_SVEN
+    , L_FOLD
     , L_APT3    
     , L_PT
     , L_NV
@@ -38,7 +38,7 @@ enum {
 #define TO_ISRT TO(L_ISRT)
 #define TO_SEMI TO(L_SEMI)
 // #define TO_WHRF TO(L_WHRF)
-#define TO_SVEN TO(L_SVEN)
+#define TO_FOLD TO(L_FOLD)
 #define TO_APT3 TO(L_APT3)
 
 
@@ -146,15 +146,15 @@ enum {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [L_BS] = LAYOUT(
-        U______, KC_ESC,  SD_Q,    SY_W,    PT_E,    NU_R,    KC_T,    U______, B______,        U______, KC_Y,    NU_U,    KC_I,    SY_O,    KC_P,    _______, U______, B______,
-        U______, TO_PT,   CT_A,    AT_S,    KC_D,    NV_F,    KC_G,    U______, B______,        U______, KC_H,    KC_J,    KC_K,    AT_L,    CT_SCLN, KC_QUOT,  U______, B______,
-        U______, KC_LSFT, GT_Z,    KC_X,    ST_C,    MS_V,    KC_B,    U______, B______,        U______, KC_N,    KC_M,    ST_COMM, KC_DOT,  GT_SLSH, KC_RSFT, U______, B______,
-        U______, U______, U______, U______, U______, KC_TAB,  KC_ENT,  KC_DEL,  B______,        KC_BSPC, KC_SPC,  KC_GRV,  U______, U______, U______, U______, U______, B______,
+        U______, U______, SD_Q,    SY_W,    PT_E,    NU_R,    KC_T,    U______, B______,        U______, KC_Y,    NU_U,    KC_I,    SY_O,    KC_P,    _______, U______, B______,
+        U______, TO_PT,   CT_A,    AT_S,    KC_D,    NV_F,    KC_G,    U______, B______,        U______, KC_H,    KC_J,    KC_K,    AT_L,    CT_SCLN, KC_QUOT, U______, B______,
+        U______, U______, GT_Z,    KC_X,    ST_C,    MS_V,    KC_B,    U______, B______,        U______, KC_N,    KC_M,    ST_COMM, KC_DOT,  GT_SLSH, U______, U______, B______,
+        U______, U______, U______, U______, U______, KC_TAB,  KC_LSFT, _______, B______,        _______, KC_SPC,  KC_GRV,  U______, U______, U______, U______, U______, B______,
         U______, U______, U______, U______, U______, _______, _______, _______, B______,        _______, _______, _______, U______, U______, U______, U______, U______, B______,
         B______, B______, B______, B______, B______, B______, B______, B______, B______,        B______, B______, B______, B______, B______, B______, B______, B______, B______
 ),
 
-// okay how do i make underscores now?
+// okay how do i make underscores now? 
 
 
 // [L_NGRM] = LAYOUT(
@@ -196,14 +196,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         U______, U______, U______, U______, U______, U______, U______, U______, B______,        U______, U______, U______, U______, U______, U______, U______, U______, B______,
         B______, B______, B______, B______, B______, B______, B______, B______, B______,        B______, B______, B______, B______, B______, B______, B______, B______, B______
 ),
-
-
-/*
-
-
-
-
-*/
 
 
 
@@ -249,7 +241,7 @@ srntk cdeai
 xjbmq pg,./
 
 */
-[L_SVEN] = LAYOUT(
+[L_FOLD] = LAYOUT(
         U______, _______, KC_M,    KC_L,    KC_C,    KC_P,    KC_B,    U______, B______,        U______, KC_SCLN, KC_W,    KC_H,    KC_U,    KC_Q,    _______, U______, B______,
         U______, _______, KC_R,    KC_N,    KC_S,    KC_T,    KC_G,    U______, B______,        U______, KC_J,    KC_E,    KC_A,    KC_O,    KC_I,    _______, U______, B______,
         U______, _______, KC_V,    KC_X,    KC_F,    KC_D,    KC_K,    U______, B______,        U______, KC_Z,    KC_Y,    KC_COMM, KC_DOT,  KC_SLSH, _______, U______, B______,
@@ -275,7 +267,7 @@ here is some text with some terrible rolls
 [L_PT] = LAYOUT(
         U______, _______, TO_SD,   TO_SY,   U______, TO_NU,   U______, U______, B______,        U______, U______, KC_COLN, KC_SCLN, KC_DQUO, KC_EXLM, _______, U______, B______,
         U______, _______, TO_CLMK, TO_ISRT, TO_BS,   TO_NV,   U______, U______, B______,        U______, U______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES, _______, U______, B______,
-        U______, _______, TO_SEMI, TO_SVEN, TO_APT3, TO_MS,   U______, U______, B______,        U______, U______, KC_MINS, KC_PLUS, _______, KC_EQL,  _______, U______, B______,
+        U______, _______, TO_SEMI, TO_FOLD, TO_APT3, TO_MS,   U______, U______, B______,        U______, U______, KC_MINS, KC_PLUS, _______, KC_EQL,  _______, U______, B______,
         U______, _______, U______, U______, U______, _______, _______, _______, B______,        _______, ST_UNDS, _______, U______, U______, _______, _______, U______, B______,
         U______, U______, U______, U______, U______, _______, _______, _______, B______,        _______, _______, _______, U______, U______, U______, U______, U______, B______,
         B______, B______, B______, B______, B______, B______, B______, B______, B______,        B______, B______, B______, B______, B______, B______, B______, B______, B______
@@ -285,7 +277,7 @@ here is some text with some terrible rolls
 [L_NV] = LAYOUT(
         U______, _______, _______, Ct_PGUP, Ct_PGDN, _______, _______, U______, B______,        U______, U______, Ct_PGUP, KC_PGDN, KC_PGUP, Ct_PGDN, _______, U______, B______,
         U______, _______, KC_LCTL, _______, _______, _______, _______, U______, B______,        U______, KC_HOME, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_END,  U______, B______,
-        U______, _______, _______, DESK_LT, DESK_RT, _______, _______, U______, B______,        U______, U______, Ct_LEFT, KC_WH_D, KC_WH_U, Ct_RGHT, _______, U______, B______,
+        U______, _______, _______, DESK_LT, DESK_RT, _______, _______, U______, B______,        U______, U______, Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT, _______, U______, B______,
         U______, _______, _______, U______, U______, _______, _______, _______, B______,        _______, _______, _______, U______, U______, _______, _______, U______, B______,
         U______, U______, U______, U______, U______, _______, _______, _______, B______,        _______, _______, _______, U______, U______, U______, U______, U______, B______,
         B______, B______, B______, B______, B______, B______, B______, B______, B______,        B______, B______, B______, B______, B______, B______, B______, B______, B______
