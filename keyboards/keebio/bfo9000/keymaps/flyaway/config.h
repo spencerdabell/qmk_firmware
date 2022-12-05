@@ -33,9 +33,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define COMBO_TERM 10
 
 
-// #define MK_3_SPEED
-// #define MK_MOMENTARY_ACCEL
-#define MK_COMBINED
+#define MK_3_SPEED
+#define MK_MOMENTARY_ACCEL
+// #define MK_COMBINED
 
 
 
