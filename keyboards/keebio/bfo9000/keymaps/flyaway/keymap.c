@@ -1,11 +1,11 @@
 #include QMK_KEYBOARD_H
 
 // broken off
-#define B_ KC_NO
-#define B_ KC_NO
+#define B______ KC_NO
+#define B_      KC_NO
 // unused areas of keyboard
 #define U______ KC_NO
-#define U_ KC_NO
+#define U_      KC_NO
 // purposely left empty, and don't do anything otherwise
 #define E______ KC_NO
 
@@ -30,6 +30,7 @@ enum {
 // LAYER SWITCHING
 #define TO_BS   TO(L_BS)
 #define TO_PT   TO(L_PT)
+#define OSL_PT  OSL(L_PT)
 #define TO_NV   TO(L_NV)
 #define TO_MS   TO(L_MS)
 #define TO_SD   TO(L_SD)
@@ -140,10 +141,10 @@ enum {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [L_BS] = LAYOUT(
-        U_, KC_ESC,  SD_Q,    SY_W,    PT_E,    KC_R,    KC_T,    U______, B_,        U______, KC_Y,    KC_U,    KC_I,    SY_O,    KC_P,    KC_GRV,  U_, B_,
+        U_, KC_ESC,  SD_Q,    SY_W,    KC_E,    KC_R,    KC_T,    U______, B_,        U______, KC_Y,    KC_U,    KC_I,    SY_O,    KC_P,    KC_GRV,  U_, B_,
         U_, KC_TAB,  CT_A,    AT_S,    KC_D,    NV_F,    KC_G,    U______, B_,        U______, KC_H,    KC_J,    KC_K,    AT_L,    CT_SCLN, KC_QUOT, U_, B_,
-        U_, U______, KC_Z,    KC_X,    KC_C,    MS_V,    KC_B,    U______, B_,        U______, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, U______, U_, B_,
-        U_, U______, U______, U______, U______, TO_PT,   OSM_LST, KC_LGUI, B_,        _______, NU_SPC,  KC_ENT,  U______, U______, U______, U______, U_, B_,
+        U_, U______, GT_Z,    KC_X,    KC_C,    MS_V,    KC_B,    U______, B_,        U______, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, U______, U_, B_,
+        U_, U______, U______, U______, U______, OSL_PT,  OSM_LST, _______, B_,        _______, NU_SPC,  KC_ENT,  U______, U______, U______, U______, U_, B_,
         U_, U______, U______, U______, U______, _______, _______, _______, B_,        _______, _______, _______, U______, U______, U______, U______, U_, B_,
         B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
 ),
@@ -241,7 +242,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [L_NU] = LAYOUT(
         U_, _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   U______, U______, B_,        U______, U______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  _______, U_, B_,
         U_, _______, CT_1,    AT_2,    GT_3,    KC_4,    U______, U______, B_,        U______, U______, KC_7,    GT_8,    AT_9,    CT_0,    _______, U_, B_,
-        U_, _______, KC_F11,  KC_F12,  KC_F5,   KC_5,    U______, U______, B_,        U______, U______, KC_6,    KC_F6,   KC_PSCR, KC_ESC, _______, U_, B_,
+        U_, _______, KC_F11,  KC_F12,  KC_F5,   KC_5,    U______, U______, B_,        U______, U______, KC_6,    KC_F6,   KC_PSCR, KC_ESC,  _______, U_, B_,
         U_, _______, _______, U______, U______, _______, _______, _______, B_,        _______, ST_UNDS, _______, U______, U______, _______, _______, U_, B_,
         U_, U______, U______, U______, U______, _______, _______, _______, B_,        _______, _______, _______, U______, U______, U______, U______, U_, B_,
         B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
