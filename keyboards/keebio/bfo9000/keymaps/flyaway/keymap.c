@@ -70,7 +70,7 @@ enum {
 #define NV_J    LT(L_NV, KC_J)
 #define NU_R    LT(L_NU, KC_R)
 #define NU_U    LT(L_NU, KC_U)
-#define SY_O    LT(L_SY, KC_O)
+// #define SY_O    LT(L_SY, KC_O)
 
 
 #define SD_MPLY LT(L_SD, KC_MPLY)
@@ -151,7 +151,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // asdfg hjkl;
 // zxcvb nm,./
 [L_BS] = LAYOUT(
-        U_, KC_ESC,  SD_Q,    SY_W,    KC_E,    KC_R,    KC_T,    U______, B_,        U______, KC_Y,    KC_U,    KC_I,    SY_O,    KC_P,    KC_GRV,  U_, B_,
+        U_, KC_ESC,  SD_Q,    SY_W,    KC_E,    KC_R,    KC_T,    U______, B_,        U______, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_GRV,  U_, B_,
         U_, KC_TAB,  CT_A,    AT_S,    KC_D,    NV_F,    KC_G,    U______, B_,        U______, KC_H,    KC_J,    KC_K,    AT_L,    CT_SCLN, KC_QUOT, U_, B_,
         U_, U______, GT_Z,    PT_X,    KC_C,    MS_V,    KC_B,    U______, B_,        U______, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, U______, U_, B_,
         U_, U______, U______, U______, U______, TO_PT,   OSM_LST, KC_LGUI, B_,        KC_TAB,  NU_SPC,  KC_ENT,  U______, U______, U______, U______, U_, B_,
@@ -330,21 +330,49 @@ enum combos {
     , CB_PassAdm
     , CB_WE_TAB
     , CB_IO_QUOT
+    , CB_THE
+    , CB_AND
+    , CB_YOU
+    , CB_HAVE
+    , CB_FOR
+    , CB_WITH
+    , CB_THIS // TS
+    , CB_THAT // TA
+    , CB_NOT
+    , CB_BUT
+    , CB_THEY // TY
+    , CB_WHAT // WH
+    , CB_CAN
+    , CB_YOUR // YR
+
+    // keep at end
     , CB_LENGTH
-//     CB_LSemi_ENT,
-//     CB_CommDot_ENT,
 };
 
 uint16_t COMBO_LEN = CB_LENGTH;
-const uint16_t PROGMEM BOOT[] =         {KC_B, SY_O, COMBO_END};
+const uint16_t PROGMEM BOOT[] =         {KC_B, KC_O, COMBO_END};
 const uint16_t PROGMEM QW_ESC[] =       {KC_Q, SY_W, COMBO_END};
-const uint16_t PROGMEM LSemi_ENT[] =    {AT_L, CT_SCLN, COMBO_END};
-const uint16_t PROGMEM CommDot_ENT[] =  {KC_COMM, KC_DOT, COMBO_END};
-const uint16_t PROGMEM PID[] =          {KC_I, KC_P, COMBO_END};
+// const uint16_t PROGMEM LSemi_ENT[] =    {AT_L, CT_SCLN, COMBO_END};
+// const uint16_t PROGMEM CommDot_ENT[] =  {KC_COMM, KC_DOT, COMBO_END};
+const uint16_t PROGMEM PID[] =          {KC_I, KC_D, COMBO_END};
 const uint16_t PROGMEM Pass[] =         {CT_A, KC_P, COMBO_END};
 const uint16_t PROGMEM PassAdm[] =      {AT_S, KC_P, COMBO_END};
 const uint16_t PROGMEM WE_TAB[] =       {SY_W, PT_E, COMBO_END};
-const uint16_t PROGMEM IO_QUOT[] =      {KC_I, SY_O, COMBO_END}; // hmm chording tends to move the keyboard quite a bit ...
+const uint16_t PROGMEM IO_QUOT[] =      {KC_I, KC_O, COMBO_END}; // hmm chording tends to move the keyboard quite a bit ...
+const uint16_t PROGMEM K_THE[] =        {KC_T, KC_H, COMBO_END}; // {KC_T, KC_H, KC_E, COMBO_END};
+const uint16_t PROGMEM K_AND[] =        {CT_A, KC_N, COMBO_END}; // {CT_A, KC_N, KC_D, COMBO_END};
+const uint16_t PROGMEM K_YOU[] =        {KC_Y, KC_U, COMBO_END};
+const uint16_t PROGMEM K_HAVE[] =       {KC_H, MS_V, COMBO_END};
+const uint16_t PROGMEM K_FOR[] =        {NV_F, KC_O, COMBO_END};
+const uint16_t PROGMEM K_WITH[] =       {SY_W, KC_I, COMBO_END};
+const uint16_t PROGMEM K_THIS[] =       {KC_T, AT_S, COMBO_END}; // TS this
+const uint16_t PROGMEM K_THAT[] =       {KC_T, CT_A, COMBO_END}; // TA that
+const uint16_t PROGMEM K_NOT[] =        {KC_N, KC_O, COMBO_END};
+const uint16_t PROGMEM K_BUT[] =        {KC_B, KC_U, COMBO_END};
+const uint16_t PROGMEM K_THEY[] =       {KC_T, KC_Y, COMBO_END}; // TY they
+const uint16_t PROGMEM K_WHAT[] =       {SY_W, CT_A, COMBO_END}; // WH what
+const uint16_t PROGMEM K_CAN[] =        {KC_C, CT_A, COMBO_END};
+const uint16_t PROGMEM K_YOUR[] =       {KC_Y, KC_R, COMBO_END}; // YR your
 
 
 combo_t key_combos[] = {
@@ -355,8 +383,21 @@ combo_t key_combos[] = {
     [CB_PassAdm] =      COMBO_ACTION(PassAdm),
     [CB_WE_TAB] =       COMBO(WE_TAB, KC_TAB),
     [CB_IO_QUOT] =      COMBO(IO_QUOT, KC_QUOT),
-//     [CB_LSemi_ENT] =    COMBO(LSemi_ENT, KC_ENT),
-//     [CB_CommDot_ENT] =  COMBO(CommDot_ENT, KC_ENT),
+    [CB_THE] =          COMBO_ACTION(K_THE),
+    [CB_AND] =          COMBO_ACTION(K_AND),
+    [CB_YOU] =          COMBO_ACTION(K_YOU),
+    [CB_HAVE] =         COMBO_ACTION(K_HAVE),
+    [CB_FOR] =          COMBO_ACTION(K_FOR),
+    [CB_WITH] =         COMBO_ACTION(K_WITH),
+    [CB_THIS] =         COMBO_ACTION(K_THIS),
+    [CB_THAT] =         COMBO_ACTION(K_THAT),
+    [CB_NOT] =          COMBO_ACTION(K_NOT),
+    [CB_BUT] =          COMBO_ACTION(K_BUT),
+    [CB_THEY] =         COMBO_ACTION(K_THEY),
+    [CB_WHAT] =         COMBO_ACTION(K_WHAT),
+    [CB_CAN] =          COMBO_ACTION(K_CAN),
+    [CB_YOUR] =         COMBO_ACTION(K_YOUR),
+
 };
 
 void process_combo_event(uint16_t combo_index, bool pressed) {
@@ -368,12 +409,13 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
       break;
     case CB_Pass:
       if (pressed) {
-        SEND_STRING("work124&");
+        //SEND_STRING("work124&");
+        SEND_STRING("Workers12022$");
       }
       break;
     case CB_PassAdm:
       if (pressed) {
-        SEND_STRING("Gong124&");
+        SEND_STRING("Gong124&Gong124&");
       }
       break;
 //     case BSPC_LSFT_CLEAR:
@@ -383,6 +425,77 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
 //         tap_code16(KC_BSPC);
 //       }
 //       break;
+    case CB_THE:
+      if (pressed) {
+        SEND_STRING("the ");
+      }
+      break;
+    case CB_AND:
+      if (pressed) {
+        SEND_STRING("and ");
+      }
+      break;
+    case CB_YOU:
+      if (pressed) {
+        SEND_STRING("you ");
+      }
+      break;
+    case CB_HAVE:
+      if (pressed) {
+        SEND_STRING("have ");
+      }
+      break;
+    case CB_FOR:
+      if (pressed) {
+        SEND_STRING("for ");
+      }
+      break;
+    case CB_WITH:
+      if (pressed) {
+        SEND_STRING("with ");
+      }
+      break;
+    case CB_THIS:
+      if (pressed) {
+        SEND_STRING("this ");
+      }
+      break;
+    case CB_THAT:
+      if (pressed) {
+        SEND_STRING("that ");
+      }
+      break;
+    case CB_NOT:
+      if (pressed) {
+        SEND_STRING("not ");
+      }
+      break;
+    case CB_BUT:
+      if (pressed) {
+        SEND_STRING("but ");
+      }
+      break;
+    case CB_THEY:
+      if (pressed) {
+        SEND_STRING("they ");
+      }
+      break;
+    case CB_WHAT:
+      if (pressed) {
+        SEND_STRING("what ");
+      }
+      break;
+    case CB_CAN:
+      if (pressed) {
+        SEND_STRING("can ");
+      }
+      break;
+    case CB_YOUR:
+      if (pressed) {
+        SEND_STRING("your ");
+      }
+      break;
+
   }
 }
 
