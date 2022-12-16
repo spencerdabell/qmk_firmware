@@ -405,6 +405,7 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
     case CB_PID:
       if (pressed) {
         SEND_STRING("P3101621");
+        tap_code16(KC_TAB);
       }
       break;
     case CB_Pass:
