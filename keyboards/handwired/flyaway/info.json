@@ -1,0 +1,19 @@
+{
+    "keyboard_name": "Flyaway RP2040",
+    "manufacturer": "svenwulf",
+    "url": "",
+    "maintainer": "svenwulf",
+    "usb": {
+        "vid": "0xF01D",
+        "pid": "0x0001",
+        "device_version": "0.0.1"
+    },
+    "layouts": {
+        "LAYOUT_ortho_1x1": {
+            "layout": [
+                {"x": 0, "y": 0}
+            ]
+        }
+    }
+}
+

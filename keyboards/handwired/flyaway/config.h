@@ -1,9 +1,25 @@
-// Copyright 2022 Stefan Kerkmann
-// SPDX-License-Identifier: GPL-2.0-or-later
-
 #pragma once
 
 #include "config_common.h"
+
+
+
+#pragma once
+
+/* key matrix size */
+#define MATRIX_ROWS 1
+#define MATRIX_COLS 1
+
+/* COL2ROW, ROW2COL */
+#define DIODE_DIRECTION COL2ROW
+
+/* Debounce reduces chatter (unintended double-presses) - set 0 if debouncing is not needed */
+#define DEBOUNCE 5
+
+
+#define TAPPING_TERM 500
+#define PERMISSIVE_HOLD
+
 
 #define MATRIX_COL_PINS \
     { GP4 }
