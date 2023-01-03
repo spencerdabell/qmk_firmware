@@ -13,8 +13,7 @@ AUDIO_ENABLE = no           # Audio output
 
 #DEFAULT_FOLDER = handwired/onekey/promicro
 
-LAYOUTS = ortho_1x1
-
+# LAYOUTS = ortho_1x1
 
 # MCU name
 MCU = RP2040
