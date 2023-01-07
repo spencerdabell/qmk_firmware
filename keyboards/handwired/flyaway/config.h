@@ -2,8 +2,8 @@
 
 #include "config_common.h"
 
-#define MATRIX_ROWS 2
-#define MATRIX_COLS 2
+#define MATRIX_ROWS 4
+#define MATRIX_COLS 4
 
 #define DIODE_DIRECTION COL2ROW
 
@@ -52,9 +52,9 @@
 
 
 // A0-A3
-#define MATRIX_ROW_PINS { GP29, GP28 }
+#define MATRIX_ROW_PINS { GP29, GP28, GP27, GP26 }
 // D2-D9
-#define MATRIX_COL_PINS { GP2, GP3 }
+#define MATRIX_COL_PINS { GP5, GP4, GP3, GP2 }
 
 #define DEBUG_MATRIX_SCAN_RATE
 
