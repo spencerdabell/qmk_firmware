@@ -17,10 +17,44 @@
 // #define MATRIX_COL_PINS { GP4 }
 // #define MATRIX_ROW_PINS { GP5 }
 
+// // Left side (front)
+// D3 D0    D1
+// D2 1U    D0
+// GND      D10
+// GND      D11
+// D1 2U    
+// D0 3U
+// D4 4U
+// C6 5U
+// D7 6U
+// E6 7U
+// B4 8U
+// B5 9U
+
+// // Right side (front)
+// //      RAW
+// //      GND
+// //      RESET
+// //      VCC
+// F4 29U
+// F5 28U
+// F6 27U
+// F7 26U
+// B1 22U
+// B3 20U
+// B2 23U
+// B6 21U
+
+// // LEDs (Mapped to QT connector to avoid collisions with button/neopixel)
+// D5 17U
+// B0 16U
+
+
+
 // A0-A3
-#define MATRIX_ROW_PINS { A0, A1 }
+#define MATRIX_ROW_PINS { GP29, GP28 }
 // D2-D9
-#define MATRIX_COL_PINS { D2, D3 }
+#define MATRIX_COL_PINS { GP2, GP3 }
 
 #define DEBUG_MATRIX_SCAN_RATE
 
