@@ -1,6 +1,7 @@
-# Build Options
-#   change yes to no to disable
-#
+MCU = RP2040
+BOOTLOADER = rp2040
+
+
 BOOTMAGIC_ENABLE = no       # Enable Bootmagic Lite
 MOUSEKEY_ENABLE = yes       # Mouse keys
 EXTRAKEY_ENABLE = yes       # Audio control and System control
@@ -11,10 +12,4 @@ BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
 RGBLIGHT_ENABLE = no        # Enable keyboard RGB underglow
 AUDIO_ENABLE = no           # Audio output
 
-#DEFAULT_FOLDER = handwired/onekey/promicro
 
-# LAYOUTS = ortho_1x1
-
-# MCU name
-MCU = RP2040
-BOOTLOADER = rp2040
