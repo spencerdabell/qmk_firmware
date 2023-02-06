@@ -40,6 +40,7 @@ enum {
 #define TO_NU2  TO(L_NU2)
 #define TO_NU3  TO(L_NU3)
 #define TO_SY   TO(L_SY)
+#define TO_GAME TO(L_GAME)
 // #define TO_NGRM TO(L_NGRM)
 // #define TO_CLMK TO(L_CLMK)
 #define TO_ISRT TO(L_ISRT)
@@ -47,6 +48,7 @@ enum {
 // #define TO_WHRF TO(L_WHRF)
 #define TO_FOLD TO(L_FOLD)
 #define TO_APT3 TO(L_APT3)
+
 
 
 
@@ -229,7 +231,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // 
 [L_PT] = LAYOUT(
         U_, _______, TO_SD,   TO_SY,   U______, TO_NU,   TO_NU2,  U______, B_,        U______, U______, KC_COLN, KC_SCLN, KC_DQUO, KC_EXLM, _______, U_, B_,
-        U_, _______, _______, TO_ISRT, TO_BS,   TO_NV,   TO_NU3,  U______, B_,        U______, U______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES, _______, U_, B_,
+        U_, _______, TO_GAME, TO_ISRT, TO_BS,   TO_NV,   TO_NU3,  U______, B_,        U______, U______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES, _______, U_, B_,
         U_, _______, TO_SEMI, TO_APT3, TO_FOLD, TO_MS,   U______, U______, B_,        U______, U______, KC_MINS, KC_PLUS, _______, KC_EQL,  _______, U_, B_,
         U_, U______, U______, U______, U______, _______, _______, _______, B_,        _______, _______, _______, U______, U______, U______, U______, U_, B_,
         U_, U______, U______, U______, U______, _______, _______, _______, B_,        _______, _______, _______, U______, U______, U______, U______, U_, B_,
@@ -317,7 +319,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         U_, U______, U______, U______, U______, _______, _______, _______, B_,        _______, _______, _______, U______, U______, U______, U______, U_, B_,
         U_, U______, U______, U______, U______, _______, _______, _______, B_,        _______, _______, _______, U______, U______, U______, U______, U_, B_,
         B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
-)
+),
+//
+//
+//
+// [L_GAME] = LAYOUT(
+//         U_, KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    U______, B_,        U______, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_GRV,  U_, B_,
+//         U_, KC_TAB,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    U______, B_,        U______, KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, U_, B_,
+//         U_, U______, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    U______, B_,        U______, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, U______, U_, B_,
+//         U_, U______, U______, U______, U______, TO_PT,   KC_SPC,  KC_LGUI, B_,        KC_TAB,  NU_SPC,  KC_ENT,  U______, U______, U______, U______, U_, B_,
+//         U_, U______, U______, U______, U______, _______, _______, _______, B_,        _______, _______, _______, U______, U______, U______, U______, U_, B_,
+//         B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
+// ),
+[L_GAME] = LAYOUT(
+        U_, KC_ESC,  KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    U______, B_,        U______, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_GRV,  U_, B_,
+        U_, KC_TAB,  KC_TAB,  KC_A,    KC_S,    KC_D,    KC_F,    U______, B_,        U______, KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, U_, B_,
+        U_, U______, KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    U______, B_,        U______, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, U______, U_, B_,
+        U_, U______, U______, U______, U______, TO_PT,   KC_SPC,  KC_LGUI, B_,        KC_TAB,  NU_SPC,  KC_ENT,  U______, U______, U______, U______, U_, B_,
+        U_, U______, U______, U______, U______, _______, _______, _______, B_,        _______, _______, _______, U______, U______, U______, U______, U_, B_,
+        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
+),
 };
 
 
@@ -405,13 +426,12 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
     case CB_PID:
       if (pressed) {
         SEND_STRING("P3101621");
-        tap_code16(KC_TAB);
+        // tap_code16(KC_TAB);
       }
       break;
     case CB_Pass:
       if (pressed) {
-        //SEND_STRING("work124&");
-        SEND_STRING("Workers12022$");
+        SEND_STRING("Worker12023!");
       }
       break;
     case CB_PassAdm:
