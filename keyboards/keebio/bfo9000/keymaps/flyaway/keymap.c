@@ -351,6 +351,7 @@ enum combos {
     , CB_PID
     , CB_Pass
     , CB_PassAdm
+    , CB_Name
     , CB_WE_TAB
     , CB_IO_QUOT
     , CB_OP_GRV
@@ -383,6 +384,7 @@ const uint16_t PROGMEM WE_ESC[] =       {SY_W, KC_E, COMBO_END};
 const uint16_t PROGMEM PID[] =          {KC_I, KC_D, COMBO_END};
 const uint16_t PROGMEM Pass[] =         {CT_A, KC_P, COMBO_END};
 const uint16_t PROGMEM PassAdm[] =      {AT_S, KC_P, COMBO_END};
+const uint16_t PROGMEM Name[] =         {KC_N, AT_S, COMBO_END};
 const uint16_t PROGMEM WE_TAB[] =       {SY_W, PT_E, COMBO_END};
 const uint16_t PROGMEM IO_QUOT[] =      {KC_I, KC_O, COMBO_END}; // hmm chording tends to move the keyboard quite a bit ...
 const uint16_t PROGMEM OP_GRV[] =       {KC_O, KC_P, COMBO_END}; // hmm chording tends to move the keyboard quite a bit ...
@@ -409,6 +411,7 @@ combo_t key_combos[] = {
     [CB_PID] =          COMBO_ACTION(PID),
     [CB_Pass] =         COMBO_ACTION(Pass),
     [CB_PassAdm] =      COMBO_ACTION(PassAdm),
+    [CB_Name] =         COMBO_ACTION(Name),
     [CB_WE_TAB] =       COMBO(WE_TAB, KC_TAB),
     [CB_IO_QUOT] =      COMBO(IO_QUOT, KC_QUOT),
     [CB_OP_GRV] =       COMBO(OP_GRV, KC_GRV),
@@ -447,6 +450,11 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
         SEND_STRING("Gong124&Gong124&");
       }
       break;
+    case CB_Name:
+      if (pressed) {
+        SEND_STRING("spencerdabell");
+      }
+      break;
 //     case BSPC_LSFT_CLEAR:
 //       if (pressed) {
 //         tap_code16(KC_END);
@@ -454,6 +462,7 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
 //         tap_code16(KC_BSPC);
 //       }
 //       break;
+
     case CB_THE:
       if (pressed) {
         SEND_STRING("the ");
