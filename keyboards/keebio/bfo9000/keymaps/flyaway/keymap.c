@@ -231,9 +231,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // 
 // 
 [L_PT] = LAYOUT(
-        U_, _______, U______, TO_SY,   U______, TO_SD,   TO_NU2,  U______, B_,        U______, U______, KC_COLN, KC_SCLN, KC_DQUO, KC_EXLM, _______, U_, B_,
-        U_, _______, TO_GAME, TO_ISRT, TO_BS,   TO_NV,   TO_NU3,  U______, B_,        U______, U______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES, _______, U_, B_,
-        U_, _______, TO_SEMI, TO_APT3, TO_FOLD, TO_MS,   U______, U______, B_,        U______, U______, KC_MINS, KC_PLUS, _______, KC_EQL,  _______, U_, B_,
+        U_, _______, U______, TO_SY,   TO_NU,   TO_SD,   U______, U______, B_,        U______, U______, KC_COLN, KC_SCLN, KC_DQUO, KC_EXLM, _______, U_, B_,
+        U_, _______, TO_GAME, U______, TO_BS,   TO_NV,   U______, U______, B_,        U______, U______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES, _______, U_, B_,
+        U_, _______, U______, U______, U______, TO_MS,   U______, U______, B_,        U______, U______, KC_MINS, KC_PLUS, _______, KC_EQL,  _______, U_, B_,
         U_, U______, U______, U______, U______, _______, _______, _______, B_,        _______, _______, _______, U______, U______, U______, U______, U_, B_,
         U_, U______, U______, U______, U______, _______, _______, _______, B_,        _______, _______, _______, U______, U______, U______, U______, U_, B_,
         B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
