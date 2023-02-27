@@ -154,11 +154,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // asdfg hjkl;
 // zxcvb nm,./
 [L_BS] = LAYOUT(
-        U_, KC_ESC,  KC_Q,    SY_W,    KC_E,    SD_R,    KC_T,    U______, B_,        U______, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_GRV,  U_, B_,
+        U_, U______, KC_Q,    SY_W,    KC_E,    SD_R,    KC_T,    U______, B_,        U______, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    U______, U_, B_,
         U_, KC_TAB,  CT_A,    AT_S,    KC_D,    NV_F,    KC_G,    U______, B_,        U______, KC_H,    KC_J,    KC_K,    AT_L,    CT_SCLN, KC_QUOT, U_, B_,
         U_, U______, GT_Z,    PT_X,    KC_C,    MS_V,    KC_B,    U______, B_,        U______, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, U______, U_, B_,
-        U_, U______, U______, U______, U______, TO_PT,   OSM_LST, KC_LGUI, B_,        KC_TAB,  NU_SPC,  KC_ENT,  U______, U______, U______, U______, U_, B_,
-        U_, U______, U______, U______, U______, _______, _______, _______, B_,        _______, _______, _______, U______, U______, U______, U______, U_, B_,
+        U_, U______, U______, U______, U______, TO_PT,   OSM_LST, U______, B_,        KC_TAB,  NU_SPC,  KC_ENT,  U______, U______, U______, U______, U_, B_,
+        U_, U______, U______, U______, U______, U______, U______, U______, B_,        U______, U______, U______, U______, U______, U______, U______, U_, B_,
         B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
 ),
 // qwfpb jluy;
@@ -354,7 +354,7 @@ enum combos {
     , CB_Name
     , CB_WE_TAB
     , CB_IO_QUOT
-    , CB_OP_GRV
+    , CB_Grave
     , CB_THE
     , CB_AND
     , CB_YOU
@@ -387,7 +387,7 @@ const uint16_t PROGMEM PassAdm[] =      {AT_S, KC_P, COMBO_END};
 const uint16_t PROGMEM Name[] =         {KC_N, AT_S, COMBO_END};
 const uint16_t PROGMEM WE_TAB[] =       {SY_W, PT_E, COMBO_END};
 const uint16_t PROGMEM IO_QUOT[] =      {KC_I, KC_O, COMBO_END}; // hmm chording tends to move the keyboard quite a bit ...
-const uint16_t PROGMEM OP_GRV[] =       {KC_O, KC_P, COMBO_END}; // hmm chording tends to move the keyboard quite a bit ...
+const uint16_t PROGMEM Grave[] =        {KC_COMM, KC_DOT, COMBO_END};
 const uint16_t PROGMEM K_THE[] =        {KC_T, KC_H, COMBO_END}; // {KC_T, KC_H, KC_E, COMBO_END};
 const uint16_t PROGMEM K_AND[] =        {CT_A, KC_N, COMBO_END}; // {CT_A, KC_N, KC_D, COMBO_END};
 const uint16_t PROGMEM K_YOU[] =        {KC_Y, KC_U, COMBO_END};
@@ -414,7 +414,7 @@ combo_t key_combos[] = {
     [CB_Name] =         COMBO_ACTION(Name),
     [CB_WE_TAB] =       COMBO(WE_TAB, KC_TAB),
     [CB_IO_QUOT] =      COMBO(IO_QUOT, KC_QUOT),
-    [CB_OP_GRV] =       COMBO(OP_GRV, KC_GRV),
+    [CB_Grave] =        COMBO(Grave, KC_GRV),
     [CB_THE] =          COMBO_ACTION(K_THE),
     [CB_AND] =          COMBO_ACTION(K_AND),
     [CB_YOU] =          COMBO_ACTION(K_YOU),
