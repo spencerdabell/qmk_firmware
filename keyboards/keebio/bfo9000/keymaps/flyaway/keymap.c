@@ -8,11 +8,9 @@
 
 enum {
     L_BS = 0
-//     , L_NGRM // engram layout mirrored
-//     , L_CLMK
     , L_ISRT
     , L_SEMI
-//     , L_WHRF
+    , L_WHRF
     , L_FOLD
     , L_APT3
     , L_PT
@@ -40,11 +38,9 @@ enum {
 #define TO_NU4  TO(L_NU4)
 #define TO_SY   TO(L_SY)
 #define TO_GAME TO(L_GAME)
-// #define TO_NGRM TO(L_NGRM)
-// #define TO_CLMK TO(L_CLMK)
 #define TO_ISRT TO(L_ISRT)
 #define TO_SEMI TO(L_SEMI)
-// #define TO_WHRF TO(L_WHRF)
+#define TO_WHRF TO(L_WHRF)
 #define TO_FOLD TO(L_FOLD)
 #define TO_APT3 TO(L_APT3)
 
@@ -221,11 +217,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, KC_V,    KC_X,    KC_F,    KC_D,    KC_K,                             KC_Z,    KC_Y,    KC_COMM, KC_DOT,  KC_SLSH, _______,
                                             _______, _______, _______,        _______, _______, _______
 ),
-
+// :;"!
+// .,'?
+// -+`=
 [L_PT] = LAYOUT_6x3_3(
         _______, U______, TO_SY,   TO_NU,   TO_SD,   U______,                          U______, KC_COLN, KC_SCLN, KC_DQUO, KC_EXLM, _______,
         _______, TO_GAME, U______, TO_BS,   TO_NV,   U______,                          U______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES, _______,
-        _______, U______, U______, U______, TO_MS,   U______,                          U______, KC_MINS, KC_PLUS, _______, KC_EQL,  _______,
+        _______, U______, U______, U______, TO_MS,   U______,                          U______, KC_MINS, KC_PLUS, KC_GRV,  KC_EQL,  _______,
                                             _______, _______, _______,        _______, _______, _______
 ),
 
@@ -239,7 +237,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [L_NU] = LAYOUT_6x3_3(
         _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   U______,                          U______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  _______,
         _______, CT_1,    AT_2,    GT_3,    KC_4,    U______,                          U______, KC_7,    GT_8,    AT_9,    CT_0,    _______,
-        _______, KC_F11,  KC_F12,  KC_F5,   KC_5,    U______,                          U______, KC_6,    KC_F6,   KC_F24,  KC_ESC,  _______,
+        _______, KC_F11,  KC_F12,  KC_F5,   KC_5,    U______,                          U______, KC_6,    KC_F6,   KC_CAPS, KC_ESC,  _______,
                                             _______, _______, _______,        _______, _______, _______
 ),
 [L_NU2] = LAYOUT_6x3_3(
@@ -262,18 +260,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 // <>[]
 // (){}
-// _|\/
+// ~|\/
+// _
 [L_SY] = LAYOUT_6x3_3(
         _______, _______, _______, _______, _______, U______,                          U______, KC_LT,   KC_GT,   KC_LBRC, KC_RBRC, _______,
         _______, _______, _______, _______, _______, U______,                          U______, KC_LPRN, KC_RPRN, KC_LCBR, KC_RCBR, _______,
-        _______, _______, _______, _______, _______, U______,                          U______, KC_UNDS, KC_PIPE, KC_BSLS, KC_SLSH, _______,
+        _______, _______, _______, _______, _______, U______,                          U______, KC_TILD, KC_PIPE, KC_BSLS, KC_SLSH, _______,
                                             _______, _______, _______,        _______, KC_UNDS, _______
 ),
 [L_MS] = LAYOUT_6x3_3(
         _______, _______, _______, _______, _______, U______,                          U______, U______, KC_BTN1, KC_BTN2, KC_BTN3, _______,
         _______, _______, KC_BTN2, KC_BTN1, _______, U______,                          U______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, _______,
         _______, KC_ACL0, KC_ACL1, KC_ACL2, _______, U______,                          U______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, _______,
-                                            _______, _______, _______,        _______, KC_UNDS, _______
+                                            _______, _______, _______,        _______, _______, _______
 ),
 [L_SD] = LAYOUT_6x3_3(
         _______, _______, _______, KC_MPLY, KC_MNXT, _______,                          U______, KC_MSTP, KC_MPLY, _______, _______, _______,
@@ -402,6 +401,7 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
 
 
 /*
+
 DF(layer)	Set the base (default) layer
 MO(layer)	Momentarily turn on layer when pressed (requires KC_TRNS on destination layer)
 OSL(layer)	Momentarily activates layer until a key is pressed. See One Shot Keys for details.
@@ -410,22 +410,14 @@ TG(layer)	Toggle layer on or off
 TO(layer)	Turns on layer and turns off all other layers, except the default layer
 TT(layer)	Normally acts like MO unless it’s tapped multiple times, which toggles layer on
 
-
-KC_LEFT_CTRL	  KC_LCTL	          Left Control
-KC_LEFT_SHIFT	  KC_LSFT	          Left Shift
 KC_LEFT_ALT	    KC_LALT, KC_LOPT	Left Alt (Option)
 KC_LEFT_GUI	    KC_LGUI, KC_LCMD, KC_LWIN	Left GUI (Windows/Command/Meta key)
-KC_RIGHT_CTRL	  KC_RCTL	          Right Control
-KC_RIGHT_SHIFT	KC_RSFT	          Right Shift
+
 KC_RIGHT_ALT	  KC_RALT, KC_ROPT, KC_ALGR	Right Alt (Option/AltGr)
 KC_RIGHT_GUI	  KC_RGUI, KC_RCMD, KC_RWIN	Right GUI (Windows/Command/Meta key)
 
 
-
 // ----------------------------- high interest (will definitely use)
-KC_CAPS, KC_CAPS_LOCK
-this is just necessary sometimes
-
 CAPS_WORD	CAPSWRD	Toggles Caps Word  toggles caps lock until end of word like space or period
 
 KC_LOCK	Hold down the next key pressed, until the key is pressed again
@@ -438,27 +430,9 @@ MT(MOD_LCTL | MOD_LSFT, KC_ESC)
 
 
 // ----------------------------- medium interest (could maybe use)
-KC_APPLICATION	KC_APP	Application (Windows Context Menu Key)
-i don't really want this but it might be good to be able to open context menus?
-
-KC_KB_POWER		System Power
-could be fun to be able to powerdown, sleep, reset etc from here
-
-KC_LANGUAGE_1	KC_LNG1	Language 1			✔
-KC_LANGUAGE_2	KC_LNG2	Language 2			✔
-could be fun to be able to switch languages
-
-
-KC_MY_COMPUTER	KC_MYCM	Launch My Computer	✔		✔
-might be nice to have a key that launches my home folder in a file explorer
-
-
 UC(c)		Send Unicode code point c, up to 0x7FFF
 
-
 // ------------------------------ low/no interest (probably won't use, but could under a blue moon)
-KC_PRINT_SCREEN	KC_PSCR (F13?)
-scroll lock (F14)
 
 
 
@@ -474,10 +448,6 @@ KC_HYPR		Left Control, Shift, Alt and GUI
 
 OSM(mod)	Hold mod for one keypress
 OSL(layer)	Switch to layer for one keypress
-OS_ON	Turns One Shot keys on
-OS_OFF	Turns One Shot keys off
-OS_TOGG	Toggles One Shot keys status
-
 
 reduce compile size
 21718/28672
