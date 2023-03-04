@@ -148,19 +148,34 @@ enum {
 
 // CAPS_WORD	CAPSWRD	Toggles Caps Word
 
+
+#define LAYOUT_6x3_3( \
+    L00, L01, L02, L03, L04, L05, R00, R01, R02, R03, R04, R05, \
+    L10, L11, L12, L13, L14, L15, R10, R11, R12, R13, R14, R15, \
+    L20, L21, L22, L23, L24, L25, R20, R21, R22, R23, R24, R25, \
+                   L33, L34, L35, R30, R31, R32   \
+    ) \
+LAYOUT( \
+        U_,  L00, L01, L02, L03, L04, L05, U_,  B_,        U_,  R00, R01, R02, R03, R04, R05, U_,  B_, \
+        U_,  L10, L11, L12, L13, L14, L15, U_,  B_,        U_,  R10, R11, R12, R13, R14, R15, U_,  B_, \
+        U_,  L20, L21, L22, L23, L24, L25, U_,  B_,        U_,  R20, R21, R22, R23, R24, R25, U_,  B_, \
+        U_,  U_,  U_,  U_,  U_,  L33, L34, L35, B_,        R30, R31, R32, U_,  U_,  U_,  U_,  U_,  B_, \
+        U_,  U_,  U_,  U_,  U_,  U_,  U_,  U_,  B_,        U_,  U_,  U_,  U_,  U_,  U_,  U_,  U_,  B_, \
+        B_,  B_,  B_,  B_,  B_,  B_,  B_,  B_,  B_,        B_,  B_,  B_,  B_,  B_,  B_,  B_,  B_,  B_ \
+)
+
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 // qwert  yuiop
 // asdfg  hjkl;
 // zxcvb  nm,./
-[L_BS] = LAYOUT(
-        U_, U______, KC_Q,    SY_W,    KC_E,    SD_R,    KC_T,    U______, B_,        U______, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    U______, U_, B_,
-        U_, KC_TAB,  CT_A,    AT_S,    KC_D,    NV_F,    KC_G,    U______, B_,        U______, KC_H,    KC_J,    KC_K,    AT_L,    CT_SCLN, KC_QUOT, U_, B_,
-        U_, U______, GT_Z,    PT_X,    N4_C,    MS_V,    KC_B,    U______, B_,        U______, KC_N,    KC_M,    KC_COMM, KC_DOT,  GT_SLSH, U______, U_, B_,
-        U_, U______, U______, U______, U______, TO_PT,   OSM_LST, U______, B_,        KC_TAB,  NU_SPC,  KC_ENT,  U______, U______, U______, U______, U_, B_,
-        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
+[L_BS] = LAYOUT_6x3_3(
+        U______, KC_Q,    SY_W,    KC_E,    SD_R,    KC_T,                            KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    U______,
+        KC_TAB,  CT_A,    AT_S,    KC_D,    NV_F,    KC_G,                            KC_H,    KC_J,    KC_K,    AT_L,    CT_SCLN, KC_QUOT,
+        U______, GT_Z,    PT_X,    N4_C,    MS_V,    KC_B,                            KC_N,    KC_M,    KC_COMM, KC_DOT,  GT_SLSH, U______,
+                                            TO_PT,   OSM_LST, U_,       KC_TAB,  NU_SPC,  KC_ENT
 ),
-
 // yclmk  zfu,'
 // isrtg  pneao
 // qvwdj  bh/.x
