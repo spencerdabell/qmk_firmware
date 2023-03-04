@@ -281,16 +281,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, _______, _______, _______, _______,                          U______, KC_MRWD, KC_MUTE, _______, KC_MFFD, _______,
                                             _______, _______, _______,        _______, _______, _______
 ),
-//
-//
-//
-// [L_GAME] = LAYOUT(
-//         U_, KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    U______, B_,        U______, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_GRV,  U_, B_,
-//         U_, KC_TAB,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    U______, B_,        U______, KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, U_, B_,
-//         U_, U______, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    U______, B_,        U______, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, U______, U_, B_,
-//         U_, U______, U______, U______, U______, TO_PT,   KC_SPC,  KC_LGUI, B_,        KC_TAB,  NU_SPC,  KC_ENT,  U______, U______, U______, U______, U_, B_,
-//         U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
-// ),
 [L_GAME] = LAYOUT_6x3_3(
         KC_ESC,  KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,                             KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_GRV, 
         KC_TAB,  KC_TAB,  KC_A,    KC_S,    KC_D,    KC_F,                             KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
@@ -298,7 +288,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                             TO_PT,   KC_SPC,  KC_LGUI,        KC_TAB,  NU_SPC,  KC_ENT
 ),
 };
-
 
 enum combos {
     CB_BOOT
