@@ -8,6 +8,24 @@
 #define U______ KC_NO
 #define U_      KC_NO
 
+
+// converts 6x3_3 layout to 6x9 for bfo
+#define LAYOUT_6x3_3( \
+    L00, L01, L02, L03, L04, L05, R00, R01, R02, R03, R04, R05, \
+    L10, L11, L12, L13, L14, L15, R10, R11, R12, R13, R14, R15, \
+    L20, L21, L22, L23, L24, L25, R20, R21, R22, R23, R24, R25, \
+                   L33, L34, L35, R30, R31, R32   \
+    ) \
+LAYOUT( \
+        U_,  L00, L01, L02, L03, L04, L05, U_,  B_,        U_,  R00, R01, R02, R03, R04, R05, U_,  B_, \
+        U_,  L10, L11, L12, L13, L14, L15, U_,  B_,        U_,  R10, R11, R12, R13, R14, R15, U_,  B_, \
+        U_,  L20, L21, L22, L23, L24, L25, U_,  B_,        U_,  R20, R21, R22, R23, R24, R25, U_,  B_, \
+        U_,  U_,  U_,  U_,  U_,  L33, L34, L35, B_,        R30, R31, R32, U_,  U_,  U_,  U_,  U_,  B_, \
+        U_,  U_,  U_,  U_,  U_,  U_,  U_,  U_,  B_,        U_,  U_,  U_,  U_,  U_,  U_,  U_,  U_,  B_, \
+        B_,  B_,  B_,  B_,  B_,  B_,  B_,  B_,  B_,        B_,  B_,  B_,  B_,  B_,  B_,  B_,  B_,  B_ \
+)
+
+
 enum {
     L_BS = 0
     , L_ISRT
@@ -107,8 +125,6 @@ enum {
 #define APP_FWD KC_LGUI
 #define APP_BCK KC_LALT
 
-#define OSM_LST OSM(MOD_LSFT)
-#define OSM_RST OSM(MOD_RSFT)
 
 
 // CAPS_WORD	CAPSWRD	Toggles Caps Word
