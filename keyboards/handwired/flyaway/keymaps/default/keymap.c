@@ -167,12 +167,57 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 enum combos {
     CB_BOOT
-    , CB_LENGTH // keep at end
+    , CB_QW_ESC
+    , CB_WE_ESC
+    , CB_PID
+    , CB_Pass
+    , CB_PassAdm
+    , CB_Name
+    , CB_WE_TAB
+    , CB_IO_QUOT
+    , CB_Grave
+    // keep at end
+    , CB_LENGTH
 };
+
 
 uint16_t COMBO_LEN = CB_LENGTH;
-const uint16_t PROGMEM BOOT[] =         {KC_B, KC_O, COMBO_END};
+
+#define COMBO_TWO(NAME, KEY1, KEY2)  const uint16_t PROGMEM NAME[] = {KEY1, KEY2, COMBO_END};
+
+COMBO_TWO(BOOT, KC_B, KC_O);
+// COMBO_TWO(LSemi_ENT, AT_L, CT_SCLN);
+// COMBO_TWO(CommDot_ENT, KC_COMM, KC_DOT);
+COMBO_TWO(QW_ESC,   KC_Q, SY_W);
+COMBO_TWO(WE_ESC,   SY_W, KC_E);
+COMBO_TWO(PID,      KC_I, KC_D);
+COMBO_TWO(Pass,     CT_A, KC_P);
+COMBO_TWO(PassAdm,  AT_S, KC_P);
+COMBO_TWO(Name,     KC_N, AT_S);
+COMBO_TWO(WE_TAB,   SY_W, PT_E);
+COMBO_TWO(IO_QUOT,  KC_I, KC_O);
+COMBO_TWO(Grave,    KC_COMM, KC_DOT);
+
 
 combo_t key_combos[] = {
-    [CB_BOOT] =         COMBO(BOOT, QK_BOOTLOADER)
+    [CB_BOOT] =         COMBO(BOOT, QK_BOOTLOADER),
+    [CB_QW_ESC] =       COMBO(QW_ESC, KC_ESC),
+    [CB_WE_ESC] =       COMBO(WE_ESC, KC_ESC),
+    [CB_PID] =          COMBO_ACTION(PID),
+    [CB_Pass] =         COMBO_ACTION(Pass),
+    [CB_PassAdm] =      COMBO_ACTION(PassAdm),
+    [CB_Name] =         COMBO_ACTION(Name),
+    [CB_WE_TAB] =       COMBO(WE_TAB, KC_TAB),
+    [CB_IO_QUOT] =      COMBO(IO_QUOT, KC_QUOT),
+    [CB_Grave] =        COMBO(Grave, KC_GRV),
 };
+
+void process_combo_event(uint16_t combo_index, bool pressed) {
+  switch(combo_index) {
+    case CB_PID:      if (pressed) { SEND_STRING("P3101621"); } break;
+    case CB_Pass:     if (pressed) { SEND_STRING("Worker12023!"); } break;
+    case CB_PassAdm:  if (pressed) { SEND_STRING("Gong124&Gong124&"); } break;
+    case CB_Name:     if (pressed) { SEND_STRING("spencerdabell"); } break;
+    default: break;
+  }
+}
