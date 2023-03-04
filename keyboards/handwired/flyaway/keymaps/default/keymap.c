@@ -3,6 +3,8 @@
 
 #include QMK_KEYBOARD_H
 
+#include "common_modkeys.h"
+
 #define OSM_LST OSM(MOD_LSFT)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
