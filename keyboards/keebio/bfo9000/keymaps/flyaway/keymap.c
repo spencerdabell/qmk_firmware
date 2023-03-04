@@ -197,11 +197,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // flhdm  vwou,
 // srntk  gyaei
 // xjbzq  pc';.
-// [L_WHRF] = LAYOUT(
-//         U______, _______, KC_F,    KC_L,    KC_H,    KC_D,    KC_M,    U______, B_,        U______, KC_V,    KC_W,    KC_O,    KC_U,    KC_COMM, _______, U_, B_,
-//         U______, _______, KC_S,    KC_R,    KC_N,    KC_T,    KC_K,    U______, B_,        U______, KC_G,    KC_Y,    KC_A,    KC_E,    KC_I,    KC_SLSH, U_, B_,
-//         U______, _______, KC_X,    KC_J,    KC_B,    KC_Z,    KC_Q,    U______, B_,        U______, KC_P,    KC_C,    KC_QUOT, KC_SCLN, KC_DOT,  _______, U_, B_,
-//         U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
+// [L_WHRF] = LAYOUT_6x3_3(
+//        _______, KC_F,    KC_L,    KC_H,    KC_D,    KC_M,                             KC_V,    KC_W,    KC_O,    KC_U,    KC_COMM, _______,
+//        _______, KC_S,    KC_R,    KC_N,    KC_T,    KC_K,                             KC_G,    KC_Y,    KC_A,    KC_E,    KC_I,    KC_SLSH,
+//        _______, KC_X,    KC_J,    KC_B,    KC_Z,    KC_Q,                             KC_P,    KC_C,    KC_QUOT, KC_SCLN, KC_DOT,  _______,
+//                                            _______, _______, _______,        _______, _______, _______
 // ),
 // wgdfb  qluoy
 // rsthk  jneai;
