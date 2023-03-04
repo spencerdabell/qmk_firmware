@@ -14,3 +14,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                             KC_LGUI, OSM_LST, KC_BSPC,          KC_TAB,  KC_SPC,  KC_ENT
     )
 };
+
+enum combos {
+    CB_BOOT
+    , CB_LENGTH // keep at end
+};
+
+uint16_t COMBO_LEN = CB_LENGTH;
+const uint16_t PROGMEM BOOT[] =         {KC_B, KC_O, COMBO_END};
+
+combo_t key_combos[] = {
+    [CB_BOOT] =         COMBO(BOOT, QK_BOOTLOADER)
+};
