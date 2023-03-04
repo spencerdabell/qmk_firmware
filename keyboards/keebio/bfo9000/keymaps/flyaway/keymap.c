@@ -1,6 +1,6 @@
 #include QMK_KEYBOARD_H
 
-#include "keymap.h"
+#include "common_modkeys.h"
 
 // broken off
 #define B_      KC_NO
