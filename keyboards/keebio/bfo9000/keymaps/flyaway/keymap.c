@@ -434,112 +434,27 @@ combo_t key_combos[] = {
 
 void process_combo_event(uint16_t combo_index, bool pressed) {
   switch(combo_index) {
-    case CB_PID:
-      if (pressed) {
-        SEND_STRING("P3101621");
-        // tap_code16(KC_TAB);
-      }
-      break;
-    case CB_Pass:
-      if (pressed) {
-        SEND_STRING("Worker12023!");
-      }
-      break;
-    case CB_PassAdm:
-      if (pressed) {
-        SEND_STRING("Gong124&Gong124&");
-      }
-      break;
-    case CB_Name:
-      if (pressed) {
-        SEND_STRING("spencerdabell");
-      }
-      break;
-//     case BSPC_LSFT_CLEAR:
-//       if (pressed) {
-//         tap_code16(KC_END);
-//         tap_code16(S(KC_HOME));
-//         tap_code16(KC_BSPC);
-//       }
-//       break;
-
-    case CB_THE:
-      if (pressed) {
-        SEND_STRING("the ");
-      }
-      break;
-    case CB_AND:
-      if (pressed) {
-        SEND_STRING("and ");
-      }
-      break;
-    case CB_YOU:
-      if (pressed) {
-        SEND_STRING("you ");
-      }
-      break;
-    case CB_HAVE:
-      if (pressed) {
-        SEND_STRING("have ");
-      }
-      break;
-    case CB_FOR:
-      if (pressed) {
-        SEND_STRING("for ");
-      }
-      break;
-    case CB_WITH:
-      if (pressed) {
-        SEND_STRING("with ");
-      }
-      break;
-    case CB_THIS:
-      if (pressed) {
-        SEND_STRING("this ");
-      }
-      break;
-    case CB_THAT:
-      if (pressed) {
-        SEND_STRING("that ");
-      }
-      break;
-    case CB_NOT:
-      if (pressed) {
-        SEND_STRING("not ");
-      }
-      break;
-    case CB_BUT:
-      if (pressed) {
-        SEND_STRING("but ");
-      }
-      break;
-    case CB_THEY:
-      if (pressed) {
-        SEND_STRING("they ");
-      }
-      break;
-    case CB_WHAT:
-      if (pressed) {
-        SEND_STRING("what ");
-      }
-      break;
-    case CB_CAN:
-      if (pressed) {
-        SEND_STRING("can ");
-      }
-      break;
-    case CB_YOUR:
-      if (pressed) {
-        SEND_STRING("your ");
-      }
-      break;
-
+    case CB_PID:      if (pressed) { SEND_STRING("P3101621"); } break;
+    case CB_Pass:     if (pressed) { SEND_STRING("Worker12023!"); } break;
+    case CB_PassAdm:  if (pressed) { SEND_STRING("Gong124&Gong124&"); } break;
+    case CB_Name:     if (pressed) { SEND_STRING("spencerdabell"); } break;
+    case CB_THE:      if (pressed) { SEND_STRING("the "); } break;
+    case CB_AND:      if (pressed) { SEND_STRING("and "); } break;
+    case CB_YOU:      if (pressed) { SEND_STRING("you "); } break;
+    case CB_HAVE:     if (pressed) { SEND_STRING("have "); } break;
+    case CB_FOR:      if (pressed) { SEND_STRING("for "); } break;
+    case CB_WITH:     if (pressed) { SEND_STRING("with "); } break;
+    case CB_THIS:     if (pressed) { SEND_STRING("this "); } break;
+    case CB_THAT:     if (pressed) { SEND_STRING("that "); } break;
+    case CB_NOT:      if (pressed) { SEND_STRING("not "); } break;
+    case CB_BUT:      if (pressed) { SEND_STRING("but "); } break;
+    case CB_THEY:     if (pressed) { SEND_STRING("they "); } break;
+    case CB_WHAT:     if (pressed) { SEND_STRING("what "); } break;
+    case CB_CAN:      if (pressed) { SEND_STRING("can "); } break;
+    case CB_YOUR:     if (pressed) { SEND_STRING("your "); } break;
+    default: break;
   }
 }
-
-
-
-
 
 
 /*
@@ -609,8 +524,6 @@ scroll lock (F14)
 
 
 
-
-
 modifier keys - https://docs.qmk.fm/#/feature_advanced_keycodes?id=modifier-keys
 LCTL(kc)	C(kc)	Hold Left Control and press kc
 LSG(kc)	SGUI(kc), SCMD(kc), SWIN(kc)	Hold Left Shift and Left GUI and press kc
@@ -628,12 +541,8 @@ OS_OFF	Turns One Shot keys off
 OS_TOGG	Toggles One Shot keys status
 
 
-
-
-
 reduce compile size
 21718/28672      
-
 
 add to rules.mk
 LTO_ENABLE = yes
@@ -641,11 +550,6 @@ LTO_ENABLE = yes
 19092/28672 
 okay so like 10% reduction
 
-
-
-
-
 https://docs.qmk.fm/#/keycodes
-
 
 */
