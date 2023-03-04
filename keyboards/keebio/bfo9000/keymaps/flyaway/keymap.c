@@ -422,7 +422,6 @@ KC_RIGHT_GUI	  KC_RGUI, KC_RCMD, KC_RWIN	Right GUI (Windows/Command/Meta key)
 
 
 
-
 // ----------------------------- high interest (will definitely use)
 KC_CAPS, KC_CAPS_LOCK
 this is just necessary sometimes
@@ -432,13 +431,11 @@ CAPS_WORD	CAPSWRD	Toggles Caps Word  toggles caps lock until end of word like sp
 KC_LOCK	Hold down the next key pressed, until the key is pressed again
 not sure but i think it could be quite useful
 
-KC_F13 - KC_F24
-i'm thinking use these to launch custom shortcuts
-
 leader key - input combined keys one at a time
 
 combined modifiers  MT(MOD_RALT|MOD_LSFT,KC_SPC)
 MT(MOD_LCTL | MOD_LSFT, KC_ESC)
+
 
 // ----------------------------- medium interest (could maybe use)
 KC_APPLICATION	KC_APP	Application (Windows Context Menu Key)
