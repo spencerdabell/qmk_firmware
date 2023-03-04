@@ -158,9 +158,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         U_, KC_TAB,  CT_A,    AT_S,    KC_D,    NV_F,    KC_G,    U______, B_,        U______, KC_H,    KC_J,    KC_K,    AT_L,    CT_SCLN, KC_QUOT, U_, B_,
         U_, U______, GT_Z,    PT_X,    N4_C,    MS_V,    KC_B,    U______, B_,        U______, KC_N,    KC_M,    KC_COMM, KC_DOT,  GT_SLSH, U______, U_, B_,
         U_, U______, U______, U______, U______, TO_PT,   OSM_LST, U______, B_,        KC_TAB,  NU_SPC,  KC_ENT,  U______, U______, U______, U______, U_, B_,
-
-        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,
-        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
+        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
 ),
 
 // yclmk  zfu,'
@@ -171,9 +169,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         U_, _______, KC_I,    KC_S,    KC_R,    KC_T,    KC_G,    U______, B_,        U______, KC_P,    KC_N,    KC_E,    KC_A,    KC_O,    _______, U_, B_,
         U_, _______, KC_Q,    KC_V,    KC_W,    KC_D,    KC_J,    U______, B_,        U______, KC_B,    KC_H,    KC_SLSH, KC_DOT,  KC_X,    _______, U_, B_,
         U_, U______, U______, U______, U______, _______, _______, _______, B_,        _______, _______, _______, U______, U______, U______, U______, U_, B_,
-
-        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,
-        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
+        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
 ),
 // flhvz  'wuoy
 // srntk  cdeai
@@ -183,9 +179,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         U_, _______, KC_S,    KC_R,    KC_N,    KC_T,    KC_K,    U______, B_,        U______, KC_C,    KC_D,    KC_E,    KC_A,    KC_I,    _______, U_, B_,
         U_, _______, KC_X,    KC_J,    KC_B,    KC_M,    KC_Q,    U______, B_,        U______, KC_P,    KC_G,    KC_COMM, KC_DOT,  KC_SLSH, _______, U_, B_,
         U_, U______, U______, U______, U______, _______, _______, _______, B_,        _______, _______, _______, U______, U______, U______, U______, U_, B_,
-
-        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,
-        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
+        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
 ),
 // flhdm  vwou,
 // srntk  gyaei
@@ -194,9 +188,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //         U______, _______, KC_F,    KC_L,    KC_H,    KC_D,    KC_M,    U______, B_,        U______, KC_V,    KC_W,    KC_O,    KC_U,    KC_COMM, _______, U_, B_,
 //         U______, _______, KC_S,    KC_R,    KC_N,    KC_T,    KC_K,    U______, B_,        U______, KC_G,    KC_Y,    KC_A,    KC_E,    KC_I,    KC_SLSH, U_, B_,
 //         U______, _______, KC_X,    KC_J,    KC_B,    KC_Z,    KC_Q,    U______, B_,        U______, KC_P,    KC_C,    KC_QUOT, KC_SCLN, KC_DOT,  _______, U_, B_,
-//         U______, U______, U______, U______, U______, _______, _______, _______, B_,        _______, _______, _______, U______, U______, U______, U______, U_, B_,
-//         U______, U______, U______, U______, U______, U______, U______, U______, B_,        U______, U______, U______, U______, U______, U______, U______, U_, B_,
-        // B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
+//         U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
 // ),
 // wgdfb  qluoy
 // rsthk  jneai;
@@ -206,9 +198,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         U_, _______, KC_R,    KC_S,    KC_T,    KC_H,    KC_K,    U______, B_,        U______, KC_J,    KC_N,    KC_E,    KC_A,    KC_I,    _______, U_, B_,
         U_, _______, KC_X,    KC_C,    KC_M,    KC_P,    KC_V,    U______, B_,        U______, KC_Z,    KC_COMM, KC_DOT,  KC_QUOT, KC_SCLN, _______, U_, B_,
         U_, U______, U______, U______, U______, _______, _______, _______, B_,        _______, _______, _______, U______, U______, U______, U______, U_, B_,
-
-        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,
-        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
+        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
 ),
 // mlcdk  ;whuq
 // rnstg  jeaoi
@@ -218,9 +208,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         U_, _______, KC_R,    KC_N,    KC_S,    KC_T,    KC_G,    U______, B_,        U______, KC_J,    KC_E,    KC_A,    KC_O,    KC_I,    _______, U_, B_,
         U_, _______, KC_V,    KC_X,    KC_F,    KC_D,    KC_K,    U______, B_,        U______, KC_Z,    KC_Y,    KC_COMM, KC_DOT,  KC_SLSH, _______, U_, B_,
         U_, U______, U______, U______, U______, _______, _______, _______, B_,        _______, _______, _______, U______, U______, U______, U______, U_, B_,
-
-        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,
-        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
+        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
 ),
 //
 //
@@ -230,9 +218,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         U_, _______, TO_GAME, U______, TO_BS,   TO_NV,   U______, U______, B_,        U______, U______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES, _______, U_, B_,
         U_, _______, U______, U______, U______, TO_MS,   U______, U______, B_,        U______, U______, KC_MINS, KC_PLUS, _______, KC_EQL,  _______, U_, B_,
         U_, U______, U______, U______, U______, _______, _______, _______, B_,        _______, _______, _______, U______, U______, U______, U______, U_, B_,
-
-        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,
-        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
+        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
 ),
 //
 //
@@ -242,9 +228,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         U_, _______, KC_LCTL, _______, _______, _______, _______, U______, B_,        U______, KC_HOME, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_END,  U_, B_,
         U_, _______, Ct_GRV,  DESK_LT, DESK_RT, _______, _______, U______, B_,        U______, U______, Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT, _______, U_, B_,
         U_, U______, U______, U______, U______, _______, _______, _______, B_,        _______, _______, _______, U______, U______, U______, U______, U_, B_,
-
-        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,
-        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
+        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
 ),
 //
 //
@@ -254,50 +238,28 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         U_, _______, CT_1,    AT_2,    GT_3,    KC_4,    U______, U______, B_,        U______, U______, KC_7,    GT_8,    AT_9,    CT_0,    _______, U_, B_,
         U_, _______, KC_F11,  KC_F12,  KC_F5,   KC_5,    U______, U______, B_,        U______, U______, KC_6,    KC_F6,   KC_PSCR, KC_ESC,  _______, U_, B_,
         U_, U______, U______, U______, U______, _______, _______, _______, B_,        _______, _______, _______, U______, U______, U______, U______, U_, B_,
-
-        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,
-        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
+        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
 ),
-//
-//
-//
 [L_NU2] = LAYOUT(
         U_, _______, _______, KC_7,    KC_8,    KC_9,    U______, U______, B_,        U______, U______, KC_4,    KC_5,    KC_6,    _______, _______, U_, B_,
         U_, _______, _______, _______, _______, KC_0,    U______, U______, B_,        U______, U______, KC_1,    KC_2,    KC_3,    _______, _______, U_, B_,
         U_, _______, _______, _______, _______, _______, U______, U______, B_,        U______, U______, _______, _______, _______, _______, _______, U_, B_,
         U_, U______, U______, U______, U______, _______, _______, _______, B_,        _______, _______, _______, U______, U______, U______, U______, U_, B_,
-
-        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,
-        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
+        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
 ),
-//
-//
-//
 [L_NU3] = LAYOUT(
-        // U_, _______, _______, _______, _______, _______, U______, U______, B_,        U______, U______, KC_7,    KC_8,    KC_9,    _______, _______, U_, B_,
-        // U_, _______, _______, _______, _______, _______, U______, U______, B_,        U______, U______, KC_4,    KC_5,    KC_6,    _______, _______, U_, B_,
-        // U_, _______, _______, _______, _______, _______, U______, U______, B_,        U______, U______, KC_1,    KC_2,    KC_3,    _______, _______, U_, B_,
-        // U_, U______, U______, U______, U______, _______, _______, _______, B_,        _______, KC_0,    _______, U______, U______, U______, U______, U_, B_,
-
         U_, _______, _______, _______, _______, _______, U______, U______, B_,        U______, U______, _______, _______, _______, _______, _______, U_, B_,
         U_, _______, KC_1,    KC_2,    KC_3,    KC_4,    U______, U______, B_,        U______, U______, KC_7,    KC_8,    KC_9,    KC_0,    _______, U_, B_,
         U_, _______, _______, _______, _______, _______, U______, U______, B_,        U______, U______, _______, _______, _______, _______, _______, U_, B_,
         U_, U______, U______, U______, U______, _______, KC_5,    _______, B_,        _______, KC_6,    _______, U______, U______, U______, U______, U_, B_,
-
-        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,
-        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
+        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
 ),
-//
-//
-//
 [L_NU4] = LAYOUT(
         U_, _______, _______, _______, _______, _______, U______, U______, B_,        U______, U______, KC_7,    KC_8,    KC_9,    _______, _______, U_, B_,
         U_, _______, _______, _______, _______, _______, U______, U______, B_,        U______, U______, KC_4,    KC_5,    KC_6,    _______, _______, U_, B_,
         U_, _______, _______, _______, _______, _______, U______, U______, B_,        U______, U______, KC_1,    KC_2,    KC_3,    _______, _______, U_, B_,
         U_, U______, U______, U______, U______, _______, _______, _______, B_,        _______, KC_0,    _______, U______, U______, U______, U______, U_, B_,
-
-        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,
-        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
+        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
 ),
 // <>[]
 // (){}
@@ -307,33 +269,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         U_, _______, _______, _______, _______, _______, U______, U______, B_,        U______, U______, KC_LPRN, KC_RPRN, KC_LCBR, KC_RCBR, _______, U_, B_,
         U_, _______, _______, _______, _______, _______, U______, U______, B_,        U______, U______, KC_UNDS, KC_PIPE, KC_BSLS, KC_SLSH, _______, U_, B_,
         U_, U______, U______, U______, U______, _______, _______, _______, B_,        _______, KC_UNDS, _______, U______, U______, U______, U______, U_, B_,
-
-        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,
-        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
+        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
 ),
-//
-//
-//
 [L_MS] = LAYOUT(
         U_, _______, _______, _______, _______, _______, U______, U______, B_,        U______, U______, U______, KC_BTN1, KC_BTN2, KC_BTN3, _______, U_, B_,
         U_, _______, _______, KC_BTN2, KC_BTN1, _______, U______, U______, B_,        U______, U______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, _______, U_, B_,
         U_, _______, KC_ACL0, KC_ACL1, KC_ACL2, _______, U______, U______, B_,        U______, U______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, _______, U_, B_,
         U_, U______, U______, U______, U______, _______, _______, _______, B_,        _______, _______, _______, U______, U______, U______, U______, U_, B_,
-
-        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,
-        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
+        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
 ),
-//
-//
-//
 [L_SD] = LAYOUT(
-        U_, _______, _______, KC_MPLY, KC_MPRV, KC_MNXT, _______, U______, B_,        U______, U______, KC_MSTP, KC_MPLY, _______, _______, _______, U_, B_,
+        U_, _______, _______, _______, KC_MPLY, KC_MNXT, _______, U______, B_,        U______, U______, KC_MSTP, KC_MPLY, _______, _______, _______, U_, B_,
         U_, _______, _______, _______, _______, _______, _______, U______, B_,        U______, U______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, _______, U_, B_,
         U_, _______, _______, _______, _______, _______, _______, U______, B_,        U______, U______, KC_MRWD, KC_MUTE, _______, KC_MFFD, _______, U_, B_,
         U_, U______, U______, U______, U______, _______, _______, _______, B_,        _______, _______, _______, U______, U______, U______, U______, U_, B_,
-
-        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,
-        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
+        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
 ),
 //
 //
@@ -343,20 +293,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //         U_, KC_TAB,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    U______, B_,        U______, KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, U_, B_,
 //         U_, U______, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    U______, B_,        U______, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, U______, U_, B_,
 //         U_, U______, U______, U______, U______, TO_PT,   KC_SPC,  KC_LGUI, B_,        KC_TAB,  NU_SPC,  KC_ENT,  U______, U______, U______, U______, U_, B_,
-//         U_, U______, U______, U______, U______, _______, _______, _______, B_,        _______, _______, _______, U______, U______, U______, U______, U_, B_,
-//         B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
+//         U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
 // ),
 [L_GAME] = LAYOUT(
         U_, KC_ESC,  KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    U______, B_,        U______, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_GRV,  U_, B_,
         U_, KC_TAB,  KC_TAB,  KC_A,    KC_S,    KC_D,    KC_F,    U______, B_,        U______, KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, U_, B_,
         U_, U______, KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    U______, B_,        U______, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, U______, U_, B_,
         U_, U______, U______, U______, U______, TO_PT,   KC_SPC,  KC_LGUI, B_,        KC_TAB,  NU_SPC,  KC_ENT,  U______, U______, U______, U______, U_, B_,
-
-        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,
-        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
+        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
 ),
 };
-
 
 
 enum combos {
@@ -393,7 +339,6 @@ uint16_t COMBO_LEN = CB_LENGTH;
 const uint16_t PROGMEM BOOT[] =         {KC_B, KC_O, COMBO_END};
 const uint16_t PROGMEM QW_ESC[] =       {KC_Q, SY_W, COMBO_END};
 const uint16_t PROGMEM WE_ESC[] =       {SY_W, KC_E, COMBO_END};
-
 // const uint16_t PROGMEM LSemi_ENT[] =    {AT_L, CT_SCLN, COMBO_END};
 // const uint16_t PROGMEM CommDot_ENT[] =  {KC_COMM, KC_DOT, COMBO_END};
 const uint16_t PROGMEM PID[] =          {KC_I, KC_D, COMBO_END};
@@ -401,22 +346,22 @@ const uint16_t PROGMEM Pass[] =         {CT_A, KC_P, COMBO_END};
 const uint16_t PROGMEM PassAdm[] =      {AT_S, KC_P, COMBO_END};
 const uint16_t PROGMEM Name[] =         {KC_N, AT_S, COMBO_END};
 const uint16_t PROGMEM WE_TAB[] =       {SY_W, PT_E, COMBO_END};
-const uint16_t PROGMEM IO_QUOT[] =      {KC_I, KC_O, COMBO_END}; // hmm chording tends to move the keyboard quite a bit ...
+const uint16_t PROGMEM IO_QUOT[] =      {KC_I, KC_O, COMBO_END};
 const uint16_t PROGMEM Grave[] =        {KC_COMM, KC_DOT, COMBO_END};
-const uint16_t PROGMEM K_THE[] =        {KC_T, KC_H, COMBO_END}; // {KC_T, KC_H, KC_E, COMBO_END};
-const uint16_t PROGMEM K_AND[] =        {CT_A, KC_N, COMBO_END}; // {CT_A, KC_N, KC_D, COMBO_END};
+const uint16_t PROGMEM K_THE[] =        {KC_T, KC_H, COMBO_END};
+const uint16_t PROGMEM K_AND[] =        {CT_A, KC_N, COMBO_END};
 const uint16_t PROGMEM K_YOU[] =        {KC_Y, KC_U, COMBO_END};
 const uint16_t PROGMEM K_HAVE[] =       {KC_H, MS_V, COMBO_END};
 const uint16_t PROGMEM K_FOR[] =        {NV_F, KC_O, COMBO_END};
 const uint16_t PROGMEM K_WITH[] =       {SY_W, KC_I, COMBO_END};
-const uint16_t PROGMEM K_THIS[] =       {KC_T, AT_S, COMBO_END}; // TS this
-const uint16_t PROGMEM K_THAT[] =       {KC_T, CT_A, COMBO_END}; // TA that
+const uint16_t PROGMEM K_THIS[] =       {KC_T, AT_S, COMBO_END};
+const uint16_t PROGMEM K_THAT[] =       {KC_T, CT_A, COMBO_END};
 const uint16_t PROGMEM K_NOT[] =        {KC_N, KC_O, COMBO_END};
 const uint16_t PROGMEM K_BUT[] =        {KC_B, KC_U, COMBO_END};
-const uint16_t PROGMEM K_THEY[] =       {KC_T, KC_Y, COMBO_END}; // TY they
-const uint16_t PROGMEM K_WHAT[] =       {SY_W, CT_A, COMBO_END}; // WH what
+const uint16_t PROGMEM K_THEY[] =       {KC_T, KC_Y, COMBO_END};
+const uint16_t PROGMEM K_WHAT[] =       {SY_W, CT_A, COMBO_END};
 const uint16_t PROGMEM K_CAN[] =        {KC_C, CT_A, COMBO_END};
-const uint16_t PROGMEM K_YOUR[] =       {KC_Y, SD_R, COMBO_END}; // YR your
+const uint16_t PROGMEM K_YOUR[] =       {KC_Y, SD_R, COMBO_END};
 
 
 combo_t key_combos[] = {
@@ -482,14 +427,14 @@ TO(layer)	Turns on layer and turns off all other layers, except the default laye
 TT(layer)	Normally acts like MO unless it’s tapped multiple times, which toggles layer on
 
 
-KC_LEFT_CTRL	KC_LCTL	Left Control	✔	✔	✔
-KC_LEFT_SHIFT	KC_LSFT	Left Shift	✔	✔	✔
-KC_LEFT_ALT	KC_LALT, KC_LOPT	Left Alt (Option)	✔	✔	✔
-KC_LEFT_GUI	KC_LGUI, KC_LCMD, KC_LWIN	Left GUI (Windows/Command/Meta key)	✔	✔	✔
-KC_RIGHT_CTRL	KC_RCTL	Right Control	✔	✔	✔
-KC_RIGHT_SHIFT	KC_RSFT	Right Shift	✔	✔	✔
-KC_RIGHT_ALT	KC_RALT, KC_ROPT, KC_ALGR	Right Alt (Option/AltGr)	✔	✔	✔
-KC_RIGHT_GUI	KC_RGUI, KC_RCMD, KC_RWIN	Right GUI (Windows/Command/Meta key)	✔	✔	✔
+KC_LEFT_CTRL	  KC_LCTL	          Left Control
+KC_LEFT_SHIFT	  KC_LSFT	          Left Shift
+KC_LEFT_ALT	    KC_LALT, KC_LOPT	Left Alt (Option)
+KC_LEFT_GUI	    KC_LGUI, KC_LCMD, KC_LWIN	Left GUI (Windows/Command/Meta key)
+KC_RIGHT_CTRL	  KC_RCTL	          Right Control
+KC_RIGHT_SHIFT	KC_RSFT	          Right Shift
+KC_RIGHT_ALT	  KC_RALT, KC_ROPT, KC_ALGR	Right Alt (Option/AltGr)
+KC_RIGHT_GUI	  KC_RGUI, KC_RCMD, KC_RWIN	Right GUI (Windows/Command/Meta key)
 
 
 
@@ -497,9 +442,6 @@ KC_RIGHT_GUI	KC_RGUI, KC_RCMD, KC_RWIN	Right GUI (Windows/Command/Meta key)	✔	
 // ----------------------------- high interest (will definitely use)
 KC_CAPS, KC_CAPS_LOCK
 this is just necessary sometimes
-
-QK_GRAVE_ESCAPE	QK_GESC	Escape when pressed, ` when Shift or GUI are held
-yep, this is pretty great, and right now my escape key is just too far away, ah let's just move it now
 
 CAPS_WORD	CAPSWRD	Toggles Caps Word  toggles caps lock until end of word like space or period
 
