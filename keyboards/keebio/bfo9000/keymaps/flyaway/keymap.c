@@ -171,30 +171,28 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // asdfg  hjkl;
 // zxcvb  nm,./
 [L_BS] = LAYOUT_6x3_3(
-        U______, KC_Q,    SY_W,    KC_E,    SD_R,    KC_T,                            KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    U______,
-        KC_TAB,  CT_A,    AT_S,    KC_D,    NV_F,    KC_G,                            KC_H,    KC_J,    KC_K,    AT_L,    CT_SCLN, KC_QUOT,
-        U______, GT_Z,    PT_X,    N4_C,    MS_V,    KC_B,                            KC_N,    KC_M,    KC_COMM, KC_DOT,  GT_SLSH, U______,
-                                            TO_PT,   OSM_LST, U_,       KC_TAB,  NU_SPC,  KC_ENT
+        U______, KC_Q,    SY_W,    KC_E,    SD_R,    KC_T,                             KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    U______,
+        KC_TAB,  CT_A,    AT_S,    KC_D,    NV_F,    KC_G,                             KC_H,    KC_J,    KC_K,    AT_L,    CT_SCLN, KC_QUOT,
+        U______, GT_Z,    PT_X,    N4_C,    MS_V,    KC_B,                             KC_N,    KC_M,    KC_COMM, KC_DOT,  GT_SLSH, U______,
+                                            TO_PT,   OSM_LST, U______,        KC_TAB,  NU_SPC,  KC_ENT
 ),
 // yclmk  zfu,'
 // isrtg  pneao
 // qvwdj  bh/.x
-[L_ISRT] = LAYOUT(
-        U_, _______, KC_Y,    KC_C,    KC_L,    KC_M,    KC_K,    U______, B_,        U______, KC_Z,    KC_F,    KC_U,    KC_COMM, KC_QUOT, _______, U_, B_,
-        U_, _______, KC_I,    KC_S,    KC_R,    KC_T,    KC_G,    U______, B_,        U______, KC_P,    KC_N,    KC_E,    KC_A,    KC_O,    _______, U_, B_,
-        U_, _______, KC_Q,    KC_V,    KC_W,    KC_D,    KC_J,    U______, B_,        U______, KC_B,    KC_H,    KC_SLSH, KC_DOT,  KC_X,    _______, U_, B_,
-        U_, U______, U______, U______, U______, _______, _______, _______, B_,        _______, _______, _______, U______, U______, U______, U______, U_, B_,
-        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
+[L_ISRT] = LAYOUT_6x3_3(
+        _______, KC_Y,    KC_C,    KC_L,    KC_M,    KC_K,                             KC_Z,    KC_F,    KC_U,    KC_COMM, KC_QUOT, _______,
+        _______, KC_I,    KC_S,    KC_R,    KC_T,    KC_G,                             KC_P,    KC_N,    KC_E,    KC_A,    KC_O,    _______,
+        _______, KC_Q,    KC_V,    KC_W,    KC_D,    KC_J,                             KC_B,    KC_H,    KC_SLSH, KC_DOT,  KC_X,    _______,
+                                            _______, _______, _______,        _______, _______, _______
 ),
 // flhvz  'wuoy
 // srntk  cdeai
 // xjbmq  pg,./
-[L_SEMI] = LAYOUT(
-        U_, _______, KC_F,    KC_L,    KC_H,    KC_V,    KC_Z,    U______, B_,        U______, KC_QUOT, KC_W,    KC_U,    KC_O,    KC_Y,    _______, U_, B_,
-        U_, _______, KC_S,    KC_R,    KC_N,    KC_T,    KC_K,    U______, B_,        U______, KC_C,    KC_D,    KC_E,    KC_A,    KC_I,    _______, U_, B_,
-        U_, _______, KC_X,    KC_J,    KC_B,    KC_M,    KC_Q,    U______, B_,        U______, KC_P,    KC_G,    KC_COMM, KC_DOT,  KC_SLSH, _______, U_, B_,
-        U_, U______, U______, U______, U______, _______, _______, _______, B_,        _______, _______, _______, U______, U______, U______, U______, U_, B_,
-        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
+[L_SEMI] = LAYOUT_6x3_3(
+        _______, KC_F,    KC_L,    KC_H,    KC_V,    KC_Z,                             KC_QUOT, KC_W,    KC_U,    KC_O,    KC_Y,    _______,
+        _______, KC_S,    KC_R,    KC_N,    KC_T,    KC_K,                             KC_C,    KC_D,    KC_E,    KC_A,    KC_I,    _______,
+        _______, KC_X,    KC_J,    KC_B,    KC_M,    KC_Q,                             KC_P,    KC_G,    KC_COMM, KC_DOT,  KC_SLSH, _______,
+                                            _______, _______, _______,        _______, _______, _______
 ),
 // flhdm  vwou,
 // srntk  gyaei
@@ -208,97 +206,80 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // wgdfb  qluoy
 // rsthk  jneai;
 // xcmpv  z,.'/
-[L_APT3] = LAYOUT(
-        U_, _______, KC_W,    KC_G,    KC_D,    KC_F,    KC_B,    U______, B_,        U______, KC_Q,    KC_L,    KC_U,    KC_O,    KC_Y,    _______, U_, B_,
-        U_, _______, KC_R,    KC_S,    KC_T,    KC_H,    KC_K,    U______, B_,        U______, KC_J,    KC_N,    KC_E,    KC_A,    KC_I,    _______, U_, B_,
-        U_, _______, KC_X,    KC_C,    KC_M,    KC_P,    KC_V,    U______, B_,        U______, KC_Z,    KC_COMM, KC_DOT,  KC_QUOT, KC_SCLN, _______, U_, B_,
-        U_, U______, U______, U______, U______, _______, _______, _______, B_,        _______, _______, _______, U______, U______, U______, U______, U_, B_,
-        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
+[L_APT3] = LAYOUT_6x3_3(
+        _______, KC_W,    KC_G,    KC_D,    KC_F,    KC_B,                             KC_Q,    KC_L,    KC_U,    KC_O,    KC_Y,    _______,
+        _______, KC_R,    KC_S,    KC_T,    KC_H,    KC_K,                             KC_J,    KC_N,    KC_E,    KC_A,    KC_I,    _______,
+        _______, KC_X,    KC_C,    KC_M,    KC_P,    KC_V,                             KC_Z,    KC_COMM, KC_DOT,  KC_QUOT, KC_SCLN, _______,
+                                            _______, _______, _______,        _______, _______, _______
 ),
 // mlcdk  ;whuq
 // rnstg  jeaoi
 // vxfpb  zy,./
-[L_FOLD] = LAYOUT(
-        U_, _______, KC_M,    KC_L,    KC_C,    KC_P,    KC_B,    U______, B_,        U______, KC_SCLN, KC_W,    KC_H,    KC_U,    KC_Q,    _______, U_, B_,
-        U_, _______, KC_R,    KC_N,    KC_S,    KC_T,    KC_G,    U______, B_,        U______, KC_J,    KC_E,    KC_A,    KC_O,    KC_I,    _______, U_, B_,
-        U_, _______, KC_V,    KC_X,    KC_F,    KC_D,    KC_K,    U______, B_,        U______, KC_Z,    KC_Y,    KC_COMM, KC_DOT,  KC_SLSH, _______, U_, B_,
-        U_, U______, U______, U______, U______, _______, _______, _______, B_,        _______, _______, _______, U______, U______, U______, U______, U_, B_,
-        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
+[L_FOLD] = LAYOUT_6x3_3(
+        _______, KC_M,    KC_L,    KC_C,    KC_P,    KC_B,                             KC_SCLN, KC_W,    KC_H,    KC_U,    KC_Q,    _______,
+        _______, KC_R,    KC_N,    KC_S,    KC_T,    KC_G,                             KC_J,    KC_E,    KC_A,    KC_O,    KC_I,    _______,
+        _______, KC_V,    KC_X,    KC_F,    KC_D,    KC_K,                             KC_Z,    KC_Y,    KC_COMM, KC_DOT,  KC_SLSH, _______,
+                                            _______, _______, _______,        _______, _______, _______
 ),
-//
-//
-//
-[L_PT] = LAYOUT(
-        U_, _______, U______, TO_SY,   TO_NU,   TO_SD,   U______, U______, B_,        U______, U______, KC_COLN, KC_SCLN, KC_DQUO, KC_EXLM, _______, U_, B_,
-        U_, _______, TO_GAME, U______, TO_BS,   TO_NV,   U______, U______, B_,        U______, U______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES, _______, U_, B_,
-        U_, _______, U______, U______, U______, TO_MS,   U______, U______, B_,        U______, U______, KC_MINS, KC_PLUS, _______, KC_EQL,  _______, U_, B_,
-        U_, U______, U______, U______, U______, _______, _______, _______, B_,        _______, _______, _______, U______, U______, U______, U______, U_, B_,
-        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
+
+[L_PT] = LAYOUT_6x3_3(
+        _______, U______, TO_SY,   TO_NU,   TO_SD,   U______,                          U______, KC_COLN, KC_SCLN, KC_DQUO, KC_EXLM, _______,
+        _______, TO_GAME, U______, TO_BS,   TO_NV,   U______,                          U______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES, _______,
+        _______, U______, U______, U______, TO_MS,   U______,                          U______, KC_MINS, KC_PLUS, _______, KC_EQL,  _______,
+                                            _______, _______, _______,        _______, _______, _______
 ),
-//
-//
-//
-[L_NV] = LAYOUT(
-        U_, _______, Gu_GRV,  AS_TAB,  At_TAB,  _______, _______, U______, B_,        U______, U______, Ct_PGUP, KC_PGDN, KC_PGUP, Ct_PGDN, _______, U_, B_,
-        U_, _______, KC_LCTL, _______, _______, _______, _______, U______, B_,        U______, KC_HOME, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_END,  U_, B_,
-        U_, _______, Ct_GRV,  DESK_LT, DESK_RT, _______, _______, U______, B_,        U______, U______, Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT, _______, U_, B_,
-        U_, U______, U______, U______, U______, _______, _______, _______, B_,        _______, _______, _______, U______, U______, U______, U______, U_, B_,
-        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
+
+[L_NV] = LAYOUT_6x3_3(
+        _______, Gu_GRV,  AS_TAB,  At_TAB,  _______, _______,                          U______, Ct_PGUP, KC_PGDN, KC_PGUP, Ct_PGDN, _______,
+        _______, KC_LCTL, _______, _______, _______, _______,                          KC_HOME, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_END, 
+        _______, Ct_GRV,  DESK_LT, DESK_RT, _______, _______,                          U______, Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT, _______,
+                                            _______, _______, _______,        _______, _______, _______
 ),
-//
-//
-//
-[L_NU] = LAYOUT(
-        U_, _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   U______, U______, B_,        U______, U______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  _______, U_, B_,
-        U_, _______, CT_1,    AT_2,    GT_3,    KC_4,    U______, U______, B_,        U______, U______, KC_7,    GT_8,    AT_9,    CT_0,    _______, U_, B_,
-        U_, _______, KC_F11,  KC_F12,  KC_F5,   KC_5,    U______, U______, B_,        U______, U______, KC_6,    KC_F6,   KC_PSCR, KC_ESC,  _______, U_, B_,
-        U_, U______, U______, U______, U______, _______, _______, _______, B_,        _______, _______, _______, U______, U______, U______, U______, U_, B_,
-        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
+ 
+[L_NU] = LAYOUT_6x3_3(
+        _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   U______,                          U______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  _______,
+        _______, CT_1,    AT_2,    GT_3,    KC_4,    U______,                          U______, KC_7,    GT_8,    AT_9,    CT_0,    _______,
+        _______, KC_F11,  KC_F12,  KC_F5,   KC_5,    U______,                          U______, KC_6,    KC_F6,   KC_PSCR, KC_ESC,  _______,
+                                            _______, _______, _______,        _______, _______, _______
 ),
-[L_NU2] = LAYOUT(
-        U_, _______, _______, KC_7,    KC_8,    KC_9,    U______, U______, B_,        U______, U______, KC_4,    KC_5,    KC_6,    _______, _______, U_, B_,
-        U_, _______, _______, _______, _______, KC_0,    U______, U______, B_,        U______, U______, KC_1,    KC_2,    KC_3,    _______, _______, U_, B_,
-        U_, _______, _______, _______, _______, _______, U______, U______, B_,        U______, U______, _______, _______, _______, _______, _______, U_, B_,
-        U_, U______, U______, U______, U______, _______, _______, _______, B_,        _______, _______, _______, U______, U______, U______, U______, U_, B_,
-        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
+[L_NU2] = LAYOUT_6x3_3(
+        _______, _______, KC_7,    KC_8,    KC_9,    U______,                          U______, KC_4,    KC_5,    KC_6,    _______, _______,
+        _______, _______, _______, _______, KC_0,    U______,                          U______, KC_1,    KC_2,    KC_3,    _______, _______,
+        _______, _______, _______, _______, _______, U______,                          U______, _______, _______, _______, _______, _______,
+                                            _______, _______, _______,        _______, _______, _______
 ),
-[L_NU3] = LAYOUT(
-        U_, _______, _______, _______, _______, _______, U______, U______, B_,        U______, U______, _______, _______, _______, _______, _______, U_, B_,
-        U_, _______, KC_1,    KC_2,    KC_3,    KC_4,    U______, U______, B_,        U______, U______, KC_7,    KC_8,    KC_9,    KC_0,    _______, U_, B_,
-        U_, _______, _______, _______, _______, _______, U______, U______, B_,        U______, U______, _______, _______, _______, _______, _______, U_, B_,
-        U_, U______, U______, U______, U______, _______, KC_5,    _______, B_,        _______, KC_6,    _______, U______, U______, U______, U______, U_, B_,
-        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
+[L_NU3] = LAYOUT_6x3_3(
+        _______, _______, _______, _______, _______, U______,                          U______, _______, _______, _______, _______, _______,
+        _______, KC_1,    KC_2,    KC_3,    KC_4,    U______,                          U______, KC_7,    KC_8,    KC_9,    KC_0,    _______,
+        _______, _______, _______, _______, _______, U______,                          U______, _______, _______, _______, _______, _______,
+                                            _______, KC_5,    _______,        _______, KC_6,    _______
 ),
-[L_NU4] = LAYOUT(
-        U_, _______, _______, _______, _______, _______, U______, U______, B_,        U______, U______, KC_7,    KC_8,    KC_9,    _______, _______, U_, B_,
-        U_, _______, _______, _______, _______, _______, U______, U______, B_,        U______, U______, KC_4,    KC_5,    KC_6,    _______, _______, U_, B_,
-        U_, _______, _______, _______, _______, _______, U______, U______, B_,        U______, U______, KC_1,    KC_2,    KC_3,    _______, _______, U_, B_,
-        U_, U______, U______, U______, U______, _______, _______, _______, B_,        _______, KC_0,    _______, U______, U______, U______, U______, U_, B_,
-        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
+[L_NU4] = LAYOUT_6x3_3(
+        _______, _______, _______, _______, _______, U______,                          U______, KC_7,    KC_8,    KC_9,    _______, _______,
+        _______, _______, _______, _______, _______, U______,                          U______, KC_4,    KC_5,    KC_6,    _______, _______,
+        _______, _______, _______, _______, _______, U______,                          U______, KC_1,    KC_2,    KC_3,    _______, _______,
+                                            _______, _______, _______,        _______, KC_0,    _______
 ),
 // <>[]
 // (){}
 // _|\/
-[L_SY] = LAYOUT(
-        U_, _______, _______, _______, _______, _______, U______, U______, B_,        U______, U______, KC_LT,   KC_GT,   KC_LBRC, KC_RBRC, _______, U_, B_,
-        U_, _______, _______, _______, _______, _______, U______, U______, B_,        U______, U______, KC_LPRN, KC_RPRN, KC_LCBR, KC_RCBR, _______, U_, B_,
-        U_, _______, _______, _______, _______, _______, U______, U______, B_,        U______, U______, KC_UNDS, KC_PIPE, KC_BSLS, KC_SLSH, _______, U_, B_,
-        U_, U______, U______, U______, U______, _______, _______, _______, B_,        _______, KC_UNDS, _______, U______, U______, U______, U______, U_, B_,
-        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
+[L_SY] = LAYOUT_6x3_3(
+        _______, _______, _______, _______, _______, U______,                          U______, KC_LT,   KC_GT,   KC_LBRC, KC_RBRC, _______,
+        _______, _______, _______, _______, _______, U______,                          U______, KC_LPRN, KC_RPRN, KC_LCBR, KC_RCBR, _______,
+        _______, _______, _______, _______, _______, U______,                          U______, KC_UNDS, KC_PIPE, KC_BSLS, KC_SLSH, _______,
+                                            _______, _______, _______,        _______, KC_UNDS, _______
 ),
-[L_MS] = LAYOUT(
-        U_, _______, _______, _______, _______, _______, U______, U______, B_,        U______, U______, U______, KC_BTN1, KC_BTN2, KC_BTN3, _______, U_, B_,
-        U_, _______, _______, KC_BTN2, KC_BTN1, _______, U______, U______, B_,        U______, U______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, _______, U_, B_,
-        U_, _______, KC_ACL0, KC_ACL1, KC_ACL2, _______, U______, U______, B_,        U______, U______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, _______, U_, B_,
-        U_, U______, U______, U______, U______, _______, _______, _______, B_,        _______, _______, _______, U______, U______, U______, U______, U_, B_,
-        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
+[L_MS] = LAYOUT_6x3_3(
+        _______, _______, _______, _______, _______, U______,                          U______, U______, KC_BTN1, KC_BTN2, KC_BTN3, _______,
+        _______, _______, KC_BTN2, KC_BTN1, _______, U______,                          U______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, _______,
+        _______, KC_ACL0, KC_ACL1, KC_ACL2, _______, U______,                          U______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, _______,
+                                            _______, _______, _______,        _______, KC_UNDS, _______
 ),
-[L_SD] = LAYOUT(
-        U_, _______, _______, _______, KC_MPLY, KC_MNXT, _______, U______, B_,        U______, U______, KC_MSTP, KC_MPLY, _______, _______, _______, U_, B_,
-        U_, _______, _______, _______, _______, _______, _______, U______, B_,        U______, U______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, _______, U_, B_,
-        U_, _______, _______, _______, _______, _______, _______, U______, B_,        U______, U______, KC_MRWD, KC_MUTE, _______, KC_MFFD, _______, U_, B_,
-        U_, U______, U______, U______, U______, _______, _______, _______, B_,        _______, _______, _______, U______, U______, U______, U______, U_, B_,
-        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
+[L_SD] = LAYOUT_6x3_3(
+        _______, _______, _______, KC_MPLY, KC_MNXT, _______,                          U______, KC_MSTP, KC_MPLY, _______, _______, _______,
+        _______, _______, _______, _______, _______, _______,                          U______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, _______,
+        _______, _______, _______, _______, _______, _______,                          U______, KC_MRWD, KC_MUTE, _______, KC_MFFD, _______,
+                                            _______, _______, _______,        _______, _______, _______
 ),
 //
 //
@@ -310,12 +291,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //         U_, U______, U______, U______, U______, TO_PT,   KC_SPC,  KC_LGUI, B_,        KC_TAB,  NU_SPC,  KC_ENT,  U______, U______, U______, U______, U_, B_,
 //         U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
 // ),
-[L_GAME] = LAYOUT(
-        U_, KC_ESC,  KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,    U______, B_,        U______, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_GRV,  U_, B_,
-        U_, KC_TAB,  KC_TAB,  KC_A,    KC_S,    KC_D,    KC_F,    U______, B_,        U______, KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, U_, B_,
-        U_, U______, KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    U______, B_,        U______, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, U______, U_, B_,
-        U_, U______, U______, U______, U______, TO_PT,   KC_SPC,  KC_LGUI, B_,        KC_TAB,  NU_SPC,  KC_ENT,  U______, U______, U______, U______, U_, B_,
-        U_, U_, U_, U_, U_, U_, U_, U_, B_, U_, U_, U_, U_, U_, U_, U_, U_,B_,        B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_, B_,B_
+[L_GAME] = LAYOUT_6x3_3(
+        KC_ESC,  KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,                             KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_GRV, 
+        KC_TAB,  KC_TAB,  KC_A,    KC_S,    KC_D,    KC_F,                             KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
+        U______, KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,                             KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, U______,
+                                            TO_PT,   KC_SPC,  KC_LGUI,        KC_TAB,  NU_SPC,  KC_ENT
 ),
 };
 
