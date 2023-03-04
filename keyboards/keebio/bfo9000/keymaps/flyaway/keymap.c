@@ -1,13 +1,10 @@
 #include QMK_KEYBOARD_H
 
 // broken off
-#define B______ KC_NO
 #define B_      KC_NO
 // unused areas of keyboard
 #define U______ KC_NO
 #define U_      KC_NO
-// purposely left empty, and don't do anything otherwise
-#define E______ KC_NO
 
 enum {
     L_BS = 0
@@ -51,72 +48,72 @@ enum {
 
 
 
-
-// QWERTY
+// control
 #define CT_A    CTL_T(KC_A)
-#define AT_S    ALT_T(KC_S)
-// #define GT_D    GUI_T(KC_D)
-#define GT_Z    GUI_T(KC_Z)
-#define ST_C    SFT_T(KC_C)
-
-
-// #define GT_K    GUI_T(KC_K)
-#define ST_COMM SFT_T(KC_COMM)
-#define AT_L    ALT_T(KC_L)
+#define CT_C    CTL_T(KC_C)
+#define CT_N    CTL_T(KC_N)
 #define CT_SCLN CTL_T(KC_SCLN)
+#define CT_1    CTL_T(KC_1)
+#define CT_0    CTL_T(KC_0)
+
+// alt
+#define AT_I    ALT_T(KC_I)
+#define AT_L    ALT_T(KC_L)
+#define AT_S    ALT_T(KC_S)
+#define AT_2    ALT_T(KC_2)
+#define AT_9    ALT_T(KC_9)
+
+// gui
+#define GT_E    GUI_T(KC_E)
+#define GT_D    GUI_T(KC_D)
+#define GT_K    GUI_T(KC_K)
+#define GT_T    GUI_T(KC_T)
+#define GT_Z    GUI_T(KC_Z)
 #define GT_SLSH GUI_T(KC_SLSH)
+#define GT_3    GUI_T(KC_3)
+#define GT_8    GUI_T(KC_8)
 
-
-#define NV_F    LT(L_NV, KC_F)
-#define MS_V    LT(L_MS, KC_V)
-#define NV_J    LT(L_NV, KC_J)
-// #define NU_R    LT(L_NU, KC_R)
-#define NU_U    LT(L_NU, KC_U)
-// #define SY_O    LT(L_SY, KC_O)
-
-
-#define SD_MPLY LT(L_SD, KC_MPLY)
-// #define SD_Q    LT(L_SD, KC_Q)
-#define SD_R    LT(L_SD, KC_R)
-#define SD_Z    LT(L_SD, KC_Z)
-#define NU_TAB  LT(L_NU, KC_TAB)
-#define NU_SPC  LT(L_NU, KC_SPC)
-#define PT_BSPC LT(L_PT, KC_BSPC)
-
-
+// shift
+#define ST_C    SFT_T(KC_C)
+#define ST_COMM SFT_T(KC_COMM)
 #define ST_ENT  SFT_T(KC_ENT)
 #define ST_SPC  SFT_T(KC_SPC)
 #define ST_UNDS SFT_T(KC_UNDS)
 
+// nav
+#define NV_A    LT(L_NV, KC_A)
+#define NV_F    LT(L_NV, KC_F)
+#define NV_H    LT(L_NV, KC_H)
+#define NV_J    LT(L_NV, KC_J)
+// mouse
+#define MS_K    LT(L_MS, KC_K)
+#define MS_R    LT(L_MS, KC_R)
+#define MS_V    LT(L_MS, KC_V)
+// number
+#define NU_R    LT(L_NU, KC_R)
+#define NU_U    LT(L_NU, KC_U)
+#define NU_TAB  LT(L_NU, KC_TAB)
+#define NU_SPC  LT(L_NU, KC_SPC)
 
-
-// shift hold, osm tap
-#define SY_DEL  LT(L_SY, KC_DEL)
+// punctuation
+#define PT_BSPC LT(L_PT, KC_BSPC)
 #define PT_E    LT(L_PT, KC_E)
 #define PT_X    LT(L_PT, KC_X)
+
+// sound
+#define SD_MPLY LT(L_SD, KC_MPLY)
+#define SD_Q    LT(L_SD, KC_Q)
+#define SD_R    LT(L_SD, KC_R)
+#define SD_Z    LT(L_SD, KC_Z)
+
+// symbol
+#define SY_O    LT(L_SY, KC_O)
+#define SY_DEL  LT(L_SY, KC_DEL)
 #define SY_D    LT(L_SY, KC_D)
 #define SY_GRV  LT(L_SY, KC_GRV)
 #define SY_W    LT(L_SY, KC_W)
 
-#define CT_1    CTL_T(KC_1)
-#define AT_2    ALT_T(KC_2)
-#define GT_3    GUI_T(KC_3)
-#define GT_8    GUI_T(KC_8)
-#define AT_9    ALT_T(KC_9)
-#define CT_0    CTL_T(KC_0)
 
-// ENGRAM | MARGNE
-#define CT_C    CTL_T(KC_C)
-#define AT_I    ALT_T(KC_I)
-#define GT_E    GUI_T(KC_E)
-#define NV_A    LT(L_NV, KC_A)
-#define MS_K    LT(L_MS, KC_K)
-
-#define GT_T    GUI_T(KC_T)
-#define AT_S    ALT_T(KC_S)
-#define CT_N    CTL_T(KC_N)
-#define NV_H    LT(L_NV, KC_H)
-#define MS_R    LT(L_MS, KC_R)
 
 
 // NAV
