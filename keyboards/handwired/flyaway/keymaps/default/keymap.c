@@ -11,7 +11,7 @@ enum {
     L_BS = 0
     , L_PT
     , L_NV
-    , L_NU   
+    , L_NU
     , L_SY
     , L_MS
     , L_SD
@@ -96,7 +96,6 @@ enum {
 #define APP_BCK KC_LALT
 
 
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 // qwert  yuiop
@@ -125,7 +124,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, Ct_GRV,  DESK_LT, DESK_RT, _______, _______,                          U______, Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT, _______,
                                             _______, _______, _______,        _______, _______, _______
 ),
- 
+
 [L_NU] = LAYOUT_split_3x6_3(
         _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   U______,                          U______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  _______,
         _______, CT_1,    AT_2,    GT_3,    KC_4,    U______,                          U______, KC_7,    GT_8,    AT_9,    CT_0,    _______,
@@ -161,10 +160,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         U______, KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,                             KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, U______,
                                             TO_PT,   KC_SPC,  KC_LGUI,        KC_TAB,  NU_SPC,  KC_ENT
 ),
+
 };
-
-
-
 
 
 
@@ -179,21 +176,6 @@ enum combos {
     , CB_WE_TAB
     , CB_IO_QUOT
     , CB_Grave
-    , CB_THE
-    , CB_AND
-    , CB_YOU
-    , CB_HAVE
-    , CB_FOR
-    , CB_WITH
-    , CB_THIS // TS
-    , CB_THAT // TA
-    , CB_NOT
-    , CB_BUT
-    , CB_THEY // TY
-    , CB_WHAT // WH
-    , CB_CAN
-    , CB_YOUR // YR
-
     // keep at end
     , CB_LENGTH
 };
