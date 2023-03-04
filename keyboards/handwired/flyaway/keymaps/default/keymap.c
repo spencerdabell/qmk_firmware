@@ -3,7 +3,7 @@
 
 #include QMK_KEYBOARD_H
 
-#include "keymap.h"
+#include "common_modkeys.h"
 
 #define U______ KC_NO
 
