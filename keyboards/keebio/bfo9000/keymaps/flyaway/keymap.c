@@ -87,6 +87,7 @@ enum {
 #define PT_BSPC LT(L_PT, KC_BSPC)
 #define PT_E    LT(L_PT, KC_E)
 #define PT_X    LT(L_PT, KC_X)
+#define PT_C    LT(L_PT, KC_C)
 
 // sound
 #define SD_MPLY LT(L_SD, KC_MPLY)
@@ -95,11 +96,12 @@ enum {
 #define SD_Z    LT(L_SD, KC_Z)
 
 // symbol
-#define SY_O    LT(L_SY, KC_O)
-#define SY_DEL  LT(L_SY, KC_DEL)
 #define SY_D    LT(L_SY, KC_D)
-#define SY_GRV  LT(L_SY, KC_GRV)
+#define SY_O    LT(L_SY, KC_O)
 #define SY_W    LT(L_SY, KC_W)
+#define SY_X    LT(L_SY, KC_X)
+#define SY_DEL  LT(L_SY, KC_DEL)
+#define SY_GRV  LT(L_SY, KC_GRV)
 
 
 // NAV
@@ -265,6 +267,7 @@ enum combos {
     , CB_Pass
     , CB_PassAdm
     , CB_Name
+    , CB_Email
     , CB_WE_TAB
     , CB_IO_QUOT
     , CB_Grave
@@ -301,7 +304,8 @@ COMBO_TWO(PID,      KC_I, KC_D);
 COMBO_TWO(Pass,     CT_A, KC_P);
 COMBO_TWO(PassAdm,  AT_S, KC_P);
 COMBO_TWO(Name,     KC_N, AT_S);
-COMBO_TWO(WE_TAB,   SY_W, PT_E);
+COMBO_TWO(Email,    KC_E, KC_M);
+COMBO_TWO(WE_TAB,   SY_W, KC_E);
 COMBO_TWO(IO_QUOT,  KC_I, KC_O);
 COMBO_TWO(Grave,    KC_COMM, KC_DOT);
 COMBO_TWO(K_THE,    KC_T, KC_H);
@@ -328,6 +332,7 @@ combo_t key_combos[] = {
     [CB_Pass] =         COMBO_ACTION(Pass),
     [CB_PassAdm] =      COMBO_ACTION(PassAdm),
     [CB_Name] =         COMBO_ACTION(Name),
+    [CB_Email] =        COMBO_ACTION(Email),
     [CB_WE_TAB] =       COMBO(WE_TAB, KC_TAB),
     [CB_IO_QUOT] =      COMBO(IO_QUOT, KC_QUOT),
     [CB_Grave] =        COMBO(Grave, KC_GRV),
@@ -353,6 +358,7 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
     case CB_Pass:     if (pressed) { SEND_STRING("Worker12023!"); } break;
     case CB_PassAdm:  if (pressed) { SEND_STRING("Gong124&Gong124&"); } break;
     case CB_Name:     if (pressed) { SEND_STRING("spencerdabell"); } break;
+    case CB_Email:    if (pressed) { SEND_STRING("spencerdabell@gmail.com"); } break;
     case CB_THE:      if (pressed) { SEND_STRING("the "); } break;
     case CB_AND:      if (pressed) { SEND_STRING("and "); } break;
     case CB_YOU:      if (pressed) { SEND_STRING("you "); } break;
