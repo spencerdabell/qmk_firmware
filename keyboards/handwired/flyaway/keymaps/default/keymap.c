@@ -15,6 +15,7 @@ enum {
     , L_SY
     , L_MS
     , L_SD
+    , L_WREATHY
     , L_GAME
 };
 
@@ -36,6 +37,8 @@ enum {
 // #define TO_WHRF TO(L_WHRF)
 // #define TO_FOLD TO(L_FOLD)
 // #define TO_APT3 TO(L_APT3)
+#define TO_WRTH TO(L_WREATHY)
+
 
 // nav
 #define NV_A    LT(L_NV, KC_A)
@@ -161,20 +164,32 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                             TO_PT,   KC_SPC,  KC_LGUI,        KC_TAB,  NU_SPC,  KC_ENT
 ),
 
+// qgdfv  jluo,
+// nsthy  wreai;
+// bcmpk  zx/'.
+// [L_WREATHY] = LAYOUT_6x3_3(
+//         _______, KC_Q,    KC_G,    KC_D,    KC_F,    KC_V,                             KC_J,    KC_L,    KC_U,    KC_O,    KC_COMM, _______,
+//         _______, KC_N,    KC_S,    KC_T,    KC_H,    KC_Y,                             KC_W,    KC_R,    KC_E,    KC_A,    KC_I,    KC_SCLN,
+//         _______, KC_B,    KC_C,    KC_M,    KC_P,    KC_K,                             KC_Z,    KC_X,    KC_SLSH, KC_QUOT, KC_DOT,  _______,
+//                                             _______, _______, _______,        _______, _______, _______
+// ),
+
+
+
 };
 
 
 
 enum combos {
     CB_BOOT
-    , CB_QW_ESC
-    , CB_WE_ESC
+//     , CB_QW_ESC
+//     , CB_WE_ESC
     , CB_PID
     , CB_Pass
     , CB_PassAdm
     , CB_Name
     , CB_Email
-    , CB_WE_TAB
+//     , CB_WE_TAB
     , CB_IO_QUOT
     , CB_Grave
     // keep at end
@@ -184,33 +199,34 @@ enum combos {
 
 uint16_t COMBO_LEN = CB_LENGTH;
 
-#define COMBO_TWO(NAME, KEY1, KEY2)  const uint16_t PROGMEM NAME[] = {KEY1, KEY2, COMBO_END};
+#define COMBO_2(NAME, KEY1, KEY2)  const uint16_t PROGMEM NAME[] = {KEY1, KEY2, COMBO_END};
+#define COMBO_3(NAME, KEY1, KEY2, KEY3)  const uint16_t PROGMEM NAME[] = {KEY1, KEY2, KEY3, COMBO_END};
 
-COMBO_TWO(BOOT, KC_B, KC_O);
-// COMBO_TWO(LSemi_ENT, AT_L, CT_SCLN);
-// COMBO_TWO(CommDot_ENT, KC_COMM, KC_DOT);
-COMBO_TWO(QW_ESC,   KC_Q, SY_W);
-COMBO_TWO(WE_ESC,   SY_W, KC_E);
-COMBO_TWO(PID,      KC_I, KC_D);
-COMBO_TWO(Pass,     CT_A, KC_P);
-COMBO_TWO(PassAdm,  AT_S, KC_P);
-COMBO_TWO(Name,     KC_N, AT_S);
-COMBO_TWO(Email,    KC_E, KC_M);
-COMBO_TWO(WE_TAB,   SY_W, PT_E);
-COMBO_TWO(IO_QUOT,  KC_I, KC_O);
-COMBO_TWO(Grave,    KC_COMM, KC_DOT);
+COMBO_2(BOOT, KC_B, KC_O);
+// COMBO_2(LSemi_ENT, AT_L, CT_SCLN);
+// COMBO_2(CommDot_ENT, KC_COMM, KC_DOT);
+// COMBO_2(QW_ESC,   KC_Q, SY_W);
+// COMBO_2(WE_ESC,   SY_W, KC_E);
+COMBO_2(PID,      KC_I, KC_D);
+COMBO_2(Pass,     CT_A, KC_P);
+COMBO_2(PassAdm,  AT_S, KC_P);
+COMBO_3(Name,     KC_K, KC_N, AT_S);
+COMBO_3(Email,    KC_K, KC_E, KC_M);
+// COMBO_2(WE_TAB,   SY_W, PT_E);
+COMBO_2(IO_QUOT,  KC_I, KC_O);
+COMBO_2(Grave,    KC_COMM, KC_DOT);
 
 
 combo_t key_combos[] = {
     [CB_BOOT] =         COMBO(BOOT, QK_BOOTLOADER),
-    [CB_QW_ESC] =       COMBO(QW_ESC, KC_ESC),
-    [CB_WE_ESC] =       COMBO(WE_ESC, KC_ESC),
+//     [CB_QW_ESC] =       COMBO(QW_ESC, KC_ESC),
+//     [CB_WE_ESC] =       COMBO(WE_ESC, KC_ESC),
     [CB_PID] =          COMBO_ACTION(PID),
     [CB_Pass] =         COMBO_ACTION(Pass),
     [CB_PassAdm] =      COMBO_ACTION(PassAdm),
     [CB_Name] =         COMBO_ACTION(Name),
     [CB_Email] =        COMBO_ACTION(Email),
-    [CB_WE_TAB] =       COMBO(WE_TAB, KC_TAB),
+//     [CB_WE_TAB] =       COMBO(WE_TAB, KC_TAB),
     [CB_IO_QUOT] =      COMBO(IO_QUOT, KC_QUOT),
     [CB_Grave] =        COMBO(Grave, KC_GRV),
 };
