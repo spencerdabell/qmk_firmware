@@ -4,6 +4,7 @@
 #define CT_N    CTL_T(KC_N)
 #define CT_SCLN CTL_T(KC_SCLN)
 #define CT_1    CTL_T(KC_1)
+#define CT_F1   CTL_T(KC_F1)
 #define CT_0    CTL_T(KC_0)
 
 // alt
@@ -11,6 +12,7 @@
 #define AT_L    ALT_T(KC_L)
 #define AT_S    ALT_T(KC_S)
 #define AT_2    ALT_T(KC_2)
+#define AT_F2   ALT_T(KC_F2)
 #define AT_9    ALT_T(KC_9)
 
 // gui
@@ -21,6 +23,7 @@
 #define GT_Z    GUI_T(KC_Z)
 #define GT_SLSH GUI_T(KC_SLSH)
 #define GT_3    GUI_T(KC_3)
+// #define GT_F3   GUI_T(KC_F3)
 #define GT_8    GUI_T(KC_8)
 
 // shift

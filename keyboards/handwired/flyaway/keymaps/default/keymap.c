@@ -9,28 +9,31 @@
 
 enum {
     L_BASE = 0
-    , L_PUNT
+    , L_QWERTY
+    , L_PUNCT
     , L_NAVI
-    , L_NUMR
-    , L_SYMB
-    , L_MOUS
-    , L_SOND
+    , L_NUMBER
+    , L_FN
+    , L_SYMBOL
+    , L_MOUSE
+    , L_SOUND
     , L_WREATHY
     , L_GAME
 };
 
 // LAYER SWITCHING
 #define TO_BS   TO(L_BASE)
-#define TO_PT   TO(L_PUNT)
-#define OSL_PT  OSL(L_PUNT)
+#define TO_QT   TO(L_QWERTY)
+#define TO_PT   TO(L_PUNCT)
+#define OSL_PT  OSL(L_PUNCT)
 #define TO_NV   TO(L_NAVI)
-#define TO_MS   TO(L_MOUS)
-#define TO_SD   TO(L_SOND)
-#define TO_NU   TO(L_NUMR)
+#define TO_MS   TO(L_MOUSE)
+#define TO_SD   TO(L_SOUND)
+#define TO_NU   TO(L_NUMBER)
 // #define TO_NU2  TO(L_NU2)
 // #define TO_NU3  TO(L_NU3)
 // #define TO_NU4  TO(L_NU4)
-#define TO_SY   TO(L_SYMB)
+#define TO_SY   TO(L_SYMBOL)
 #define TO_GAME TO(L_GAME)
 // #define TO_ISRT TO(L_ISRT)
 // #define TO_SEMI TO(L_SEMI)
@@ -46,33 +49,33 @@ enum {
 #define NV_H    LT(L_NAVI, KC_H)
 #define NV_J    LT(L_NAVI, KC_J)
 // mouse
-#define MS_K    LT(L_MOUS, KC_K)
-#define MS_R    LT(L_MOUS, KC_R)
-#define MS_V    LT(L_MOUS, KC_V)
+#define MS_K    LT(L_MOUSE, KC_K)
+#define MS_R    LT(L_MOUSE, KC_R)
+#define MS_V    LT(L_MOUSE, KC_V)
 // number
-#define NU_R    LT(L_NUMR, KC_R)
-#define NU_U    LT(L_NUMR, KC_U)
-#define NU_TAB  LT(L_NUMR, KC_TAB)
-#define NU_SPC  LT(L_NUMR, KC_SPC)
+#define NU_R    LT(L_NUMBER, KC_R)
+#define NU_U    LT(L_NUMBER, KC_U)
+#define NU_TAB  LT(L_NUMBER, KC_TAB)
+#define NU_SPC  LT(L_NUMBER, KC_SPC)
 // #define N4_C    LT(L_NU4, KC_C)
 
 // punctuation
-#define PT_BSPC LT(L_PUNT, KC_BSPC)
-#define PT_E    LT(L_PUNT, KC_E)
-#define PT_X    LT(L_PUNT, KC_X)
+#define PT_BSPC LT(L_PUNCT, KC_BSPC)
+#define PT_E    LT(L_PUNCT, KC_E)
+#define PT_X    LT(L_PUNCT, KC_X)
 
 // sound
-#define SD_MPLY LT(L_SOND, KC_MPLY)
-#define SD_Q    LT(L_SOND, KC_Q)
-#define SD_R    LT(L_SOND, KC_R)
-#define SD_Z    LT(L_SOND, KC_Z)
+#define SD_MPLY LT(L_SOUND, KC_MPLY)
+#define SD_Q    LT(L_SOUND, KC_Q)
+#define SD_R    LT(L_SOUND, KC_R)
+#define SD_Z    LT(L_SOUND, KC_Z)
 
 // symbol
-#define SY_O    LT(L_SYMB, KC_O)
-#define SY_DEL  LT(L_SYMB, KC_DEL)
-#define SY_D    LT(L_SYMB, KC_D)
-#define SY_GRV  LT(L_SYMB, KC_GRV)
-#define SY_W    LT(L_SYMB, KC_W)
+#define SY_O    LT(L_SYMBOL, KC_O)
+#define SY_DEL  LT(L_SYMBOL, KC_DEL)
+#define SY_D    LT(L_SYMBOL, KC_D)
+#define SY_GRV  LT(L_SYMBOL, KC_GRV)
+#define SY_W    LT(L_SYMBOL, KC_W)
 
 
 // NAV
@@ -111,12 +114,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                             TO_PT,   OSM_LST, U______,        KC_TAB,  NU_SPC,  KC_ENT
 ),
 
+[L_QWERTY] = LAYOUT_split_3x6_3(
+        U______, KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                             KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    U______,
+        KC_TAB,  KC_A,    KC_S,    KC_D,    NV_F,    KC_G,                             KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
+        U______, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                             KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, U______,
+                                            _______, _______, _______,        _______, _______, _______
+),
+
+
+
+
+
 // :;"!
 // .,'?
 // -+`=
-[L_PUNT] = LAYOUT_split_3x6_3(
+[L_PUNCT] = LAYOUT_split_3x6_3(
         _______, U______, TO_SY,   TO_NU,   TO_SD,   U______,                          U______, KC_COLN, KC_SCLN, KC_DQUO, KC_EXLM, _______,
-        _______, TO_GAME, U______, TO_BS,   TO_NV,   U______,                          U______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES, _______,
+        _______, TO_GAME, TO_QT,   TO_BS,   TO_NV,   U______,                          U______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES, _______,
         _______, U______, U______, U______, TO_MS,   U______,                          U______, KC_MINS, KC_PLUS, KC_GRV,  KC_EQL,  _______,
                                             _______, _______, _______,        _______, _______, _______
 ),
@@ -128,30 +142,59 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                             _______, _______, _______,        _______, _______, _______
 ),
 
-[L_NUMR] = LAYOUT_split_3x6_3(
+
+//  f1, f2, f3, f4, __  __, f7, f8, f9, f10,
+//   1,  2,  3,  4, __  __,  7,  8,  9,   0,
+// f11,f12, f5,  5, __  __,  6, f6,cap, esc,
+
+//  f1, f2, f3, f4, __  __, f7, f8, f9, f10,
+//   1,  2,  3,  4, __  __,  7,  8,  9,   0,
+// f11,f12, f5,  5, __  __,  6, f6,cap, esc,
+
+//   7,  8,  9,  0, __  __,  1,  2,  3,  4,
+//               6, __  __,  5
+[L_NUMBER] = LAYOUT_split_3x6_3(
         _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   U______,                          U______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  _______,
         _______, CT_1,    AT_2,    GT_3,    KC_4,    U______,                          U______, KC_7,    GT_8,    AT_9,    CT_0,    _______,
         _______, KC_F11,  KC_F12,  KC_F5,   KC_5,    U______,                          U______, KC_6,    KC_F6,   KC_CAPS, KC_ESC,  _______,
                                             _______, _______, _______,        _______, _______, _______
 ),
 
+// [L_NUMBER] = LAYOUT_split_3x6_3(
+//         _______, _______,_______,_______,   _______, U______,                          U______, _______, _______, _______, _______, _______,
+//         _______, CT_1,    AT_2,    GT_3,    KC_4,    U______,                          U______, KC_7,    GT_8,    AT_9,    CT_0,    _______,
+//         _______, _______,_______,_______,   _______, U______,                          U______, KC_6,    _______, KC_CAPS, KC_ESC,  _______,
+//                                             _______, _______, _______,        _______, _______, _______
+// ),
+
+
+// [L_FN] = LAYOUT_split_3x6_3(
+//         _______, _______,_______,_______,   _______, U______,                          U______, _______, _______, _______, _______, _______,
+//         _______, CT_F1,   AT_F2,   KC_F3,   KC_F4,   U______,                          U______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  _______,
+//         _______, KC_F11,  KC_F12,  _______, KC_F5,   U______,                          U______, KC_F6,   _______, KC_CAPS, KC_ESC,  _______,
+//                                             _______, _______, _______,        _______, _______, _______
+// ),
+
+
+
+
 // <>[]
 // (){}
 // ~|\/
 // _
-[L_SYMB] = LAYOUT_split_3x6_3(
+[L_SYMBOL] = LAYOUT_split_3x6_3(
         _______, _______, _______, _______, _______, U______,                          U______, KC_LT,   KC_GT,   KC_LBRC, KC_RBRC, _______,
         _______, _______, _______, _______, _______, U______,                          U______, KC_LPRN, KC_RPRN, KC_LCBR, KC_RCBR, _______,
         _______, _______, _______, _______, _______, U______,                          U______, KC_TILD, KC_PIPE, KC_BSLS, KC_SLSH, _______,
                                             _______, _______, _______,        _______, KC_UNDS, _______
 ),
-[L_MOUS] = LAYOUT_split_3x6_3(
+[L_MOUSE] = LAYOUT_split_3x6_3(
         _______, _______, _______, _______, _______, U______,                          U______, U______, KC_BTN1, KC_BTN2, KC_BTN3, _______,
         _______, _______, KC_BTN2, KC_BTN1, _______, U______,                          U______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, _______,
         _______, KC_ACL0, KC_ACL1, KC_ACL2, _______, U______,                          U______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, _______,
                                             _______, _______, _______,        _______, _______, _______
 ),
-[L_SOND] = LAYOUT_split_3x6_3(
+[L_SOUND] = LAYOUT_split_3x6_3(
         _______, _______, _______, KC_MPLY, KC_MNXT, _______,                          U______, KC_MSTP, KC_MPLY, _______, _______, _______,
         _______, _______, _______, _______, _______, _______,                          U______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, _______,
         _______, _______, _______, _______, _______, _______,                          U______, KC_MRWD, KC_MUTE, _______, KC_MFFD, _______,
