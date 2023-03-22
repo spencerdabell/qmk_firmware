@@ -9,11 +9,11 @@
 
 enum {
     L_BASE = 0
-    , L_QWERTY
+    // , L_QWERTY
     , L_PUNCT
     , L_NAVI
     , L_NUMBER
-    , L_FN
+    // , L_FN
     , L_SYMBOL
     , L_MOUSE
     , L_SOUND
@@ -23,7 +23,7 @@ enum {
 
 // LAYER SWITCHING
 #define TO_BS   TO(L_BASE)
-#define TO_QT   TO(L_QWERTY)
+// #define TO_QT   TO(L_QWERTY)
 #define TO_PT   TO(L_PUNCT)
 #define OSL_PT  OSL(L_PUNCT)
 #define TO_NV   TO(L_NAVI)
@@ -114,12 +114,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                             TO_PT,   OSM_LST, U______,        KC_TAB,  NU_SPC,  KC_ENT
 ),
 
-[L_QWERTY] = LAYOUT_split_3x6_3(
-        U______, KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                             KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    U______,
-        KC_TAB,  KC_A,    KC_S,    KC_D,    NV_F,    KC_G,                             KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-        U______, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                             KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, U______,
-                                            _______, _______, _______,        _______, _______, _______
-),
+// [L_QWERTY] = LAYOUT_split_3x6_3(
+//         U______, KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                             KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    U______,
+//         KC_TAB,  KC_A,    KC_S,    KC_D,    NV_F,    KC_G,                             KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
+//         U______, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                             KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, U______,
+//                                             _______, _______, _______,        _______, _______, _______
+// ),
 
 
 
@@ -130,7 +130,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // -+`=
 [L_PUNCT] = LAYOUT_split_3x6_3(
         _______, U______, TO_SY,   TO_NU,   TO_SD,   U______,                          U______, KC_COLN, KC_SCLN, KC_DQUO, KC_EXLM, _______,
-        _______, TO_GAME, TO_QT,   TO_BS,   TO_NV,   U______,                          U______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES, _______,
+        _______, TO_GAME, _______, TO_BS,   TO_NV,   U______,                          U______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES, _______,
         _______, U______, U______, U______, TO_MS,   U______,                          U______, KC_MINS, KC_PLUS, KC_GRV,  KC_EQL,  _______,
                                             _______, _______, _______,        _______, _______, _______
 ),
