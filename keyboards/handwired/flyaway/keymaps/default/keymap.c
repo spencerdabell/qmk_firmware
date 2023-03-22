@@ -1,6 +1,3 @@
-// Copyright 2022 beekeeb
-// SPDX-License-Identifier: GPL-2.0-or-later
-
 #include QMK_KEYBOARD_H
 
 #include "common_modkeys.h"
@@ -216,25 +213,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //         _______, KC_B,    KC_C,    KC_M,    KC_P,    KC_K,                             KC_Z,    KC_X,    KC_SLSH, KC_QUOT, KC_DOT,  _______,
 //                                             _______, _______, _______,        _______, _______, _______
 // ),
-
-
-
 };
 
 
 
 enum combos {
     CB_BOOT
-//     , CB_QW_ESC
-//     , CB_WE_ESC
     , CB_PID
     , CB_Pass
     , CB_PassAdm
     , CB_Name
     , CB_Email
-//     , CB_WE_TAB
     , CB_IO_QUOT
     , CB_Grave
+//     , CB_QW_ESC
+//     , CB_WE_ESC
+//     , CB_WE_TAB
     // keep at end
     , CB_LENGTH
 };
@@ -245,33 +239,31 @@ uint16_t COMBO_LEN = CB_LENGTH;
 #define COMBO_2(NAME, KEY1, KEY2)  const uint16_t PROGMEM NAME[] = {KEY1, KEY2, COMBO_END};
 #define COMBO_3(NAME, KEY1, KEY2, KEY3)  const uint16_t PROGMEM NAME[] = {KEY1, KEY2, KEY3, COMBO_END};
 
-COMBO_3(BOOT, KC_K, KC_B, KC_O);
+COMBO_3(BOOT,     NU_SPC, KC_B, KC_O);
+COMBO_3(PID,      NU_SPC, KC_I, KC_D);
+COMBO_3(Pass,     NU_SPC, CT_A, KC_P);
+COMBO_3(PassAdm,  NU_SPC, AT_S, KC_P);
+COMBO_3(Name,     NU_SPC, KC_N, AT_S);
+COMBO_3(Email,    NU_SPC, KC_E, KC_M);
+COMBO_2(IO_QUOT,  KC_I, KC_O);
+COMBO_2(Grave,    KC_COMM, KC_DOT);
 // COMBO_2(LSemi_ENT, AT_L, CT_SCLN);
 // COMBO_2(CommDot_ENT, KC_COMM, KC_DOT);
 // COMBO_2(QW_ESC,   KC_Q, SY_W);
 // COMBO_2(WE_ESC,   SY_W, KC_E);
-COMBO_3(PID,      KC_K, KC_I, KC_D);
-COMBO_3(Pass,     KC_K, CT_A, KC_P);
-COMBO_3(PassAdm,  KC_K, AT_S, KC_P);
-COMBO_3(Name,     KC_K, KC_N, AT_S);
-COMBO_3(Email,    KC_K, KC_E, KC_M);
 // COMBO_2(WE_TAB,   SY_W, PT_E);
-COMBO_2(IO_QUOT,  KC_I, KC_O);
-COMBO_2(Grave,    KC_COMM, KC_DOT);
-
-
 combo_t key_combos[] = {
     [CB_BOOT] =         COMBO(BOOT, QK_BOOTLOADER),
-//     [CB_QW_ESC] =       COMBO(QW_ESC, KC_ESC),
-//     [CB_WE_ESC] =       COMBO(WE_ESC, KC_ESC),
     [CB_PID] =          COMBO_ACTION(PID),
     [CB_Pass] =         COMBO_ACTION(Pass),
     [CB_PassAdm] =      COMBO_ACTION(PassAdm),
     [CB_Name] =         COMBO_ACTION(Name),
     [CB_Email] =        COMBO_ACTION(Email),
-//     [CB_WE_TAB] =       COMBO(WE_TAB, KC_TAB),
     [CB_IO_QUOT] =      COMBO(IO_QUOT, KC_QUOT),
     [CB_Grave] =        COMBO(Grave, KC_GRV),
+//     [CB_QW_ESC] =       COMBO(QW_ESC, KC_ESC),
+//     [CB_WE_ESC] =       COMBO(WE_ESC, KC_ESC),
+//     [CB_WE_TAB] =       COMBO(WE_TAB, KC_TAB),
 };
 
 void process_combo_event(uint16_t combo_index, bool pressed) {
