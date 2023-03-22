@@ -245,14 +245,14 @@ uint16_t COMBO_LEN = CB_LENGTH;
 #define COMBO_2(NAME, KEY1, KEY2)  const uint16_t PROGMEM NAME[] = {KEY1, KEY2, COMBO_END};
 #define COMBO_3(NAME, KEY1, KEY2, KEY3)  const uint16_t PROGMEM NAME[] = {KEY1, KEY2, KEY3, COMBO_END};
 
-COMBO_2(BOOT, KC_B, KC_O);
+COMBO_3(BOOT, KC_K, KC_B, KC_O);
 // COMBO_2(LSemi_ENT, AT_L, CT_SCLN);
 // COMBO_2(CommDot_ENT, KC_COMM, KC_DOT);
 // COMBO_2(QW_ESC,   KC_Q, SY_W);
 // COMBO_2(WE_ESC,   SY_W, KC_E);
-COMBO_2(PID,      KC_I, KC_D);
-COMBO_2(Pass,     CT_A, KC_P);
-COMBO_2(PassAdm,  AT_S, KC_P);
+COMBO_3(PID,      KC_K, KC_I, KC_D);
+COMBO_3(Pass,     KC_K, CT_A, KC_P);
+COMBO_3(PassAdm,  KC_K, AT_S, KC_P);
 COMBO_3(Name,     KC_K, KC_N, AT_S);
 COMBO_3(Email,    KC_K, KC_E, KC_M);
 // COMBO_2(WE_TAB,   SY_W, PT_E);
