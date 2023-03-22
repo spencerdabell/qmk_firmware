@@ -14,7 +14,7 @@ enum {
     , L_SYMBOL
     , L_MOUSE
     , L_SOUND
-    , L_WREATHY
+    // , L_WREATHY
     , L_GAME
 };
 
@@ -37,7 +37,7 @@ enum {
 // #define TO_WHRF TO(L_WHRF)
 // #define TO_FOLD TO(L_FOLD)
 // #define TO_APT3 TO(L_APT3)
-#define TO_WRTH TO(L_WREATHY)
+// #define TO_WRTH TO(L_WREATHY)
 
 
 // nav
@@ -126,7 +126,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // :;"!
     // .,'?
     // -+`=
-    _______, U______, TO_SY,   TO_NU,   TO_SD,   U______,                          U______, KC_COLN, KC_SCLN, KC_DQUO, KC_EXLM, _______,
+    _______, U______, _______, TO_NU,   TO_SD,   U______,                          U______, KC_COLN, KC_SCLN, KC_DQUO, KC_EXLM, _______,
     _______, TO_GAME, _______, TO_BS,   TO_NV,   U______,                          U______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES, _______,
     _______, U______, U______, U______, TO_MS,   U______,                          U______, KC_MINS, KC_PLUS, KC_GRV,  KC_EQL,  _______,
                                         _______, _______, _______,        _______, _______, _______
@@ -173,6 +173,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
 [L_SYMBOL] = LAYOUT_split_3x6_3(
+/*
+1234567890
+!@#$%^&*()
+
+12345678
+!@#$%^&*
+
+
+*/
     // <>[]
     // (){}
     // ~|\/
@@ -214,6 +223,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
 
+
+// combo indexes
 enum combos {
     CB_BOOT
     , CB_PID
@@ -222,11 +233,11 @@ enum combos {
     , CB_Name
     , CB_Email
     , CB_Grave
-    // keep at end
     , CB_LENGTH
 };
 uint16_t COMBO_LEN = CB_LENGTH;
 
+// combo key combinations
 #define COMBO_2(NAME, KEY1, KEY2)  const uint16_t PROGMEM NAME[] = {KEY1, KEY2, COMBO_END};
 #define COMBO_3(NAME, KEY1, KEY2, KEY3)  const uint16_t PROGMEM NAME[] = {KEY1, KEY2, KEY3, COMBO_END};
 COMBO_3(BOOT,     NU_SPC, KC_B, KC_O);
@@ -237,6 +248,7 @@ COMBO_3(Name,     NU_SPC, KC_N, AT_S);
 COMBO_3(Email,    NU_SPC, KC_E, KC_M);
 COMBO_2(Grave,    KC_COMM, KC_DOT);
 
+// combo behavior
 combo_t key_combos[] = {
     [CB_BOOT] =         COMBO(BOOT, QK_BOOTLOADER),
     [CB_PID] =          COMBO_ACTION(PID),
@@ -247,6 +259,7 @@ combo_t key_combos[] = {
     [CB_Grave] =        COMBO(Grave, KC_GRV),
 };
 
+// combo complex actions
 void process_combo_event(uint16_t combo_index, bool pressed) {
   switch(combo_index) {
     case CB_PID:      if (pressed) { SEND_STRING("P3101621"); } break;
