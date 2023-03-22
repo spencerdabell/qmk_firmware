@@ -10,7 +10,7 @@ enum {
     , L_PUNCT
     , L_NAVI
     , L_NUMBER
-    // , L_FN
+    , L_FN
     , L_SYMBOL
     , L_MOUSE
     , L_SOUND
@@ -55,6 +55,9 @@ enum {
 #define NU_TAB  LT(L_NUMBER, KC_TAB)
 #define NU_SPC  LT(L_NUMBER, KC_SPC)
 // #define N4_C    LT(L_NU4, KC_C)
+
+// fn
+#define FN_ENT  LT(L_FN, KC_ENT)
 
 // punctuation
 #define PT_BSPC LT(L_PUNCT, KC_BSPC)
@@ -120,7 +123,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     U______, KC_Q,    KC_W,    KC_E,    SD_R,    KC_T,                             KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    U______,
     KC_TAB,  CT_A,    AT_S,    KC_D,    NV_F,    KC_G,                             KC_H,    KC_J,    KC_K,    AT_L,    CT_SCLN, KC_QUOT,
     U______, GT_Z,    SY_X,    PT_C,    MS_V,    KC_B,                             KC_N,    KC_M,    KC_COMM, KC_DOT,  GT_SLSH, U______,
-                                        TO_PT,   OSM_LST, U______,        KC_TAB,  NU_SPC,  KC_ENT
+                                        TO_PT,   OSM_LST, KC_ESC,         KC_TAB,  NU_SPC,  FN_ENT
 ),
 [L_PUNCT] = LAYOUT_split_3x6_3(
     // :;"!
@@ -149,27 +152,27 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 //   7,  8,  9,  0, __  __,  1,  2,  3,  4,
 //               6, __  __,  5
+// [L_NUMBER] = LAYOUT_split_3x6_3(
+//     _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   U______,                          U______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  _______,
+//     _______, CT_1,    AT_2,    GT_3,    KC_4,    U______,                          U______, KC_7,    GT_8,    AT_9,    CT_0,    _______,
+//     _______, KC_F11,  KC_F12,  KC_F5,   KC_5,    U______,                          U______, KC_6,    KC_F6,   KC_CAPS, KC_ESC,  _______,
+//                                         _______, _______, _______,        _______, _______, _______
+// ),
+
 [L_NUMBER] = LAYOUT_split_3x6_3(
-    _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   U______,                          U______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  _______,
-    _______, CT_1,    AT_2,    GT_3,    KC_4,    U______,                          U______, KC_7,    GT_8,    AT_9,    CT_0,    _______,
-    _______, KC_F11,  KC_F12,  KC_F5,   KC_5,    U______,                          U______, KC_6,    KC_F6,   KC_CAPS, KC_ESC,  _______,
-                                        _______, _______, _______,        _______, _______, _______
+        _______, _______,_______,_______,   _______, U______,                          U______, _______, _______, _______, _______, _______,
+        _______, CT_1,    AT_2,    GT_3,    KC_4,    U______,                          U______, KC_7,    GT_8,    AT_9,    CT_0,    _______,
+        _______, _______,_______,_______,   KC_5,    U______,                          U______, KC_6,    _______, _______, KC_ESC,  _______,
+                                            _______, ST_5,    _______,        _______, _______, _______
 ),
 
-// [L_NUMBER] = LAYOUT_split_3x6_3(
-//         _______, _______,_______,_______,   _______, U______,                          U______, _______, _______, _______, _______, _______,
-//         _______, CT_1,    AT_2,    GT_3,    KC_4,    U______,                          U______, KC_7,    GT_8,    AT_9,    CT_0,    _______,
-//         _______, _______,_______,_______,   _______, U______,                          U______, KC_6,    _______, KC_CAPS, KC_ESC,  _______,
-//                                             _______, _______, _______,        _______, _______, _______
-// ),
 
-
-// [L_FN] = LAYOUT_split_3x6_3(
-//         _______, _______,_______,_______,   _______, U______,                          U______, _______, _______, _______, _______, _______,
-//         _______, CT_F1,   AT_F2,   KC_F3,   KC_F4,   U______,                          U______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  _______,
-//         _______, KC_F11,  KC_F12,  _______, KC_F5,   U______,                          U______, KC_F6,   _______, KC_CAPS, KC_ESC,  _______,
-//                                             _______, _______, _______,        _______, _______, _______
-// ),
+[L_FN] = LAYOUT_split_3x6_3(
+        _______, _______, _______, _______, _______, U______,                          U______, _______, _______, _______, _______, _______,
+        _______, CT_F1,   AT_F2,   KC_F3,   KC_F4,   U______,                          U______, KC_F7,   KC_F8,   AT_F9,   CT_F10,  _______,
+        _______, KC_F11,  KC_F12,  _______, KC_F5,   U______,                          U______, KC_F6,   _______, KC_CAPS, KC_ESC,  _______,
+                                            _______, ST_F5,   _______,        _______, _______, _______
+),
 
 
 [L_SYMBOL] = LAYOUT_split_3x6_3(

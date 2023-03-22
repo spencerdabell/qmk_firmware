@@ -6,6 +6,7 @@
 #define CT_1    LCTL_T(KC_1)
 #define CT_F1   LCTL_T(KC_F1)
 #define CT_0    RCTL_T(KC_0)
+#define CT_F10  RCTL_T(KC_F10)
 
 // alt
 #define AT_I    ALT_T(KC_I)
@@ -14,6 +15,7 @@
 #define AT_2    LALT_T(KC_2)
 #define AT_F2   LALT_T(KC_F2)
 #define AT_9    RALT_T(KC_9)
+#define AT_F9   RALT_T(KC_F9)
 
 // gui
 #define GT_E    GUI_T(KC_E)
@@ -32,7 +34,8 @@
 #define ST_ENT  SFT_T(KC_ENT)
 #define ST_SPC  SFT_T(KC_SPC)
 #define ST_UNDS SFT_T(KC_UNDS)
-
+#define ST_5    LSFT_T(KC_5)
+#define ST_F5   LSFT_T(KC_F5)
 
 // one shot mod
 #define OSM_LST OSM(MOD_LSFT)
