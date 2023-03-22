@@ -119,28 +119,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
 
-// qwert  yuiop
-// asdfg  hjkl;
-// zxcvb  nm,./
 [L_BASE] = LAYOUT_split_3x6_3(
+        // qwert  yuiop
+        // asdfg  hjkl;
+        // zxcvb  nm,./
         U______, KC_Q,    KC_W,    KC_E,    SD_R,    KC_T,                             KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    U______,
         KC_TAB,  CT_A,    AT_S,    KC_D,    NV_F,    KC_G,                             KC_H,    KC_J,    KC_K,    AT_L,    CT_SCLN, KC_QUOT,
         U______, GT_Z,    SY_X,    PT_C,    MS_V,    KC_B,                             KC_N,    KC_M,    KC_COMM, KC_DOT,  GT_SLSH, U______,
                                             TO_PT,   OSM_LST, U______,        KC_TAB,  NU_SPC,  KC_ENT
 ),
 
-// [L_QWERTY] = LAYOUT_split_3x6_3(
-//         U______, KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                             KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    U______,
-//         KC_TAB,  KC_A,    KC_S,    KC_D,    NV_F,    KC_G,                             KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-//         U______, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                             KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, U______,
-//                                             _______, _______, _______,        _______, _______, _______
-// ),
-
-
-// :;"!
-// .,'?
-// -+`=
 [L_PUNCT] = LAYOUT_split_3x6_3(
+        // :;"!
+        // .,'?
+        // -+`=
         _______, U______, TO_SY,   TO_NU,   TO_SD,   U______,                          U______, KC_COLN, KC_SCLN, KC_DQUO, KC_EXLM, _______,
         _______, TO_GAME, _______, TO_BS,   TO_NV,   U______,                          U______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES, _______,
         _______, U______, U______, U______, TO_MS,   U______,                          U______, KC_MINS, KC_PLUS, KC_GRV,  KC_EQL,  _______,
@@ -186,8 +178,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //         _______, KC_F11,  KC_F12,  _______, KC_F5,   U______,                          U______, KC_F6,   _______, KC_CAPS, KC_ESC,  _______,
 //                                             _______, _______, _______,        _______, _______, _______
 // ),
-
-
 
 
 // <>[]
@@ -239,34 +229,22 @@ enum combos {
     , CB_PassAdm
     , CB_Name
     , CB_Email
-    , CB_IO_QUOT
     , CB_Grave
-//     , CB_QW_ESC
-//     , CB_WE_ESC
-//     , CB_WE_TAB
     // keep at end
     , CB_LENGTH
 };
-
-
 uint16_t COMBO_LEN = CB_LENGTH;
 
 #define COMBO_2(NAME, KEY1, KEY2)  const uint16_t PROGMEM NAME[] = {KEY1, KEY2, COMBO_END};
 #define COMBO_3(NAME, KEY1, KEY2, KEY3)  const uint16_t PROGMEM NAME[] = {KEY1, KEY2, KEY3, COMBO_END};
-
 COMBO_3(BOOT,     NU_SPC, KC_B, KC_O);
 COMBO_3(PID,      NU_SPC, KC_I, KC_D);
 COMBO_3(Pass,     NU_SPC, CT_A, KC_P);
 COMBO_3(PassAdm,  NU_SPC, AT_S, KC_P);
 COMBO_3(Name,     NU_SPC, KC_N, AT_S);
 COMBO_3(Email,    NU_SPC, KC_E, KC_M);
-COMBO_2(IO_QUOT,  KC_I, KC_O);
 COMBO_2(Grave,    KC_COMM, KC_DOT);
-// COMBO_2(LSemi_ENT, AT_L, CT_SCLN);
-// COMBO_2(CommDot_ENT, KC_COMM, KC_DOT);
-// COMBO_2(QW_ESC,   KC_Q, SY_W);
-// COMBO_2(WE_ESC,   SY_W, KC_E);
-// COMBO_2(WE_TAB,   SY_W, PT_E);
+
 combo_t key_combos[] = {
     [CB_BOOT] =         COMBO(BOOT, QK_BOOTLOADER),
     [CB_PID] =          COMBO_ACTION(PID),
@@ -274,11 +252,7 @@ combo_t key_combos[] = {
     [CB_PassAdm] =      COMBO_ACTION(PassAdm),
     [CB_Name] =         COMBO_ACTION(Name),
     [CB_Email] =        COMBO_ACTION(Email),
-    [CB_IO_QUOT] =      COMBO(IO_QUOT, KC_QUOT),
     [CB_Grave] =        COMBO(Grave, KC_GRV),
-//     [CB_QW_ESC] =       COMBO(QW_ESC, KC_ESC),
-//     [CB_WE_ESC] =       COMBO(WE_ESC, KC_ESC),
-//     [CB_WE_TAB] =       COMBO(WE_TAB, KC_TAB),
 };
 
 void process_combo_event(uint16_t combo_index, bool pressed) {
