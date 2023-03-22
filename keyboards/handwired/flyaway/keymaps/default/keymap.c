@@ -60,6 +60,7 @@ enum {
 #define PT_BSPC LT(L_PUNCT, KC_BSPC)
 #define PT_E    LT(L_PUNCT, KC_E)
 #define PT_X    LT(L_PUNCT, KC_X)
+#define PT_C    LT(L_PUNCT, KC_C)
 
 // sound
 #define SD_MPLY LT(L_SOUND, KC_MPLY)
@@ -71,6 +72,7 @@ enum {
 #define SY_O    LT(L_SYMBOL, KC_O)
 #define SY_DEL  LT(L_SYMBOL, KC_DEL)
 #define SY_D    LT(L_SYMBOL, KC_D)
+#define SY_X    LT(L_SYMBOL, KC_X)
 #define SY_GRV  LT(L_SYMBOL, KC_GRV)
 #define SY_W    LT(L_SYMBOL, KC_W)
 
@@ -101,13 +103,29 @@ enum {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
+
+/*
+
++-------+-------+-------+-------+-------+-------+
+|       |       |       |       | sound |       |
++-------+-------+-------+-------+-------+-------+
+|       | ctrl  | alt   |       | nav   |       |
++-------+-------+-------+-------+-------+-------+
+|       | gui   | symb  | punct | mouse |       |
++-------+-------+-------+-------+-------+-------+
+
+
+*/
+
+
+
 // qwert  yuiop
 // asdfg  hjkl;
 // zxcvb  nm,./
 [L_BASE] = LAYOUT_split_3x6_3(
-        U______, KC_Q,    SY_W,    KC_E,    SD_R,    KC_T,                             KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    U______,
+        U______, KC_Q,    KC_W,    KC_E,    SD_R,    KC_T,                             KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    U______,
         KC_TAB,  CT_A,    AT_S,    KC_D,    NV_F,    KC_G,                             KC_H,    KC_J,    KC_K,    AT_L,    CT_SCLN, KC_QUOT,
-        U______, GT_Z,    PT_X,    KC_C,    MS_V,    KC_B,                             KC_N,    KC_M,    KC_COMM, KC_DOT,  GT_SLSH, U______,
+        U______, GT_Z,    SY_X,    PT_C,    MS_V,    KC_B,                             KC_N,    KC_M,    KC_COMM, KC_DOT,  GT_SLSH, U______,
                                             TO_PT,   OSM_LST, U______,        KC_TAB,  NU_SPC,  KC_ENT
 ),
 
@@ -117,9 +135,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //         U______, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                             KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, U______,
 //                                             _______, _______, _______,        _______, _______, _______
 // ),
-
-
-
 
 
 // :;"!
@@ -134,7 +149,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [L_NAVI] = LAYOUT_split_3x6_3(
         _______, Gu_GRV,  AS_TAB,  At_TAB,  _______, _______,                          U______, Ct_PGUP, KC_PGDN, KC_PGUP, Ct_PGDN, _______,
-        _______, KC_LCTL, _______, _______, _______, _______,                          KC_HOME, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_END, 
+        _______, KC_LCTL, _______, MT(MOD_LCTL | MOD_LALT, _______), _______, _______, KC_HOME, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_END, 
         _______, Ct_GRV,  DESK_LT, DESK_RT, _______, _______,                          U______, Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT, _______,
                                             _______, _______, _______,        _______, _______, _______
 ),
@@ -198,8 +213,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                             _______, _______, _______,        _______, _______, _______
 ),
 [L_GAME] = LAYOUT_split_3x6_3(
-        KC_ESC,  KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,                             KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_GRV, 
-        KC_TAB,  KC_TAB,  KC_A,    KC_S,    KC_D,    KC_F,                             KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
+        U______, KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,                             KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_GRV, 
+        U______, KC_TAB,  KC_A,    KC_S,    KC_D,    KC_F,                             KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
         U______, KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,                             KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, U______,
                                             TO_PT,   KC_SPC,  KC_LGUI,        KC_TAB,  NU_SPC,  KC_ENT
 ),
