@@ -47,6 +47,7 @@ enum {
 #define NV_F    LT(L_NAVI, KC_F)
 #define NV_H    LT(L_NAVI, KC_H)
 #define NV_J    LT(L_NAVI, KC_J)
+#define NV_T    LT(L_NAVI, KC_T)
 // mouse
 #define MS_K    LT(L_MOUSE, KC_K)
 #define MS_R    LT(L_MOUSE, KC_R)
@@ -175,13 +176,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [L_WREATHY] = LAYOUT_split_3x6_3(
     _______, KC_Q,    KC_G,    KC_D,    KC_F,    KC_V,                             KC_J,    KC_L,    KC_U,    KC_O,    KC_COMM, _______, // qgdfv  jluo,
-    _______, KC_N,    KC_S,    KC_T,    KC_H,    KC_Y,                             KC_W,    KC_R,    KC_E,    KC_A,    KC_I,    KC_SCLN, // nsthy  wreai;
+    _______, KC_N,    KC_S,    KC_T,    NV_H,    KC_Y,                             KC_W,    KC_R,    KC_E,    KC_A,    KC_I,    KC_SCLN, // nsthy  wreai;
     _______, KC_B,    KC_C,    KC_M,    KC_P,    KC_K,                             KC_Z,    KC_X,    KC_SLSH, KC_QUOT, KC_DOT,  _______, // bcmpk  zx/'.
                                         _______, _______, _______,        _______, _______, _______
 ),
 [L_ADEPT] = LAYOUT_split_3x6_3(
     _______, KC_SLSH, KC_W,    KC_M,    KC_P,    KC_Q,                             KC_Z,    KC_K,    KC_COMM, KC_DOT,  KC_SCLN, _______, // qgdfv  jluo,
-    _______, KC_R,    KC_S,    KC_N,    KC_T,    KC_G,                             KC_V,    KC_H,    KC_A,    KC_I,    KC_O,    _______, // nsthy  wreai;
+    _______, KC_R,    KC_S,    KC_N,    NV_T,    KC_G,                             KC_V,    KC_H,    KC_A,    KC_I,    KC_O,    _______, // nsthy  wreai;
     _______, KC_X,    KC_C,    KC_F,    KC_D,    KC_B,                             KC_J,    KC_L,    KC_U,    KC_Y,    KC_QUOT, _______, // bcmpk  zx/'.
                                         _______, ST_SPC, _______,         _______, KC_E, _______
 ),
