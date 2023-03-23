@@ -197,7 +197,7 @@ enum combos {
     , CB_PassAdm
     , CB_Name
     , CB_Email
-    , CB_Grave
+    , CB_Tilde
     , CB_LENGTH
 };
 uint16_t COMBO_LEN = CB_LENGTH;
@@ -211,7 +211,7 @@ COMBO_3(Pass,     NU_SPC, CT_A, KC_P);
 COMBO_3(PassAdm,  NU_SPC, AT_S, KC_P);
 COMBO_3(Name,     NU_SPC, KC_N, AT_S);
 COMBO_3(Email,    NU_SPC, KC_E, KC_M);
-COMBO_2(Grave,    KC_COMM, KC_DOT);
+COMBO_2(Tilde,    KC_COMM, KC_DOT);
 
 // combo behavior
 combo_t key_combos[] = {
@@ -221,7 +221,7 @@ combo_t key_combos[] = {
     [CB_PassAdm] =      COMBO_ACTION(PassAdm),
     [CB_Name] =         COMBO_ACTION(Name),
     [CB_Email] =        COMBO_ACTION(Email),
-    [CB_Grave] =        COMBO(Grave, KC_GRV),
+    [CB_Tilde] =        COMBO(Tilde, KC_TILD),
 };
 
 // combo complex actions
