@@ -11,7 +11,7 @@ enum {
     , L_NAVI
     , L_NUMBER
     , L_FN
-    , L_SYMBOL
+    , L_BRACKET
     , L_MOUSE
     , L_SOUND
     // , L_WREATHY
@@ -30,7 +30,7 @@ enum {
 // #define TO_NU2  TO(L_NU2)
 // #define TO_NU3  TO(L_NU3)
 // #define TO_NU4  TO(L_NU4)
-#define TO_SY   TO(L_SYMBOL)
+#define TO_SY   TO(L_BRACKET)
 #define TO_GAME TO(L_GAME)
 // #define TO_ISRT TO(L_ISRT)
 // #define TO_SEMI TO(L_SEMI)
@@ -71,13 +71,13 @@ enum {
 #define SD_R    LT(L_SOUND, KC_R)
 #define SD_Z    LT(L_SOUND, KC_Z)
 
-// symbol
-#define SY_O    LT(L_SYMBOL, KC_O)
-#define SY_DEL  LT(L_SYMBOL, KC_DEL)
-#define SY_D    LT(L_SYMBOL, KC_D)
-#define SY_X    LT(L_SYMBOL, KC_X)
-#define SY_GRV  LT(L_SYMBOL, KC_GRV)
-#define SY_W    LT(L_SYMBOL, KC_W)
+// bracket
+#define BR_O    LT(L_BRACKET, KC_O)
+#define BR_DEL  LT(L_BRACKET, KC_DEL)
+#define BR_D    LT(L_BRACKET, KC_D)
+#define BR_X    LT(L_BRACKET, KC_X)
+#define BR_GRV  LT(L_BRACKET, KC_GRV)
+#define BR_W    LT(L_BRACKET, KC_W)
 
 // nav
 #define Ct_PGUP C(KC_PGUP)
@@ -119,7 +119,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [L_BASE] = LAYOUT_split_3x6_3(
     U______, KC_Q,    KC_W,    KC_E,    SD_R,    KC_T,                             KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    U______,
     KC_TAB,  CT_A,    AT_S,    KC_D,    NV_F,    KC_G,                             KC_H,    KC_J,    KC_K,    AT_L,    CT_SCLN, KC_QUOT,
-    U______, GT_Z,    SY_X,    PT_C,    MS_V,    KC_B,                             KC_N,    KC_M,    KC_COMM, KC_DOT,  GT_SLSH, U______,
+    U______, GT_Z,    BR_X,    PT_C,    MS_V,    KC_B,                             KC_N,    KC_M,    KC_COMM, KC_DOT,  GT_SLSH, U______,
                                         TO_PT,   OSM_LST, KC_ESC,         KC_TAB,  NU_SPC,  FN_ENT
 ),
 [L_PUNCT] = LAYOUT_split_3x6_3(
@@ -143,21 +143,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 12345678
 !@#$%^&*
 */
+
         _______, U______, U______, U______, U______, U______,                          U______, U______, U______, U______, U______, _______,
         _______, CT_1,    AT_2,    GT_3,    KC_4,    U______,                          U______, KC_7,    GT_8,    AT_9,    CT_0,    _______,
         _______, U______, U______, U______, KC_5,    U______,                          U______, KC_6,    _______, _______, KC_ESC,  _______,
                                             _______, ST_5,    _______,        _______, _______, _______
 ),
-// F14 is XF86Launch5 ??
 [L_FN] = LAYOUT_split_3x6_3(
-        _______, U______, U______, _______, KC_F14,  U______,                          U______, KC_F17,  KC_F18,  _______, _______, _______,
+        _______, U______, U______, _______, KC_F14,  U______,                          U______, KC_F17,  KC_F18,  _______, _______, _______, // F14 is XF86Launch5 ??
         _______, CT_F1,   AT_F2,   KC_F3,   KC_F4,   U______,                          U______, KC_F7,   KC_F8,   AT_F9,   CT_F10,  _______,
         _______, KC_F11,  KC_F12,  KC_F15,  KC_F5,   U______,                          U______, KC_F6,   KC_F16,  KC_CAPS, KC_ESC,  _______,
                                             _______, ST_F5,   _______,        _______, _______, _______
 ),
-
-
-[L_SYMBOL] = LAYOUT_split_3x6_3(
+[L_BRACKET] = LAYOUT_split_3x6_3(
     _______, _______, _______, _______, _______, U______,                          U______, KC_BSLS, KC_SLSH, KC_PIPE, _______, _______, // \/|
     _______, _______, _______, _______, _______, U______,                          U______, KC_LPRN, KC_RPRN, KC_LCBR, KC_RCBR, _______, // (){}
     _______, _______, _______, _______, _______, U______,                          U______, KC_LT,   KC_GT,   KC_LBRC, KC_RBRC, _______, // <>[]
@@ -183,12 +181,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 // [L_WREATHY] = LAYOUT_6x3_3(
-// qgdfv  jluo,
-// nsthy  wreai;
-// bcmpk  zx/'.
-//         _______, KC_Q,    KC_G,    KC_D,    KC_F,    KC_V,                             KC_J,    KC_L,    KC_U,    KC_O,    KC_COMM, _______,
-//         _______, KC_N,    KC_S,    KC_T,    KC_H,    KC_Y,                             KC_W,    KC_R,    KC_E,    KC_A,    KC_I,    KC_SCLN,
-//         _______, KC_B,    KC_C,    KC_M,    KC_P,    KC_K,                             KC_Z,    KC_X,    KC_SLSH, KC_QUOT, KC_DOT,  _______,
+//         _______, KC_Q,    KC_G,    KC_D,    KC_F,    KC_V,                             KC_J,    KC_L,    KC_U,    KC_O,    KC_COMM, _______, // qgdfv  jluo,
+//         _______, KC_N,    KC_S,    KC_T,    KC_H,    KC_Y,                             KC_W,    KC_R,    KC_E,    KC_A,    KC_I,    KC_SCLN, // nsthy  wreai;
+//         _______, KC_B,    KC_C,    KC_M,    KC_P,    KC_K,                             KC_Z,    KC_X,    KC_SLSH, KC_QUOT, KC_DOT,  _______, // bcmpk  zx/'.
 //                                             _______, _______, _______,        _______, _______, _______
 // ),
 };
