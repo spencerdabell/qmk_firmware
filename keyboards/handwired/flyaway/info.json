@@ -10,7 +10,8 @@
         "extrakey": true,
         "mousekey": true,
         "combo": true,
-        "nkro": true
+        "nkro": true,
+        "caps_word": true
     },
     "processor": "RP2040",
     "url": "",

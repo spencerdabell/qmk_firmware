@@ -155,7 +155,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [L_FN] = LAYOUT_split_3x6_3(
     _______, U______, U______, _______, KC_F14,  U______,                          U______, KC_F17,  KC_F18,  _______, _______, _______, // F14 is XF86Launch5 ??
     _______, CT_F1,   AT_F2,   KC_F3,   KC_F4,   U______,                          U______, KC_F7,   KC_F8,   AT_F9,   CT_F10,  _______,
-    _______, KC_F11,  KC_F12,  KC_F15,  KC_F5,   U______,                          U______, KC_F6,   KC_F16,  KC_CAPS, KC_ESC,  _______,
+    _______, KC_F11,  KC_F12,  KC_F15,  KC_F5,   U______,                          U______, KC_F6,   CW_TOGG, KC_CAPS, KC_ESC,  _______,
                                         _______, ST_F5,   _______,        _______, _______, _______
 ),
 [L_BRACKET] = LAYOUT_split_3x6_3(
@@ -231,3 +231,9 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
     default: break;
   }
 }
+
+/*
+reference
+https://docs.qmk.fm/#/feature_caps_word
+
+*/
