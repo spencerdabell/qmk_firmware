@@ -1,3 +1,5 @@
+#define U______ KC_NO
+
 // control
 #define CT_A    LCTL_T(KC_A)
 #define CT_C    LCTL_T(KC_C)
@@ -40,3 +42,7 @@
 // one shot mod
 #define OSM_LST OSM(MOD_LSFT)
 #define OSM_RST OSM(MOD_RSFT)
+
+// ctrl alt, trans
+#define CTAT___ MT(MOD_LCTL|MOD_LALT, _______)
+        

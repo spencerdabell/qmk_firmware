@@ -2,8 +2,6 @@
 
 #include "common_modkeys.h"
 
-#define U______ KC_NO
-
 enum {
     // base
     L_QWERTY = 0
@@ -144,7 +142,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 [L_NAVI] = LAYOUT_split_3x6_3(
     _______, Gu_GRV,  AS_TAB,  At_TAB,  _______, _______,                          U______, Ct_PGUP, KC_PGDN, KC_PGUP, Ct_PGDN, _______,
-    _______, KC_LCTL, _______, MT(MOD_LCTL|MOD_LALT, _______), _______,   _______, KC_HOME, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_END,
+    _______, KC_LCTL, _______, CTAT___, _______, _______,                          KC_HOME, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_END,
     _______, Ct_GRV,  DESK_LT, DESK_RT, _______, _______,                          U______, Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT, _______,
                                         _______, _______, _______,        _______, _______, _______
 ),
@@ -185,8 +183,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                         TO_PT,   KC_SPC,  KC_LGUI,        KC_TAB,  NU_SPC,  KC_ENT
 ),
 };
-
-
 
 
 // combo indexes
