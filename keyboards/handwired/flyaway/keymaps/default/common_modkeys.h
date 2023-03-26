@@ -10,6 +10,16 @@
 #define CT_0    RCTL_T(KC_0)
 #define CT_F10  RCTL_T(KC_F10)
 
+
+#define Ct_C    C(KC_C)
+#define Ct_F    C(KC_F)
+#define Ct_S    C(KC_S)
+#define Ct_V    C(KC_V)
+#define Ct_X    C(KC_X)
+#define Ct_Y    C(KC_Y)
+#define Ct_Z    C(KC_Z)
+
+
 // alt
 #define AT_I    ALT_T(KC_I)
 #define AT_L    RALT_T(KC_L)

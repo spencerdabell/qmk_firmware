@@ -9,6 +9,7 @@ enum {
     , L_ADEPT
     , L_PUNCT
     , L_NAVI
+    , L_EDIT
     , L_NUMBER
     , L_FN
     , L_BRACKET
@@ -103,8 +104,11 @@ enum {
 #define APP_BCK KC_LALT
 
 
-const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+// edit
+#define ED_W    LT(L_EDIT, KC_W)
 
+
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
 /*
@@ -117,7 +121,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 +-------+-------+-------+-------+-------+-------+
 */
 [L_QWERTY] = LAYOUT_split_3x6_3(
-    U______, KC_Q,    KC_W,    KC_E,    SD_R,    KC_T,                             KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    U______,
+    U______, KC_Q,    ED_W,    KC_E,    SD_R,    KC_T,                             KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    U______,
     KC_TAB,  CT_A,    AT_S,    KC_D,    NV_F,    KC_G,                             KC_H,    KC_J,    KC_K,    AT_L,    CT_SCLN, KC_QUOT,
     U______, GT_Z,    BR_X,    PT_C,    MS_V,    KC_B,                             KC_N,    KC_M,    KC_COMM, KC_DOT,  GT_SLSH, U______,
                                         TO_PT,   ST_SPC, KC_ESC,          KC_TAB,  NU_SPC,  FN_ENT
@@ -144,6 +148,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, Gu_GRV,  AS_TAB,  At_TAB,  _______, _______,                          U______, Ct_PGUP, KC_PGDN, KC_PGUP, Ct_PGDN, _______,
     _______, KC_LCTL, _______, CTAT___, _______, _______,                          KC_HOME, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_END,
     _______, Ct_GRV,  DESK_LT, DESK_RT, _______, _______,                          U______, Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT, _______,
+                                        _______, _______, _______,        _______, _______, _______
+),
+[L_EDIT] = LAYOUT_split_3x6_3(
+    _______, _______, _______, _______, _______, _______,                          U______, _______, _______, _______, _______, _______,
+    _______, _______, _______, _______, _______, _______,                          U______, Ct_Z,    _______, _______, Ct_Y,    _______,
+    _______, _______, _______, _______, _______, _______,                          U______, _______, _______, _______, _______, _______,
                                         _______, _______, _______,        _______, _______, _______
 ),
 [L_NUMBER] = LAYOUT_split_3x6_3(
