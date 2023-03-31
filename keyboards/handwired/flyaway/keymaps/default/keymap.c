@@ -206,6 +206,7 @@ enum combos {
     , CB_Email
     , CB_Tilde
     , CB_PassLinux
+    , CB_CD_up
     , CB_LENGTH
 };
 uint16_t COMBO_LEN = CB_LENGTH;
@@ -217,10 +218,12 @@ COMBO_3(BOOT,      NU_SPC, KC_B, KC_O);
 COMBO_3(PID,       NU_SPC, KC_I, KC_D);
 COMBO_3(Pass,      NU_SPC, CT_A, KC_P);
 COMBO_3(PassAdm,   NU_SPC, AT_S, KC_P);
+COMBO_3(PassLinux, NU_SPC, NV_F, AT_L);
 COMBO_3(Name,      NU_SPC, KC_N, AT_S);
 COMBO_3(Email,     NU_SPC, KC_E, KC_M);
 COMBO_2(Tilde,     KC_COMM, KC_DOT);
-COMBO_3(PassLinux, NU_SPC, NV_F, AT_L);
+COMBO_3(CD_up,     NU_SPC, PT_C, KC_DOT);
+
 
 // combo behavior
 combo_t key_combos[] = {
@@ -228,10 +231,11 @@ combo_t key_combos[] = {
     [CB_PID] =          COMBO_ACTION(PID),
     [CB_Pass] =         COMBO_ACTION(Pass),
     [CB_PassAdm] =      COMBO_ACTION(PassAdm),
+    [CB_PassLinux] =    COMBO_ACTION(PassLinux),
     [CB_Name] =         COMBO_ACTION(Name),
     [CB_Email] =        COMBO_ACTION(Email),
     [CB_Tilde] =        COMBO(Tilde, KC_TILD),
-    [CB_PassLinux] =    COMBO_ACTION(PassLinux),
+    [CB_CD_up] =        COMBO_ACTION(CD_up),
 };
 
 // combo complex actions
@@ -240,9 +244,11 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
     case CB_PID:       if (pressed) { SEND_STRING(ID_CHARTER); } break;
     case CB_Pass:      if (pressed) { SEND_STRING(PW_CHARTER); } break;
     case CB_PassAdm:   if (pressed) { SEND_STRING(PW_CHARTER_ADM); } break;
+    case CB_PassLinux: if (pressed) { SEND_STRING(PW_LINUX); } break;
     case CB_Name:      if (pressed) { SEND_STRING("spencerdabell"); } break;
     case CB_Email:     if (pressed) { SEND_STRING("spencerdabell@gmail.com"); } break;
-    case CB_PassLinux: if (pressed) { SEND_STRING(PW_LINUX); } break;
+    case CB_CD_up:     if (pressed) { SEND_STRING("cd .."); tap_code16(KC_ENT); } break;
+   
     default: break;
   }
 }
