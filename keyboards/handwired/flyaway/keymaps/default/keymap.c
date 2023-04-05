@@ -8,6 +8,7 @@ enum {
     L_QWERTY = 0
     , L_WREATHY
     , L_ADEPT
+    , L_LAYER
     , L_PUNCT
     , L_NAVI
     , L_EDIT
@@ -21,6 +22,7 @@ enum {
 
 // LAYER SWITCHING
 #define TO_QT   TO(L_QWERTY)
+#define TO_LY   TO(L_LAYER)
 #define TO_PT   TO(L_PUNCT)
 #define OSL_PT  OSL(L_PUNCT)
 #define TO_NV   TO(L_NAVI)
@@ -125,7 +127,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     U______, KC_Q,    ED_W,    KC_E,    SD_R,    KC_T,                             KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    U______,
     KC_TAB,  CT_A,    AT_S,    KC_D,    NV_F,    KC_G,                             KC_H,    KC_J,    KC_K,    AT_L,    CT_SCLN, KC_QUOT,
     U______, GT_Z,    BR_X,    PT_C,    MS_V,    KC_B,                             KC_N,    KC_M,    KC_COMM, KC_DOT,  GT_SLSH, U______,
-                                        TO_PT,   ST_SPC, KC_ESC,          KC_TAB,  NU_SPC,  FN_ENT
+                                        KC_ENT,  ST_SPC,  TO_LY,          KC_TAB,  NU_SPC,  FN_ENT
 ),
 [L_WREATHY] = LAYOUT_split_3x6_3(
     _______, KC_Q,    KC_G,    KC_D,    KC_F,    KC_V,                             KC_J,    KC_L,    KC_U,    KC_O,    KC_COMM, _______, // qgdfv  jluo,
@@ -139,10 +141,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, KC_X,    KC_C,    KC_F,    KC_D,    KC_B,                             KC_J,    KC_L,    KC_U,    KC_Y,    KC_QUOT, _______, // bcmpk  zx/'.
                                         _______, ST_SPC, _______,         _______, KC_E, _______
 ),
+[L_LAYER] = LAYOUT_split_3x6_3(
+    _______, U______, _______, TO_NU,   TO_SD,   U______,                          U______, U______, U______, U______, U______, U______,
+    _______, TO_GAME, _______, TO_QT,   TO_NV,   U______,                          U______, U______, U______, U______, U______, U______,
+    _______, TO_WRTH, TO_ADPT, U______, TO_MS,   U______,                          U______, U______, U______, U______, U______, U______,
+                                        _______, _______, _______,        _______, _______, _______
+),
 [L_PUNCT] = LAYOUT_split_3x6_3(
-    _______, U______, _______, TO_NU,   TO_SD,   U______,                          U______, KC_COLN, KC_SCLN, KC_DQUO, KC_EXLM, _______, // :;"!
-    _______, TO_GAME, _______, TO_QT,   TO_NV,   U______,                          U______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES, _______, // .,'?
-    _______, TO_WRTH, TO_ADPT, U______, TO_MS,   U______,                          U______, KC_MINS, KC_PLUS, KC_GRV,  KC_EQL,  _______, // -+`=
+    _______, U______, U______, U______, U______, U______,                          U______, KC_COLN, KC_SCLN, KC_DQUO, KC_EXLM, _______, // :;"!
+    _______, U______, U______, U______, U______, U______,                          U______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES, _______, // .,'?
+    _______, U______, U______, U______, U______, U______,                          U______, KC_MINS, KC_PLUS, KC_GRV,  KC_EQL,  _______, // -+`=
                                         _______, _______, _______,        _______, _______, _______
 ),
 [L_NAVI] = LAYOUT_split_3x6_3(
