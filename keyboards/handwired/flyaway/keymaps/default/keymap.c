@@ -82,6 +82,7 @@ enum {
 #define BR_X    LT(L_BRACKET, KC_X)
 #define BR_GRV  LT(L_BRACKET, KC_GRV)
 #define BR_W    LT(L_BRACKET, KC_W)
+#define BR_ESC  LT(L_BRACKET, KC_ESC)
 
 // nav
 #define Ct_PGUP C(KC_PGUP)
@@ -126,8 +127,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [L_QWERTY] = LAYOUT_split_3x6_3(
     U______, KC_Q,    ED_W,    KC_E,    SD_R,    KC_T,                             KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    U______,
     KC_TAB,  CT_A,    AT_S,    KC_D,    NV_F,    KC_G,                             KC_H,    KC_J,    KC_K,    AT_L,    CT_SCLN, KC_QUOT,
-    U______, GT_Z,    BR_X,    PT_C,    MS_V,    KC_B,                             KC_N,    KC_M,    KC_COMM, KC_DOT,  GT_SLSH, U______,
-                                        KC_ESC,  ST_SPC,  TO_LY,          KC_TAB,  NU_SPC,  FN_ENT
+    U______, GT_Z,    PT_X,    KC_C,    MS_V,    KC_B,                             KC_N,    KC_M,    KC_COMM, KC_DOT,  GT_SLSH, U______,
+                                        BR_ESC,  ST_SPC,  TO_LY,          KC_TAB,  NU_SPC,  FN_ENT
 ),
 [L_WREATHY] = LAYOUT_split_3x6_3(
     _______, KC_Q,    KC_G,    KC_D,    KC_F,    KC_V,                             KC_J,    KC_L,    KC_U,    KC_O,    KC_COMM, _______, // qgdfv  jluo,
