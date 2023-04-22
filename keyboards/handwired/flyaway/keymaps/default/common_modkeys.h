@@ -13,8 +13,13 @@
 
 #define Ct_C    C(KC_C)
 #define Ct_F    C(KC_F)
+#define Ct_K    C(KC_K)
+#define Ct_R    C(KC_R)
 #define Ct_S    C(KC_S)
+#define Ct_T    C(KC_T)
+#define Ct_U    C(KC_U)
 #define Ct_V    C(KC_V)
+#define Ct_W    C(KC_W)
 #define Ct_X    C(KC_X)
 #define Ct_Y    C(KC_Y)
 #define Ct_Z    C(KC_Z)

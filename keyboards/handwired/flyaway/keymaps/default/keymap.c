@@ -161,9 +161,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                         _______, _______, _______,        _______, _______, _______
 ),
 [L_EDIT] = LAYOUT_split_3x6_3(
-    _______, _______, _______, _______, _______, _______,                          U______, _______, _______, _______, _______, _______,
+    _______, _______, _______, _______, _______, _______,                          U______, _______, Ct_S,    _______, _______, _______,
     _______, _______, _______, _______, _______, _______,                          U______, Ct_Z,    Ct_C,    Ct_V,    Ct_Y,    _______,
-    _______, _______, _______, _______, _______, _______,                          U______, _______, Ct_X,    _______, _______, _______,
+    _______, _______, _______, _______, _______, _______,                          U______, Ct_U,    Ct_X,    _______, Ct_K,    _______,
                                         _______, _______, _______,        _______, _______, _______
 ),
 [L_NUMBER] = LAYOUT_split_3x6_3(
@@ -179,10 +179,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                         _______, ST_F5,   _______,        _______, _______, _______
 ),
 [L_BRACKET] = LAYOUT_split_3x6_3(
-    _______, _______, _______, _______, _______, U______,                          U______, KC_BSLS, KC_SLSH, KC_PIPE, _______, _______, // \/|
-    _______, _______, _______, _______, _______, U______,                          U______, KC_LPRN, KC_RPRN, KC_LCBR, KC_RCBR, _______, // (){}
-    _______, _______, _______, _______, _______, U______,                          U______, KC_LT,   KC_GT,   KC_LBRC, KC_RBRC, _______, // <>[]
-                                        _______, _______, _______,        KC_EQL,  KC_UNDS, _______
+    _______, _______, _______, _______, _______, U______,                          U______, _______, KC_AMPR, KC_PIPE, _______, _______, // \/|
+    _______, KC_LT,   KC_MINS, KC_EQL,  KC_GT,   U______,                          U______, KC_LPRN, KC_RPRN, KC_LCBR, KC_RCBR, _______, // (){}
+    _______, KC_BSLS, _______, KC_EXLM, KC_EXLM, U______,                          U______, _______, KC_LBRC, KC_RBRC, _______, _______, // <>[]
+                                        _______, _______, _______,        _______, KC_UNDS, _______
 ),
 [L_MOUSE] = LAYOUT_split_3x6_3(
     _______, _______, _______, _______, _______, U______,                          U______, U______, KC_BTN1, KC_BTN2, KC_BTN3, _______,
@@ -208,6 +208,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // combo indexes
 enum combos {
     CB_BOOT
+    , CB_BOOT_TGB
     , CB_PID
     , CB_Pass
     , CB_PassAdm
@@ -216,6 +217,8 @@ enum combos {
     , CB_Tilde
     , CB_PassLinux
     , CB_CD_up
+    , CB_Underscore
+    , CB_Escape
     , CB_LENGTH
 };
 uint16_t COMBO_LEN = CB_LENGTH;
@@ -224,6 +227,7 @@ uint16_t COMBO_LEN = CB_LENGTH;
 #define COMBO_2(NAME, KEY1, KEY2)  const uint16_t PROGMEM NAME[] = {KEY1, KEY2, COMBO_END};
 #define COMBO_3(NAME, KEY1, KEY2, KEY3)  const uint16_t PROGMEM NAME[] = {KEY1, KEY2, KEY3, COMBO_END};
 COMBO_3(BOOT,      NU_SPC, KC_B, KC_O);
+COMBO_3(BOOT_TGB,  KC_T, KC_G, KC_B);
 COMBO_3(PID,       NU_SPC, KC_I, KC_D);
 COMBO_3(Pass,      NU_SPC, CT_A, KC_P);
 COMBO_3(PassAdm,   NU_SPC, AT_S, KC_P);
@@ -232,11 +236,15 @@ COMBO_3(Name,      NU_SPC, KC_N, AT_S);
 COMBO_3(Email,     NU_SPC, KC_E, KC_M);
 COMBO_2(Tilde,     KC_COMM, KC_DOT);
 COMBO_3(CD_up,     NU_SPC, PT_C, KC_DOT);
+COMBO_2(Underscore,KC_TAB, NU_SPC);
+COMBO_2(Escape,     AT_S,   KC_D);
+
 
 
 // combo behavior
 combo_t key_combos[] = {
     [CB_BOOT] =         COMBO(BOOT, QK_BOOTLOADER),
+    [CB_BOOT_TGB] =     COMBO(BOOT_TGB, QK_BOOTLOADER),
     [CB_PID] =          COMBO_ACTION(PID),
     [CB_Pass] =         COMBO_ACTION(Pass),
     [CB_PassAdm] =      COMBO_ACTION(PassAdm),
@@ -245,6 +253,9 @@ combo_t key_combos[] = {
     [CB_Email] =        COMBO_ACTION(Email),
     [CB_Tilde] =        COMBO(Tilde, KC_TILD),
     [CB_CD_up] =        COMBO_ACTION(CD_up),
+    [CB_Underscore] =   COMBO(Underscore, KC_UNDS),
+    [CB_Escape] =       COMBO(Escape, KC_ESC),
+    
 };
 
 // combo complex actions
