@@ -219,6 +219,7 @@ enum combos {
     , CB_CD_up
     , CB_Underscore
     , CB_Escape
+    , CB_Enter
     , CB_LENGTH
 };
 uint16_t COMBO_LEN = CB_LENGTH;
@@ -237,7 +238,8 @@ COMBO_3(Email,     NU_SPC, KC_E, KC_M);
 COMBO_2(Tilde,     KC_COMM, KC_DOT);
 COMBO_3(CD_up,     NU_SPC, PT_C, KC_DOT);
 COMBO_2(Underscore,KC_TAB, NU_SPC);
-COMBO_2(Escape,     AT_S,   KC_D);
+COMBO_2(Escape,    AT_S, KC_D);
+COMBO_2(Enter,     KC_K, AT_L);
 
 
 
@@ -255,6 +257,7 @@ combo_t key_combos[] = {
     [CB_CD_up] =        COMBO_ACTION(CD_up),
     [CB_Underscore] =   COMBO(Underscore, KC_UNDS),
     [CB_Escape] =       COMBO(Escape, KC_ESC),
+    [CB_Enter] =        COMBO(Enter, KC_ENT),
     
 };
 
