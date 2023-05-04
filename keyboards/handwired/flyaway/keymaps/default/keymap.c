@@ -6,8 +6,9 @@
 enum {
     // base
     L_QWERTY = 0
-    , L_WREATHY
-    , L_ADEPT
+    // , L_WREATHY
+    // , L_ADEPT
+    , L_FOLD
     , L_LAYER
     , L_PUNCT
     , L_NAVI
@@ -41,6 +42,8 @@ enum {
 // #define TO_APT3 TO(L_APT3)
 #define TO_WRTH TO(L_WREATHY)
 #define TO_ADPT TO(L_ADEPT)
+#define TO_FOLD TO(L_FOLD)
+
 
 
 // nav
@@ -130,24 +133,38 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     U______, GT_Z,    PT_X,    KC_C,    MS_V,    KC_B,                             KC_N,    KC_M,    KC_COMM, KC_DOT,  GT_SLSH, U______,
                                         BR_ESC,  ST_SPC,  TO_LY,          KC_TAB,  NU_SPC,  FN_ENT
 ),
-[L_WREATHY] = LAYOUT_split_3x6_3(
-    _______, KC_Q,    KC_G,    KC_D,    KC_F,    KC_V,                             KC_J,    KC_L,    KC_U,    KC_O,    KC_COMM, _______, // qgdfv  jluo,
-    _______, KC_N,    KC_S,    KC_T,    NV_H,    KC_Y,                             KC_W,    KC_R,    KC_E,    KC_A,    KC_I,    KC_SCLN, // nsthy  wreai;
-    _______, KC_B,    KC_C,    KC_M,    KC_P,    KC_K,                             KC_Z,    KC_X,    KC_SLSH, KC_QUOT, KC_DOT,  _______, // bcmpk  zx/'.
-                                        _______, _______, _______,        _______, _______, _______
+// [L_WREATHY] = LAYOUT_split_3x6_3(
+//     _______, KC_Q,    KC_G,    KC_D,    KC_F,    KC_V,                             KC_J,    KC_L,    KC_U,    KC_O,    KC_COMM, _______, // qgdfv  jluo,
+//     _______, KC_N,    KC_S,    KC_T,    NV_H,    KC_Y,                             KC_W,    KC_R,    KC_E,    KC_A,    KC_I,    KC_SCLN, // nsthy  wreai;
+//     _______, KC_B,    KC_C,    KC_M,    KC_P,    KC_K,                             KC_Z,    KC_X,    KC_SLSH, KC_QUOT, KC_DOT,  _______, // bcmpk  zx/'.
+//                                         _______, _______, _______,        _______, _______, _______
+// ),
+// [L_ADEPT] = LAYOUT_split_3x6_3(
+//     _______, KC_SLSH, KC_W,    KC_M,    KC_P,    KC_Q,                             KC_Z,    KC_K,    KC_COMM, KC_DOT,  KC_SCLN, _______, //
+//     _______, KC_R,    KC_S,    KC_N,    NV_T,    KC_G,                             KC_V,    KC_H,    KC_A,    KC_I,    KC_O,    _______, //
+//     _______, KC_X,    KC_C,    KC_F,    KC_D,    KC_B,                             KC_J,    KC_L,    KC_U,    KC_Y,    KC_QUOT, _______, //
+//                                         _______, ST_SPC, _______,         _______, KC_E, _______
+// ),
+
+
+
+// 
+// 
+// 
+[L_FOLD] = LAYOUT_split_3x6_3(
+    _______, _______, _______, _______, _______, _______,                             _______, KC_L,    KC_U,    KC_O,    KC_Y,    _______, // 
+    _______, KC_S,    KC_T,    KC_D,    KC_N,    _______,                             _______, KC_R,    KC_E,    KC_A,    KC_I,    _______, // 
+    _______, KC_F,    _______, _______, _______, _______,                             _______, _______, _______, _______, _______, _______, // 
+                                        _______, KC_H,    KC_M,        _______, _______, _______
 ),
-[L_ADEPT] = LAYOUT_split_3x6_3(
-    _______, KC_SLSH, KC_W,    KC_M,    KC_P,    KC_Q,                             KC_Z,    KC_K,    KC_COMM, KC_DOT,  KC_SCLN, _______, // qgdfv  jluo,
-    _______, KC_R,    KC_S,    KC_N,    NV_T,    KC_G,                             KC_V,    KC_H,    KC_A,    KC_I,    KC_O,    _______, // nsthy  wreai;
-    _______, KC_X,    KC_C,    KC_F,    KC_D,    KC_B,                             KC_J,    KC_L,    KC_U,    KC_Y,    KC_QUOT, _______, // bcmpk  zx/'.
-                                        _______, ST_SPC, _______,         _______, KC_E, _______
-),
+
 [L_LAYER] = LAYOUT_split_3x6_3(
     _______, U______, _______, TO_NU,   TO_SD,   U______,                          U______, U______, U______, U______, U______, U______,
-    _______, TO_GAME, _______, TO_QT,   TO_NV,   U______,                          U______, U______, U______, U______, U______, U______,
-    _______, TO_WRTH, TO_ADPT, U______, TO_MS,   U______,                          U______, U______, U______, U______, U______, U______,
+    _______, TO_FOLD, _______, TO_QT,   TO_NV,   U______,                          U______, U______, U______, U______, U______, U______,
+    _______, TO_GAME, _______, U______, TO_MS,   U______,                          U______, U______, U______, U______, U______, U______,
                                         _______, _______, _______,        _______, _______, _______
 ),
+
 [L_PUNCT] = LAYOUT_split_3x6_3(
     _______, U______, U______, U______, U______, U______,                          U______, KC_COLN, KC_SCLN, KC_DQUO, KC_EXLM, _______, // :;"!
     _______, U______, U______, U______, U______, U______,                          U______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES, _______, // .,'?
@@ -220,6 +237,7 @@ enum combos {
     , CB_Underscore
     , CB_Escape
     , CB_Enter
+    , CB_Tab
     , CB_LENGTH
 };
 uint16_t COMBO_LEN = CB_LENGTH;
@@ -240,7 +258,7 @@ COMBO_3(CD_up,     NU_SPC, PT_C, KC_DOT);
 COMBO_2(Underscore,KC_TAB, NU_SPC);
 COMBO_2(Escape,    AT_S, KC_D);
 COMBO_2(Enter,     KC_K, AT_L);
-
+COMBO_2(Tab,       KC_I, KC_O);
 
 
 // combo behavior
@@ -258,6 +276,7 @@ combo_t key_combos[] = {
     [CB_Underscore] =   COMBO(Underscore, KC_UNDS),
     [CB_Escape] =       COMBO(Escape, KC_ESC),
     [CB_Enter] =        COMBO(Enter, KC_ENT),
+    [CB_Tab] =          COMBO(Tab, KC_TAB),
     
 };
 
