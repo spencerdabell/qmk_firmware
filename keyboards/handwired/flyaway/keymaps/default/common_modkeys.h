@@ -3,6 +3,7 @@
 // control
 #define CT_A    LCTL_T(KC_A)
 #define CT_C    LCTL_T(KC_C)
+#define CT_I    LCTL_T(KC_I)
 #define CT_N    LCTL_T(KC_N)
 #define CT_SCLN RCTL_T(KC_SCLN)
 #define CT_1    LCTL_T(KC_1)
@@ -26,6 +27,7 @@
 
 
 // alt
+#define AT_A    ALT_T(KC_A)
 #define AT_I    ALT_T(KC_I)
 #define AT_L    RALT_T(KC_L)
 #define AT_S    LALT_T(KC_S)
@@ -35,8 +37,9 @@
 #define AT_F9   RALT_T(KC_F9)
 
 // gui
-#define GT_E    GUI_T(KC_E)
+#define GT_B    GUI_T(KC_B)
 #define GT_D    GUI_T(KC_D)
+#define GT_E    GUI_T(KC_E)
 #define GT_K    GUI_T(KC_K)
 #define GT_T    GUI_T(KC_T)
 #define GT_Z    LGUI_T(KC_Z)

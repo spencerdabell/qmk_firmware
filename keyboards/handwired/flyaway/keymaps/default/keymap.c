@@ -147,15 +147,38 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // ),
 
 
+/*
 
-// 
-// 
-// 
+ 
+v m h g w  z x u o ,        rl-eai
+s t n d p  j r e a i
+y k b c f  q l ' ; .
+
+
+v m l c p  x f o u j        sturdy
+s t r d y  . n a e i
+z k q g w  b h ' ; ,
+
+tnsrhldcmfpgwyb vkxjqz
+tnsr h ld cm fpg pwyb vkxjqz
+
+
+  d  luoy
+nstc reai
+ 
+   h 
+
+wreathy
+q g d f v  j l u o ,
+n s t h y  w r e a i ;
+b c m p k  z x / ' .
+
+*/
 [L_FOLD] = LAYOUT_split_3x6_3(
-    _______, _______, _______, _______, _______, _______,                             _______, KC_L,    KC_U,    KC_O,    KC_Y,    _______, // 
-    _______, KC_S,    KC_T,    KC_D,    KC_N,    _______,                             _______, KC_R,    KC_E,    KC_A,    KC_I,    _______, // 
-    _______, KC_F,    _______, _______, _______, _______,                             _______, _______, _______, _______, _______, _______, // 
-                                        _______, KC_H,    KC_M,        _______, _______, _______
+    _______, KC_Q,    KC_G,    KC_D,    KC_F,    KC_V,                             KC_J,    KC_L,    KC_U,    KC_O,    KC_Y,    _______, // 
+    _______, CT_N,    AT_S,    KC_T,    NV_H,    KC_Y,                             KC_W,    KC_R,    KC_E,    AT_A,    CT_I,    KC_QUOT, // 
+    _______, GT_B,    KC_C,    KC_M,    KC_P,    KC_K,                             KC_Z,    KC_X,    KC_COMM, KC_DOT,  GT_SLSH, _______, // 
+                                        BR_ESC,  ST_SPC,  TO_LY,          KC_TAB,  NU_SPC,  FN_ENT
 ),
 
 [L_LAYER] = LAYOUT_split_3x6_3(
