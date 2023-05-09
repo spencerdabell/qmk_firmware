@@ -143,9 +143,9 @@ b c m p k  z x / ' .
 */
 [L_FOLD] = LAYOUT_split_3x6_3(
     U______, KC_Q,    ED_G,    KC_D,    SD_F,    KC_V,                             KC_Z,    KC_L,    KC_U,    KC_O,    KC_Y,    U______,
-    _______, CT_N,    AT_S,    KC_T,    NV_H,    KC_K,                             KC_W,    KC_R,    KC_E,    AT_A,    CT_I,    KC_QUOT,
-    U______, GT_B,    PT_C,    KC_M,    MS_P,    U______,                          KC_J,    KC_X,    KC_COMM, KC_DOT,  GT_SLSH, U______,
-                                        BR_ESC,  ST_SPC,  TO_LY,          KC_TAB,  NU_SPC,  FN_ENT
+    KC_ESC,  CT_N,    AT_S,    KC_T,    NV_H,    KC_K,                             KC_W,    KC_R,    KC_E,    AT_A,    CT_I,    KC_QUOT,
+    U______, GT_B,    PT_C,    KC_M,    MS_P,    KC_SCLN,                          KC_J,    KC_X,    KC_COMM, KC_DOT,  GT_SLSH, U______,
+                                        BR_ESC,  ST_H,  TO_LY,            KC_TAB,  NU_SPC,  FN_ENT
 ),
 [L_LAYER] = LAYOUT_split_3x6_3(
     _______, U______, _______, TO_NU,   TO_SD,   U______,                          U______, U______, U______, U______, U______, U______,
