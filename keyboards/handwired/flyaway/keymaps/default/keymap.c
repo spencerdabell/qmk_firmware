@@ -55,6 +55,7 @@ enum {
 // mouse
 #define MS_K    LT(L_MOUSE, KC_K)
 #define MS_R    LT(L_MOUSE, KC_R)
+#define MS_P    LT(L_MOUSE, KC_P)
 #define MS_V    LT(L_MOUSE, KC_V)
 // number
 #define NU_R    LT(L_NUMBER, KC_R)
@@ -67,16 +68,18 @@ enum {
 #define FN_ENT  LT(L_FN, KC_ENT)
 
 // punctuation
-#define PT_BSPC LT(L_PUNCT, KC_BSPC)
+#define PT_C    LT(L_PUNCT, KC_C)
 #define PT_E    LT(L_PUNCT, KC_E)
 #define PT_X    LT(L_PUNCT, KC_X)
-#define PT_C    LT(L_PUNCT, KC_C)
+#define PT_BSPC LT(L_PUNCT, KC_BSPC)
 
 // sound
 #define SD_MPLY LT(L_SOUND, KC_MPLY)
+#define SD_F    LT(L_SOUND, KC_F)
 #define SD_Q    LT(L_SOUND, KC_Q)
 #define SD_R    LT(L_SOUND, KC_R)
 #define SD_Z    LT(L_SOUND, KC_Z)
+
 
 // bracket
 #define BR_O    LT(L_BRACKET, KC_O)
@@ -112,21 +115,15 @@ enum {
 
 
 // edit
+#define ED_G    LT(L_EDIT, KC_G)
 #define ED_W    LT(L_EDIT, KC_W)
+
+
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
-/*
-+-------+-------+-------+-------+-------+-------+
-|       |       |       |       | sound |       |
-+-------+-------+-------+-------+-------+-------+
-|       | ctrl  | alt   |       | nav   |       |
-+-------+-------+-------+-------+-------+-------+
-|       | gui   | symb  | punct | mouse |       |
-+-------+-------+-------+-------+-------+-------+
-*/
 [L_QWERTY] = LAYOUT_split_3x6_3(
     U______, KC_Q,    ED_W,    KC_E,    SD_R,    KC_T,                             KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    U______,
     KC_TAB,  CT_A,    AT_S,    KC_D,    NV_F,    KC_G,                             KC_H,    KC_J,    KC_K,    AT_L,    CT_SCLN, KC_QUOT,
@@ -139,21 +136,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //     _______, KC_B,    KC_C,    KC_M,    KC_P,    KC_K,                             KC_Z,    KC_X,    KC_SLSH, KC_QUOT, KC_DOT,  _______, // bcmpk  zx/'.
 //                                         _______, _______, _______,        _______, _______, _______
 // ),
-// [L_ADEPT] = LAYOUT_split_3x6_3(
-//     _______, KC_SLSH, KC_W,    KC_M,    KC_P,    KC_Q,                             KC_Z,    KC_K,    KC_COMM, KC_DOT,  KC_SCLN, _______, //
-//     _______, KC_R,    KC_S,    KC_N,    NV_T,    KC_G,                             KC_V,    KC_H,    KC_A,    KC_I,    KC_O,    _______, //
-//     _______, KC_X,    KC_C,    KC_F,    KC_D,    KC_B,                             KC_J,    KC_L,    KC_U,    KC_Y,    KC_QUOT, _______, //
-//                                         _______, ST_SPC, _______,         _______, KC_E, _______
-// ),
-
 
 /*
-
- 
 v m h g w  z x u o ,        rl-eai
 s t n d p  j r e a i
 y k b c f  q l ' ; .
-
 
 v m l c p  x f o u j        sturdy
 s t r d y  . n a e i
@@ -162,24 +149,23 @@ z k q g w  b h ' ; ,
 tnsrhldcmfpgwyb vkxjqz
 tnsr h ld cm fpg pwyb vkxjqz
 
-
   d  luoy
 nstc reai
  
    h 
 
-wreathy
-q g d f v  j l u o ,
+q g d f v  j l u o ,        wreathy
 n s t h y  w r e a i ;
 b c m p k  z x / ' .
 
 */
 [L_FOLD] = LAYOUT_split_3x6_3(
-    _______, KC_Q,    KC_G,    KC_D,    KC_F,    KC_V,                             KC_J,    KC_L,    KC_U,    KC_O,    KC_Y,    _______, // 
-    _______, CT_N,    AT_S,    KC_T,    NV_H,    KC_Y,                             KC_W,    KC_R,    KC_E,    AT_A,    CT_I,    KC_QUOT, // 
-    _______, GT_B,    KC_C,    KC_M,    KC_P,    KC_K,                             KC_Z,    KC_X,    KC_COMM, KC_DOT,  GT_SLSH, _______, // 
+    _______, KC_Q,    ED_G,    KC_D,    SD_F,    KC_V,                             KC_Z,    KC_L,    KC_U,    KC_O,    KC_Y,    _______, // 
+    _______, CT_N,    AT_S,    KC_T,    NV_H,    KC_K,                             KC_W,    KC_R,    KC_E,    AT_A,    CT_I,    KC_QUOT, // 
+    _______, GT_B,    PT_C,    KC_M,    MS_P,    U______,                          KC_J,    KC_X,    KC_COMM, KC_DOT,  GT_SLSH, _______, // 
                                         BR_ESC,  ST_SPC,  TO_LY,          KC_TAB,  NU_SPC,  FN_ENT
 ),
+
 
 [L_LAYER] = LAYOUT_split_3x6_3(
     _______, U______, _______, TO_NU,   TO_SD,   U______,                          U______, U______, U______, U______, U______, U______,
