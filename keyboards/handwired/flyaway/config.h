@@ -14,6 +14,6 @@
 #define IGNORE_MOD_TAP_INTERRUPT
 // #define PERMISSIVE_HOLD
 
-#define COMBO_TERM 20
+#define COMBO_TERM 40
 
 
