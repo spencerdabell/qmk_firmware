@@ -6,8 +6,6 @@
 enum {
     // base
     L_QWERTY = 0
-    // , L_WREATHY
-    // , L_ADEPT
     , L_FOLD
     , L_LAYER
     , L_PUNCT
@@ -45,7 +43,6 @@ enum {
 #define TO_FOLD TO(L_FOLD)
 
 
-
 // nav
 #define NV_A    LT(L_NAVI, KC_A)
 #define NV_F    LT(L_NAVI, KC_F)
@@ -62,7 +59,6 @@ enum {
 #define NU_U    LT(L_NUMBER, KC_U)
 #define NU_TAB  LT(L_NUMBER, KC_TAB)
 #define NU_SPC  LT(L_NUMBER, KC_SPC)
-// #define N4_C    LT(L_NU4, KC_C)
 
 // fn
 #define FN_ENT  LT(L_FN, KC_ENT)
@@ -226,6 +222,9 @@ enum combos {
     , CB_Escape
     , CB_Enter
     , CB_Tab
+    , CB_Fold_Z
+    , CB_Fold_V
+    , CB_Fold_K
     , CB_LENGTH
 };
 uint16_t COMBO_LEN = CB_LENGTH;
@@ -248,6 +247,11 @@ COMBO_2(Escape,    AT_S, KC_D);
 COMBO_2(Enter,     KC_K, AT_L);
 COMBO_2(Tab,       KC_I, KC_O);
 
+COMBO_2(Fold_Z,    ST_H, AT_S);
+COMBO_2(Fold_V,    ST_H, SD_F);
+COMBO_2(Fold_K,    ST_H, ED_G);
+
+
 
 // combo behavior
 combo_t key_combos[] = {
@@ -265,7 +269,10 @@ combo_t key_combos[] = {
     [CB_Escape] =       COMBO(Escape, KC_ESC),
     [CB_Enter] =        COMBO(Enter, KC_ENT),
     [CB_Tab] =          COMBO(Tab, KC_TAB),
-    
+
+    [CB_Fold_Z] =       COMBO(Fold_Z, KC_Z),
+    [CB_Fold_V] =       COMBO(Fold_V, KC_V),
+    [CB_Fold_K] =       COMBO(Fold_K, KC_K),
 };
 
 // combo complex actions
