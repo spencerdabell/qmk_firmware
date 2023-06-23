@@ -67,6 +67,7 @@ enum {
 #define PT_C    LT(L_PUNCT, KC_C)
 #define PT_E    LT(L_PUNCT, KC_E)
 #define PT_X    LT(L_PUNCT, KC_X)
+#define PT__    LT(L_PUNCT, KC_NO)
 #define PT_BSPC LT(L_PUNCT, KC_BSPC)
 
 // sound
@@ -177,7 +178,7 @@ b c m p k  z x / ' .
 [L_NUMBER] = LAYOUT_split_3x6_3(
     _______, U______, U______, U______, U______, U______,                          U______, U______, U______, U______, U______, _______,
     _______, CT_1,    AT_2,    GT_3,    KC_4,    U______,                          U______, KC_7,    GT_8,    AT_9,    CT_0,    _______,
-    _______, U______, U______, U______, KC_5,    U______,                          U______, KC_6,    _______, _______, _______, _______,
+    _______, U______, PT__,    U______, KC_5,    U______,                          U______, KC_6,    _______, _______, _______, _______,
                                         _______, ST_5,    _______,        _______, _______, _______
 ),
 [L_FN] = LAYOUT_split_3x6_3(
