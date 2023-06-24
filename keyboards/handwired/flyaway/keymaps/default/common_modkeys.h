@@ -176,7 +176,8 @@
 #define ST_F7   SFT_T(KC_F7)
 #define ST_F8   SFT_T(KC_F8)
 #define ST_F9   SFT_T(KC_F9)
-#define ST_F0   SFT_T(KC_F0)
+#define ST_F10  SFT_T(KC_F10)
+
 
 
 

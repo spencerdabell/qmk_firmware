@@ -45,15 +45,63 @@ enum {
 
 // nav
 #define NV_A    LT(L_NAVI, KC_A)
+#define NV_B    LT(L_NAVI, KC_B)
+#define NV_C    LT(L_NAVI, KC_C)
+#define NV_D    LT(L_NAVI, KC_D)
+#define NV_E    LT(L_NAVI, KC_E)
 #define NV_F    LT(L_NAVI, KC_F)
+#define NV_G    LT(L_NAVI, KC_G)
 #define NV_H    LT(L_NAVI, KC_H)
+#define NV_I    LT(L_NAVI, KC_I)
 #define NV_J    LT(L_NAVI, KC_J)
+#define NV_K    LT(L_NAVI, KC_K)
+#define NV_L    LT(L_NAVI, KC_L)
+#define NV_M    LT(L_NAVI, KC_M)
+#define NV_N    LT(L_NAVI, KC_N)
+#define NV_O    LT(L_NAVI, KC_O)
+#define NV_P    LT(L_NAVI, KC_P)
+#define NV_Q    LT(L_NAVI, KC_Q)
+#define NV_R    LT(L_NAVI, KC_R)
+#define NV_S    LT(L_NAVI, KC_S)
 #define NV_T    LT(L_NAVI, KC_T)
+#define NV_U    LT(L_NAVI, KC_U)
+#define NV_V    LT(L_NAVI, KC_V)
+#define NV_W    LT(L_NAVI, KC_W)
+#define NV_X    LT(L_NAVI, KC_X)
+#define NV_Y    LT(L_NAVI, KC_Y)
+#define NV_Z    LT(L_NAVI, KC_Z)
+#define NV__    LT(L_NAVI, KC_NO)
+
 // mouse
+#define MS_A    LT(L_MOUSE, KC_A)
+#define MS_B    LT(L_MOUSE, KC_B)
+#define MS_C    LT(L_MOUSE, KC_C)
+#define MS_D    LT(L_MOUSE, KC_D)
+#define MS_E    LT(L_MOUSE, KC_E)
+#define MS_F    LT(L_MOUSE, KC_F)
+#define MS_G    LT(L_MOUSE, KC_G)
+#define MS_H    LT(L_MOUSE, KC_H)
+#define MS_I    LT(L_MOUSE, KC_I)
+#define MS_J    LT(L_MOUSE, KC_J)
 #define MS_K    LT(L_MOUSE, KC_K)
-#define MS_R    LT(L_MOUSE, KC_R)
+#define MS_L    LT(L_MOUSE, KC_L)
+#define MS_M    LT(L_MOUSE, KC_M)
+#define MS_N    LT(L_MOUSE, KC_N)
+#define MS_O    LT(L_MOUSE, KC_O)
 #define MS_P    LT(L_MOUSE, KC_P)
+#define MS_Q    LT(L_MOUSE, KC_Q)
+#define MS_R    LT(L_MOUSE, KC_R)
+#define MS_S    LT(L_MOUSE, KC_S)
+#define MS_T    LT(L_MOUSE, KC_T)
+#define MS_U    LT(L_MOUSE, KC_U)
 #define MS_V    LT(L_MOUSE, KC_V)
+#define MS_W    LT(L_MOUSE, KC_W)
+#define MS_X    LT(L_MOUSE, KC_X)
+#define MS_Y    LT(L_MOUSE, KC_Y)
+#define MS_Z    LT(L_MOUSE, KC_Z)
+#define MS__    LT(L_MOUSE, KC_NO)
+
+
 // number
 #define NU_R    LT(L_NUMBER, KC_R)
 #define NU_U    LT(L_NUMBER, KC_U)
@@ -136,21 +184,29 @@ tnsr h ld cm fpg pwyb vkxjqz
 
 
 
-
-
-
-
-
 q g d f v  j l u o ,        wreathy
 n s t h y  w r e a i ;
 b c m p k  z x / ' .
+
+
+_ g d f v  j m u o _        wheat
+n s t c y  x h e a i/
+q b p w k  z l , . /
+
+r
+
+s t n _ _  _ h e a i 
+
+      r
+
 */
 [L_FOLD] = LAYOUT_split_3x6_3(
     U______, KC_Q,    ED_G,    KC_D,    SD_F,    KC_V,                             KC_Z,    KC_L,    KC_U,    KC_O,    KC_Y,    U______,
     KC_ESC,  CT_N,    AT_S,    KC_T,    NV_H,    KC_K,                             KC_W,    KC_R,    KC_E,    AT_A,    CT_I,    KC_QUOT,
     U______, GT_B,    PT_C,    KC_M,    MS_P,    KC_SCLN,                          KC_J,    KC_X,    KC_COMM, KC_DOT,  GT_SLSH, U______,
-                                        BR_ESC,  ST_H,  TO_LY,            KC_TAB,  NU_SPC,  FN_ENT
+                                        BR_ESC,  ST_H,    TO_LY,          KC_TAB,  NU_SPC,  FN_ENT
 ),
+
 [L_LAYER] = LAYOUT_split_3x6_3(
     _______, U______, _______, TO_NU,   TO_SD,   U______,                          U______, U______, U______, U______, U______, U______,
     _______, TO_FOLD, _______, TO_QT,   TO_NV,   U______,                          U______, U______, U______, U______, U______, U______,
@@ -188,9 +244,9 @@ b c m p k  z x / ' .
                                         _______, ST_F5,   _______,        _______, _______, _______
 ),
 [L_BRACKET] = LAYOUT_split_3x6_3(
-    _______, _______, _______, _______, _______, U______,                          U______, _______, KC_AMPR, KC_PIPE, _______, _______, // \/|
-    _______, KC_LT,   KC_MINS, KC_EQL,  KC_GT,   U______,                          U______, KC_LPRN, KC_RPRN, KC_LCBR, KC_RCBR, _______, // (){}
-    _______, KC_BSLS, _______, KC_EXLM, KC_EXLM, U______,                          U______, _______, KC_LBRC, KC_RBRC, _______, _______, // <>[]
+    _______, _______, _______, _______, _______, U______,                          U______, KC_PIPE, KC_LBRC, KC_RBRC, _______, _______,
+    _______, _______, KC_MINS, KC_EQL,  _______, U______,                          U______, KC_LPRN, KC_RPRN, KC_LCBR, KC_RCBR, _______,
+    _______, _______, _______, KC_EXLM, KC_EXLM, U______,                          U______, KC_BSLS, KC_LT,   KC_GT,   _______, _______,
                                         _______, _______, _______,        _______, KC_UNDS, _______
 ),
 [L_MOUSE] = LAYOUT_split_3x6_3(
