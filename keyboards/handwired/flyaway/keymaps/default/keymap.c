@@ -10,6 +10,7 @@ enum {
     , L_LAYER
     , L_PUNCT
     , L_NAVI
+    , L_CTRL
     , L_EDIT
     , L_NUMBER
     , L_FN
@@ -71,6 +72,9 @@ enum {
 #define NV_Y    LT(L_NAVI, KC_Y)
 #define NV_Z    LT(L_NAVI, KC_Z)
 #define NV__    LT(L_NAVI, KC_NO)
+
+// ctrl
+#define CR_D    LT(L_CTRL, KC_D)
 
 // mouse
 #define MS_A    LT(L_MOUSE, KC_A)
@@ -165,7 +169,7 @@ enum {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [L_QWERTY] = LAYOUT_split_3x6_3(
     U______, KC_Q,    ED_W,    KC_E,    SD_R,    KC_T,                             KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    U______,
-    KC_TAB,  CT_A,    AT_S,    KC_D,    NV_F,    KC_G,                             KC_H,    KC_J,    KC_K,    AT_L,    CT_SCLN, KC_QUOT,
+    KC_TAB,  CT_A,    AT_S,    CR_D,    NV_F,    KC_G,                             KC_H,    KC_J,    KC_K,    AT_L,    CT_SCLN, KC_QUOT,
     U______, GT_Z,    PT_X,    KC_C,    MS_V,    KC_B,                             KC_N,    KC_M,    KC_COMM, KC_DOT,  GT_SLSH, U______,
                                         BR_ESC,  ST_SPC,  TO_LY,          KC_TAB,  NU_SPC,  FN_ENT
 ),
@@ -189,24 +193,35 @@ n s t h y  w r e a i ;
 b c m p k  z x / ' .
 
 
-_ g d f v  j m u o _        wheat
-n s t c y  x h e a i/
-q b p w k  z l , . /
+1 2 3 4 .  . 7 v v v
+        .  . 6
+      5 .  .  
 
-r
+tnsr h ld
 
-s t n _ _  _ h e a i 
+
+n s t c  _  _ h e a i 
 
       r
 
+
+L W U O Y
+R H E A I
+
+
+qgdfvzluoy
+nsthkwreai
+bcmp;jx,./
+
 */
+
+
 [L_FOLD] = LAYOUT_split_3x6_3(
     U______, KC_Q,    ED_G,    KC_D,    SD_F,    KC_V,                             KC_Z,    KC_L,    KC_U,    KC_O,    KC_Y,    U______,
     KC_ESC,  CT_N,    AT_S,    KC_T,    NV_H,    KC_K,                             KC_W,    KC_R,    KC_E,    AT_A,    CT_I,    KC_QUOT,
     U______, GT_B,    PT_C,    KC_M,    MS_P,    KC_SCLN,                          KC_J,    KC_X,    KC_COMM, KC_DOT,  GT_SLSH, U______,
                                         BR_ESC,  ST_H,    TO_LY,          KC_TAB,  NU_SPC,  FN_ENT
 ),
-
 [L_LAYER] = LAYOUT_split_3x6_3(
     _______, U______, _______, TO_NU,   TO_SD,   U______,                          U______, U______, U______, U______, U______, U______,
     _______, TO_FOLD, _______, TO_QT,   TO_NV,   U______,                          U______, U______, U______, U______, U______, U______,
@@ -223,6 +238,12 @@ s t n _ _  _ h e a i
     _______, Gu_GRV,  AS_TAB,  At_TAB,  _______, _______,                          U______, Ct_PGUP, KC_PGDN, KC_PGUP, Ct_PGDN, _______,
     _______, KC_LCTL, _______, CTAT___, _______, _______,                          KC_HOME, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_END,
     _______, Ct_GRV,  DESK_LT, DESK_RT, _______, _______,                          U______, Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT, _______,
+                                        _______, _______, _______,        _______, _______, _______
+),
+[L_CTRL] = LAYOUT_split_3x6_3(
+    _______, _______, _______, _______, _______, _______,                          U______, _______, _______, _______, _______, _______,
+    _______, _______, _______, _______, _______, _______,                          _______,S(KC_TAB),KC_ENT,  KC_ESC,  KC_TAB,  _______,
+    _______, _______, _______, _______, _______, _______,                          U______, _______, _______, _______, _______, _______,
                                         _______, _______, _______,        _______, _______, _______
 ),
 [L_EDIT] = LAYOUT_split_3x6_3(
@@ -298,7 +319,7 @@ uint16_t COMBO_LEN = CB_LENGTH;
 #define COMBO_3(NAME, KEY1, KEY2, KEY3)  const uint16_t PROGMEM NAME[] = {KEY1, KEY2, KEY3, COMBO_END};
 COMBO_3(BOOT,      NU_SPC, KC_B, KC_O);
 COMBO_3(BOOT_TGB,  KC_T, KC_G, KC_B);
-COMBO_3(PID,       NU_SPC, KC_I, KC_D);
+COMBO_3(PID,       NU_SPC, KC_I, CR_D);
 COMBO_3(Pass,      NU_SPC, CT_A, KC_P);
 COMBO_3(PassAdm,   NU_SPC, AT_S, KC_P);
 COMBO_3(PassLinux, NU_SPC, NV_F, AT_L);
@@ -307,7 +328,7 @@ COMBO_3(Email,     NU_SPC, KC_E, KC_M);
 COMBO_2(Tilde,     KC_COMM, KC_DOT);
 COMBO_3(CD_up,     NU_SPC, PT_C, KC_DOT);
 COMBO_2(Underscore,KC_TAB, NU_SPC);
-COMBO_2(Escape,    AT_S, KC_D);
+COMBO_2(Escape,    AT_S, CR_D);
 COMBO_2(Enter,     KC_K, AT_L);
 COMBO_2(Tab,       KC_I, KC_O);
 
