@@ -188,4 +188,3 @@
 
 // ctrl alt, trans
 #define CTAT___ MT(MOD_LCTL|MOD_LALT, _______)
-        
