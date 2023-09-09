@@ -73,9 +73,6 @@ enum {
 #define NV_Z    LT(L_NAVI, KC_Z)
 #define NV__    LT(L_NAVI, KC_NO)
 
-// ctrl
-#define CR_D    LT(L_CTRL, KC_D)
-
 // mouse
 #define MS_A    LT(L_MOUSE, KC_A)
 #define MS_B    LT(L_MOUSE, KC_B)
@@ -168,11 +165,11 @@ enum {
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-[L_QWERTY] = LAYOUT_split_3x6_3(
-    U______, KC_Q,    ED_W,    KC_E,    SD_R,    KC_T,           KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    U______,
-    U______, CT_A,    AT_S,    CR_D,    NV_F,    KC_G,           KC_H,    KC_J,    KC_K,    AT_L,    CT_SCLN, U______,
-    U______, GT_Z,    PT_X,    KC_C,    MS_V,    KC_B,           KC_N,    KC_M,    KC_COMM, KC_DOT,  GT_SLSH, U______,
-                               BR_ESC,  ST_SPC,  TO_LY,          KC_TAB,  NU_SPC,  KC_ENT
+[L_QWERTY] = LAYOUT_split_3x5_3(
+    KC_Q,    ED_W,    KC_E,    SD_R,    KC_T,           KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
+    CT_A,    AT_S,    ST_D,    NV_F,    KC_G,           KC_H,    KC_J,    ST_K,    AT_L,    CT_SCLN,
+    GT_Z,    PT_X,    KC_C,    MS_V,    KC_B,           KC_N,    KC_M,    KC_COMM, KC_DOT,  GT_SLSH,
+                      BR_ESC,  ST_TAB,  TO_LY,          KC_TAB,  NU_SPC,  KC_ENT
 ),
 
 /*
@@ -216,12 +213,11 @@ bcmp;jx,./
 
 */
 
-
-[L_FOLD] = LAYOUT_split_3x6_3(
-    U______, KC_Q,    ED_G,    KC_D,    SD_F,    KC_V,           KC_Z,    KC_L,    KC_U,    KC_O,    KC_Y,    U______,
-    U______, CT_N,    AT_S,    KC_T,    NV_H,    KC_K,           KC_W,    KC_R,    KC_E,    AT_A,    CT_I,    U______,
-    U______, GT_B,    PT_C,    KC_M,    MS_P,    KC_SCLN,        KC_J,    KC_X,    KC_COMM, KC_DOT,  GT_SLSH, U______,
-                               _______, ST_H,    TO_LY,          _______, NU_SPC,  _______
+[L_FOLD] = LAYOUT_split_3x5_3(
+    KC_Q,    ED_G,    KC_D,    SD_F,    KC_V,           KC_Z,    KC_L,    KC_U,    KC_O,    KC_Y,
+    CT_N,    AT_S,    KC_T,    NV_H,    KC_K,           KC_W,    KC_R,    KC_E,    AT_A,    CT_I,
+    GT_B,    PT_C,    KC_M,    MS_P,    KC_SCLN,        KC_J,    KC_X,    KC_COMM, KC_DOT,  GT_SLSH,
+                      _______, ST_H,    _______,        _______, _______, _______
 ),
 /*
 don't really ever use game layer
@@ -229,11 +225,11 @@ don't use num layer (but i guess keep for now)
 don't use game layer
 hmmm then this thumb key is kinda getting underused
  */
-[L_LAYER] = LAYOUT_split_3x6_3(
-    U______, U______, _______, TO_NU,   TO_SD,   U______,        U______, U______, U______, U______, U______, U______,
-    U______, TO_FOLD, _______, TO_QT,   TO_NV,   U______,        U______, U______, U______, U______, U______, U______,
-    U______, U______, _______, U______, TO_MS,   U______,        U______, U______, U______, U______, U______, U______,
-                               _______, _______, _______,        _______, _______, _______
+[L_LAYER] = LAYOUT_split_3x5_3(
+    U______, _______, TO_NU,   TO_SD,   U______,        U______, U______, U______, U______, U______,
+    TO_FOLD, _______, TO_QT,   TO_NV,   U______,        U______, U______, U______, U______, U______,
+    U______, _______, U______, TO_MS,   U______,        U______, U______, U______, U______, U______,
+                      _______, _______, _______,        _______, _______, _______
 ),
 /*
 for the most part i use the symbols on the number layer
@@ -251,89 +247,64 @@ xx'x
 : is not in a good place for future vim use
 especially if it's paired esc
  */
-[L_PUNCT] = LAYOUT_split_3x6_3(
-    U______, U______, U______, U______, U______, U______,        U______, KC_COLN, KC_SCLN, KC_DQUO, KC_EXLM, U______,
-    U______, U______, U______, U______, U______, U______,        U______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES, U______,
-    U______, U______, U______, U______, U______, U______,        U______, KC_MINS, KC_PLUS, KC_GRV,  KC_EQL,  U______,
-                               _______, _______, _______,        _______, _______, _______
+[L_PUNCT] = LAYOUT_split_3x5_3(
+    U______, U______, U______, U______, U______,        U______, KC_COLN, KC_SCLN, KC_DQUO, KC_EXLM,
+    U______, U______, U______, U______, U______,        U______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES,
+    U______, U______, U______, U______, U______,        U______, KC_MINS, KC_PLUS, KC_GRV,  KC_EQL,
+                      _______, _______, _______,        _______, _______, _______
 ),
 /*
-remove desk_lt, desk_rt
 remove ctat__, put desktop switching on left middle finger top row (??)
-
-     Up
-Left Down Rght Bksp
-Home      End  Del
-
-     PgDn PgUp
-Left Down Up   Rght
-Home Bksp Del  End
-
-
  */
-[L_NAVI] = LAYOUT_split_3x6_3(
-    U______, Gu_GRV,  Ct_PGUP, Ct_PGDN, _______, U______,        U______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  U______,
-    U______, KC_LCTL, _______, CTAT___, _______, U______,        U______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, U______,
-    U______, Ct_GRV,  AS_TAB,  At_TAB,  _______, U______,        U______, Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT, U______,
-                               _______, _______, _______,        _______, _______, _______
+[L_NAVI] = LAYOUT_split_3x5_3(
+    _______, Ct_PGUP, Ct_PGDN, _______, U______,        U______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
+    KC_LCTL, _______, CTAT___, _______, U______,        U______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,
+    Ct_GRV,  AS_TAB,  At_TAB,  _______, U______,        U______, Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT,
+                      _______, _______, _______,        _______, _______, _______
 ),
-/*
-for a main finger, this is pretty underused. (left middle finger)
-*/
-[L_CTRL] = LAYOUT_split_3x6_3(
-    U______, _______, _______, _______, _______, U______,        U______, KC_COLN, _______, _______, _______, U______,
-    U______, _______, _______, _______, _______, U______,        U______,S(KC_TAB),KC_ENT,  KC_ESC,  KC_TAB,  U______,
-    U______, _______, _______, _______, _______, U______,        U______, KC_COLN, _______, _______, _______, U______,
-                               _______, _______, _______,        _______, _______, _______
-),
-/*
 
+/*
 yeah c-x,c-s is pretty awkard here
 
 zxcv
 
  */
-[L_EDIT] = LAYOUT_split_3x6_3(
-    U______, _______, _______, _______, _______, U______,        U______, _______, Ct_S,    _______, _______, U______,
-    U______, _______, _______, _______, _______, U______,        U______, Ct_Z,    Ct_C,    Ct_V,    Ct_Y,    U______,
-    U______, _______, _______, _______, _______, U______,        U______, Ct_U,    Ct_X,    _______, Ct_K,    U______,
-                               _______, _______, _______,        _______, _______, _______
+[L_EDIT] = LAYOUT_split_3x5_3(
+    _______, _______, _______, _______, U______,        U______, _______, Ct_S,    _______, _______,
+    _______, _______, _______, _______, U______,        U______, Ct_Z,    Ct_C,    Ct_V,    Ct_Y,
+    _______, _______, _______, _______, U______,        U______, Ct_U,    Ct_X,    _______, Ct_K,
+                      _______, _______, _______,        _______, _______, _______
 ),
 /*
 yeah leaving a bunch on the table with numbers, maybe
 
  */
-[L_NUMBER] = LAYOUT_split_3x6_3(
-    U______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   U______,        U______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  U______,
-    U______, CT_1,    AT_2,    GT_3,    KC_4,    U______,        U______, KC_7,    GT_8,    AT_9,    CT_0,    U______,
-    U______, KC_F11,  PT_F12,  KC_F5,   KC_5,    U______,        U______, KC_6,    KC_F6,   CW_TOGG, KC_CAPS, U______,
-                               _______, ST_5,    _______,        _______, _______, _______
+[L_NUMBER] = LAYOUT_split_3x5_3(
+    KC_F1,   KC_F2,   KC_F3,   KC_F4,   U______,        U______, KC_F7,   KC_F8,   KC_F9,   KC_F10,
+    CT_1,    AT_2,    GT_3,    KC_4,    U______,        U______, KC_7,    GT_8,    AT_9,    CT_0,
+    KC_F11,  PT_F12,  KC_F5,   KC_5,    U______,        U______, KC_6,    KC_F6,   CW_TOGG, KC_CAPS,
+                      _______, ST_5,    _______,        _______, _______, _______
 ),
 
-[L_BRACKET] = LAYOUT_split_3x6_3(
-    U______, _______, _______, _______, _______, U______,        U______, KC_PIPE, KC_LBRC, KC_RBRC, _______, U______,
-    U______, _______, KC_MINS, KC_EQL,  _______, U______,        U______, KC_LPRN, KC_RPRN, KC_LCBR, KC_RCBR, U______,
-    U______, _______, _______, KC_EXLM, KC_EXLM, U______,        U______, KC_BSLS, KC_LT,   KC_GT,   KC_SLSH, U______,
-                               _______, _______, _______,        _______, KC_UNDS, _______
+[L_BRACKET] = LAYOUT_split_3x5_3(
+    _______, _______, _______, _______, U______,        U______, KC_PIPE, KC_LBRC, KC_RBRC, _______,
+    _______, KC_MINS, KC_EQL,  _______, U______,        U______, KC_LPRN, KC_RPRN, KC_LCBR, KC_RCBR,
+    _______, _______, KC_EXLM, KC_EXLM, U______,        U______, KC_BSLS, KC_LT,   KC_GT,   KC_SLSH,
+                      _______, _______, _______,        _______, KC_UNDS, _______
 ),
-[L_MOUSE] = LAYOUT_split_3x6_3(
-    U______, _______, _______, _______, _______, U______,        U______, U______, KC_BTN1, KC_BTN2, KC_BTN3, U______,
-    U______, _______, KC_BTN2, KC_BTN1, _______, U______,        U______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, U______,
-    U______, KC_ACL0, KC_ACL1, KC_ACL2, _______, U______,        U______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, U______,
-                               _______, _______, _______,        _______, _______, _______
+[L_MOUSE] = LAYOUT_split_3x5_3(
+    _______, _______, _______, _______, U______,        U______, U______, KC_BTN1, KC_BTN2, KC_BTN3,
+    _______, KC_BTN2, KC_BTN1, _______, U______,        U______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,
+    KC_ACL0, KC_ACL1, KC_ACL2, _______, U______,        U______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R,
+                      _______, _______, _______,        _______, _______, _______
 ),
-[L_SOUND] = LAYOUT_split_3x6_3(
-    U______, _______, _______, KC_MPLY, KC_MNXT, U______,        U______, _______, _______, _______, _______, U______,
-    U______, _______, _______, _______, _______, U______,        U______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, U______,
-    U______, _______, _______, _______, _______, U______,        U______, KC_MRWD, _______, _______, KC_MFFD, U______,
-                               _______, _______, _______,        _______, _______, _______
+[L_SOUND] = LAYOUT_split_3x5_3(
+    _______, _______, KC_MPLY, KC_MNXT, U______,        U______, _______, _______, _______, _______,
+    _______, _______, _______, _______, U______,        U______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT,
+    _______, _______, _______, _______, U______,        U______, KC_MRWD, _______, _______, KC_MFFD,
+                      _______, _______, _______,        _______, _______, _______
 ),
-// [L_GAME] = LAYOUT_split_3x6_3(
-//     U______, KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,           KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_GRV,
-//     U______, KC_TAB,  KC_A,    KC_S,    KC_D,    KC_F,           KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-//     U______, KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,           KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, U______,
-//                                TO_PT,   KC_SPC,  _______,        KC_TAB,  NU_SPC,  KC_ENT
-// ),
+
 };
 
 
@@ -353,9 +324,9 @@ enum combos {
     , CB_Escape
     , CB_Enter
     , CB_Tab
-    , CB_Fold_Z
-    , CB_Fold_V
-    , CB_Fold_K
+    // , CB_Fold_Z
+    // , CB_Fold_V
+    // , CB_Fold_K
     , CB_LENGTH
 };
 uint16_t COMBO_LEN = CB_LENGTH;
@@ -365,7 +336,7 @@ uint16_t COMBO_LEN = CB_LENGTH;
 #define COMBO_3(NAME, KEY1, KEY2, KEY3)  const uint16_t PROGMEM NAME[] = {KEY1, KEY2, KEY3, COMBO_END};
 COMBO_3(BOOT,      NU_SPC, KC_B, KC_O);
 COMBO_3(BOOT_TGB,  KC_T, KC_G, KC_B);
-COMBO_3(PID,       NU_SPC, KC_I, CR_D);
+COMBO_3(PID,       NU_SPC, KC_I, ST_D);
 COMBO_3(Pass,      NU_SPC, CT_A, KC_P);
 COMBO_3(PassAdm,   NU_SPC, AT_S, KC_P);
 COMBO_3(PassLinux, NU_SPC, NV_F, AT_L);
@@ -374,13 +345,13 @@ COMBO_3(Email,     NU_SPC, KC_E, KC_M);
 COMBO_2(Tilde,     KC_COMM, KC_DOT);
 COMBO_3(CD_up,     NU_SPC, PT_C, KC_DOT);
 COMBO_2(Underscore,KC_TAB, NU_SPC);
-COMBO_2(Escape,    AT_S, CR_D);
+COMBO_2(Escape,    AT_S, ST_D);
 COMBO_2(Enter,     KC_K, AT_L);
 COMBO_2(Tab,       KC_I, KC_O);
 
-COMBO_2(Fold_Z,    ST_H, AT_S);
-COMBO_2(Fold_V,    ST_H, SD_F);
-COMBO_2(Fold_K,    ST_H, ED_G);
+// COMBO_2(Fold_Z,    ST_H, AT_S);
+// COMBO_2(Fold_V,    ST_H, SD_F);
+// COMBO_2(Fold_K,    ST_H, ED_G);
 
 
 
@@ -401,9 +372,9 @@ combo_t key_combos[] = {
     [CB_Enter] =        COMBO(Enter, KC_ENT),
     [CB_Tab] =          COMBO(Tab, KC_TAB),
 
-    [CB_Fold_Z] =       COMBO(Fold_Z, KC_Z),
-    [CB_Fold_V] =       COMBO(Fold_V, KC_V),
-    [CB_Fold_K] =       COMBO(Fold_K, KC_K),
+    // [CB_Fold_Z] =       COMBO(Fold_Z, KC_Z),
+    // [CB_Fold_V] =       COMBO(Fold_V, KC_V),
+    // [CB_Fold_K] =       COMBO(Fold_K, KC_K),
 };
 
 // combo complex actions

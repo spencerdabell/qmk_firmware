@@ -110,8 +110,7 @@
 #define AT_F8   ALT_T(KC_F8)
 #define AT_F9   ALT_T(KC_F9)
 #define AT_F0   ALT_T(KC_F0)
-
-
+#define AT_ESC  ALT_T(KC_ESC)
 
 
 // gui
@@ -156,6 +155,7 @@
 #define ST_COMM SFT_T(KC_COMM)
 #define ST_ENT  SFT_T(KC_ENT)
 #define ST_SPC  SFT_T(KC_SPC)
+#define ST_TAB  SFT_T(KC_TAB)
 #define ST_UNDS SFT_T(KC_UNDS)
 #define ST_1    SFT_T(KC_1)
 #define ST_2    SFT_T(KC_2)
