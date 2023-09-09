@@ -43,6 +43,7 @@ enum {
 #define TO_ADPT TO(L_ADEPT)
 #define TO_FOLD TO(L_FOLD)
 
+#define LY_ENT  LT(L_LAYER, KC_ENT)
 
 // nav
 #define NV_A    LT(L_NAVI, KC_A)
@@ -165,11 +166,11 @@ enum {
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-[L_QWERTY] = LAYOUT_split_3x5_3(
+[L_QWERTY] = LAYOUT_split_3x5_2(
     KC_Q,    ED_W,    KC_E,    SD_R,    KC_T,           KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
     CT_A,    AT_S,    ST_D,    NV_F,    KC_G,           KC_H,    KC_J,    ST_K,    AT_L,    CT_SCLN,
     GT_Z,    PT_X,    KC_C,    MS_V,    KC_B,           KC_N,    KC_M,    KC_COMM, KC_DOT,  GT_SLSH,
-                      BR_ESC,  ST_TAB,  TO_LY,          KC_TAB,  NU_SPC,  KC_ENT
+                               BR_ESC,  ST_TAB,         NU_SPC,  LY_ENT
 ),
 
 /*
@@ -213,11 +214,11 @@ bcmp;jx,./
 
 */
 
-[L_FOLD] = LAYOUT_split_3x5_3(
+[L_FOLD] = LAYOUT_split_3x5_2(
     KC_Q,    ED_G,    KC_D,    SD_F,    KC_V,           KC_Z,    KC_L,    KC_U,    KC_O,    KC_Y,
     CT_N,    AT_S,    KC_T,    NV_H,    KC_K,           KC_W,    KC_R,    KC_E,    AT_A,    CT_I,
     GT_B,    PT_C,    KC_M,    MS_P,    KC_SCLN,        KC_J,    KC_X,    KC_COMM, KC_DOT,  GT_SLSH,
-                      _______, ST_H,    _______,        _______, _______, _______
+                               _______, ST_H,           _______, _______
 ),
 /*
 don't really ever use game layer
@@ -225,11 +226,11 @@ don't use num layer (but i guess keep for now)
 don't use game layer
 hmmm then this thumb key is kinda getting underused
  */
-[L_LAYER] = LAYOUT_split_3x5_3(
+[L_LAYER] = LAYOUT_split_3x5_2(
     U______, _______, TO_NU,   TO_SD,   U______,        U______, U______, U______, U______, U______,
     TO_FOLD, _______, TO_QT,   TO_NV,   U______,        U______, U______, U______, U______, U______,
     U______, _______, U______, TO_MS,   U______,        U______, U______, U______, U______, U______,
-                      _______, _______, _______,        _______, _______, _______
+                               _______, _______,        _______, _______
 ),
 /*
 for the most part i use the symbols on the number layer
@@ -247,20 +248,20 @@ xx'x
 : is not in a good place for future vim use
 especially if it's paired esc
  */
-[L_PUNCT] = LAYOUT_split_3x5_3(
+[L_PUNCT] = LAYOUT_split_3x5_2(
     U______, U______, U______, U______, U______,        U______, KC_COLN, KC_SCLN, KC_DQUO, KC_EXLM,
     U______, U______, U______, U______, U______,        U______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES,
     U______, U______, U______, U______, U______,        U______, KC_MINS, KC_PLUS, KC_GRV,  KC_EQL,
-                      _______, _______, _______,        _______, _______, _______
+                               _______, _______,        _______, _______
 ),
 /*
 remove ctat__, put desktop switching on left middle finger top row (??)
  */
-[L_NAVI] = LAYOUT_split_3x5_3(
+[L_NAVI] = LAYOUT_split_3x5_2(
     _______, Ct_PGUP, Ct_PGDN, _______, U______,        U______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
     KC_LCTL, _______, CTAT___, _______, U______,        U______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,
     Ct_GRV,  AS_TAB,  At_TAB,  _______, U______,        U______, Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT,
-                      _______, _______, _______,        _______, _______, _______
+                               _______, _______,        _______, _______
 ),
 
 /*
@@ -269,40 +270,40 @@ yeah c-x,c-s is pretty awkard here
 zxcv
 
  */
-[L_EDIT] = LAYOUT_split_3x5_3(
+[L_EDIT] = LAYOUT_split_3x5_2(
     _______, _______, _______, _______, U______,        U______, _______, Ct_S,    _______, _______,
     _______, _______, _______, _______, U______,        U______, Ct_Z,    Ct_C,    Ct_V,    Ct_Y,
     _______, _______, _______, _______, U______,        U______, Ct_U,    Ct_X,    _______, Ct_K,
-                      _______, _______, _______,        _______, _______, _______
+                               _______, _______,        _______, _______
 ),
 /*
 yeah leaving a bunch on the table with numbers, maybe
 
  */
-[L_NUMBER] = LAYOUT_split_3x5_3(
+[L_NUMBER] = LAYOUT_split_3x5_2(
     KC_F1,   KC_F2,   KC_F3,   KC_F4,   U______,        U______, KC_F7,   KC_F8,   KC_F9,   KC_F10,
     CT_1,    AT_2,    GT_3,    KC_4,    U______,        U______, KC_7,    GT_8,    AT_9,    CT_0,
-    KC_F11,  PT_F12,  KC_F5,   KC_5,    U______,        U______, KC_6,    KC_F6,   CW_TOGG, KC_CAPS,
-                      _______, ST_5,    _______,        _______, _______, _______
+    KC_F11,  PT_F12,  KC_F5,   KC_5,    U______,        U______, KC_6,    KC_F6,   KC_CAPS, CW_TOGG,
+                               _______, ST_5,           _______, _______
 ),
 
-[L_BRACKET] = LAYOUT_split_3x5_3(
+[L_BRACKET] = LAYOUT_split_3x5_2(
     _______, _______, _______, _______, U______,        U______, KC_PIPE, KC_LBRC, KC_RBRC, _______,
     _______, KC_MINS, KC_EQL,  _______, U______,        U______, KC_LPRN, KC_RPRN, KC_LCBR, KC_RCBR,
     _______, _______, KC_EXLM, KC_EXLM, U______,        U______, KC_BSLS, KC_LT,   KC_GT,   KC_SLSH,
-                      _______, _______, _______,        _______, KC_UNDS, _______
+                               _______, _______,        KC_UNDS, _______
 ),
-[L_MOUSE] = LAYOUT_split_3x5_3(
+[L_MOUSE] = LAYOUT_split_3x5_2(
     _______, _______, _______, _______, U______,        U______, U______, KC_BTN1, KC_BTN2, KC_BTN3,
     _______, KC_BTN2, KC_BTN1, _______, U______,        U______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,
     KC_ACL0, KC_ACL1, KC_ACL2, _______, U______,        U______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R,
-                      _______, _______, _______,        _______, _______, _______
+                               _______, _______,        _______, _______
 ),
-[L_SOUND] = LAYOUT_split_3x5_3(
+[L_SOUND] = LAYOUT_split_3x5_2(
     _______, _______, KC_MPLY, KC_MNXT, U______,        U______, _______, _______, _______, _______,
     _______, _______, _______, _______, U______,        U______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT,
     _______, _______, _______, _______, U______,        U______, KC_MRWD, _______, _______, KC_MFFD,
-                      _______, _______, _______,        _______, _______, _______
+                               _______, _______,        _______, _______
 ),
 
 };
