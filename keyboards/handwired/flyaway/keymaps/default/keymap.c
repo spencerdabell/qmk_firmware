@@ -12,7 +12,6 @@ enum {
     , L_NAVI
     , L_NUMBER
     , L_MOUSE
-    , L_SOUND
 };
 
 // LAYER SWITCHING
@@ -22,9 +21,7 @@ enum {
 #define OSL_PT  OSL(L_PUNCT)
 #define TO_NV   TO(L_NAVI)
 #define TO_MS   TO(L_MOUSE)
-#define TO_SD   TO(L_SOUND)
 #define TO_NU   TO(L_NUMBER)
-#define TO_SY   TO(L_BRACKET)
 #define TO_FOLD TO(L_FOLD)
 
 #define LY_ENT  LT(L_LAYER, KC_ENT)
@@ -88,6 +85,7 @@ enum {
 #define MS_Y    LT(L_MOUSE, KC_Y)
 #define MS_Z    LT(L_MOUSE, KC_Z)
 #define MS__    LT(L_MOUSE, KC_NO)
+#define MS_ESC  LT(L_MOUSE, KC_ESC)
 
 
 // number
@@ -118,15 +116,6 @@ enum {
 #define SD_R    LT(L_SOUND, KC_R)
 #define SD_Z    LT(L_SOUND, KC_Z)
 
-// bracket
-#define BR_O    LT(L_BRACKET, KC_O)
-#define BR_DEL  LT(L_BRACKET, KC_DEL)
-#define BR_D    LT(L_BRACKET, KC_D)
-#define BR_X    LT(L_BRACKET, KC_X)
-#define BR_GRV  LT(L_BRACKET, KC_GRV)
-#define BR_W    LT(L_BRACKET, KC_W)
-#define BR_ESC  LT(L_BRACKET, KC_ESC)
-
 // nav
 #define Ct_PGUP C(KC_PGUP)
 #define Ct_PGDN C(KC_PGDN)
@@ -138,8 +127,7 @@ enum {
 #define Gu_GRV  G(KC_GRV)
 #define At_TAB  A(KC_TAB)
 #define AS_TAB  LSA(KC_TAB)
-#define DESK_LT LCTL(LGUI(KC_LEFT))
-#define DESK_RT LCTL(LGUI(KC_RGHT))
+
 // switch back to last application
 // ctrl+tab
 // switch ctrl+shift+tab
@@ -153,10 +141,10 @@ enum {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [L_QWERTY] = LAYOUT_split_3x5_2(
-    KC_Q,    KC_W,    KC_E,    SD_R,    KC_T,           KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
+    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,           KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
     CT_A,    AT_S,    ST_D,    NV_F,    KC_G,           KC_H,    KC_J,    ST_K,    AT_L,    CT_SCLN,
     GT_Z,    KC_X,    KC_C,    MS_V,    KC_B,           KC_N,    KC_M,    KC_COMM, KC_DOT,  GT_SLSH,
-                               BR_ESC,  PT_TAB,         NU_SPC,  LY_ENT
+                               KC_ESC,  PT_TAB,         NU_SPC,  LY_ENT
 ),
 
 /*
@@ -201,9 +189,9 @@ bcmp;jx,./
 */
 
 [L_FOLD] = LAYOUT_split_3x5_2(
-    KC_Q,    KC_G,    KC_D,    SD_F,    KC_V,           KC_Z,    KC_L,    KC_U,    KC_O,    KC_Y,
+    KC_Q,    KC_G,    KC_D,    KC_F,    KC_V,           KC_Z,    KC_L,    KC_U,    KC_O,    KC_Y,
     CT_N,    AT_S,    ST_T,    NV_H,    KC_K,           KC_W,    KC_R,    ST_E,    AT_A,    CT_I,
-    GT_B,    KC_C,    KC_M,    MS_P,    KC_SCLN,        KC_J,    KC_X,    KC_COMM, KC_DOT,  GT_SLSH,
+    GT_B,    KC_C,    KC_M,    KC_P,    KC_SCLN,        KC_J,    KC_X,    KC_COMM, KC_DOT,  GT_SLSH,
                                _______, PT_H,           _______, _______
 ),
 /*
@@ -213,11 +201,12 @@ don't use game layer
 hmmm then this thumb key is kinda getting underused
  */
 [L_LAYER] = LAYOUT_split_3x5_2(
-    TO_FOLD, TO_QT,   TO_NU,   TO_SD,   U______,        U______, U______, U______, U______, U______,
-    Ct_Y,    Ct_S,    TO_MS,   TO_NV,   U______,        U______, U______, U______, U______, U______,
-    Ct_Z,    Ct_X,    Ct_C,    Ct_V,    U______,        U______, U______, U______, U______, U______,
+    Ct_Q,    TO_FOLD, TO_QT,   TO_NU,   U______,        U______, U______, KC_MPLY, U______, U______,
+    Ct_Z,    Ct_S,    TO_MS,   TO_NV,   U______,        U______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT,
+    Ct_Z,    Ct_X,    Ct_C,    Ct_V,    U______,        U______, KC_MRWD, U______, U______, KC_MFFD,
                                _______, Ct_Y,           _______, _______
 ),
+
 /*
 for the most part i use the symbols on the number layer
 
@@ -259,16 +248,9 @@ remove ctat__, put desktop switching on left middle finger top row (??)
 
 [L_MOUSE] = LAYOUT_split_3x5_2(
     _______, _______, _______, _______, U______,        U______, U______, KC_BTN1, KC_BTN2, KC_BTN3,
-    _______, KC_BTN2, KC_BTN1, _______, U______,        U______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,
+    _______, _______, _______, _______, U______,        U______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,
     KC_ACL0, KC_ACL1, KC_ACL2, _______, U______,        U______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R,
-                               _______, _______,        _______, _______
-),
-
-[L_SOUND] = LAYOUT_split_3x5_2(
-    _______, _______, KC_MPLY, KC_MNXT, U______,        U______, _______, _______, _______, _______,
-    _______, _______, _______, _______, U______,        U______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT,
-    _______, _______, _______, _______, U______,        U______, KC_MRWD, _______, _______, KC_MFFD,
-                               _______, _______,        _______, _______
+                               _______, _______,        KC_BTN1, _______
 ),
 
 };
