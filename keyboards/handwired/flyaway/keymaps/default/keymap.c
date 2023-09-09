@@ -10,14 +10,10 @@ enum {
     , L_LAYER
     , L_PUNCT
     , L_NAVI
-    , L_CTRL
-    , L_EDIT
     , L_NUMBER
-    // , L_FN
     , L_BRACKET
     , L_MOUSE
     , L_SOUND
-    // , L_GAME
 };
 
 // LAYER SWITCHING
@@ -29,21 +25,12 @@ enum {
 #define TO_MS   TO(L_MOUSE)
 #define TO_SD   TO(L_SOUND)
 #define TO_NU   TO(L_NUMBER)
-// #define TO_NU2  TO(L_NU2)
-// #ST_SPC TO_NU3   TO(L_NU3)
-// #define TO_NU4  TO(L_NU4)
 #define TO_SY   TO(L_BRACKET)
-// #define TO_GAME TO(L_GAME)
-// #define TO_WRTHSRTO_ADPT TO(L_ISRT)
-// #define TO_SEMI TO(L_SEMI)
-// #define TO_WHRF TO(L_WHRF)
-// #define TO_FOLD TO(L_FOLD)
-// #define TO_APT3 TO(L_APT3)
-#define TO_WRTH TO(L_WREATHY)
-#define TO_ADPT TO(L_ADEPT)
 #define TO_FOLD TO(L_FOLD)
 
 #define LY_ENT  LT(L_LAYER, KC_ENT)
+#define LY_TAB  LT(L_LAYER, KC_TAB)
+#define LY_ESC  LT(L_LAYER, KC_ESC)
 
 // nav
 #define NV_A    LT(L_NAVI, KC_A)
@@ -116,10 +103,14 @@ enum {
 // punctuation
 #define PT_C    LT(L_PUNCT, KC_C)
 #define PT_E    LT(L_PUNCT, KC_E)
+#define PT_H    LT(L_PUNCT, KC_H)
 #define PT_X    LT(L_PUNCT, KC_X)
 #define PT__    LT(L_PUNCT, KC_NO)
+#define PT_5    LT(L_PUNCT, KC_5)
 #define PT_F12  LT(L_PUNCT, KC_F12)
 #define PT_BSPC LT(L_PUNCT, KC_BSPC)
+#define PT_TAB  LT(L_PUNCT, KC_TAB)
+
 
 // sound
 #define SD_MPLY LT(L_SOUND, KC_MPLY)
@@ -160,17 +151,13 @@ enum {
 #define APP_FWD KC_LGUI
 #define APP_BCK KC_LALT
 
-// edit
-#define ED_G    LT(L_EDIT, KC_G)
-#define ED_W    LT(L_EDIT, KC_W)
-
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [L_QWERTY] = LAYOUT_split_3x5_2(
-    KC_Q,    ED_W,    KC_E,    SD_R,    KC_T,           KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
+    KC_Q,    KC_W,    KC_E,    SD_R,    KC_T,           KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
     CT_A,    AT_S,    ST_D,    NV_F,    KC_G,           KC_H,    KC_J,    ST_K,    AT_L,    CT_SCLN,
-    GT_Z,    PT_X,    KC_C,    MS_V,    KC_B,           KC_N,    KC_M,    KC_COMM, KC_DOT,  GT_SLSH,
-                               BR_ESC,  ST_TAB,         NU_SPC,  LY_ENT
+    GT_Z,    KC_X,    KC_C,    MS_V,    KC_B,           KC_N,    KC_M,    KC_COMM, KC_DOT,  GT_SLSH,
+                               BR_ESC,  PT_TAB,         NU_SPC,  LY_ENT
 ),
 
 /*
@@ -215,10 +202,10 @@ bcmp;jx,./
 */
 
 [L_FOLD] = LAYOUT_split_3x5_2(
-    KC_Q,    ED_G,    KC_D,    SD_F,    KC_V,           KC_Z,    KC_L,    KC_U,    KC_O,    KC_Y,
-    CT_N,    AT_S,    KC_T,    NV_H,    KC_K,           KC_W,    KC_R,    KC_E,    AT_A,    CT_I,
-    GT_B,    PT_C,    KC_M,    MS_P,    KC_SCLN,        KC_J,    KC_X,    KC_COMM, KC_DOT,  GT_SLSH,
-                               _______, ST_H,           _______, _______
+    KC_Q,    KC_G,    KC_D,    SD_F,    KC_V,           KC_Z,    KC_L,    KC_U,    KC_O,    KC_Y,
+    CT_N,    AT_S,    ST_T,    NV_H,    KC_K,           KC_W,    KC_R,    ST_E,    AT_A,    CT_I,
+    GT_B,    KC_C,    KC_M,    MS_P,    KC_SCLN,        KC_J,    KC_X,    KC_COMM, KC_DOT,  GT_SLSH,
+                               _______, PT_H,           _______, _______
 ),
 /*
 don't really ever use game layer
@@ -227,10 +214,10 @@ don't use game layer
 hmmm then this thumb key is kinda getting underused
  */
 [L_LAYER] = LAYOUT_split_3x5_2(
-    U______, _______, TO_NU,   TO_SD,   U______,        U______, U______, U______, U______, U______,
-    TO_FOLD, _______, TO_QT,   TO_NV,   U______,        U______, U______, U______, U______, U______,
-    U______, _______, U______, TO_MS,   U______,        U______, U______, U______, U______, U______,
-                               _______, _______,        _______, _______
+    TO_FOLD, TO_QT,   TO_NU,   TO_SD,   U______,        U______, U______, U______, U______, U______,
+    Ct_Y,    Ct_S,    TO_MS,   TO_NV,   U______,        U______, U______, U______, U______, U______,
+    Ct_Z,    Ct_X,    Ct_C,    Ct_V,    U______,        U______, U______, U______, U______, U______,
+                               _______, Ct_Y,           _______, _______
 ),
 /*
 for the most part i use the symbols on the number layer
@@ -265,26 +252,14 @@ remove ctat__, put desktop switching on left middle finger top row (??)
 ),
 
 /*
-yeah c-x,c-s is pretty awkard here
-
-zxcv
-
- */
-[L_EDIT] = LAYOUT_split_3x5_2(
-    _______, _______, _______, _______, U______,        U______, _______, Ct_S,    _______, _______,
-    _______, _______, _______, _______, U______,        U______, Ct_Z,    Ct_C,    Ct_V,    Ct_Y,
-    _______, _______, _______, _______, U______,        U______, Ct_U,    Ct_X,    _______, Ct_K,
-                               _______, _______,        _______, _______
-),
-/*
 yeah leaving a bunch on the table with numbers, maybe
 
  */
 [L_NUMBER] = LAYOUT_split_3x5_2(
     KC_F1,   KC_F2,   KC_F3,   KC_F4,   U______,        U______, KC_F7,   KC_F8,   KC_F9,   KC_F10,
-    CT_1,    AT_2,    GT_3,    KC_4,    U______,        U______, KC_7,    GT_8,    AT_9,    CT_0,
-    KC_F11,  PT_F12,  KC_F5,   KC_5,    U______,        U______, KC_6,    KC_F6,   KC_CAPS, CW_TOGG,
-                               _______, ST_5,           _______, _______
+    CT_1,    AT_2,    ST_3,    KC_4,    U______,        U______, KC_7,    ST_8,    AT_9,    CT_0,
+    KC_F11,  KC_F12,  KC_F5,   KC_5,    U______,        U______, KC_6,    KC_F6,   KC_CAPS, CW_TOGG,
+                               _______, PT_5,           KC_6,    _______
 ),
 
 [L_BRACKET] = LAYOUT_split_3x5_2(
@@ -293,6 +268,7 @@ yeah leaving a bunch on the table with numbers, maybe
     _______, _______, KC_EXLM, KC_EXLM, U______,        U______, KC_BSLS, KC_LT,   KC_GT,   KC_SLSH,
                                _______, _______,        KC_UNDS, _______
 ),
+
 [L_MOUSE] = LAYOUT_split_3x5_2(
     _______, _______, _______, _______, U______,        U______, U______, KC_BTN1, KC_BTN2, KC_BTN3,
     _______, KC_BTN2, KC_BTN1, _______, U______,        U______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,
@@ -318,16 +294,11 @@ enum combos {
     , CB_PassAdm
     , CB_Name
     , CB_Email
-    , CB_Tilde
     , CB_PassLinux
-    , CB_CD_up
     , CB_Underscore
     , CB_Escape
     , CB_Enter
     , CB_Tab
-    // , CB_Fold_Z
-    // , CB_Fold_V
-    // , CB_Fold_K
     , CB_LENGTH
 };
 uint16_t COMBO_LEN = CB_LENGTH;
@@ -343,17 +314,10 @@ COMBO_3(PassAdm,   NU_SPC, AT_S, KC_P);
 COMBO_3(PassLinux, NU_SPC, NV_F, AT_L);
 COMBO_3(Name,      NU_SPC, KC_N, AT_S);
 COMBO_3(Email,     NU_SPC, KC_E, KC_M);
-COMBO_2(Tilde,     KC_COMM, KC_DOT);
-COMBO_3(CD_up,     NU_SPC, PT_C, KC_DOT);
 COMBO_2(Underscore,KC_TAB, NU_SPC);
 COMBO_2(Escape,    AT_S, ST_D);
 COMBO_2(Enter,     KC_K, AT_L);
 COMBO_2(Tab,       KC_I, KC_O);
-
-// COMBO_2(Fold_Z,    ST_H, AT_S);
-// COMBO_2(Fold_V,    ST_H, SD_F);
-// COMBO_2(Fold_K,    ST_H, ED_G);
-
 
 
 // combo behavior
@@ -366,16 +330,10 @@ combo_t key_combos[] = {
     [CB_PassLinux] =    COMBO_ACTION(PassLinux),
     [CB_Name] =         COMBO_ACTION(Name),
     [CB_Email] =        COMBO_ACTION(Email),
-    [CB_Tilde] =        COMBO(Tilde, KC_TILD),
-    [CB_CD_up] =        COMBO_ACTION(CD_up),
     [CB_Underscore] =   COMBO(Underscore, KC_UNDS),
     [CB_Escape] =       COMBO(Escape, KC_ESC),
     [CB_Enter] =        COMBO(Enter, KC_ENT),
-    [CB_Tab] =          COMBO(Tab, KC_TAB),
-
-    // [CB_Fold_Z] =       COMBO(Fold_Z, KC_Z),
-    // [CB_Fold_V] =       COMBO(Fold_V, KC_V),
-    // [CB_Fold_K] =       COMBO(Fold_K, KC_K),
+    [CB_Tab] =          COMBO(Tab, KC_TAB),   
 };
 
 // combo complex actions
@@ -387,8 +345,6 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
     case CB_PassLinux: if (pressed) { SEND_STRING(PW_LINUX); } break;
     case CB_Name:      if (pressed) { SEND_STRING("spencerdabell"); } break;
     case CB_Email:     if (pressed) { SEND_STRING("spencerdabell@gmail.com"); } break;
-    case CB_CD_up:     if (pressed) { SEND_STRING("cd .."); tap_code16(KC_ENT); } break;
-
     default: break;
   }
 }
