@@ -11,7 +11,6 @@ enum {
     , L_PUNCT
     , L_NAVI
     , L_NUMBER
-    , L_BRACKET
     , L_MOUSE
     , L_SOUND
 };
@@ -236,10 +235,10 @@ xx'x
 especially if it's paired esc
  */
 [L_PUNCT] = LAYOUT_split_3x5_2(
-    U______, U______, U______, U______, U______,        U______, KC_COLN, KC_SCLN, KC_DQUO, KC_EXLM,
-    U______, U______, U______, U______, U______,        U______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES,
-    U______, U______, U______, U______, U______,        U______, KC_MINS, KC_PLUS, KC_GRV,  KC_EQL,
-                               _______, _______,        _______, _______
+    _______, KC_LBRC, KC_RBRC, KC_PIPE, U______,        U______, KC_COLN, KC_SCLN, KC_DQUO, KC_EXLM,
+    KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, U______,        U______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES,
+    KC_BSLS, KC_LT,   KC_GT,   KC_SLSH, U______,        U______, KC_MINS, KC_PLUS, KC_GRV,  KC_EQL,
+                               _______, _______,        KC_UNDS, _______
 ),
 /*
 remove ctat__, put desktop switching on left middle finger top row (??)
@@ -251,22 +250,11 @@ remove ctat__, put desktop switching on left middle finger top row (??)
                                _______, _______,        _______, _______
 ),
 
-/*
-yeah leaving a bunch on the table with numbers, maybe
-
- */
 [L_NUMBER] = LAYOUT_split_3x5_2(
     KC_F1,   KC_F2,   KC_F3,   KC_F4,   U______,        U______, KC_F7,   KC_F8,   KC_F9,   KC_F10,
     CT_1,    AT_2,    ST_3,    KC_4,    U______,        U______, KC_7,    ST_8,    AT_9,    CT_0,
     KC_F11,  KC_F12,  KC_F5,   KC_5,    U______,        U______, KC_6,    KC_F6,   KC_CAPS, CW_TOGG,
                                _______, PT_5,           KC_6,    _______
-),
-
-[L_BRACKET] = LAYOUT_split_3x5_2(
-    _______, _______, _______, _______, U______,        U______, KC_PIPE, KC_LBRC, KC_RBRC, _______,
-    _______, KC_MINS, KC_EQL,  _______, U______,        U______, KC_LPRN, KC_RPRN, KC_LCBR, KC_RCBR,
-    _______, _______, KC_EXLM, KC_EXLM, U______,        U______, KC_BSLS, KC_LT,   KC_GT,   KC_SLSH,
-                               _______, _______,        KC_UNDS, _______
 ),
 
 [L_MOUSE] = LAYOUT_split_3x5_2(
@@ -275,6 +263,7 @@ yeah leaving a bunch on the table with numbers, maybe
     KC_ACL0, KC_ACL1, KC_ACL2, _______, U______,        U______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R,
                                _______, _______,        _______, _______
 ),
+
 [L_SOUND] = LAYOUT_split_3x5_2(
     _______, _______, KC_MPLY, KC_MNXT, U______,        U______, _______, _______, _______, _______,
     _______, _______, _______, _______, U______,        U______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT,
