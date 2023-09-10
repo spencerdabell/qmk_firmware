@@ -194,12 +194,7 @@ bcmp;jx,./
     GT_B,    KC_C,    KC_M,    KC_P,    KC_SCLN,        KC_J,    KC_X,    KC_COMM, KC_DOT,  GT_SLSH,
                                _______, PT_H,           _______, _______
 ),
-/*
-don't really ever use game layer
-don't use num layer (but i guess keep for now)
-don't use game layer
-hmmm then this thumb key is kinda getting underused
- */
+
 [L_LAYER] = LAYOUT_split_3x5_2(
     Ct_Q,    TO_FOLD, TO_QT,   TO_NU,   U______,        U______, U______, KC_MPLY, U______, U______,
     Ct_Z,    Ct_S,    TO_MS,   TO_NV,   U______,        U______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT,
@@ -239,6 +234,8 @@ remove ctat__, put desktop switching on left middle finger top row (??)
                                _______, _______,        _______, _______
 ),
 
+
+
 [L_NUMBER] = LAYOUT_split_3x5_2(
     KC_F1,   KC_F2,   KC_F3,   KC_F4,   U______,        U______, KC_F7,   KC_F8,   KC_F9,   KC_F10,
     CT_1,    AT_2,    ST_3,    KC_4,    U______,        U______, KC_7,    ST_8,    AT_9,    CT_0,
@@ -248,7 +245,7 @@ remove ctat__, put desktop switching on left middle finger top row (??)
 
 [L_MOUSE] = LAYOUT_split_3x5_2(
     _______, _______, _______, _______, U______,        U______, U______, KC_BTN1, KC_BTN2, KC_BTN3,
-    _______, _______, _______, _______, U______,        U______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,
+    _______, KC_BTN2, KC_BTN1, _______, U______,        U______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,
     KC_ACL0, KC_ACL1, KC_ACL2, _______, U______,        U______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R,
                                _______, _______,        KC_BTN1, _______
 ),
