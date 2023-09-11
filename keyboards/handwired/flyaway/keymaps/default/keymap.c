@@ -7,6 +7,8 @@ enum {
     // base
     L_QWERTY = 0
     , L_FOLD
+    , L_HAIR
+    , L_HAIR2
     , L_LAYER
     , L_PUNCT
     , L_NAVI
@@ -23,10 +25,15 @@ enum {
 #define TO_MS   TO(L_MOUSE)
 #define TO_NU   TO(L_NUMBER)
 #define TO_FOLD TO(L_FOLD)
+#define TO_HAIR TO(L_HAIR)
 
+#define LY_U    LT(L_LAYER, KC_U)
 #define LY_ENT  LT(L_LAYER, KC_ENT)
 #define LY_TAB  LT(L_LAYER, KC_TAB)
 #define LY_ESC  LT(L_LAYER, KC_ESC)
+
+// hair 1 and 2
+#define H2_H    LT(L_HAIR2, KC_H)
 
 // nav
 #define NV_A    LT(L_NAVI, KC_A)
@@ -89,6 +96,7 @@ enum {
 
 
 // number
+#define NU_E    LT(L_NUMBER, KC_E)
 #define NU_R    LT(L_NUMBER, KC_R)
 #define NU_U    LT(L_NUMBER, KC_U)
 #define NU_TAB  LT(L_NUMBER, KC_TAB)
@@ -106,6 +114,7 @@ enum {
 #define PT_5    LT(L_PUNCT, KC_5)
 #define PT_F12  LT(L_PUNCT, KC_F12)
 #define PT_BSPC LT(L_PUNCT, KC_BSPC)
+#define PT_SPC  LT(L_PUNCT, KC_SPC)
 #define PT_TAB  LT(L_PUNCT, KC_TAB)
 
 
@@ -144,7 +153,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,           KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
     CT_A,    AT_S,    ST_D,    NV_F,    KC_G,           KC_H,    KC_J,    ST_K,    AT_L,    CT_SCLN,
     GT_Z,    KC_X,    KC_C,    MS_V,    KC_B,           KC_N,    KC_M,    KC_COMM, KC_DOT,  GT_SLSH,
-                               KC_ESC,  PT_TAB,         NU_SPC,  LY_ENT
+                               ST_ESC,  PT_TAB,         NU_SPC,  LY_ENT
 ),
 
 /*
@@ -159,12 +168,9 @@ z k q g w  b h ' ; ,
 tnsrhldcmfpgwyb vkxjqz
 tnsr h ld cm fpg pwyb vkxjqz
 
-
-
 q g d f v  j l u o ,        wreathy
 n s t h y  w r e a i ;
 b c m p k  z x / ' .
-
 
 1 2 3 4 .  . 7 v v v
         .  . 6
@@ -172,15 +178,12 @@ b c m p k  z x / ' .
 
 tnsr h ld
 
-
 n s t c  _  _ h e a i
 
       r
 
-
 L W U O Y
 R H E A I
-
 
 qgdfvzluoy
 nsthkwreai
@@ -194,9 +197,39 @@ bcmp;jx,./
     GT_B,    KC_C,    KC_M,    KC_P,    KC_SCLN,        KC_J,    KC_X,    KC_COMM, KC_DOT,  GT_SLSH,
                                _______, PT_H,           _______, _______
 ),
+/*
+fpdb   moyw
+sntc   hair
+   g   l
+   ␣   eu
+
+
+
+*/
+[L_HAIR] = LAYOUT_split_3x5_2(
+    GT_F,    KC_P,    KC_D,    KC_G,    U______,        U______, KC_L,    KC_O,    KC_Y,    GT_W,
+    CT_S,    AT_N,    ST_T,    NV_C,    U______,        U______, H2_H,    ST_A,    AT_I,    CT_R,
+    U______, U______, U______, KC_B,    U______,        U______, KC_M,    U______, U______, U______,
+                               _______, PT_SPC,         NU_E,    LY_U
+),
+
+/*
+fg???s
+vkxjqz
+
+
+*/
+
+[L_HAIR2] = LAYOUT_split_3x5_2(
+    KC_V,    KC_B,    KC_Q,    KC_K,    _______,        _______, _______, _______, _______, _______,
+    KC_Z,    KC_M,    KC_X,    KC_J,    _______,        _______, _______, _______, _______, _______,
+    _______, _______, _______, _______, _______,        _______, _______, _______, _______, _______,
+                               _______, _______,        _______, _______
+),
+
 
 [L_LAYER] = LAYOUT_split_3x5_2(
-    Ct_Q,    TO_FOLD, TO_QT,   TO_NU,   U______,        U______, U______, KC_MPLY, U______, U______,
+    Ct_Q,    TO_FOLD, TO_QT,   TO_HAIR, U______,        U______, U______, KC_MPLY, U______, U______,
     Ct_Z,    Ct_S,    TO_MS,   TO_NV,   U______,        U______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT,
     Ct_Z,    Ct_X,    Ct_C,    Ct_V,    U______,        U______, KC_MRWD, U______, U______, KC_MFFD,
                                _______, Ct_Y,           _______, _______
@@ -208,7 +241,6 @@ for the most part i use the symbols on the number layer
 :;"!
 .,'?
 -+`=
-
 
 x for dont use
 :;"x
@@ -228,21 +260,17 @@ especially if it's paired esc
 remove ctat__, put desktop switching on left middle finger top row (??)
  */
 [L_NAVI] = LAYOUT_split_3x5_2(
-    _______, Ct_PGUP, Ct_PGDN, _______, U______,        U______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
-    KC_LCTL, _______, CTAT___, _______, U______,        U______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,
-    Ct_GRV,  AS_TAB,  At_TAB,  _______, U______,        U______, Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT,
+    Ct_GRV,  AS_TAB,  At_TAB,  _______, U______,        U______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
+    KC_LCTL, _______, _______, _______, U______,        U______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,
+    CTAT___, Ct_PGUP, Ct_PGDN, _______, U______,        U______, Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT,
                                _______, _______,        _______, _______
 ),
-
-
-
 [L_NUMBER] = LAYOUT_split_3x5_2(
     KC_F1,   KC_F2,   KC_F3,   KC_F4,   U______,        U______, KC_F7,   KC_F8,   KC_F9,   KC_F10,
     CT_1,    AT_2,    ST_3,    KC_4,    U______,        U______, KC_7,    ST_8,    AT_9,    CT_0,
     KC_F11,  KC_F12,  KC_F5,   KC_5,    U______,        U______, KC_6,    KC_F6,   KC_CAPS, CW_TOGG,
                                _______, PT_5,           KC_6,    _______
 ),
-
 [L_MOUSE] = LAYOUT_split_3x5_2(
     _______, _______, _______, _______, U______,        U______, U______, KC_BTN1, KC_BTN2, KC_BTN3,
     _______, KC_BTN2, KC_BTN1, _______, U______,        U______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,
