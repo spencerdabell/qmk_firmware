@@ -296,6 +296,7 @@ enum combos {
     , CB_Email
     , CB_PassLinux
     , CB_Underscore
+    , CB_Tilde
     , CB_Escape
     , CB_Enter
     , CB_Tab
@@ -315,6 +316,7 @@ COMBO_3(PassLinux, NU_SPC, NV_F, AT_L);
 COMBO_3(Name,      NU_SPC, KC_N, AT_S);
 COMBO_3(Email,     NU_SPC, KC_E, KC_M);
 COMBO_2(Underscore,KC_TAB, NU_SPC);
+COMBO_2(Tilde,     KC_COMM, KC_DOT);
 COMBO_2(Escape,    AT_S, ST_D);
 COMBO_2(Enter,     KC_K, AT_L);
 COMBO_2(Tab,       KC_I, KC_O);
@@ -331,6 +333,7 @@ combo_t key_combos[] = {
     [CB_Name] =         COMBO_ACTION(Name),
     [CB_Email] =        COMBO_ACTION(Email),
     [CB_Underscore] =   COMBO(Underscore, KC_UNDS),
+    [CB_Tilde] =        COMBO(Tilde, KC_TILD),
     [CB_Escape] =       COMBO(Escape, KC_ESC),
     [CB_Enter] =        COMBO(Enter, KC_ENT),
     [CB_Tab] =          COMBO(Tab, KC_TAB),
