@@ -154,7 +154,7 @@ enum {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [L_QWERTY] = LAYOUT_split_3x6_3(
-    U______, KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,           KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, U______,
+    U______, KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,           KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    U______,
     U______, CT_A,    AT_S,    ST_D,    NV_F,    KC_G,           KC_H,    KC_J,    ST_K,    AT_L,    CT_SCLN, U______,
     U______, GT_Z,    KC_X,    KC_C,    MS_V,    KC_B,           KC_N,    KC_M,    KC_COMM, KC_DOT,  GT_SLSH, U______,
                                ST_ESC,  PT_TAB,  _______,        _______, NU_SPC,  LY_ENT
@@ -167,7 +167,7 @@ y k b c f  q l ' ; .
 
 v m l c p  x f o u j        sturdy
 s t r d y  . n a e i
-z k q g w  b h ' ; ,
+z k q g w  b h ' ; ,_
 
 tnsrhldcmfpgwyb vkxjqz
 tnsr h ld cm fpg pwyb vkxjqz
@@ -196,8 +196,8 @@ bcmp;jx,./
 */
 
 [L_FOLD] = LAYOUT_split_3x6_3(
-    U______, KC_Q,    KC_G,    KC_D,    KC_F,    KC_V,           KC_Z,    KC_L,    KC_U,    KC_O,    KC_Y, U______,
-    U______, CT_N,    AT_S,    ST_T,    NV_H,    KC_K,           KC_W,    KC_R,    ST_E,    AT_A,    CT_I, U______,
+    U______, KC_Q,    KC_G,    KC_D,    KC_F,    KC_V,           KC_Z,    KC_L,    KC_U,    KC_O,    KC_Y,    U______,
+    U______, CT_N,    AT_S,    ST_T,    NV_H,    KC_K,           KC_W,    KC_R,    ST_E,    AT_A,    CT_I,    U______,
     U______, GT_B,    KC_C,    KC_M,    KC_P,    KC_SCLN,        KC_J,    KC_X,    KC_COMM, KC_DOT,  GT_SLSH, U______,
                                _______, PT_H,    _______,        _______, _______, _______
 ),
@@ -211,8 +211,8 @@ sntc   hair
 
 */
 [L_HAIR] = LAYOUT_split_3x6_3(
-    U______, GT_F,    KC_P,    KC_C,    MS_G,    U______,        U______, KC_L,    KC_O,    KC_Y,    GT_W, U______,
-    U______, CT_S,    AT_N,    ST_T,    NV_D,    MS_B,           KC_M,    H2_H,    ST_A,    AT_I,    CT_R, U______,
+    U______, GT_F,    KC_P,    KC_C,    MS_G,    U______,        U______, KC_L,    KC_O,    KC_Y,    GT_W,    U______,
+    U______, CT_S,    AT_N,    ST_T,    NV_D,    MS_B,           KC_M,    H2_H,    ST_A,    AT_I,    CT_R,    U______,
     U______, U______, U______, U______, MS_B,    U______,        U______, KC_M,    U______, U______, U______, U______,
                                _______, PT_SPC,  _______,        _______, NU_E,    LY_U
 ),
@@ -257,21 +257,21 @@ especially if it's paired esc
 [L_PUNCT] = LAYOUT_split_3x6_3(
     U______, _______, KC_LBRC, KC_RBRC, KC_PIPE, U______,        U______, KC_COLN, KC_SCLN, KC_DQUO, KC_EXLM, U______,
     U______, KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, U______,        U______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES, U______,
-    U______, KC_BSLS, KC_LT,   KC_GT,   KC_SLSH, U______,        U______, KC_MINS, KC_PLUS, KC_GRV,  KC_EQL, U______,
+    U______, KC_BSLS, KC_LT,   KC_GT,   KC_SLSH, U______,        U______, KC_MINS, KC_PLUS, KC_GRV,  KC_EQL,  U______,
                                _______, _______, _______,        _______, KC_UNDS, _______
 ),
 /*
 remove ctat__, put desktop switching on left middle finger top row (??)
  */
 [L_NAVI] = LAYOUT_split_3x6_3(
-    U______, _______, AS_TAB,  At_TAB,  _______, U______,        U______, KC_HOME, KC_PGDN, KC_PGUP, KC_END, U______,
-    U______, KC_LCTL, _______, _______, _______, U______,        U______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, U______,
-    U______, _______, Ct_PGUP, Ct_PGDN, _______, U______,        U______, Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT, U______,
-                               _______, _______, _______,        _______, _______,  _______
+    U______, _______, AS_TAB,  At_TAB,  _______, U______,        U______, Ct_PGUP, KC_PGDN, KC_PGUP, Ct_PGDN,  U______,
+    U______, KC_LCTL, _______, _______, _______, U______,        KC_HOME, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_END,
+    U______, C(KC_J), CA_DOWN, CA_UP,   _______, U______,        U______, Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT, U______,
+                               _______, _______, _______,        _______, _______, _______
 ),
 [L_NUMBER] = LAYOUT_split_3x6_3(
-    U______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   U______,        U______, KC_F7,   KC_F8,   KC_F9,   KC_F10, U______,
-    U______, CT_1,    AT_2,    ST_3,    KC_4,    U______,        U______, KC_7,    ST_8,    AT_9,    CT_0, U______,
+    U______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   U______,        U______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  U______,
+    U______, CT_1,    AT_2,    ST_3,    KC_4,    U______,        U______, KC_7,    ST_8,    AT_9,    CT_0,    U______,
     U______, KC_F11,  KC_F12,  KC_F5,   KC_5,    U______,        U______, KC_6,    KC_F6,   KC_CAPS, CW_TOGG, U______,
                                _______, PT_5, _______,           _______, KC_6,    _______
 ),

@@ -182,13 +182,12 @@
 #define ST_F9   SFT_T(KC_F9)
 #define ST_F10  SFT_T(KC_F10)
 
-
-
-
-
 // one shot mod
 #define OSM_LST OSM(MOD_LSFT)
 #define OSM_RST OSM(MOD_RSFT)
 
 // ctrl alt, trans
 #define CTAT___ MT(MOD_LCTL|MOD_LALT, _______)
+
+#define CA_DOWN LCA(KC_DOWN)
+#define CA_UP   LCA(KC_UP)
