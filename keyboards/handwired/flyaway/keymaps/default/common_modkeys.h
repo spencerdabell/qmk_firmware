@@ -189,5 +189,16 @@
 // ctrl alt, trans
 #define CTAT___ MT(MOD_LCTL|MOD_LALT, _______)
 
-#define CA_DOWN LCA(KC_DOWN)
-#define CA_UP   LCA(KC_UP)
+
+
+
+
+// switch back to last application
+// ctrl+tab
+// switch ctrl+shift+tab
+// app fwrd, app_back
+// #define APP_FWD GUI_T(C(KC_TAB))
+// #define APP_BCK ALT_T(C(S(KC_TAB)))
+// not working, switch off for now
+// #define APP_FWD KC_LGUI
+// #define APP_BCK KC_LALT
