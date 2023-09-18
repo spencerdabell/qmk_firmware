@@ -33,6 +33,8 @@
 #define CT_0    RCTL_T(KC_0)
 #define CT_F10  RCTL_T(KC_F10)
 
+
+// control + the key
 #define Ct_A    C(KC_A)
 #define Ct_B    C(KC_B)
 #define Ct_C    C(KC_C)
@@ -59,6 +61,15 @@
 #define Ct_X    C(KC_X)
 #define Ct_Y    C(KC_Y)
 #define Ct_Z    C(KC_Z)
+#define Ct_PGUP C(KC_PGUP)
+#define Ct_PGDN C(KC_PGDN)
+#define Ct_HOME C(KC_HOME)
+#define Ct_LEFT C(KC_LEFT)
+#define Ct_RGHT C(KC_RGHT)
+#define Ct_END  C(KC_END)
+#define Ct_GRV  C(KC_GRV)
+#define Ct_BSPC C(KC_BSPC)
+
 
 
 
@@ -122,8 +133,9 @@
 #define GT_T    GUI_T(KC_T)
 #define GT_V    GUI_T(KC_V)
 #define GT_W    GUI_T(KC_W)
+#define GT_Y    GUI_T(KC_Y)
 #define GT_Z    LGUI_T(KC_Z)
-#define GT_SLSH RGUI_T(KC_SLSH)
+#define GT_SLSH LGUI_T(KC_SLSH)
 #define GT_3    LGUI_T(KC_3)
 // #define GT_F3   GUI_T(KC_F3)
 #define GT_8    GUI_T(KC_8)

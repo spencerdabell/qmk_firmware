@@ -7,8 +7,6 @@ enum {
     // base
     L_QWERTY = 0
     , L_FOLD
-    // , L_HAIR
-    // , L_HAIR2
     , L_LAYER
     , L_PUNCT
     , L_NAVI
@@ -25,9 +23,6 @@ enum {
 #define TO_MS   TO(L_MOUSE)
 #define TO_NU   TO(L_NUMBER)
 #define TO_FOLD TO(L_FOLD)
-// #define TO_HAIR TO(L_HAIR)
-// hair 1 and 2
-// #define H2_H    LT(L_HAIR2, KC_H)
 
 #define LY_U    LT(L_LAYER, KC_U)
 #define LY_ENT  LT(L_LAYER, KC_ENT)
@@ -97,6 +92,7 @@ enum {
 
 // number
 #define NU_E    LT(L_NUMBER, KC_E)
+#define NU_I    LT(L_NUMBER, KC_I)
 #define NU_R    LT(L_NUMBER, KC_R)
 #define NU_U    LT(L_NUMBER, KC_U)
 #define NU_TAB  LT(L_NUMBER, KC_TAB)
@@ -126,13 +122,7 @@ enum {
 #define SD_Z    LT(L_SOUND, KC_Z)
 
 // nav
-#define Ct_PGUP C(KC_PGUP)
-#define Ct_PGDN C(KC_PGDN)
-#define Ct_HOME C(KC_HOME)
-#define Ct_LEFT C(KC_LEFT)
-#define Ct_RGHT C(KC_RGHT)
-#define Ct_END  C(KC_END)
-#define Ct_GRV  C(KC_GRV)
+
 #define Gu_GRV  G(KC_GRV)
 #define At_TAB  A(KC_TAB)
 #define AS_TAB  LSA(KC_TAB)
@@ -147,30 +137,25 @@ enum {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [L_QWERTY] = LAYOUT_split_3x6_3(
     U______, KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,           KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    U______,
-    U______, CT_A,    AT_S,    ST_D,    NV_F,    KC_G,           KC_H,    KC_J,    ST_K,    AT_L,    CT_SCLN, U______,
+    KC_ESC,  CT_A,    AT_S,    ST_D,    NV_F,    KC_G,           KC_H,    KC_J,    ST_K,    AT_L,    CT_SCLN, KC_ENT,
     U______, GT_Z,    KC_X,    KC_C,    MS_V,    KC_B,           KC_N,    KC_M,    KC_COMM, KC_DOT,  GT_SLSH, U______,
-                               ST_ESC,  PT_SPC,  KC_TAB,         _______, NU_SPC,  LY_ENT
+                               ST_ESC,  PT_SPC,  KC_TAB,         ______,  NU_SPC,  LY_ENT
 ),
+
+/*  YGCFV JUOLK
+    STDNB 'EARH
+    QWMP_ ZX,./
+        ␣ IY
+*/
 [L_FOLD] = LAYOUT_split_3x6_3(
-    U______, KC_Q,    KC_G,    KC_D,    KC_F,    KC_V,           KC_Z,    KC_L,    KC_U,    KC_O,    KC_Y,    U______,
-    U______, CT_N,    AT_S,    ST_T,    NV_H,    KC_K,           KC_W,    KC_R,    ST_E,    AT_A,    CT_I,    U______,
-    U______, GT_B,    KC_C,    KC_M,    MS_P,    KC_SCLN,        KC_J,    KC_X,    KC_COMM, KC_DOT,  GT_SLSH, U______,
-                               _______, _______, _______,        _______, _______, _______
+    U______, KC_Q,    KC_G,    KC_C,    KC_F,    KC_V,           KC_J,    KC_U,    KC_O,    KC_L,    KC_K,    U______,
+    U______, CT_S,    AT_T,    ST_D,    NV_N,    KC_B,           KC_QUOT, KC_E,    ST_A,    AT_R,    CT_H,    U______,
+    U______, GT_Y,    KC_W,    KC_M,    MS_P,    KC_Y,           KC_Z,    KC_X,    KC_COMM, KC_DOT,  GT_SLSH, U______,
+                               _______, _______, _______,        LY_Y,    NU_I,    _______
 ),
-// [L_HAIR] = LAYOUT_split_3x6_3(
-//     U______, GT_F,    KC_P,    KC_C,    MS_G,    U______,        U______, KC_L,    KC_O,    KC_Y,    GT_W,    U______,
-//     U______, CT_S,    AT_N,    ST_T,    NV_D,    MS_B,           KC_M,    H2_H,    ST_A,    AT_I,    CT_R,    U______,
-//     U______, U______, U______, U______, MS_B,    U______,        U______, KC_M,    U______, U______, U______, U______,
-//                                _______, PT_SPC,  _______,        _______, NU_E,    LY_U
-// ),
-// [L_HAIR2] = LAYOUT_split_3x6_3(
-//     U______, KC_V,    KC_B,    KC_Q,    KC_K,    _______,        _______, _______, _______, _______, _______, U______,
-//     U______, KC_Z,    KC_M,    KC_X,    KC_J,    _______,        _______, _______, _______, _______, _______, U______,
-//     U______, _______, _______, _______, _______, _______,        _______, _______, _______, _______, _______, U______,
-//                                _______, _______, _______,        _______, _______, _______
-// ),
+
 [L_LAYER] = LAYOUT_split_3x6_3(
-    U______, Ct_Q,    TO_FOLD, TO_QT,   TO_NU, U______,        U______, U______, KC_MPLY, U______, U______, U______,
+    U______, Ct_Q,    TO_FOLD, TO_QT,   TO_NU,   U______,        U______, U______, KC_MPLY, U______, U______, U______,
     U______, Ct_Z,    Ct_S,    TO_MS,   TO_NV,   U______,        U______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, U______,
     U______, Ct_Z,    Ct_X,    Ct_C,    Ct_V,    U______,        U______, KC_MRWD, U______, U______, KC_MFFD, U______,
                                _______, Ct_Y,    _______,        _______, _______, _______
@@ -182,9 +167,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                _______, _______, _______,        _______, KC_UNDS, _______
 ),
 [L_NAVI] = LAYOUT_split_3x6_3(
-    U______, _______, AS_TAB,  At_TAB,  _______, U______,        U______, Ct_PGUP, KC_PGDN, KC_PGUP, Ct_PGDN,  U______,
+    U______, _______, AS_TAB,  At_TAB,  _______, U______,        KC_DEL,  Ct_PGUP, KC_PGDN, KC_PGUP, Ct_PGDN,  U______,
     U______, KC_LCTL, _______, _______, _______, U______,        KC_HOME, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_END,
-    U______, C(KC_J), CA_DOWN, CA_UP,   _______, U______,        U______, Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT, U______,
+    U______, _______, CA_DOWN, CA_UP,   _______, U______,        U______, Ct_LEFT, KC_BSPC, Ct_BSPC, Ct_RGHT, U______,
                                _______, _______, _______,        _______, _______, _______
 ),
 [L_NUMBER] = LAYOUT_split_3x6_3(
