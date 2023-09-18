@@ -134,9 +134,10 @@
 #define GT_V    GUI_T(KC_V)
 #define GT_W    GUI_T(KC_W)
 #define GT_Y    GUI_T(KC_Y)
-#define GT_Z    LGUI_T(KC_Z)
-#define GT_SLSH LGUI_T(KC_SLSH)
-#define GT_3    LGUI_T(KC_3)
+#define GT_Z    GUI_T(KC_Z)
+#define GT_ENT  GUI_T(KC_ENT)
+#define GT_SLSH GUI_T(KC_SLSH)
+#define GT_3    GUI_T(KC_3)
 // #define GT_F3   GUI_T(KC_F3)
 #define GT_8    GUI_T(KC_8)
 
