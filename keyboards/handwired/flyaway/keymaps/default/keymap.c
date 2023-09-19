@@ -135,6 +135,7 @@ enum {
 #define S_CtPDN SFT_T(Ct_PGDN)
 
 
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*  
 YGCFV JUOLK
@@ -142,17 +143,19 @@ STDNB 'EARH
 QWMP_ ZX,./
     ␣ YI
 
- _gcf_ _uolk
-_stdnb 'earh_
- vwmpq zx,./
-   ___ yij
+vgcfj _uolk
+stdnb _earh_
+_wmpq zx,._
+  ___ yij
 */
 [L_FOLD] = LAYOUT_split_3x6_3(
-    U______, KC_ESC,  KC_G,    KC_C,    KC_F,    KC_TAB,         KC_ENT,  KC_U,    KC_O,    KC_L,    KC_K,   U______,
-    ST_ESC,  CT_S,    AT_T,    KC_D,    NV_N,    KC_B,           KC_QUOT, KC_E,    KC_A,    AT_R,    CT_H,   ST_ENT,
-    U______, GT_V,    KC_W,    KC_M,    MS_P,    KC_Q,           KC_Z,    KC_X,    KC_COMM, KC_DOT,  GT_ENT, U______,
-                               ST_ESC,  PT_SPC,  KC_TAB,         LY_Y,    NU_I,    LY_J
+    U______, KC_V,    KC_G,    KC_C,    KC_F,    KC_J,           KC_ENT,  KC_U,    KC_O,    KC_L,    KC_K,   U______,
+    U______, CT_S,    AT_T,    KC_D,    NV_N,    KC_B,           KC_QUOT, KC_E,    KC_A,    AT_R,    CT_H,   U______,
+    U______, GT_ESC,  KC_W,    KC_M,    MS_P,    KC_Q,           KC_Z,    KC_X,    KC_COMM, KC_DOT,  GT_ENT, U______,
+                               _______, PT_SPC,  ST_TAB,         LY_Y,    NU_I,    _______
 ),
+
+
 
 [L_QWERTY] = LAYOUT_split_3x6_3(
     U______, KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,           KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    U______,
@@ -193,7 +196,6 @@ _stdnb 'earh_
 
 };
 
-
 // combo indexes
 enum combos {
     CB_BOOT
@@ -232,6 +234,8 @@ COMBO_2(Escape,    AT_S, ST_D);
 COMBO_2(Enter,     KC_K, AT_L);
 COMBO_2(Tab,       KC_I, KC_O);
 
+
+
 // combo behavior
 combo_t key_combos[] = {
     [CB_BOOT] =         COMBO(BOOT, QK_BOOTLOADER),
@@ -240,7 +244,7 @@ combo_t key_combos[] = {
     [CB_Pass] =         COMBO_ACTION(Pass),
     [CB_PassAdm] =      COMBO_ACTION(PassAdm),
     [CB_PassLinux] =    COMBO_ACTION(PassLinux),
-    [CB_PassLinuxFold] =    COMBO_ACTION(PassLinuxFold),
+    [CB_PassLinuxFold] = COMBO_ACTION(PassLinux),
     [CB_Name] =         COMBO_ACTION(Name),
     [CB_Email] =        COMBO_ACTION(Email),
     [CB_Underscore] =   COMBO(Underscore, KC_UNDS),
