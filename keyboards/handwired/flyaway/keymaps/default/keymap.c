@@ -6,7 +6,6 @@
 enum {
     // base
     L_FOLD = 0
-    , L_QWERTY
     , L_LAYER
     , L_PUNCT
     , L_NAVI
@@ -16,7 +15,6 @@ enum {
 
 // LAYER SWITCHING
 #define TO_FOLD TO(L_FOLD)
-#define TO_QT   TO(L_QWERTY)
 #define TO_LY   TO(L_LAYER)
 #define TO_PT   TO(L_PUNCT)
 #define OSL_PT  OSL(L_PUNCT)
@@ -138,15 +136,10 @@ enum {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*  
-YGCFV JUOLK
-STDNB 'EARH
-QWMP_ ZX,./
-    ␣ YI
-
 vgcfj _uolk
-stdnb _earh_
+stdnb 'earh
 _wmpq zx,._
-  ___ yij
+   __ yi
 */
 [L_FOLD] = LAYOUT_split_3x6_3(
     U______, KC_V,    KC_G,    KC_C,    KC_F,    KC_J,           KC_ENT,  KC_U,    KC_O,    KC_L,    KC_K,   U______,
@@ -154,17 +147,8 @@ _wmpq zx,._
     U______, GT_ESC,  KC_W,    KC_M,    MS_P,    KC_Q,           KC_Z,    KC_X,    KC_COMM, KC_DOT,  GT_ENT, U______,
                                _______, PT_SPC,  ST_TAB,         LY_Y,    NU_I,    _______
 ),
-
-
-
-[L_QWERTY] = LAYOUT_split_3x6_3(
-    U______, KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,           KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    U______,
-    _______, CT_A,    AT_S,    KC_D,    NV_F,    KC_G,           KC_H,    KC_J,    KC_K,    AT_L,    CT_SCLN, _______,
-    U______, GT_Z,    KC_X,    KC_C,    MS_V,    KC_B,           KC_N,    KC_M,    KC_COMM, KC_DOT,  GT_SLSH, U______,
-                               _______, _______, _______,        _______, _______, _______
-),
 [L_LAYER] = LAYOUT_split_3x6_3(
-    U______, Ct_Q,    TO_FOLD, TO_QT,   TO_NU,   U______,        U______, U______, KC_MPLY, U______, U______, U______,
+    U______, Ct_Q,    _______, TO_FOLD, TO_NU,   U______,        U______, U______, KC_MPLY, U______, U______, U______,
     U______, Ct_Z,    Ct_S,    TO_MS,   TO_NV,   U______,        U______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, U______,
     U______, Ct_Z,    Ct_X,    Ct_C,    Ct_V,    U______,        U______, KC_MRWD, U______, U______, KC_MFFD, U______,
                                _______, Ct_Y,    _______,        _______, _______, _______
@@ -193,7 +177,6 @@ _wmpq zx,._
     U______, KC_ACL0, KC_ACL1, KC_ACL2, _______, U______,        U______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, U______,
                                _______, KC_BTN1, _______,        _______, KC_BTN1, _______
 ),
-
 };
 
 // combo indexes
