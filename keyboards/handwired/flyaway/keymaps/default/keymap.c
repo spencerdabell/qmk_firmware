@@ -161,7 +161,7 @@ _wmpq zx,._
 ),
 [L_NAVI] = LAYOUT_split_3x6_3(
     U______, _______, AS_TAB,  At_TAB,  _______, U______,        Ct_BSPC, Ct_PGUP, KC_PGDN, KC_PGUP, Ct_PGDN, U______,
-    U______, KC_LCTL, _______, _______, _______, U______,        KC_HOME, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_END,
+    U______, CT_ESC,  AT_TAB,  KC_ENT,  _______, U______,        KC_HOME, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_END,
     U______, _______, CA_DOWN, CA_UP,   _______, U______,        Ct_BSPC, Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT, U______,
                                _______, _______, _______,        _______, _______, _______
 ),

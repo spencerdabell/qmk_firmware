@@ -27,7 +27,8 @@
 #define CT_X    LCTL_T(KC_X)
 #define CT_Y    LCTL_T(KC_Y)
 #define CT_Z    LCTL_T(KC_Z)
-#define CT_SCLN RCTL_T(KC_SCLN)
+#define CT_SCLN LCTL_T(KC_SCLN)
+#define CT_ESC  LCTL_T(KC_ESC)
 #define CT_1    LCTL_T(KC_1)
 #define CT_F1   LCTL_T(KC_F1)
 #define CT_0    RCTL_T(KC_0)
@@ -122,7 +123,7 @@
 #define AT_F9   ALT_T(KC_F9)
 #define AT_F0   ALT_T(KC_F0)
 #define AT_ESC  ALT_T(KC_ESC)
-
+#define AT_TAB  ALT_T(KC_TAB)
 
 // gui
 #define GT_B    GUI_T(KC_B)
