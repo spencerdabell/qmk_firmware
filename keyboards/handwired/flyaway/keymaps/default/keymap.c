@@ -182,15 +182,12 @@ _wmpq zx,._
 // combo indexes
 enum combos {
     CB_BOOT
-    , CB_BOOT_TOP
     , CB_PID
     , CB_Pass
     , CB_PassAdm
     , CB_Name
     , CB_Email
     , CB_PassLinux
-    , CB_PassLinuxFold
-    , CB_Underscore
     , CB_Tilde
     , CB_Escape
     , CB_Enter
@@ -202,35 +199,27 @@ uint16_t COMBO_LEN = CB_LENGTH;
 // combo key combinations
 #define COMBO_2(NAME, KEY1, KEY2)  const uint16_t PROGMEM NAME[] = {KEY1, KEY2, COMBO_END};
 #define COMBO_3(NAME, KEY1, KEY2, KEY3)  const uint16_t PROGMEM NAME[] = {KEY1, KEY2, KEY3, COMBO_END};
-COMBO_3(BOOT,      KC_W, KC_E, KC_R); 
-COMBO_3(BOOT_TOP,  KC_G, KC_C, KC_F);
-COMBO_3(PID,       NU_SPC, KC_I, ST_D);
-COMBO_3(Pass,      NU_SPC, CT_A, KC_P);
-COMBO_3(PassAdm,   NU_SPC, AT_S, KC_P);
-COMBO_3(PassLinux, NU_SPC, NV_F, AT_L);
-COMBO_3(PassLinuxFold, KC_L, PT_SPC, NV_N);
-COMBO_3(Name,      NU_SPC, KC_N, AT_S);
-COMBO_3(Email,     NU_SPC, KC_E, KC_M);
-COMBO_2(Underscore,KC_TAB, NU_SPC);
+COMBO_3(BOOT,      KC_G, KC_C, KC_F);
+COMBO_3(PID,       MS_P, NU_I, KC_D);
+COMBO_3(Pass,      MS_P, KC_A, CT_S);
+COMBO_3(PassAdm,   MS_P, KC_A, KC_D);
+COMBO_3(PassLinux, NV_N, NU_I, KC_L);
+COMBO_3(Name,      KC_M, NV_N, KC_A);
+COMBO_3(Email,     KC_M, KC_E, KC_A);
 COMBO_2(Tilde,     KC_COMM, KC_DOT);
-COMBO_2(Escape,    AT_S, ST_D);
-COMBO_2(Enter,     KC_K, AT_L);
-COMBO_2(Tab,       KC_I, KC_O);
-
-
+COMBO_2(Escape,    AT_T, KC_D);
+COMBO_2(Enter,     KC_A, AT_R);
+COMBO_2(Tab,       KC_G, KC_C);
 
 // combo behavior
 combo_t key_combos[] = {
     [CB_BOOT] =         COMBO(BOOT, QK_BOOTLOADER),
-    [CB_BOOT_TOP] =     COMBO(BOOT_TOP, QK_BOOTLOADER),
     [CB_PID] =          COMBO_ACTION(PID),
     [CB_Pass] =         COMBO_ACTION(Pass),
     [CB_PassAdm] =      COMBO_ACTION(PassAdm),
     [CB_PassLinux] =    COMBO_ACTION(PassLinux),
-    [CB_PassLinuxFold] = COMBO_ACTION(PassLinux),
     [CB_Name] =         COMBO_ACTION(Name),
     [CB_Email] =        COMBO_ACTION(Email),
-    [CB_Underscore] =   COMBO(Underscore, KC_UNDS),
     [CB_Tilde] =        COMBO(Tilde, KC_TILD),
     [CB_Escape] =       COMBO(Escape, KC_ESC),
     [CB_Enter] =        COMBO(Enter, KC_ENT),
