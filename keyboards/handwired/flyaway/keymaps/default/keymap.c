@@ -142,9 +142,9 @@ enum {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [L_FOLD] = LAYOUT_split_3x6_3(
-    U______, KC_ESC,  KC_G,    KC_M,    KC_P,    U______,        KC_K,    KC_U,    KC_O,    KC_L,    KC_K,   U______,
-    U______, CT_S,    AT_T,    KC_N,    NV_D,    KC_B,           KC_J,    KC_A,    KC_E,    AT_R,    CT_H,   U______,
-    U______, GT_V,    KC_W,    KC_F,    MS_C,    KC_Q,           KC_Z,    KC_X,    KC_COMM, KC_DOT,  GT_ENT, U______,
+    U______, KC_ESC,  KC_G,    KC_C,    KC_F,    U______,        KC_K,    KC_U,    KC_O,    KC_L,    KC_K,   U______,
+    U______, CT_S,    AT_T,    KC_D,    NV_N,    KC_B,           KC_J,    KC_A,    KC_E,    AT_R,    CT_H,   U______,
+    U______, GT_V,    KC_W,    KC_M,    MS_P,    KC_Q,           KC_Z,    KC_X,    KC_COMM, KC_DOT,  GT_ENT, U______,
                                _______, ST_SPC,  PT_O,           LY_Y,    NU_I,    _______
 ),
 [L_LAYER] = LAYOUT_split_3x6_3(
