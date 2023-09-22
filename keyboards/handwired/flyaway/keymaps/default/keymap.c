@@ -8,23 +8,25 @@ enum {
     L_FOLD = 0
     , L_LAYER
     , L_PUNCT
-    , L_NAVI
     , L_NUMBER
     , L_MOUSE
+    , L_NAVI
 };
 
 // LAYER SWITCHING
 #define TO_FOLD TO(L_FOLD)
-#define TO_LY   TO(L_LAYER)
-#define TO_PT   TO(L_PUNCT)
+#define TG_LY   TG(L_LAYER)
+#define TG_PT   TG(L_PUNCT)
 #define OSL_PT  OSL(L_PUNCT)
-#define TO_NV   TO(L_NAVI)
-#define TO_MS   TO(L_MOUSE)
-#define TO_NU   TO(L_NUMBER)
+#define TG_NV   TG(L_NAVI)
+#define TG_MS   TG(L_MOUSE)
+#define TG_NU   TG(L_NUMBER)
 
 #define LY_J    LT(L_LAYER, KC_J)
 #define LY_U    LT(L_LAYER, KC_U)
 #define LY_Y    LT(L_LAYER, KC_Y)
+#define LY_6    LT(L_LAYER, KC_6)
+#define LY_9    LT(L_LAYER, KC_9)
 #define LY_ENT  LT(L_LAYER, KC_ENT)
 #define LY_TAB  LT(L_LAYER, KC_TAB)
 #define LY_ESC  LT(L_LAYER, KC_ESC)
@@ -56,6 +58,8 @@ enum {
 #define NV_X    LT(L_NAVI, KC_X)
 #define NV_Y    LT(L_NAVI, KC_Y)
 #define NV_Z    LT(L_NAVI, KC_Z)
+#define NV_0    LT(L_NAVI, KC_0)
+#define NV_4    LT(L_NAVI, KC_4)
 #define NV__    LT(L_NAVI, KC_NO)
 
 // mouse
@@ -104,6 +108,7 @@ enum {
 #define PT_C    LT(L_PUNCT, KC_C)
 #define PT_E    LT(L_PUNCT, KC_E)
 #define PT_H    LT(L_PUNCT, KC_H)
+#define PT_O    LT(L_PUNCT, KC_O)
 #define PT_X    LT(L_PUNCT, KC_X)
 #define PT__    LT(L_PUNCT, KC_NO)
 #define PT_5    LT(L_PUNCT, KC_5)
@@ -135,44 +140,40 @@ enum {
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-/*  
-vgcfj _uolk
-stdnb 'earh
-_wmpq zx,._
-   __ yi
-*/
+
 [L_FOLD] = LAYOUT_split_3x6_3(
-    U______, KC_V,    KC_G,    KC_C,    KC_F,    KC_J,           KC_ENT,  KC_U,    KC_O,    KC_L,    KC_K,   U______,
-    U______, CT_S,    AT_T,    KC_D,    NV_N,    KC_B,           KC_QUOT, KC_E,    KC_A,    AT_R,    CT_H,   U______,
-    U______, GT_ESC,  KC_W,    KC_M,    MS_P,    KC_Q,           KC_Z,    KC_X,    KC_COMM, KC_DOT,  GT_ENT, U______,
-                               _______, PT_SPC,  ST_TAB,         LY_Y,    NU_I,    _______
+    U______, KC_ESC,  KC_G,    KC_M,    KC_P,    U______,        KC_K,    KC_U,    KC_O,    KC_L,    KC_K,   U______,
+    U______, CT_S,    AT_T,    KC_N,    NV_D,    KC_B,           KC_J,    KC_A,    KC_E,    AT_R,    CT_H,   U______,
+    U______, GT_V,    KC_W,    KC_F,    MS_C,    KC_Q,           KC_Z,    KC_X,    KC_COMM, KC_DOT,  GT_ENT, U______,
+                               _______, ST_SPC,  PT_O,           LY_Y,    NU_I,    _______
 ),
 [L_LAYER] = LAYOUT_split_3x6_3(
-    U______, Ct_Q,    _______, TO_FOLD, TO_NU,   U______,        U______, U______, KC_MPLY, U______, U______, U______,
-    U______, Ct_Z,    Ct_S,    TO_MS,   TO_NV,   U______,        U______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, U______,
+    U______, Ct_Q,    _______, TO_FOLD, TG_NU,   U______,        _______, U______, KC_MPLY, U______, U______, U______,
+    U______, Ct_Z,    Ct_S,    _______, TG_NV,   U______,        U______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, U______,
     U______, Ct_Z,    Ct_X,    Ct_C,    Ct_V,    U______,        U______, KC_MRWD, U______, U______, KC_MFFD, U______,
                                _______, Ct_Y,    _______,        _______, _______, _______
 ),
 [L_PUNCT] = LAYOUT_split_3x6_3(
     U______, _______, KC_LBRC, KC_RBRC, KC_PIPE, U______,        U______, KC_COLN, KC_SCLN, KC_DQUO, KC_EXLM, U______,
     U______, KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, U______,        U______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES, U______,
-    U______, KC_BSLS, KC_LT,   KC_GT,   KC_SLSH, U______,        U______, KC_MINS, KC_PLUS, KC_GRV,  KC_EQL,  U______,
+    U______, KC_BSLS, KC_LT,   KC_GT,   KC_SLSH, U______,        _______, KC_MINS, KC_PLUS, KC_GRV,  KC_EQL,  U______,
                                _______, _______, _______,        _______, KC_UNDS, _______
 ),
+[L_NUMBER] = LAYOUT_split_3x6_3(
+    U______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,          KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  U______,
+    U______, CT_1,    AT_2,    KC_3,    NV_4,    KC_5,           KC_6,    KC_7,    KC_8,    AT_9,    CT_0,    U______,
+    U______, KC_F11,  KC_F12,  KC_CAPS, CW_TOGG, _______,        _______, KC_MINS, KC_COMM, KC_DOT,  KC_ENT,  U______,
+                               _______, _______, KC_5,           LY_6,    _______,    _______
+),
 [L_NAVI] = LAYOUT_split_3x6_3(
-    U______, _______, AS_TAB,  At_TAB,  _______, U______,        Ct_BSPC, Ct_PGUP, KC_PGDN, KC_PGUP, Ct_PGDN, U______,
+    U______, _______, AS_TAB,  At_TAB,  _______, U______,        _______, Ct_PGUP, KC_PGDN, KC_PGUP, Ct_PGDN, U______,
     U______, CT_ESC,  AT_TAB,  KC_ENT,  _______, U______,        KC_HOME, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_END,
     U______, _______, CA_DOWN, CA_UP,   _______, U______,        Ct_BSPC, Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT, U______,
                                _______, _______, _______,        _______, _______, _______
 ),
-[L_NUMBER] = LAYOUT_split_3x6_3(
-    U______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   U______,        U______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  U______,
-    U______, CT_1,    AT_2,    ST_3,    KC_4,    U______,        U______, KC_7,    ST_8,    AT_9,    CT_0,    U______,
-    U______, KC_F11,  KC_F12,  KC_F5,   KC_5,    U______,        U______, KC_6,    KC_F6,   KC_CAPS, CW_TOGG, U______,
-                               _______, PT_5,    _______,        _______, KC_6,    _______
-),
+
 [L_MOUSE] = LAYOUT_split_3x6_3(
-    U______, _______, _______, _______, _______, U______,        U______, U______, KC_BTN1, KC_BTN2, KC_BTN3, U______,
+    U______, _______, _______, _______, _______, U______,        _______, U______, KC_BTN1, KC_BTN2, KC_BTN3, U______,
     U______, _______, KC_BTN2, KC_BTN1, _______, U______,        U______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, U______,
     U______, KC_ACL0, KC_ACL1, KC_ACL2, _______, U______,        U______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, U______,
                                _______, KC_BTN1, _______,        _______, KC_BTN1, _______
@@ -199,17 +200,17 @@ uint16_t COMBO_LEN = CB_LENGTH;
 // combo key combinations
 #define COMBO_2(NAME, KEY1, KEY2)  const uint16_t PROGMEM NAME[] = {KEY1, KEY2, COMBO_END};
 #define COMBO_3(NAME, KEY1, KEY2, KEY3)  const uint16_t PROGMEM NAME[] = {KEY1, KEY2, KEY3, COMBO_END};
-COMBO_3(BOOT,      KC_G, KC_C, KC_F);
-COMBO_3(PID,       MS_P, NU_I, KC_D);
-COMBO_3(Pass,      MS_P, KC_A, CT_S);
-COMBO_3(PassAdm,   MS_P, KC_A, KC_D);
-COMBO_3(PassLinux, NV_N, NU_I, KC_L);
-COMBO_3(Name,      KC_M, NV_N, KC_A);
+COMBO_3(BOOT,      KC_G, KC_M, KC_P);
+COMBO_2(PID,       NU_I, NV_D);
+COMBO_2(Pass,      KC_P, CT_S);
+COMBO_2(PassAdm,   KC_P, NV_D);
+COMBO_3(PassLinux, KC_N, NV_D, KC_L);
+COMBO_2(Name,      KC_M, KC_N);
 COMBO_3(Email,     KC_M, KC_E, KC_A);
 COMBO_2(Tilde,     KC_COMM, KC_DOT);
-COMBO_2(Escape,    AT_T, KC_D);
-COMBO_2(Enter,     KC_A, AT_R);
-COMBO_2(Tab,       KC_G, KC_C);
+COMBO_2(Escape,    AT_T, KC_N);
+COMBO_2(Enter,     KC_E, AT_R);
+COMBO_2(Tab,       KC_G, KC_M);
 
 // combo behavior
 combo_t key_combos[] = {
