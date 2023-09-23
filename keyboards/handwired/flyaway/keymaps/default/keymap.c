@@ -200,17 +200,17 @@ uint16_t COMBO_LEN = CB_LENGTH;
 // combo key combinations
 #define COMBO_2(NAME, KEY1, KEY2)  const uint16_t PROGMEM NAME[] = {KEY1, KEY2, COMBO_END};
 #define COMBO_3(NAME, KEY1, KEY2, KEY3)  const uint16_t PROGMEM NAME[] = {KEY1, KEY2, KEY3, COMBO_END};
-COMBO_3(BOOT,      KC_G, KC_M, KC_P);
-COMBO_2(PID,       NU_I, NV_D);
-COMBO_2(Pass,      KC_P, CT_S);
-COMBO_2(PassAdm,   KC_P, NV_D);
-COMBO_3(PassLinux, KC_N, NV_D, KC_L);
-COMBO_2(Name,      KC_M, KC_N);
-COMBO_3(Email,     KC_M, KC_E, KC_A);
+COMBO_3(BOOT,      KC_G, KC_C, KC_F);
+COMBO_2(PID,       NU_I, KC_D);
+COMBO_2(Pass,      MS_P, CT_S);
+COMBO_2(PassAdm,   MS_P, KC_D);
+COMBO_3(PassLinux, NV_N, KC_D, KC_L);
+COMBO_2(Name,      KC_M, NV_N);
+COMBO_3(Email,     KC_M, KC_A, KC_E);
 COMBO_2(Tilde,     KC_COMM, KC_DOT);
-COMBO_2(Escape,    AT_T, KC_N);
+COMBO_2(Escape,    AT_T, KC_D);
 COMBO_2(Enter,     KC_E, AT_R);
-COMBO_2(Tab,       KC_G, KC_M);
+COMBO_2(Tab,       KC_G, KC_C);
 
 // combo behavior
 combo_t key_combos[] = {
