@@ -6,6 +6,7 @@
 enum {
     // base
     L_FOLD = 0
+    , L_QT
     , L_LAYER
     , L_PUNCT
     , L_NUMBER
@@ -15,6 +16,7 @@ enum {
 
 // LAYER SWITCHING
 #define TO_FOLD TO(L_FOLD)
+#define TO_QT   TO(L_QT)
 #define TG_LY   TG(L_LAYER)
 #define TG_PT   TG(L_PUNCT)
 #define OSL_PT  OSL(L_PUNCT)
@@ -30,6 +32,8 @@ enum {
 #define LY_ENT  LT(L_LAYER, KC_ENT)
 #define LY_TAB  LT(L_LAYER, KC_TAB)
 #define LY_ESC  LT(L_LAYER, KC_ESC)
+#define LY__    LT(L_LAYER, KC_NO)
+
 
 // nav
 #define NV_A    LT(L_NAVI, KC_A)
@@ -136,6 +140,8 @@ enum {
 // shortcuts for, wait these don't work 
 #define A_CtPUP ALT_T(Ct_PGUP)
 #define S_CtPDN SFT_T(Ct_PGDN)
+#define DESK_LT LCTL(LGUI(KC_LEFT))
+#define DESK_RT LCTL(LGUI(KC_RGHT))
 
 
 
@@ -147,9 +153,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     U______, GT_V,    KC_W,    KC_M,    MS_P,    KC_Q,           KC_Z,    KC_X,    KC_COMM, KC_DOT,  GT_ENT, U______,
                                _______, ST_SPC,  PT_O,           LY_Y,    NU_I,    _______
 ),
+
+[L_QT] = LAYOUT_split_3x6_3(
+    U______, KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,           KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,   U______,
+    U______, CT_A,    AT_S,    KC_D,    NV_F,    KC_G,           KC_H,    KC_J,    KC_K,    AT_L,    CT_SCLN,U______,
+    U______, GT_Z,    KC_X,    KC_C,    MS_V,    KC_B,           KC_N,    KC_M,    KC_COMM, KC_DOT,  GT_ENT, U______,
+                               _______, ST_SPC,  PT__,           LY__,    NU_SPC,  _______
+),
+
 [L_LAYER] = LAYOUT_split_3x6_3(
-    U______, Ct_Q,    _______, TO_FOLD, TG_NU,   U______,        _______, U______, KC_MPLY, U______, U______, U______,
-    U______, Ct_Z,    Ct_S,    _______, TG_NV,   U______,        U______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, U______,
+    U______, Ct_Q,    TO_QT,   TO_FOLD, _______, U______,        _______, U______, KC_MPLY, U______, U______, U______,
+    U______, Ct_Z,    Ct_S,    _______, _______, U______,        U______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, U______,
     U______, Ct_Z,    Ct_X,    Ct_C,    Ct_V,    U______,        U______, KC_MRWD, U______, U______, KC_MFFD, U______,
                                _______, Ct_Y,    _______,        _______, _______, _______
 ),
@@ -169,7 +183,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     U______, _______, AS_TAB,  At_TAB,  _______, U______,        _______, Ct_PGUP, KC_PGDN, KC_PGUP, Ct_PGDN, U______,
     U______, CT_ESC,  AT_TAB,  KC_ENT,  _______, U______,        KC_HOME, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_END,
     U______, _______, CA_DOWN, CA_UP,   _______, U______,        Ct_BSPC, Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT, U______,
-                               _______, _______, _______,        _______, _______, _______
+                               _______, _______, DESK_LT,        DESK_RT, _______, _______
 ),
 
 [L_MOUSE] = LAYOUT_split_3x6_3(
@@ -201,9 +215,16 @@ uint16_t COMBO_LEN = CB_LENGTH;
 #define COMBO_2(NAME, KEY1, KEY2)  const uint16_t PROGMEM NAME[] = {KEY1, KEY2, COMBO_END};
 #define COMBO_3(NAME, KEY1, KEY2, KEY3)  const uint16_t PROGMEM NAME[] = {KEY1, KEY2, KEY3, COMBO_END};
 COMBO_3(BOOT,      KC_G, KC_C, KC_F);
-COMBO_2(PID,       NU_I, KC_D);
-COMBO_2(Pass,      MS_P, CT_S);
-COMBO_2(PassAdm,   MS_P, KC_D);
+// COMBO_2(PID,       NU_I, KC_D);
+COMBO_2(PID,       KC_I, KC_D);
+
+//COMBO_2(Pass,      MS_P, CT_S);
+COMBO_2(Pass,      KC_P, AT_S);
+
+//COMBO_2(PassAdm,   MS_P, KC_D);
+COMBO_2(PassAdm,   KC_P, KC_D);
+
+
 COMBO_3(PassLinux, NV_N, KC_D, KC_L);
 COMBO_2(Name,      KC_M, NV_N);
 COMBO_3(Email,     KC_M, KC_A, KC_E);
