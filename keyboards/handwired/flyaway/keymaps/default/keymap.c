@@ -149,16 +149,16 @@ enum {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [L_FOLD] = LAYOUT_split_3x6_3(
-    U______, KC_Q,    KC_F,    KC_M,    KC_P,    _______,        _______, KC_J,    KC_K,    KC_Y,    KC_QUOT,U______,
-    U______, CT_R,    AT_S,    KC_T,    NV_H,    KC_B,           KC_X,    KC_N,    KC_A,    AT_I,    CT_O,   U______,
-    U______, GT_W,    KC_C,    KC_G,    MS_D,    KC_V,           KC_Z,    KC_L,    KC_COMM, KC_DOT,  GT_ENT, U______,
+    U______, KC_Q,    KC_F,    KC_M,    KC_P,    _______,        _______, KC_J,    KC_K,    KC_Y,    KC_QUOT, U______,
+    U______, CT_R,    AT_S,    KC_T,    NV_H,    KC_B,           KC_X,    KC_N,    KC_A,    AT_I,    CT_O,    U______,
+    U______, GT_W,    KC_C,    KC_G,    MS_D,    KC_V,           KC_Z,    KC_L,    KC_COMM, KC_DOT,  GT_ENT,  U______,
                                _______, PT_SPC,  ST_SPC,         NU_E,    LY_U,    _______
 ),
 
 [L_QT] = LAYOUT_split_3x6_3(
-    U______, KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,           KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,   U______,
-    U______, CT_A,    AT_S,    KC_D,    NV_F,    KC_G,           KC_H,    KC_J,    KC_K,    AT_L,    CT_SCLN,U______,
-    U______, GT_Z,    KC_X,    KC_C,    MS_V,    KC_B,           KC_N,    KC_M,    KC_COMM, KC_DOT,  GT_ENT, U______,
+    U______, KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,           KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    U______,
+    U______, CT_A,    AT_S,    KC_D,    NV_F,    KC_G,           KC_H,    KC_J,    KC_K,    AT_L,    CT_SCLN, U______,
+    U______, GT_Z,    KC_X,    KC_C,    MS_V,    KC_B,           KC_N,    KC_M,    KC_COMM, KC_DOT,  GT_ENT,  U______,
                                _______, ST_SPC,  PT_TAB,         LY__,    NU_SPC,  _______
 ),
 
@@ -181,10 +181,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                _______, KC_5,    KC_5,           LY_6,    KC_6,    _______
 ),
 [L_NAVI] = LAYOUT_split_3x6_3(
-    U______, _______, AS_TAB,  At_TAB,  _______, U______,        _______, Ct_PGUP, KC_PGDN, KC_PGUP, Ct_PGDN, U______,
-    U______, CT_ESC,  AT_TAB,  KC_ENT,  _______, U______,        KC_HOME, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_END,
-    U______, _______, CA_DOWN, CA_UP,   _______, U______,        Ct_BSPC, Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT, U______,
-                               _______, _______, DESK_LT,        DESK_RT, _______, _______
+    U______, DESK_LT, AS_TAB,  At_TAB,  _______, U______,        _______, Ct_PGUP, KC_PGDN, KC_PGUP, Ct_PGDN, U______,
+    U______, CT_ESC,  AT_TAB,  KC_ENT,  _______, U______,        KC_HOME, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, U______,
+    U______, DESK_RT, CA_DOWN, CA_UP,   _______, U______,        KC_END,  Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT, U______,
+                               _______, _______, _______,        Ct_BSPC, KC_END,  _______
 ),
 
 [L_MOUSE] = LAYOUT_split_3x6_3(
