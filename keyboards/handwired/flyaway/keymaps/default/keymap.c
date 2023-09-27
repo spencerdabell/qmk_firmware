@@ -24,6 +24,7 @@ enum {
 #define TG_MS   TG(L_MOUSE)
 #define TG_NU   TG(L_NUMBER)
 
+#define LY_E    LT(L_LAYER, KC_E)
 #define LY_J    LT(L_LAYER, KC_J)
 #define LY_U    LT(L_LAYER, KC_U)
 #define LY_Y    LT(L_LAYER, KC_Y)
@@ -148,17 +149,17 @@ enum {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [L_FOLD] = LAYOUT_split_3x6_3(
-    U______, KC_ESC,  KC_G,    KC_C,    KC_F,    U______,        KC_K,    KC_U,    KC_O,    KC_L,    KC_K,   U______,
-    U______, CT_S,    AT_T,    KC_D,    NV_N,    KC_B,           KC_J,    KC_A,    KC_E,    AT_R,    CT_H,   U______,
-    U______, GT_V,    KC_W,    KC_M,    MS_P,    KC_Q,           KC_Z,    KC_X,    KC_COMM, KC_DOT,  GT_ENT, U______,
-                               _______, ST_SPC,  PT_O,           LY_Y,    NU_I,    _______
+    U______, KC_Q,    KC_F,    KC_M,    KC_P,    _______,        _______, KC_J,    KC_K,    KC_Y,    KC_QUOT,U______,
+    U______, CT_R,    AT_S,    KC_T,    NV_H,    KC_B,           KC_X,    KC_N,    KC_A,    AT_I,    CT_O,   U______,
+    U______, GT_W,    KC_C,    KC_G,    MS_D,    KC_V,           KC_Z,    KC_L,    KC_COMM, KC_DOT,  GT_ENT, U______,
+                               _______, ST_SPC,  PT_TAB,         LY_E,    NU_U,    _______
 ),
 
 [L_QT] = LAYOUT_split_3x6_3(
     U______, KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,           KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,   U______,
     U______, CT_A,    AT_S,    KC_D,    NV_F,    KC_G,           KC_H,    KC_J,    KC_K,    AT_L,    CT_SCLN,U______,
     U______, GT_Z,    KC_X,    KC_C,    MS_V,    KC_B,           KC_N,    KC_M,    KC_COMM, KC_DOT,  GT_ENT, U______,
-                               _______, ST_SPC,  PT__,           LY__,    NU_SPC,  _______
+                               _______, ST_SPC,  PT_TAB,         LY__,    NU_SPC,  _______
 ),
 
 [L_LAYER] = LAYOUT_split_3x6_3(
@@ -214,18 +215,11 @@ uint16_t COMBO_LEN = CB_LENGTH;
 // combo key combinations
 #define COMBO_2(NAME, KEY1, KEY2)  const uint16_t PROGMEM NAME[] = {KEY1, KEY2, COMBO_END};
 #define COMBO_3(NAME, KEY1, KEY2, KEY3)  const uint16_t PROGMEM NAME[] = {KEY1, KEY2, KEY3, COMBO_END};
-COMBO_3(BOOT,      KC_G, KC_C, KC_F);
-// COMBO_2(PID,       NU_I, KC_D);
+COMBO_3(BOOT,      KC_F, KC_M, KC_P);
 COMBO_2(PID,       KC_I, KC_D);
-
-//COMBO_2(Pass,      MS_P, CT_S);
 COMBO_2(Pass,      KC_P, AT_S);
-
-//COMBO_2(PassAdm,   MS_P, KC_D);
 COMBO_2(PassAdm,   KC_P, KC_D);
-
-
-COMBO_3(PassLinux, NV_N, KC_D, KC_L);
+COMBO_3(PassLinux, NV_H, KC_N, KC_L);
 COMBO_2(Name,      KC_M, NV_N);
 COMBO_3(Email,     KC_M, KC_A, KC_E);
 COMBO_2(Tilde,     KC_COMM, KC_DOT);
