@@ -152,7 +152,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     U______, KC_Q,    KC_F,    KC_M,    KC_P,    _______,        _______, KC_J,    KC_K,    KC_Y,    KC_QUOT,U______,
     U______, CT_R,    AT_S,    KC_T,    NV_H,    KC_B,           KC_X,    KC_N,    KC_A,    AT_I,    CT_O,   U______,
     U______, GT_W,    KC_C,    KC_G,    MS_D,    KC_V,           KC_Z,    KC_L,    KC_COMM, KC_DOT,  GT_ENT, U______,
-                               _______, ST_SPC,  PT_TAB,         LY_E,    NU_U,    _______
+                               _______, PT_SPC,  ST_SPC,         NU_E,    LY_U,    _______
 ),
 
 [L_QT] = LAYOUT_split_3x6_3(
@@ -178,7 +178,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     U______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,          KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  U______,
     U______, CT_1,    AT_2,    KC_3,    NV_4,    KC_5,           KC_6,    KC_7,    KC_8,    AT_9,    CT_0,    U______,
     U______, KC_F11,  KC_F12,  KC_CAPS, CW_TOGG, _______,        _______, KC_MINS, KC_COMM, KC_DOT,  KC_ENT,  U______,
-                               _______, _______, KC_5,           LY_6,    _______,    _______
+                               _______, KC_5,    KC_5,           LY_6,    KC_6,    _______
 ),
 [L_NAVI] = LAYOUT_split_3x6_3(
     U______, _______, AS_TAB,  At_TAB,  _______, U______,        _______, Ct_PGUP, KC_PGDN, KC_PGUP, Ct_PGDN, U______,
