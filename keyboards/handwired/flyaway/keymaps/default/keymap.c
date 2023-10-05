@@ -153,60 +153,53 @@ enum {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
-[L_FOLD] = LAYOUT_split_3x6_3(
-    U______, KC_Q,    KC_F,    KC_M,    KC_P,    KC_SLSH,        KC_COMM, KC_J,    KC_K,    KC_COMM, KC_QUOT, U______,
-    U______, CT_R,    AT_S,    NV2_T,   NV_H,    KC_B,           KC_X,    KC_N,    KC_A,    AT_I,    CT_O,    U______,
-    U______, GT_W,    KC_C,    KC_G,    MS_D,    KC_V,           KC_Z,    KC_L,    KC_Y,    KC_DOT,  GT_ENT,  U______,
-                               _______, ST_SPC,  PT_SPC,         LY_E,    NU_U,    _______
+[L_FOLD] = LAYOUT_split_3x5_3(
+    KC_Q,    KC_F,    KC_M,    KC_P,    KC_SLSH,        KC_COMM, KC_J,    KC_K,    KC_COMM, KC_QUOT,
+    CT_R,    AT_S,    NV2_T,   NV_H,    KC_B,           KC_X,    KC_N,    KC_A,    AT_I,    CT_O,
+    GT_W,    KC_C,    KC_G,    MS_D,    KC_V,           KC_Z,    KC_L,    KC_Y,    KC_DOT,  GT_ENT,
+                      _______, ST_SPC,  PT_SPC,         LY_E,    NU_U,    _______
 ),
-[L_QT] = LAYOUT_split_3x6_3(
-    U______, KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,           KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    U______,
-    U______, CT_A,    AT_S,    NV2_D,   NV_F,    KC_G,           KC_H,    KC_J,    KC_K,    AT_L,    CT_SCLN, U______,
-    U______, GT_Z,    KC_X,    KC_C,    MS_V,    KC_B,           KC_N,    KC_M,    KC_COMM, KC_DOT,  GT_ENT,  U______,
-                               _______, ST_SPC,  PT_TAB,         LY__,    NU_SPC,  _______
+[L_QT] = LAYOUT_split_3x5_3(
+    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,           KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
+    CT_A,    AT_S,    NV2_D,   NV_F,    KC_G,           KC_H,    KC_J,    KC_K,    AT_L,    CT_SCLN,
+    GT_Z,    KC_X,    KC_C,    MS_V,    KC_B,           KC_N,    KC_M,    KC_COMM, KC_DOT,  GT_ENT,
+                      _______, ST_SPC,  PT_TAB,         LY__,    NU_SPC,  _______
 ),
-[L_LAYER] = LAYOUT_split_3x6_3(
-    U______, Ct_Q,    TO_QT,   TO_FOLD, _______, U______,        _______, U______, KC_MPLY, U______, U______, U______,
-    U______, Ct_Z,    Ct_S,    _______, _______, U______,        U______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, U______,
-    U______, Ct_Z,    Ct_X,    Ct_C,    Ct_V,    U______,        U______, KC_MRWD, U______, U______, KC_MFFD, U______,
-                               _______, Ct_Y,    _______,        _______, _______, _______
+[L_LAYER] = LAYOUT_split_3x5_3(
+    Ct_Q,    TO_QT,   TO_FOLD, _______, U______,        _______, U______, KC_MPLY, U______, U______,
+    Ct_Z,    Ct_S,    _______, _______, U______,        U______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT,
+    Ct_Z,    Ct_X,    Ct_C,    Ct_V,    U______,        U______, KC_MRWD, U______, U______, KC_MFFD,
+                      _______, Ct_Y,    _______,        _______, _______, _______
 ),
-[L_PUNCT] = LAYOUT_split_3x6_3(
-    U______, _______, KC_LBRC, KC_RBRC, KC_PIPE, U______,        U______, KC_COLN, KC_SCLN, KC_DQUO, KC_EXLM, U______,
-    U______, KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, U______,        U______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES, U______,
-    U______, KC_BSLS, KC_LT,   KC_GT,   KC_SLSH, U______,        _______, KC_MINS, KC_PLUS, KC_GRV,  KC_EQL,  U______,
-                               _______, _______, _______,        _______, KC_UNDS, _______
+[L_PUNCT] = LAYOUT_split_3x5_3(
+    _______, KC_LBRC, KC_RBRC, KC_PIPE, U______,        U______, KC_COLN, KC_SCLN, KC_DQUO, KC_EXLM,
+    KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, U______,        U______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES,
+    KC_BSLS, KC_LT,   KC_GT,   KC_SLSH, U______,        _______, KC_MINS, KC_PLUS, KC_GRV,  KC_EQL,
+                      _______, _______, _______,        _______, KC_UNDS, _______
 ),
-[L_NUMBER] = LAYOUT_split_3x6_3(
-    U______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,          KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  U______,
-    U______, CT_1,    AT_2,    KC_3,    NV_4,    KC_5,           KC_6,    KC_7,    KC_8,    AT_9,    CT_0,    U______,
-    U______, KC_F11,  KC_F12,  KC_CAPS, CW_TOGG, _______,        _______, KC_MINS, KC_COMM, KC_DOT,  KC_ENT,  U______,
-                               _______, ST_5,    PT_5,           LY_6,    KC_6,    _______
+[L_NUMBER] = LAYOUT_split_3x5_3(
+    KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,          KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,
+    CT_1,    AT_2,    KC_3,    NV_4,    KC_5,           KC_6,    KC_7,    KC_8,    AT_9,    CT_0,
+    KC_F11,  KC_F12,  KC_CAPS, CW_TOGG, _______,        _______, KC_MINS, KC_COMM, KC_DOT,  KC_ENT,
+                      _______, ST_5,    PT_5,           LY_6,    KC_6,    _______
 ),
-[L_NAVI] = LAYOUT_split_3x6_3(
-    U______, _______, AS_TAB,  At_TAB,  _______, U______,        _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  U______,
-    U______, CT_ESC,  AT_TAB,  _______, _______, U______,        _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, U______,
-    U______, KC_SLSH, _______, _______, _______, U______,        _______, Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT, U______,
-                               _______, _______, _______,        Ct_BSPC, KC_END,  _______
+[L_NAVI] = LAYOUT_split_3x5_3(
+    _______, AS_TAB,  At_TAB,  _______, U______,        _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
+    CT_ESC,  AT_TAB,  _______, _______, U______,        _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,
+    KC_SLSH, _______, _______, _______, U______,        _______, Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT,
+                      _______, _______, _______,        Ct_BSPC, KC_END,  _______
 ),
-
-/*
-tabs
-workspaces
-*/
-[L_NAVI2] = LAYOUT_split_3x6_3(
-    U______, _______, AS_TAB,  At_TAB,  _______, U______,        _______, KC_SLSH, AS_TAB,  At_TAB,  _______, U______,
-    U______, CT_ESC,  AT_TAB,  KC_ENT,  _______, U______,        _______, Ct_PGUP, CA_DOWN, CA_UP,   Ct_PGDN, U______,
-    U______, _______, _______, _______, _______, U______,        _______, St_TAB,  CA_LEFT, CA_RGHT, KC_TAB,  U______,
-                               _______, _______, _______,        _______, _______, _______
+[L_NAVI2] = LAYOUT_split_3x5_3(
+    _______, AS_TAB,  At_TAB,  _______, U______,        _______, KC_SLSH, AS_TAB,  At_TAB,  _______,
+    CT_ESC,  AT_TAB,  KC_ENT,  _______, U______,        _______, Ct_PGUP, CA_DOWN, CA_UP,   Ct_PGDN,
+    _______, _______, _______, _______, U______,        _______, St_TAB,  CA_LEFT, CA_RGHT, KC_TAB,
+                      _______, _______, _______,        _______, _______, _______
 ),
-
-
-[L_MOUSE] = LAYOUT_split_3x6_3(
-    U______, _______, _______, _______, _______, U______,        _______, U______, KC_BTN1, KC_BTN2, KC_BTN3, U______,
-    U______, _______, KC_BTN2, KC_BTN1, _______, U______,        U______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R, U______,
-    U______, KC_ACL0, KC_ACL1, KC_ACL2, _______, U______,        U______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, U______,
-                               _______, KC_BTN1, _______,        _______, KC_BTN1, _______
+[L_MOUSE] = LAYOUT_split_3x5_3(
+    _______, _______, _______, _______, U______,        _______, U______, KC_BTN1, KC_BTN2, KC_BTN3,
+    _______, KC_BTN2, KC_BTN1, _______, U______,        U______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,
+    KC_ACL0, KC_ACL1, KC_ACL2, _______, U______,        U______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R,
+                      _______, KC_BTN1, _______,        _______, KC_BTN1, _______
 ),
 
 };
