@@ -1,3 +1,4 @@
+#include "keycodes.h"
 #include QMK_KEYBOARD_H
 
 #include "common_modkeys.h"
@@ -10,8 +11,9 @@ enum {
     L_LAYER,
     L_PUNCT,
     L_NUMBER,
-    L_MOUSE,
-    L_NAVI
+    L_NAVI,
+    L_NAVI2,
+    L_MOUSE
 };
 
 // LAYER SWITCHING
@@ -65,6 +67,9 @@ enum {
 #define NV_0 LT(L_NAVI, KC_0)
 #define NV_4 LT(L_NAVI, KC_4)
 #define NV__ LT(L_NAVI, KC_NO)
+
+#define NV2_D LT(L_NAVI2, KC_D)
+#define NV2_T LT(L_NAVI2, KC_T)
 
 // mouse
 #define MS_A LT(L_MOUSE, KC_A)
@@ -133,8 +138,10 @@ enum {
 #define At_TAB A(KC_TAB)
 #define AS_TAB LSA(KC_TAB)
 // ctrl+alt [up, down]
+#define CA_LEFT LCA(KC_LEFT)
 #define CA_DOWN LCA(KC_DOWN)
 #define CA_UP LCA(KC_UP)
+#define CA_RGHT LCA(KC_RGHT)
 // shortcuts for, wait these don't work
 #define A_CtPUP ALT_T(Ct_PGUP)
 #define S_CtPDN SFT_T(Ct_PGDN)
@@ -144,22 +151,20 @@ enum {
 // clang-format off
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-/*
+
 
 [L_FOLD] = LAYOUT_split_3x6_3(
     U______, KC_Q,    KC_F,    KC_M,    KC_P,    KC_SLSH,        KC_COMM, KC_J,    KC_K,    KC_COMM, KC_QUOT, U______,
-    U______, CT_R,    AT_S,    KC_T,    NV_H,    KC_B,           KC_X,    KC_N,    KC_A,    AT_I,    CT_O,    U______,
+    U______, CT_R,    AT_S,    NV2_T,   NV_H,    KC_B,           KC_X,    KC_N,    KC_A,    AT_I,    CT_O,    U______,
     U______, GT_W,    KC_C,    KC_G,    MS_D,    KC_V,           KC_Z,    KC_L,    KC_Y,    KC_DOT,  GT_ENT,  U______,
                                _______, ST_SPC,  PT_SPC,         LY_E,    NU_U,    _______
 ),
-
 [L_QT] = LAYOUT_split_3x6_3(
     U______, KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,           KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    U______,
-    U______, CT_A,    AT_S,    KC_D,    NV_F,    KC_G,           KC_H,    KC_J,    KC_K,    AT_L,    CT_SCLN, U______,
+    U______, CT_A,    AT_S,    NV2_D,   NV_F,    KC_G,           KC_H,    KC_J,    KC_K,    AT_L,    CT_SCLN, U______,
     U______, GT_Z,    KC_X,    KC_C,    MS_V,    KC_B,           KC_N,    KC_M,    KC_COMM, KC_DOT,  GT_ENT,  U______,
                                _______, ST_SPC,  PT_TAB,         LY__,    NU_SPC,  _______
 ),
-
 [L_LAYER] = LAYOUT_split_3x6_3(
     U______, Ct_Q,    TO_QT,   TO_FOLD, _______, U______,        _______, U______, KC_MPLY, U______, U______, U______,
     U______, Ct_Z,    Ct_S,    _______, _______, U______,        U______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT, U______,
@@ -179,11 +184,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                _______, ST_5,    PT_5,           LY_6,    KC_6,    _______
 ),
 [L_NAVI] = LAYOUT_split_3x6_3(
-    U______, DESK_LT, AS_TAB,  At_TAB,  _______, U______,        _______, Ct_PGUP, KC_PGDN, KC_PGUP, Ct_PGDN, U______,
-    U______, CT_ESC,  AT_TAB,  KC_ENT,  _______, U______,        KC_HOME, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, U______,
-    U______, DESK_RT, CA_DOWN, CA_UP,   _______, U______,        KC_END,  Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT, U______,
+    U______, _______, AS_TAB,  At_TAB,  _______, U______,        _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  U______,
+    U______, CT_ESC,  AT_TAB,  _______, _______, U______,        _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, U______,
+    U______, KC_SLSH, _______, _______, _______, U______,        _______, Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT, U______,
                                _______, _______, _______,        Ct_BSPC, KC_END,  _______
 ),
+
+/*
+tabs
+workspaces
+*/
+[L_NAVI2] = LAYOUT_split_3x6_3(
+    U______, _______, AS_TAB,  At_TAB,  _______, U______,        _______, KC_SLSH, AS_TAB,  At_TAB,  _______, U______,
+    U______, CT_ESC,  AT_TAB,  KC_ENT,  _______, U______,        _______, Ct_PGUP, CA_DOWN, CA_UP,   Ct_PGDN, U______,
+    U______, _______, _______, _______, _______, U______,        _______, St_TAB,  CA_LEFT, CA_RGHT, KC_TAB,  U______,
+                               _______, _______, _______,        _______, _______, _______
+),
+
 
 [L_MOUSE] = LAYOUT_split_3x6_3(
     U______, _______, _______, _______, _______, U______,        _______, U______, KC_BTN1, KC_BTN2, KC_BTN3, U______,
@@ -191,10 +208,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     U______, KC_ACL0, KC_ACL1, KC_ACL2, _______, U______,        U______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, U______,
                                _______, KC_BTN1, _______,        _______, KC_BTN1, _______
 ),
-*/
-};
 
-/*
+};
 
 
 // combo indexes
@@ -229,12 +244,12 @@ COMBO_2(PID,       KC_I, KC_D);
 COMBO_2(Pass,      KC_P, AT_S);
 COMBO_2(PassAdm,   KC_P, KC_D);
 COMBO_3(PassLinux, NV_H, KC_N, KC_L);
-COMBO_2(Name,      KC_M, NV_N);
-COMBO_3(Email,     KC_M, KC_A, KC_E);
-COMBO_2(Tilde,     KC_COMM, KC_DOT);
-COMBO_2(Escape,    AT_T, KC_D);
-COMBO_2(Enter,     KC_E, AT_R);
-COMBO_2(Tab,       KC_G, KC_C);
+COMBO_2(Name,      KC_M, KC_N);
+COMBO_2(Email,     KC_M, KC_L);
+COMBO_2(Tilde,     KC_Y, KC_DOT);
+COMBO_2(Escape,    AT_S, KC_T);
+COMBO_2(Enter,     KC_A, AT_I);
+COMBO_2(Tab,       KC_F, KC_M);
 COMBO_2(Home,      KC_LEFT, Ct_LEFT);
 COMBO_2(End,       KC_RGHT, Ct_RGHT);
 
@@ -268,7 +283,6 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
   }
 }
 
-*/
 
 /*
 reference
