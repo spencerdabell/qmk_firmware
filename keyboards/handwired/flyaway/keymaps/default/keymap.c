@@ -247,7 +247,7 @@ COMBO_3(BOOT,      KC_W,    KC_E,    KC_R);
 COMBO_2(PID,       KC_I, KC_D);
 COMBO_2(Pass,      KC_P, AT_S);
 COMBO_2(PassAdm,   KC_P, KC_D);
-COMBO_3(PassLinux, NV_H, CT_N, LY_L);
+COMBO_2(PassLinux, NV_H, CT_N);
 COMBO_2(Name,      GT_M, CT_N);
 COMBO_2(Email,     GT_M, LY_L);
 COMBO_2(Tilde,     KC_Z, KC_J);
