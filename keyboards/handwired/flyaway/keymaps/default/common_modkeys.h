@@ -33,6 +33,7 @@
 #define CT_F1 LCTL_T(KC_F1)
 #define CT_0 RCTL_T(KC_0)
 #define CT_F10 RCTL_T(KC_F10)
+#define CT_BTN3 LCTL_T(KC_BTN3)
 
 // control + the key
 #define Ct_A C(KC_A)
@@ -69,6 +70,7 @@
 #define Ct_END C(KC_END)
 #define Ct_GRV C(KC_GRV)
 #define Ct_BSPC C(KC_BSPC)
+#define Ct_SLSH C(KC_SLSH)
 
 // shift + key
 #define St_TAB S(KC_TAB)
@@ -129,6 +131,8 @@
 #define GT_E GUI_T(KC_E)
 #define GT_F GUI_T(KC_F)
 #define GT_K GUI_T(KC_K)
+#define GT_L GUI_T(KC_L)
+#define GT_M GUI_T(KC_M)
 #define GT_T GUI_T(KC_T)
 #define GT_V GUI_T(KC_V)
 #define GT_W GUI_T(KC_W)

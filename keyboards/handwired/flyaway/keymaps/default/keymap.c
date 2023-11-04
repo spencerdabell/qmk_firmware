@@ -4,7 +4,7 @@
 #include "common_modkeys.h"
 #include "password.h"
 
-enum {
+enum layer {
     // base
     L_FOLD = 0,
     L_QT,
@@ -26,8 +26,14 @@ enum {
 #define TG_MS TG(L_MOUSE)
 #define TG_NU TG(L_NUMBER)
 
+#define MO_PT MO(L_PUNCT)
+
 #define LY_E LT(L_LAYER, KC_E)
+#define LY_H LT(L_LAYER, KC_H)
 #define LY_J LT(L_LAYER, KC_J)
+#define LY_L LT(L_LAYER, KC_L)
+#define LY_M LT(L_LAYER, KC_M)
+#define LY_R LT(L_LAYER, KC_R)
 #define LY_U LT(L_LAYER, KC_U)
 #define LY_Y LT(L_LAYER, KC_Y)
 #define LY_6 LT(L_LAYER, KC_6)
@@ -104,6 +110,7 @@ enum {
 // number
 #define NU_E LT(L_NUMBER, KC_E)
 #define NU_I LT(L_NUMBER, KC_I)
+#define NU_N LT(L_NUMBER, KC_N)
 #define NU_R LT(L_NUMBER, KC_R)
 #define NU_U LT(L_NUMBER, KC_U)
 #define NU_TAB LT(L_NUMBER, KC_TAB)
@@ -153,12 +160,19 @@ enum {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
+/*
+zwgvp ;'uyq
+nsthf .aeio
+bcmdk ,x/j_
+       lr
+*/
 [L_FOLD] = LAYOUT_split_3x5_3(
-    KC_Q,    KC_F,    KC_M,    KC_P,    KC_SLSH,        KC_COMM, KC_J,    KC_K,    KC_COMM, KC_QUOT,
-    CT_R,    AT_S,    NV2_T,   NV_H,    KC_B,           KC_X,    KC_N,    KC_A,    AT_I,    CT_O,
-    GT_W,    KC_C,    KC_G,    MS_D,    KC_V,           KC_Z,    KC_L,    KC_Y,    KC_DOT,  GT_ENT,
-                      _______, ST_SPC,  PT_SPC,         LY_E,    NU_U,    _______
+    KC_Z,    KC_W,    KC_G,    KC_V,    KC_P,           KC_SCLN, KC_QUOT, KC_U,    KC_Y,    KC_Q,
+    CT_N,    AT_S,    NV2_T,   NV_H,    KC_F,           KC_DOT,  KC_A,    KC_E,    AT_I,    CT_O,
+    GT_B,    KC_C,    KC_M,    MS_D,    KC_K,           KC_COMM, KC_X,    KC_SLSH, KC_J,    GT_ENT,
+                      _______, ST_SPC,  PT_TAB,         LY_L,    NU_R,    _______
 ),
+
 [L_QT] = LAYOUT_split_3x5_3(
     KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,           KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
     CT_A,    AT_S,    NV2_D,   NV_F,    KC_G,           KC_H,    KC_J,    KC_K,    AT_L,    CT_SCLN,
@@ -166,9 +180,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                       _______, ST_SPC,  PT_TAB,         LY__,    NU_SPC,  _______
 ),
 [L_LAYER] = LAYOUT_split_3x5_3(
-    Ct_Q,    TO_QT,   TO_FOLD, _______, U______,        _______, U______, KC_MPLY, U______, U______,
-    Ct_Z,    Ct_S,    _______, _______, U______,        U______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT,
-    Ct_Z,    Ct_X,    Ct_C,    Ct_V,    U______,        U______, KC_MRWD, U______, U______, KC_MFFD,
+    U______, TO_QT,   TO_FOLD, _______, U______,        _______, U______, KC_MPLY, U______, U______,
+    Ct_Z,    Ct_X,    Ct_C,    Ct_V,    U______,        U______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT,
+    Ct_SLSH, U______, U______, U______, U______,        U______, KC_MRWD, U______, U______, KC_MFFD,
                       _______, Ct_Y,    _______,        _______, _______, _______
 ),
 [L_PUNCT] = LAYOUT_split_3x5_3(
@@ -197,11 +211,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 [L_MOUSE] = LAYOUT_split_3x5_3(
     _______, _______, _______, _______, U______,        _______, U______, KC_BTN1, KC_BTN2, KC_BTN3,
-    _______, KC_BTN2, KC_BTN1, _______, U______,        U______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,
+    CT_BTN3, KC_BTN2, KC_BTN1, _______, U______,        U______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,
     KC_ACL0, KC_ACL1, KC_ACL2, _______, U______,        U______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R,
                       _______, KC_BTN1, _______,        _______, KC_BTN1, _______
 ),
-
 };
 
 
@@ -223,8 +236,6 @@ enum combos {
     , CB_LENGTH
 };
 
-
-
 uint16_t COMBO_LEN = CB_LENGTH;
 
 // combo key combinations
@@ -232,17 +243,17 @@ uint16_t COMBO_LEN = CB_LENGTH;
 #define COMBO_3(NAME, KEY1, KEY2, KEY3)  const uint16_t PROGMEM NAME[] = {KEY1, KEY2, KEY3, COMBO_END};
 
 // const uint16_t PROGMEM BOOT[] = {KC_F,    KC_M,    KC_P, COMBO_END};
-COMBO_3(BOOT,      KC_F,    KC_M,    KC_P);
+COMBO_3(BOOT,      KC_W,    KC_E,    KC_R);
 COMBO_2(PID,       KC_I, KC_D);
 COMBO_2(Pass,      KC_P, AT_S);
 COMBO_2(PassAdm,   KC_P, KC_D);
-COMBO_3(PassLinux, NV_H, KC_N, KC_L);
-COMBO_2(Name,      KC_M, KC_N);
-COMBO_2(Email,     KC_M, KC_L);
-COMBO_2(Tilde,     KC_Y, KC_DOT);
+COMBO_3(PassLinux, NV_H, CT_N, LY_L);
+COMBO_2(Name,      GT_M, CT_N);
+COMBO_2(Email,     GT_M, LY_L);
+COMBO_2(Tilde,     KC_Z, KC_J);
 COMBO_2(Escape,    AT_S, KC_T);
-COMBO_2(Enter,     KC_A, AT_I);
-COMBO_2(Tab,       KC_F, KC_M);
+COMBO_2(Enter,     KC_E, AT_I);
+COMBO_2(Tab,       KC_U, KC_Y);
 COMBO_2(Home,      KC_LEFT, Ct_LEFT);
 COMBO_2(End,       KC_RGHT, Ct_RGHT);
 
