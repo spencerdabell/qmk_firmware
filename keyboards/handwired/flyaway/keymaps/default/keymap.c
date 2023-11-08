@@ -161,17 +161,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
 /*
-zwgfp ;'uyq
+zwgfp 'juyq
 nsthv .aeio
-bcmdk ,x/j_
+bcmdk ,x/;_
        lr
-
-
 */
 [L_FOLD] = LAYOUT_split_3x5_3(
-    KC_Z,    KC_W,    KC_G,    KC_F,    KC_P,           KC_SCLN, KC_QUOT, KC_U,    KC_Y,    KC_Q,
+    KC_Z,    KC_W,    KC_G,    KC_F,    KC_P,           KC_QUOT, KC_J,    KC_U,    KC_Y,    KC_Q,
     CT_N,    AT_S,    NV2_T,   NV_H,    KC_V,           KC_DOT,  KC_A,    KC_E,    AT_I,    CT_O,
-    GT_B,    KC_C,    KC_M,    MS_D,    KC_K,           KC_COMM, KC_X,    KC_SLSH, KC_J,    GT_ENT,
+    GT_B,    KC_C,    KC_M,    MS_D,    KC_K,           KC_COMM, KC_X,    KC_SLSH, KC_SCLN, GT_ENT,
                       _______, ST_SPC,  PT_TAB,         LY_L,    NU_R,    _______
 ),
 
