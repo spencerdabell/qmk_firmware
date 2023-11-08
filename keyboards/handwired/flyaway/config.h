@@ -15,5 +15,3 @@
 // #define PERMISSIVE_HOLD
 
 #define COMBO_TERM 40
-
-

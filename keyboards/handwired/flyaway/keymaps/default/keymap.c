@@ -165,6 +165,8 @@ zwgfp ;'uyq
 nsthv .aeio
 bcmdk ,x/j_
        lr
+
+
 */
 [L_FOLD] = LAYOUT_split_3x5_3(
     KC_Z,    KC_W,    KC_G,    KC_F,    KC_P,           KC_SCLN, KC_QUOT, KC_U,    KC_Y,    KC_Q,
@@ -250,10 +252,10 @@ COMBO_2(PassAdm,   KC_P, KC_D);
 COMBO_2(PassLinux, NV_H, CT_N);
 COMBO_2(Name,      GT_M, CT_N);
 COMBO_2(Email,     GT_M, LY_L);
-COMBO_2(Tilde,     KC_Z, KC_J);
-COMBO_2(Escape,    AT_S, KC_T);
-COMBO_2(Enter,     KC_E, AT_I);
-COMBO_2(Tab,       KC_U, KC_Y);
+// COMBO_2(Tilde,     KC_Z, KC_J);
+// COMBO_2(Escape,    AT_S, KC_T);
+// COMBO_2(Enter,     KC_E, AT_I);
+// COMBO_2(Tab,       KC_U, KC_Y);
 COMBO_2(Home,      KC_LEFT, Ct_LEFT);
 COMBO_2(End,       KC_RGHT, Ct_RGHT);
 
@@ -266,10 +268,10 @@ combo_t key_combos[] = {
     [CB_PassLinux] =    COMBO_ACTION(PassLinux),
     [CB_Name] =         COMBO_ACTION(Name),
     [CB_Email] =        COMBO_ACTION(Email),
-    [CB_Tilde] =        COMBO(Tilde, KC_TILD),
-    [CB_Escape] =       COMBO(Escape, KC_ESC),
-    [CB_Enter] =        COMBO(Enter, KC_ENT),
-    [CB_Tab] =          COMBO(Tab, KC_TAB),
+    // [CB_Tilde] =        COMBO(Tilde, KC_TILD),
+    // [CB_Escape] =       COMBO(Escape, KC_ESC),
+    // [CB_Enter] =        COMBO(Enter, KC_ENT),
+    // [CB_Tab] =          COMBO(Tab, KC_TAB),
     [CB_Home] =         COMBO(Home, KC_HOME),
     [CB_End] =          COMBO(End, KC_END),
 };
