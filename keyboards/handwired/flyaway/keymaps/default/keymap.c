@@ -1,4 +1,5 @@
 #include "keycodes.h"
+#include "send_string_keycodes.h"
 #include QMK_KEYBOARD_H
 
 #include "common_modkeys.h"
@@ -11,6 +12,7 @@ enum layer {
     L_LAYER,
     L_PUNCT,
     L_NUMBER,
+    L_GREEK,
     L_NAVI,
     L_NAVI2,
     L_MOUSE
@@ -163,16 +165,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*
 zwgfp 'juyq
 nsthv .aeio
-bcmdk ,x/;_
+bcmdk ,x/__
        lr
 */
 [L_FOLD] = LAYOUT_split_3x5_3(
     KC_Z,    KC_W,    KC_G,    KC_F,    KC_P,           KC_QUOT, KC_J,    KC_U,    KC_Y,    KC_Q,
     CT_N,    AT_S,    NV2_T,   NV_H,    KC_V,           KC_DOT,  KC_A,    KC_E,    AT_I,    CT_O,
-    GT_B,    KC_C,    KC_M,    MS_D,    KC_K,           KC_COMM, KC_X,    KC_SLSH, KC_SCLN, GT_ENT,
+    GT_B,    KC_C,    KC_M,    MS_D,    KC_K,           KC_COMM, KC_X,    KC_SLSH, KC_TAB,  GT_ENT,
                       _______, ST_SPC,  PT_TAB,         LY_L,    NU_R,    _______
 ),
-
 [L_QT] = LAYOUT_split_3x5_3(
     KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,           KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
     CT_A,    AT_S,    NV2_D,   NV_F,    KC_G,           KC_H,    KC_J,    KC_K,    AT_L,    CT_SCLN,
@@ -197,6 +198,12 @@ bcmdk ,x/;_
     KC_F11,  KC_F12,  KC_CAPS, CW_TOGG, _______,        _______, KC_MINS, KC_COMM, KC_DOT,  KC_ENT,
                       _______, ST_5,    PT_5,           LY_6,    KC_6,    _______
 ),
+[L_GREEK] = LAYOUT_split_3x5_3(
+    KC_Z,    KC_W,    KC_G,    KC_F,    KC_P,           KC_QUOT, KC_J,    KC_U,    KC_Y,    KC_Q,
+    CT_N,    AT_S,    NV2_T,   NV_H,    KC_V,           KC_DOT,  KC_A,    KC_E,    AT_I,    CT_O,
+    GT_B,    KC_C,    KC_M,    MS_D,    KC_K,           KC_COMM, KC_X,    KC_SLSH, KC_TAB,  GT_ENT,
+                      _______, ST_SPC,  PT_TAB,         LY_L,    NU_R,    _______
+),
 [L_NAVI] = LAYOUT_split_3x5_3(
     _______, AS_TAB,  At_TAB,  _______, U______,        _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
     CT_ESC,  AT_TAB,  _______, _______, U______,        _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,
@@ -213,7 +220,7 @@ bcmdk ,x/;_
     _______, _______, _______, _______, U______,        _______, U______, KC_BTN1, KC_BTN2, KC_BTN3,
     CT_BTN3, KC_BTN2, KC_BTN1, _______, U______,        U______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,
     KC_ACL0, KC_ACL1, KC_ACL2, _______, U______,        U______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R,
-                      _______, KC_BTN1, _______,        _______, KC_BTN1, _______
+                      _______, _______, _______,        _______, KC_BTN1, _______
 ),
 };
 
@@ -221,9 +228,6 @@ bcmdk ,x/;_
 // combo indexes
 enum combos {
     CB_BOOT
-    , CB_PID
-    , CB_Pass
-    , CB_PassAdm
     , CB_Name
     , CB_Email
     , CB_PassLinux
@@ -233,6 +237,11 @@ enum combos {
     , CB_Tab
     , CB_Home
     , CB_End
+    , CB_P
+    , CB_K
+    , CB_Omega
+    , CB_Micro
+    , CB_Degree
     , CB_LENGTH
 };
 
@@ -243,26 +252,25 @@ uint16_t COMBO_LEN = CB_LENGTH;
 #define COMBO_3(NAME, KEY1, KEY2, KEY3)  const uint16_t PROGMEM NAME[] = {KEY1, KEY2, KEY3, COMBO_END};
 
 // const uint16_t PROGMEM BOOT[] = {KC_F,    KC_M,    KC_P, COMBO_END};
-COMBO_3(BOOT,      KC_W,    KC_E,    KC_R);
-COMBO_2(PID,       KC_I, KC_D);
-COMBO_2(Pass,      KC_P, AT_S);
-COMBO_2(PassAdm,   KC_P, KC_D);
+COMBO_3(BOOT,      KC_W, KC_E, KC_R);
 COMBO_2(PassLinux, NV_H, CT_N);
-COMBO_2(Name,      GT_M, CT_N);
+COMBO_2(Name,      KC_M, CT_N);
 COMBO_2(Email,     GT_M, LY_L);
 // COMBO_2(Tilde,     KC_Z, KC_J);
 // COMBO_2(Escape,    AT_S, KC_T);
 // COMBO_2(Enter,     KC_E, AT_I);
 // COMBO_2(Tab,       KC_U, KC_Y);
+COMBO_2(K_P,       KC_G, KC_F);
+COMBO_2(K_K,       KC_M, MS_D);
+COMBO_2(K_OMEGA,   ST_SPC, CT_O);
+COMBO_2(K_MICRO,   ST_SPC, KC_M);
+COMBO_2(K_Degree,  ST_SPC, MS_D);
 COMBO_2(Home,      KC_LEFT, Ct_LEFT);
 COMBO_2(End,       KC_RGHT, Ct_RGHT);
 
 // combo behavior
 combo_t key_combos[] = {
     [CB_BOOT] =         COMBO(BOOT, QK_BOOTLOADER),
-    [CB_PID] =          COMBO_ACTION(PID),
-    [CB_Pass] =         COMBO_ACTION(Pass),
-    [CB_PassAdm] =      COMBO_ACTION(PassAdm),
     [CB_PassLinux] =    COMBO_ACTION(PassLinux),
     [CB_Name] =         COMBO_ACTION(Name),
     [CB_Email] =        COMBO_ACTION(Email),
@@ -270,19 +278,26 @@ combo_t key_combos[] = {
     // [CB_Escape] =       COMBO(Escape, KC_ESC),
     // [CB_Enter] =        COMBO(Enter, KC_ENT),
     // [CB_Tab] =          COMBO(Tab, KC_TAB),
+    [CB_P] =            COMBO(K_P, KC_P),
+    [CB_K] =            COMBO(K_K, KC_K),
+    [CB_Omega] =        COMBO_ACTION(K_OMEGA),
+    [CB_Micro] =        COMBO_ACTION(K_MICRO),
+    [CB_Degree] =       COMBO_ACTION(K_Degree),
     [CB_Home] =         COMBO(Home, KC_HOME),
     [CB_End] =          COMBO(End, KC_END),
 };
 
+#define UNICODEZ(UCODE) SEND_STRING( SS_DOWN(X_LEFT_CTRL)SS_DOWN(X_LEFT_SHIFT)"u"  SS_DELAY(50)SS_UP(X_LEFT_CTRL)SS_UP(X_LEFT_SHIFT) SS_DELAY(100) UCODE SS_TAP(X_ENTER));
+
 // combo complex actions
 void process_combo_event(uint16_t combo_index, bool pressed) {
   switch(combo_index) {
-    case CB_PID:       if (pressed) { SEND_STRING(ID_CHARTER); } break;
-    case CB_Pass:      if (pressed) { SEND_STRING(PW_CHARTER); } break;
-    case CB_PassAdm:   if (pressed) { SEND_STRING(PW_CHARTER_ADM); } break;
     case CB_PassLinux: if (pressed) { SEND_STRING(PW_LINUX); } break;
     case CB_Name:      if (pressed) { SEND_STRING("spencerdabell"); } break;
     case CB_Email:     if (pressed) { SEND_STRING("spencerdabell@gmail.com"); } break;
+    case CB_Omega:     if (pressed) { UNICODEZ("03a9"); } break;
+    case CB_Micro:     if (pressed) { UNICODEZ("03bc"); } break;
+    case CB_Degree:     if (pressed) { UNICODEZ("00b0"); } break;
     default: break;
   }
 }
