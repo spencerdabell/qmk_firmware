@@ -12,7 +12,7 @@ enum layer {
     L_LAYER,
     L_PUNCT,
     L_NUMBER,
-    L_GREEK,
+    // L_GREEK,
     L_NAVI,
     L_NAVI2,
     L_MOUSE
@@ -133,6 +133,7 @@ enum layer {
 #define PT_BSPC LT(L_PUNCT, KC_BSPC)
 #define PT_SPC LT(L_PUNCT, KC_SPC)
 #define PT_TAB LT(L_PUNCT, KC_TAB)
+#define PT_ESC LT(L_PUNCT, KC_ESC)
 
 // sound
 #define SD_MPLY LT(L_SOUND, KC_MPLY)
@@ -172,13 +173,13 @@ bcmdk ,x/__
     KC_Z,    KC_W,    KC_G,    KC_F,    KC_P,           KC_QUOT, KC_J,    KC_U,    KC_Y,    KC_Q,
     CT_N,    AT_S,    NV2_T,   NV_H,    KC_V,           KC_DOT,  KC_A,    KC_E,    AT_I,    CT_O,
     GT_B,    KC_C,    KC_M,    MS_D,    KC_K,           KC_COMM, KC_X,    KC_SLSH, KC_TAB,  GT_ENT,
-                      _______, ST_SPC,  PT_TAB,         LY_L,    NU_R,    _______
+                      _______, ST_SPC,  PT_ESC,         LY_L,    NU_R,    _______
 ),
 [L_QT] = LAYOUT_split_3x5_3(
     KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,           KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
     CT_A,    AT_S,    NV2_D,   NV_F,    KC_G,           KC_H,    KC_J,    KC_K,    AT_L,    CT_SCLN,
     GT_Z,    KC_X,    KC_C,    MS_V,    KC_B,           KC_N,    KC_M,    KC_COMM, KC_DOT,  GT_ENT,
-                      _______, ST_SPC,  PT_TAB,         LY__,    NU_SPC,  _______
+                      _______, _______, _______,        LY_TAB,  NU_SPC,  _______
 ),
 [L_LAYER] = LAYOUT_split_3x5_3(
     U______, TO_QT,   TO_FOLD, _______, U______,        _______, U______, KC_MPLY, U______, U______,
@@ -198,12 +199,12 @@ bcmdk ,x/__
     KC_F11,  KC_F12,  KC_CAPS, CW_TOGG, _______,        _______, KC_MINS, KC_COMM, KC_DOT,  KC_ENT,
                       _______, ST_5,    PT_5,           LY_6,    KC_6,    _______
 ),
-[L_GREEK] = LAYOUT_split_3x5_3(
-    KC_Z,    KC_W,    KC_G,    KC_F,    KC_P,           KC_QUOT, KC_J,    KC_U,    KC_Y,    KC_Q,
-    CT_N,    AT_S,    NV2_T,   NV_H,    KC_V,           KC_DOT,  KC_A,    KC_E,    AT_I,    CT_O,
-    GT_B,    KC_C,    KC_M,    MS_D,    KC_K,           KC_COMM, KC_X,    KC_SLSH, KC_TAB,  GT_ENT,
-                      _______, ST_SPC,  PT_TAB,         LY_L,    NU_R,    _______
-),
+// [L_GREEK] = LAYOUT_split_3x5_3(
+//     KC_Z,    KC_W,    KC_G,    KC_F,    KC_P,           KC_QUOT, KC_J,    KC_U,    KC_Y,    KC_Q,
+//     CT_N,    AT_S,    NV2_T,   NV_H,    KC_V,           KC_DOT,  KC_A,    KC_E,    AT_I,    CT_O,
+//     GT_B,    KC_C,    KC_M,    MS_D,    KC_K,           KC_COMM, KC_X,    KC_SLSH, KC_TAB,  GT_ENT,
+//                       _______, ST_SPC,  PT_TAB,         LY_L,    NU_R,    _______
+// ),
 [L_NAVI] = LAYOUT_split_3x5_3(
     _______, AS_TAB,  At_TAB,  _______, U______,        _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
     CT_ESC,  AT_TAB,  _______, _______, U______,        _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,
@@ -235,8 +236,6 @@ enum combos {
     , CB_Escape
     , CB_Enter
     , CB_Tab
-    , CB_Home
-    , CB_End
     , CB_P
     , CB_K
     , CB_Omega
@@ -251,7 +250,6 @@ uint16_t COMBO_LEN = CB_LENGTH;
 #define COMBO_2(NAME, KEY1, KEY2)  const uint16_t PROGMEM NAME[] = {KEY1, KEY2, COMBO_END};
 #define COMBO_3(NAME, KEY1, KEY2, KEY3)  const uint16_t PROGMEM NAME[] = {KEY1, KEY2, KEY3, COMBO_END};
 
-// const uint16_t PROGMEM BOOT[] = {KC_F,    KC_M,    KC_P, COMBO_END};
 COMBO_3(BOOT,      KC_W, KC_E, KC_R);
 COMBO_2(PassLinux, NV_H, CT_N);
 COMBO_2(Name,      KC_M, CT_N);
@@ -265,8 +263,6 @@ COMBO_2(K_K,       KC_M, MS_D);
 COMBO_2(K_OMEGA,   ST_SPC, CT_O);
 COMBO_2(K_MICRO,   ST_SPC, KC_M);
 COMBO_2(K_Degree,  ST_SPC, MS_D);
-COMBO_2(Home,      KC_LEFT, Ct_LEFT);
-COMBO_2(End,       KC_RGHT, Ct_RGHT);
 
 // combo behavior
 combo_t key_combos[] = {
@@ -283,8 +279,6 @@ combo_t key_combos[] = {
     [CB_Omega] =        COMBO_ACTION(K_OMEGA),
     [CB_Micro] =        COMBO_ACTION(K_MICRO),
     [CB_Degree] =       COMBO_ACTION(K_Degree),
-    [CB_Home] =         COMBO(Home, KC_HOME),
-    [CB_End] =          COMBO(End, KC_END),
 };
 
 #define UNICODEZ(UCODE) SEND_STRING( SS_DOWN(X_LEFT_CTRL)SS_DOWN(X_LEFT_SHIFT)"u"  SS_DELAY(50)SS_UP(X_LEFT_CTRL)SS_UP(X_LEFT_SHIFT) SS_DELAY(100) UCODE SS_TAP(X_ENTER));
