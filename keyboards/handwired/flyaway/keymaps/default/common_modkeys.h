@@ -124,6 +124,7 @@
 #define AT_F0 ALT_T(KC_F0)
 #define AT_ESC ALT_T(KC_ESC)
 #define AT_TAB ALT_T(KC_TAB)
+#define AT_BTN2 ALT_T(KC_BTN2)
 
 // gui
 #define GT_B GUI_T(KC_B)
@@ -133,6 +134,7 @@
 #define GT_K GUI_T(KC_K)
 #define GT_L GUI_T(KC_L)
 #define GT_M GUI_T(KC_M)
+#define GT_P GUI_T(KC_P)
 #define GT_T GUI_T(KC_T)
 #define GT_V GUI_T(KC_V)
 #define GT_W GUI_T(KC_W)
