@@ -298,7 +298,7 @@ COMBO_2(PassLinux, NV_H, CT_N);
 COMBO_2(Name,      KC_M, CT_N);
 COMBO_2(Email,     GT_M, LY_L);
 COMBO_2(Tilde,     KC_SLSH, KC_TAB);
-// COMBO_2(Escape,    AT_S, KC_T);
+COMBO_2(Escape,    AT_S, NV2_T);
 // COMBO_2(Enter,     KC_E, AT_I);
 // COMBO_2(Tab,       KC_U, KC_Y);
 COMBO_2(K_P,       KC_G, KC_F);
@@ -314,7 +314,7 @@ combo_t key_combos[] = {
     [CB_Name] =         COMBO_ACTION(Name),
     [CB_Email] =        COMBO_ACTION(Email),
     [CB_Tilde] =        COMBO(Tilde, KC_TILD),
-    // [CB_Escape] =       COMBO(Escape, KC_ESC),
+    [CB_Escape] =       COMBO(Escape, KC_ESC),
     // [CB_Enter] =        COMBO(Enter, KC_ENT),
     // [CB_Tab] =          COMBO(Tab, KC_TAB),
     [CB_P] =            COMBO(K_P, KC_P),
