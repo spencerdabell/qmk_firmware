@@ -35,7 +35,7 @@
         }
     },
     "layouts": {
-        "LAYOUT_split_5x3_2": {
+        "LAYOUT_split_5x3_2_info": {
             "layout": [
                 { "matrix": [0, 0], "x": 0, "y": 0 },
                 { "matrix": [0, 1], "x": 0, "y": 0 },
