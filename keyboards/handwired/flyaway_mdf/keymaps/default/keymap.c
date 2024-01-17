@@ -1,4 +1,4 @@
-#include "keycodes.h"
+// #include "keycodes.h"
 #include "send_string_keycodes.h"
 #include QMK_KEYBOARD_H
 
@@ -170,7 +170,21 @@ enum layer {
 
 #define U_ KC_NO
 
+// make compiler warnings go away
+#ifndef MATRIX_COLS
+#    define MATRIX_COLS 6
+#endif
+#ifndef MATRIX_ROWS
+#    define MATRIX_ROWS 6
+#endif
+#ifndef LAYOUT_split_5x3_2_info
+#    define LAYOUT_split_5x3_2_info(L00, L01, L02, L03, L04, L05, R00, R01, R02, R03, R04, R05, L10, L11, L12, L13, L14, L15, R10, R11, R12, R13, R14, R15, L20, L21, L22, L23, L24, L25, R20, R21, R22, R23, R24, R25) \
+        {}
+#endif
+// make compiler warnings go away
+
 // clang-format off
+
 
 #define LAYOUT_split_5x3_2( \
     L00, L01, L02, L03, L04, R01, R02, R03, R04, R05, \
@@ -196,7 +210,7 @@ pcmdk ,x/__
 [L_FOLD] = LAYOUT_split_5x3_2(
     LY_Z,    KC_W,    KC_G,    KC_F,    KC_K,           KC_QUOT, KC_J,    KC_U,    KC_Y,    KC_Q,
     CT_N,    AT_S,    NV2_T,   NV_H,    KC_V,           KC_DOT,  KC_A,    KC_E,    AT_I,    CT_O,
-    GT_P,    KC_C,    KC_M,    MS_D,    KC_B,           KC_COMM, KC_X,    KC_SLSH, KC_TAB,  GT_ENT,
+    GT_P,    ST_C,    KC_M,    MS_D,    KC_B,           KC_COMM, KC_X,    KC_SLSH, ST_TAB,  GT_ENT,
                                ST_SPC,  PT_ESC,         LY_L,    NU_R
 ),
 /*
@@ -265,7 +279,7 @@ z[]|   :;"!
 [L_NAVI] = LAYOUT_split_5x3_2(
     U______, AS_TAB,  At_TAB,  U______, U______,        U______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
     CT_ESC,  U______, U______, U______, U______,        U______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,
-    KC_SLSH, U______, U______, U______, U______,        U______, Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT,
+    KC_LGUI, U______, U______, U______, U______,        U______, Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT,
                                _______, _______,        Ct_BSPC, KC_END
 ),
 [L_NAVI2] = LAYOUT_split_5x3_2(
@@ -311,7 +325,7 @@ COMBO_3(BOOT,      KC_W, KC_E, KC_R);
 COMBO_2(PassLinux, NV_H, CT_N);
 COMBO_2(Name,      KC_M, CT_N);
 COMBO_2(Email,     GT_M, LY_L);
-COMBO_2(Tilde,     KC_SLSH, KC_TAB);
+COMBO_2(Tilde,     KC_SLSH, ST_TAB);
 COMBO_2(Escape,    AT_S, NV2_T);
 // COMBO_2(Enter,     KC_E, AT_I);
 // COMBO_2(Tab,       KC_U, KC_Y);

@@ -180,6 +180,7 @@
 #define ST_SPC SFT_T(KC_SPC)
 #define ST_TAB SFT_T(KC_TAB)
 #define ST_UNDS SFT_T(KC_UNDS)
+#define ST_SLSH SFT_T(KC_SLSH)
 #define ST_1 SFT_T(KC_1)
 #define ST_2 SFT_T(KC_2)
 #define ST_3 SFT_T(KC_3)
