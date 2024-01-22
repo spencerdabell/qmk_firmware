@@ -7,7 +7,7 @@
 
 enum layer {
     // base
-    L_FOLD = 0,
+    L_ALPHA = 0,
     L_FOL2,
     L_QT,
     L_LAYER,

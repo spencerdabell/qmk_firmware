@@ -69,6 +69,7 @@
 #define Ct_RGHT C(KC_RGHT)
 #define Ct_END C(KC_END)
 #define Ct_GRV C(KC_GRV)
+#define Ct_DEL C(KC_DEL)
 #define Ct_BSPC C(KC_BSPC)
 #define Ct_SLSH C(KC_SLSH)
 
@@ -201,6 +202,7 @@
 #define ST_F8 SFT_T(KC_F8)
 #define ST_F9 SFT_T(KC_F9)
 #define ST_F10 SFT_T(KC_F10)
+#define ST_____ SFT_T(KC_NO)
 
 // one shot mod
 #define OSM_LST OSM(MOD_LSFT)
