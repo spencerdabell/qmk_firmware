@@ -14,7 +14,7 @@ enum layer {
     L_NAVI,
     L_NAVI2,
     L_MOUSE,
-    L_LAYER
+    L_SOUND
 };
 
 // LAYER SWITCHING
@@ -30,23 +30,23 @@ enum layer {
 
 #define MO_PT MO(L_PUNCT)
 
-#define LY_E LT(L_LAYER, KC_E)
-#define LY_H LT(L_LAYER, KC_H)
-#define LY_J LT(L_LAYER, KC_J)
-#define LY_L LT(L_LAYER, KC_L)
-#define LY_M LT(L_LAYER, KC_M)
-#define LY_Q LT(L_LAYER, KC_Q)
-#define LY_R LT(L_LAYER, KC_R)
-#define LY_U LT(L_LAYER, KC_U)
-#define LY_Y LT(L_LAYER, KC_Y)
-#define LY_Z LT(L_LAYER, KC_Z)
-#define LY_6 LT(L_LAYER, KC_6)
-#define LY_9 LT(L_LAYER, KC_9)
-#define LY_ENT LT(L_LAYER, KC_ENT)
-#define LY_TAB LT(L_LAYER, KC_TAB)
-#define LY_ESC LT(L_LAYER, KC_ESC)
-// #define LY__ LT(L_LAYER, KC_NO)
-#define LY_____ LT(L_LAYER, KC_NO)
+// #define LY_E LT(L_LAYER, KC_E)
+// #define LY_H LT(L_LAYER, KC_H)
+// #define LY_J LT(L_LAYER, KC_J)
+// #define LY_L LT(L_LAYER, KC_L)
+// #define LY_M LT(L_LAYER, KC_M)
+// #define LY_Q LT(L_LAYER, KC_Q)
+// #define LY_R LT(L_LAYER, KC_R)
+// #define LY_U LT(L_LAYER, KC_U)
+// #define LY_Y LT(L_LAYER, KC_Y)
+// #define LY_Z LT(L_LAYER, KC_Z)
+// #define LY_6 LT(L_LAYER, KC_6)
+// #define LY_9 LT(L_LAYER, KC_9)
+// #define LY_ENT LT(L_LAYER, KC_ENT)
+// #define LY_TAB LT(L_LAYER, KC_TAB)
+// #define LY_ESC LT(L_LAYER, KC_ESC)
+// // #define LY__ LT(L_LAYER, KC_NO)
+// #define LY_____ LT(L_LAYER, KC_NO)
 
 // nav
 #define NV_A LT(L_NAVI, KC_A)
@@ -147,6 +147,7 @@ enum layer {
 #define SD_Q LT(L_SOUND, KC_Q)
 #define SD_R LT(L_SOUND, KC_R)
 #define SD_Z LT(L_SOUND, KC_Z)
+#define SD_ESC LT(L_SOUND, KC_ESC)
 
 // nav
 
@@ -219,24 +220,24 @@ pcmdk ,x/__
     KC_Z,    KC_W,    KC_G,    KC_F,    KC_K,           KC_QUOT, KC_J,    KC_U,    KC_Y,    KC_Q,
     CT_N,    AT_S,    NV2_T,   NV_H,    KC_V,           KC_DOT,  KC_A,    KC_E,    AT_I,    CT_O,
     GT_P,    ST_C,    KC_M,    MS_D,    KC_B,           KC_COMM, KC_X,    KC_SLSH, ST_TAB,  GT_ENT,
-                               ST_SPC,  KC_ESC,         NU_L,    PT_R
+                               ST_SPC,  SD_ESC,         NU_L,    PT_R
 ),
 [L_PUNCT] = LAYOUT_split_5x3_2(
     U______, KC_LBRC, KC_RBRC, KC_PIPE, U______,        U______, KC_COLN, KC_SCLN, KC_DQUO, KC_EXLM,
     KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, U______,        U______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES,
     KC_BSLS, KC_LT,   KC_GT,   KC_SLSH, U______,        U______, KC_MINS, KC_PLUS, KC_GRV,  KC_EQL,
-                               _______, KC_UNDS,        U______, KC_UNDS
+                               _______, KC_UNDS,        U______, U______
 ),
 [L_NUMBER] = LAYOUT_split_5x3_2(
     KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,          KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,
     CT_1,    AT_2,    KC_3,    NV_4,    KC_5,           KC_6,    KC_7,    KC_8,    AT_9,    CT_0,
     KC_F11,  KC_F12,  KC_CAPS, CW_TOGG, U______,        U______, KC_MINS, KC_COMM, KC_DOT,  KC_ENT,
-                               _______, KC_5,           LY_6,    KC_6
+                               _______, KC_5,           U______, KC_6
 ),
 [L_NAVI] = LAYOUT_split_5x3_2(
     U______, AS_TAB,  At_TAB,  U______, U______,        U______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
-    CT_ESC,  U______, U______, U______, U______,        U______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,
-    KC_LGUI, U______, U______, U______, U______,        U______, Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT,
+    CT_ESC,  Ct_Z,    Ct_Y,    U______, U______,        U______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,
+    KC_LGUI, Ct_SLSH, U______, U______, U______,        U______, Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT,
                                ST_____, Ct_DEL,         Ct_BSPC, KC_END
 ),
 [L_NAVI2] = LAYOUT_split_5x3_2(
@@ -249,13 +250,13 @@ pcmdk ,x/__
     U______, U______, U______, U______, U______,        U______, U______, KC_BTN1, KC_BTN2, U______,
     CT_BTN3, AT_BTN2, KC_BTN1, KC_BTN1, U______,        U______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,
     KC_ACL0, KC_ACL1, KC_ACL2, U______, U______,        U______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R,
-                               ST_____, U______,        LY_____, U______
+                               ST_____, U______,        U______, U______
 ),
-[L_LAYER] = LAYOUT_split_5x3_2(
-    U______, U______, TO_ALPH, U______, U______,        U______, U______, KC_MPLY, U______, U______,
-    Ct_Z,    Ct_X,    Ct_C,    Ct_V,    U______,        U______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT,
-    Ct_SLSH, U______, U______, TO_MOUS, U______,        U______, KC_MRWD, U______, U______, KC_MFFD,
-                               Ct_Y,    U______,        U______, U______
+[L_SOUND] = LAYOUT_split_5x3_2(
+    U______, U______, U______, U______, U______,        U______, U______, KC_MPLY, U______, U______,
+    U______, U______, U______, U______, U______,        U______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT,
+    U______, U______, U______, U______, U______,        U______, KC_MRWD, U______, U______, KC_MFFD,
+                               U______, U______,        U______, U______
 ),
 };
 
@@ -287,7 +288,7 @@ uint16_t COMBO_LEN = CB_LENGTH;
 COMBO_3(BOOT,      KC_G, KC_F, KC_K);
 COMBO_2(PassLinux, NV_H, CT_N);
 COMBO_2(Name,      KC_M, CT_N);
-COMBO_2(Email,     GT_M, LY_L);
+COMBO_2(Email,     GT_M, NU_L);
 COMBO_2(Tilde,     KC_SLSH, ST_TAB);
 // COMBO_2(Escape,    AT_S, NV2_T);
 // COMBO_2(Enter,     KC_E, AT_I);
