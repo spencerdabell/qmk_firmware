@@ -228,7 +228,7 @@ pcmdk ,x/__
 ),
 [L_PUNCT] = LAYOUT_split_5x3_2(
     U______, KC_LBRC, KC_RBRC, KC_PIPE, KC_HASH,        _______, KC_QUOT, KC_GRV,  KC_DQUO, U______,
-    KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, KC_AMPR,        _______, KC_UNDS, KC_COLN, KC_SCLN, KC_EQL,
+    KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, KC_AMPR,        _______, KC_UNDS, KC_SCLN, KC_COLN, KC_EQL,
     KC_BSLS, KC_LT,   KC_GT,   KC_SLSH, KC_DLR,         _______, KC_MINS, KC_PLUS, KC_EXLM, KC_QUES,
                                _______, KC_UNDS,        U______, U______
 ),
@@ -257,8 +257,8 @@ pcmdk ,x/__
                                ST_____, U______,        U______, U______
 ),
 [L_SOUND] = LAYOUT_split_5x3_2(
-    U______, U______, U______, U______, U______,        KC_MPLY, KC_MRWD, KC_VOLD, KC_VOLU, KC_MFFD,
-    U______, U______, U______, U______, U______,        U______, KC_MPRV, U______, U______, KC_MNXT,
+    U______, U______, U______, U______, U______,        KC_VOLU, KC_MRWD, KC_MPLY, U______, KC_MFFD,
+    U______, U______, U______, U______, U______,        KC_VOLD, KC_MPRV, U______, U______, KC_MNXT,
     U______, U______, U______, U______, U______,        U______, U______, U______, U______, U______,
                                U______, U______,        U______, U______
 ),
