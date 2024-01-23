@@ -145,6 +145,7 @@ enum layer {
 // sound
 #define SD_MPLY LT(L_SOUND, KC_MPLY)
 #define SD_F LT(L_SOUND, KC_F)
+#define SD_L LT(L_SOUND, KC_L)
 #define SD_Q LT(L_SOUND, KC_Q)
 #define SD_R LT(L_SOUND, KC_R)
 #define SD_Z LT(L_SOUND, KC_Z)
@@ -224,7 +225,7 @@ pcmdk ,x/__
     KC_Z,    KC_W,    KC_G,    KC_F,    KC_K,           KC_QUOT, KC_J,    KC_U,    KC_Y,    KC_Q,
     CT_N,    AT_S,    NV2_T,   NV_H,    KC_V,           KC_DOT,  KC_A,    KC_E,    AT_I,    CT_O,
     GT_P,    ST_C,    KC_M,    MS_D,    KC_B,           SD_COMM, KC_X,    KC_SLSH, ST_TAB,  GT_ENT,
-                               ST_SPC,  NU_ESC,         NU_L,    PT_R
+                               ST_SPC,  NU_ESC,         SD_L,    PT_R
 ),
 [L_PUNCT] = LAYOUT_split_5x3_2(
     U______, KC_LBRC, KC_RBRC, KC_PIPE, KC_HASH,        _______, KC_QUOT, KC_GRV,  KC_DQUO, U______,
@@ -257,9 +258,9 @@ pcmdk ,x/__
                                ST_____, U______,        U______, U______
 ),
 [L_SOUND] = LAYOUT_split_5x3_2(
-    U______, U______, U______, U______, U______,        KC_VOLU, KC_MRWD, KC_MPLY, U______, KC_MFFD,
-    U______, U______, U______, U______, U______,        KC_VOLD, KC_MPRV, U______, U______, KC_MNXT,
-    U______, U______, U______, U______, U______,        U______, U______, U______, U______, U______,
+    U______, U______, U______, U______, U______,        U______, U______, KC_MPLY, U______, U______,
+    U______, U______, U______, U______, U______,        U______, KC_MRWD, KC_VOLD, KC_VOLU, KC_MFFD,
+    U______, U______, U______, U______, U______,        U______, KC_MPRV, U______, U______, KC_MNXT,
                                U______, U______,        U______, U______
 ),
 };
@@ -292,7 +293,7 @@ uint16_t COMBO_LEN = CB_LENGTH;
 COMBO_3(BOOT,      KC_G, KC_F, KC_K);
 COMBO_2(PassLinux, NV_H, CT_N);
 COMBO_2(Name,      KC_M, CT_N);
-COMBO_2(Email,     GT_M, NU_L);
+COMBO_2(Email,     GT_M, SD_L);
 COMBO_2(Tilde,     KC_SLSH, ST_TAB);
 // COMBO_2(Escape,    AT_S, NV2_T);
 // COMBO_2(Enter,     KC_E, AT_I);
