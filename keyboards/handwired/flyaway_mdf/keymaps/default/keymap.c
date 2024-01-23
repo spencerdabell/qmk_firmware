@@ -211,13 +211,13 @@ nsthv .aeio
 pcmdk ,x/__
        lr
 
- []|   :;"!
-{()}   .,'?
-\<>/   -+`=
+ []|# ''`"
+{()}& ._:;=
+\<>/$ ,-*!?
 
 
 12345 67890
-       -,.
+       -+*
 
 */
 [L_ALPHA] = LAYOUT_split_5x3_2(
@@ -227,15 +227,6 @@ pcmdk ,x/__
                                ST_SPC,  NU_ESC,         NU_L,    PT_R
 ),
 [L_PUNCT] = LAYOUT_split_5x3_2(
-    // U______, KC_LBRC, KC_RBRC, KC_PIPE, U______,        _______, KC_COLN, KC_SCLN, KC_DQUO, KC_EXLM,
-    // KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, U______,        _______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES,
-    // KC_BSLS, KC_LT,   KC_GT,   KC_SLSH, U______,        _______, KC_MINS, KC_PLUS, KC_GRV,  KC_EQL,
-    //                            _______, KC_UNDS,        U______, U______
-/*
- []|#  ''`"
-{()}&  ._:;=
-\<>/$  ,-*!?
-*/
     U______, KC_LBRC, KC_RBRC, KC_PIPE, KC_HASH,        _______, KC_QUOT, KC_GRV,  KC_DQUO, U______,
     KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, KC_AMPR,        _______, KC_UNDS, KC_COLN, KC_SCLN, KC_EQL,
     KC_BSLS, KC_LT,   KC_GT,   KC_SLSH, KC_DLR,         _______, KC_MINS, KC_PLUS, KC_EXLM, KC_QUES,
