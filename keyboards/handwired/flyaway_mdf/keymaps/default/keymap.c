@@ -122,6 +122,7 @@ enum layer {
 #define NU_U LT(L_NUMBER, KC_U)
 #define NU_TAB LT(L_NUMBER, KC_TAB)
 #define NU_SPC LT(L_NUMBER, KC_SPC)
+#define NU_ESC LT(L_NUMBER, KC_ESC)
 
 // fn
 // #define FN_ENT  LT(L_FN, KC_ENT)
@@ -202,6 +203,8 @@ LAYOUT_split_5x3_2_info( \
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
+
+
 /*
 zwgfb 'juyq
 nsthv .aeio
@@ -221,21 +224,27 @@ pcmdk ,x/__
     KC_Z,    KC_W,    KC_G,    KC_F,    KC_K,           KC_QUOT, KC_J,    KC_U,    KC_Y,    KC_Q,
     CT_N,    AT_S,    NV2_T,   NV_H,    KC_V,           KC_DOT,  KC_A,    KC_E,    AT_I,    CT_O,
     GT_P,    ST_C,    KC_M,    MS_D,    KC_B,           SD_COMM, KC_X,    KC_SLSH, ST_TAB,  GT_ENT,
-                               ST_SPC,  KC_ESC,         NU_L,    PT_R
+                               ST_SPC,  NU_ESC,         NU_L,    PT_R
 ),
 [L_PUNCT] = LAYOUT_split_5x3_2(
-    U______, KC_LBRC, KC_RBRC, KC_PIPE, U______,        _______, KC_COLN, KC_SCLN, KC_DQUO, KC_EXLM,
-    KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, U______,        _______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES,
-    KC_BSLS, KC_LT,   KC_GT,   KC_SLSH, U______,        _______, KC_MINS, KC_PLUS, KC_GRV,  KC_EQL,
+    // U______, KC_LBRC, KC_RBRC, KC_PIPE, U______,        _______, KC_COLN, KC_SCLN, KC_DQUO, KC_EXLM,
+    // KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, U______,        _______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES,
+    // KC_BSLS, KC_LT,   KC_GT,   KC_SLSH, U______,        _______, KC_MINS, KC_PLUS, KC_GRV,  KC_EQL,
+    //                            _______, KC_UNDS,        U______, U______
+/*
+ []|#  ''`"
+{()}&  ._:;=
+\<>/$  ,-*!?
+*/
+    U______, KC_LBRC, KC_RBRC, KC_PIPE, KC_HASH,        _______, KC_QUOT, KC_GRV,  KC_DQUO, U______,
+    KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, KC_AMPR,        _______, KC_UNDS, KC_COLN, KC_SCLN, KC_EQL,
+    KC_BSLS, KC_LT,   KC_GT,   KC_SLSH, KC_DLR,         _______, KC_MINS, KC_PLUS, KC_EXLM, KC_QUES,
                                _______, KC_UNDS,        U______, U______
 ),
-// 1234567890
-// !@#$%^&*()
-
 [L_NUMBER] = LAYOUT_split_5x3_2(
     KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,          KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,
     CT_1,    AT_2,    KC_3,    NV_4,    KC_5,           KC_6,    KC_7,    KC_8,    AT_9,    CT_0,
-    KC_F11,  KC_F12,  KC_CAPS, CW_TOGG, U______,        U______, KC_MINS, KC_COMM, KC_DOT,  KC_ENT,
+    KC_F11,  KC_F12,  KC_CAPS, CW_TOGG, U______,        U______, KC_MINS, KC_PLUS, KC_ASTR, _______,
                                _______, KC_5,           U______, KC_6
 ),
 [L_NAVI] = LAYOUT_split_5x3_2(
