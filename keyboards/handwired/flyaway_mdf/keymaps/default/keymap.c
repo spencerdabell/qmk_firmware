@@ -148,6 +148,7 @@ enum layer {
 #define SD_R LT(L_SOUND, KC_R)
 #define SD_Z LT(L_SOUND, KC_Z)
 #define SD_ESC LT(L_SOUND, KC_ESC)
+#define SD_COMM LT(L_SOUND, KC_COMM)
 
 // nav
 
@@ -219,15 +220,18 @@ pcmdk ,x/__
 [L_ALPHA] = LAYOUT_split_5x3_2(
     KC_Z,    KC_W,    KC_G,    KC_F,    KC_K,           KC_QUOT, KC_J,    KC_U,    KC_Y,    KC_Q,
     CT_N,    AT_S,    NV2_T,   NV_H,    KC_V,           KC_DOT,  KC_A,    KC_E,    AT_I,    CT_O,
-    GT_P,    ST_C,    KC_M,    MS_D,    KC_B,           KC_COMM, KC_X,    KC_SLSH, ST_TAB,  GT_ENT,
-                               ST_SPC,  SD_ESC,         NU_L,    PT_R
+    GT_P,    ST_C,    KC_M,    MS_D,    KC_B,           SD_COMM, KC_X,    KC_SLSH, ST_TAB,  GT_ENT,
+                               ST_SPC,  KC_ESC,         NU_L,    PT_R
 ),
 [L_PUNCT] = LAYOUT_split_5x3_2(
-    U______, KC_LBRC, KC_RBRC, KC_PIPE, U______,        U______, KC_COLN, KC_SCLN, KC_DQUO, KC_EXLM,
-    KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, U______,        U______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES,
-    KC_BSLS, KC_LT,   KC_GT,   KC_SLSH, U______,        U______, KC_MINS, KC_PLUS, KC_GRV,  KC_EQL,
+    U______, KC_LBRC, KC_RBRC, KC_PIPE, U______,        _______, KC_COLN, KC_SCLN, KC_DQUO, KC_EXLM,
+    KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, U______,        _______, KC_DOT,  KC_COMM, KC_QUOT, KC_QUES,
+    KC_BSLS, KC_LT,   KC_GT,   KC_SLSH, U______,        _______, KC_MINS, KC_PLUS, KC_GRV,  KC_EQL,
                                _______, KC_UNDS,        U______, U______
 ),
+// 1234567890
+// !@#$%^&*()
+
 [L_NUMBER] = LAYOUT_split_5x3_2(
     KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,          KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,
     CT_1,    AT_2,    KC_3,    NV_4,    KC_5,           KC_6,    KC_7,    KC_8,    AT_9,    CT_0,
@@ -253,8 +257,8 @@ pcmdk ,x/__
                                ST_____, U______,        U______, U______
 ),
 [L_SOUND] = LAYOUT_split_5x3_2(
-    U______, U______, U______, U______, U______,        U______, U______, KC_MPLY, U______, U______,
-    U______, U______, U______, U______, U______,        U______, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT,
+    U______, U______, U______, U______, U______,        U______, KC_MRWD, KC_MPLY, U______, KC_MFFD,
+    U______, U______, U______, U______, U______,        U______, KC_MRWD, KC_VOLD, KC_VOLU, KC_MNXT,
     U______, U______, U______, U______, U______,        U______, KC_MRWD, U______, U______, KC_MFFD,
                                U______, U______,        U______, U______
 ),
