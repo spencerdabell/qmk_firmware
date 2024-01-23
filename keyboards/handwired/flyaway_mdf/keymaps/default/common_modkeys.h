@@ -182,6 +182,7 @@
 #define ST_TAB SFT_T(KC_TAB)
 #define ST_UNDS SFT_T(KC_UNDS)
 #define ST_SLSH SFT_T(KC_SLSH)
+#define ST_ASTR SFT_T(KC_ASTR)
 #define ST_1 SFT_T(KC_1)
 #define ST_2 SFT_T(KC_2)
 #define ST_3 SFT_T(KC_3)
@@ -202,6 +203,8 @@
 #define ST_F8 SFT_T(KC_F8)
 #define ST_F9 SFT_T(KC_F9)
 #define ST_F10 SFT_T(KC_F10)
+#define ST_F11 SFT_T(KC_F11)
+#define ST_F12 SFT_T(KC_F12)
 #define ST_____ SFT_T(KC_NO)
 
 // one shot mod
