@@ -8,7 +8,7 @@
 enum layer {
     // base
     L_ALPHA = 0,
-    L_PUNCT,
+    L_SYMBOL,
     L_NUMBER,
     L_FN,
     L_NAVI,
@@ -22,13 +22,13 @@ enum layer {
 #define TO_MOUS TO(L_MOUSE)
 #define TO_QT TO(L_QT)
 #define TG_LY TG(L_LAYER)
-#define TG_PT TG(L_PUNCT)
-#define OSL_PT OSL(L_PUNCT)
+// #define TG_PT TG(L_SYMBOL)
+// #define OSL_PT OSL(L_SYMBOL)
 #define TG_NV TG(L_NAVI)
 #define TG_MS TG(L_MOUSE)
 #define TG_NU TG(L_NUMBER)
 
-#define MO_PT MO(L_PUNCT)
+// #define MO_PT MO(L_SYMBOL)
 
 // #define LY_E LT(L_LAYER, KC_E)
 // #define LY_H LT(L_LAYER, KC_H)
@@ -127,20 +127,20 @@ enum layer {
 // fn
 // #define FN_ENT  LT(L_FN, KC_ENT)
 
-// punctuation
-#define PT_C LT(L_PUNCT, KC_C)
-#define PT_E LT(L_PUNCT, KC_E)
-#define PT_H LT(L_PUNCT, KC_H)
-#define PT_O LT(L_PUNCT, KC_O)
-#define PT_R LT(L_PUNCT, KC_R)
-#define PT_X LT(L_PUNCT, KC_X)
-#define PT__ LT(L_PUNCT, KC_NO)
-#define PT_5 LT(L_PUNCT, KC_5)
-#define PT_F12 LT(L_PUNCT, KC_F12)
-#define PT_BSPC LT(L_PUNCT, KC_BSPC)
-#define PT_SPC LT(L_PUNCT, KC_SPC)
-#define PT_TAB LT(L_PUNCT, KC_TAB)
-#define PT_ESC LT(L_PUNCT, KC_ESC)
+// symbol
+#define SY_C LT(L_SYMBOL, KC_C)
+#define SY_E LT(L_SYMBOL, KC_E)
+#define SY_H LT(L_SYMBOL, KC_H)
+#define SY_O LT(L_SYMBOL, KC_O)
+#define SY_R LT(L_SYMBOL, KC_R)
+#define SY_X LT(L_SYMBOL, KC_X)
+#define SY__ LT(L_SYMBOL, KC_NO)
+#define SY_5 LT(L_SYMBOL, KC_5)
+#define SY_F12 LT(L_SYMBOL, KC_F12)
+#define SY_BSPC LT(L_SYMBOL, KC_BSPC)
+#define SY_SPC LT(L_SYMBOL, KC_SPC)
+#define SY_TAB LT(L_SYMBOL, KC_TAB)
+#define SY_ESC LT(L_SYMBOL, KC_ESC)
 
 // sound
 #define SD_MPLY LT(L_SOUND, KC_MPLY)
@@ -225,9 +225,9 @@ pcmdk ,x/__         \<>/$ ,-*!?
     KC_Z,    KC_W,    KC_G,    KC_F,    KC_K,           KC_QUOT, KC_J,    KC_U,    KC_Y,    KC_Q,
     CT_N,    AT_S,    NV2_T,   NV_H,    KC_V,           KC_DOT,  KC_A,    KC_E,    AT_I,    CT_O,
     GT_P,    ST_C,    KC_M,    MS_D,    KC_B,           SD_COMM, KC_X,    KC_SLSH, ST_TAB,  GT_ENT,
-                               ST_SPC,  NU_ESC,         SD_L,    PT_R
+                               ST_SPC,  NU_ESC,         SD_L,    SY_R
 ),
-[L_PUNCT] = LAYOUT_split_5x3_2(
+[L_SYMBOL] = LAYOUT_split_5x3_2(
     U______, KC_LBRC, KC_RBRC, KC_PIPE, KC_HASH,        _______, KC_QUOT, KC_GRV,  KC_DQUO, U______,
     KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, KC_AMPR,        _______, KC_UNDS, KC_SCLN, KC_COLN, KC_EQL,
     KC_BSLS, KC_LT,   KC_GT,   KC_SLSH, KC_DLR,         _______, KC_MINS, KC_ASTR, KC_EXLM, KC_QUES,
