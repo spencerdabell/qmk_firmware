@@ -8,6 +8,7 @@
 enum layer {
     // base
     L_ALPHA = 0,
+    L_ALPHA2,
     L_SYMBOL,
     L_NUMBER,
     L_FN,
@@ -27,6 +28,8 @@ enum layer {
 #define TG_NV TG(L_NAVI)
 #define TG_MS TG(L_MOUSE)
 #define TG_NU TG(L_NUMBER)
+
+// #define TG_NU TG(L_NUMBER)
 
 // #define MO_PT MO(L_SYMBOL)
 
@@ -207,14 +210,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
 /*
-zwgfb 'juyq          []|# ''`"
-nsthv .aeio         {()}& ._;:=
-pcmdk ,x/__         \<>/$ ,-*!?
-       lr
+zwgfb  'juyq          []|# ''`"
+nsthv  .aeio         {()}& ._;:=
+pcmdk  ,x/__         \<>/$ ,-*!?
+        lr
 
- []|# ''`"
-{()}& ._:;=
-\<>/$ ,-*!?
+ []|#  ''`"
+{()}&  ._:;=
+\<>/$  ,-*!?
 
 
 12345 67890
@@ -222,10 +225,16 @@ pcmdk ,x/__         \<>/$ ,-*!?
 
 */
 [L_ALPHA] = LAYOUT_split_5x3_2(
-    KC_Z,    KC_W,    KC_G,    KC_F,    KC_K,           KC_QUOT, KC_J,    KC_U,    KC_Y,    KC_Q,
+    SD_Z,    KC_W,    KC_G,    KC_F,    KC_K,           KC_QUOT, KC_J,    KC_U,    KC_Y,    KC_Q,
     CT_N,    AT_S,    NV2_T,   NV_H,    KC_V,           KC_DOT,  KC_A,    KC_E,    AT_I,    CT_O,
     GT_P,    ST_C,    KC_M,    MS_D,    KC_B,           SD_COMM, KC_X,    KC_SLSH, ST_TAB,  GT_ENT,
                                ST_SPC,  NU_ESC,         SD_L,    SY_R
+),
+[L_ALPHA2] = LAYOUT_split_5x3_2(
+    SD_Z,    KC_W,    KC_G,    KC_F,    KC_K,           KC_QUOT, KC_J,    KC_U,    KC_Y,    KC_Q,
+    KC_N,    KC_S,    KC_T,    KC_H,    KC_V,           KC_DOT,  KC_A,    KC_E,    KC_I,    KC_O,
+    KC_P,    KC_C,    KC_M,    KC_D,    KC_B,           KC_COMM, KC_X,    KC_SLSH, KC_TAB,  KC_ENT,
+                               KC_SPC,  NU_ESC,         KC_L,    KC_R
 ),
 [L_SYMBOL] = LAYOUT_split_5x3_2(
     U______, KC_LBRC, KC_RBRC, KC_PIPE, KC_HASH,        _______, KC_QUOT, KC_GRV,  KC_DQUO, U______,
@@ -258,7 +267,7 @@ pcmdk ,x/__         \<>/$ ,-*!?
                                ST_____, U______,        U______, U______
 ),
 [L_SOUND] = LAYOUT_split_5x3_2(
-    U______, U______, U______, U______, U______,        U______, U______, KC_MPLY, U______, U______,
+    U______, TG(L_ALPHA2), U______, U______, U______,        U______, U______, KC_MPLY, U______, U______,
     U______, U______, U______, U______, U______,        U______, KC_MRWD, KC_VOLD, KC_VOLU, KC_MFFD,
     U______, U______, U______, U______, U______,        U______, KC_MPRV, U______, U______, KC_MNXT,
                                U______, U______,        U______, U______
