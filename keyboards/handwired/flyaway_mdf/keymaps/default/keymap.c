@@ -210,7 +210,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     SD_Z,    KC_W,    KC_G,    KC_F,    KC_K,           KC_QUOT, KC_J,    SD_U,    KC_Y,    KC_Q,
     CT_N,    AT_S,    NV2_T,   NV_H,    KC_V,           KC_DOT,  KC_A,    KC_E,    AT_I,    CT_O,
     GT_P,    ST_C,    KC_M,    MS_D,    KC_B,           SD_COMM, KC_X,    KC_SLSH, ST_TAB,  GT_ENT,
-                               ST_SPC,  NU_ESC,         KC_L,    SY_R
+                               ST_SPC,  KC_ESC,         NU_L,    SY_R
 ),
 /*
  @#$% ^&`"
