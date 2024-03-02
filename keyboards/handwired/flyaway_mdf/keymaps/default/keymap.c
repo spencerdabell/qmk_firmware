@@ -230,7 +230,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                _______, KC_5,           U______, KC_6
 ),
 [L_NAVI] = LAYOUT_split_5x3_2(
-    U______, U______, U______, U______, U______,        U______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
+    KC_MCTL, U______, U______, U______, U______,        U______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
     KC_LCTL, Ct_Z,    Ct_Y,    U______, U______,        U______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,
     KC_LGUI, Ct_SLSH, U______, U______, U______,        U______, Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT,
                                ST_____, Ct_DEL,         Ct_BSPC, KC_END
@@ -238,14 +238,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [L_NAVI2] = LAYOUT_split_5x3_2(
     U______, U______, U______, U______, U______,        U______, U______, U______, U______, U______,
     U______, U______, U______, U______, U______,        U______, Ct_PGUP, CA_DOWN, CA_UP,   Ct_PGDN,
-    U______, U______, U______, U______, U______,        U______, U______, CA_LEFT, CA_RGHT, U______,
+    U______, U______, U______, U______, U______,        U______, U______, U______, U______, U______,
                                ST_____, U______,        U______, U______
 ),
 [L_MOUSE] = LAYOUT_split_5x3_2(
     U______, U______, U______, U______, U______,        U______, U______, KC_BTN1, KC_BTN2, U______,
-    CT_BTN3, AT_BTN2, KC_BTN1, KC_BTN1, U______,        U______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,
-    KC_ACL0, KC_ACL1, KC_ACL2, U______, U______,        U______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R,
+    CT_BTN3, AT_BTN2, KC_BTN1, U______, U______,        U______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,
+    U______, U______, U______, U______, U______,        U______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R,
                                ST_____, U______,        U______, U______
+
 ),
 [L_SOUND] = LAYOUT_split_5x3_2(
     U______, U______, U______, U______, U______,        KC_MPRV, KC_MRWD, U______, KC_MFFD, KC_MNXT,
