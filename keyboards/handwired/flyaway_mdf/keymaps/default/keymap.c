@@ -151,6 +151,7 @@ enum layer {
 #define SD_Q LT(L_SOUND, KC_Q)
 #define SD_R LT(L_SOUND, KC_R)
 #define SD_U LT(L_SOUND, KC_U)
+#define SD_Y LT(L_SOUND, KC_Y)
 #define SD_Z LT(L_SOUND, KC_Z)
 #define SD_ESC LT(L_SOUND, KC_ESC)
 #define SD_COMM LT(L_SOUND, KC_COMM)
@@ -192,7 +193,10 @@ enum layer {
 
 // clang-format off
 
-#define LAYOUT_split_5x3_2( \
+// LAYOUT_5x3_2
+// LAYOUT_532
+
+#define LAYOUT_532( \
     L00, L01, L02, L03, L04, R01, R02, R03, R04, R05, \
     L10, L11, L12, L13, L14, R11, R12, R13, R14, R15, \
     L20, L21, L22, L23, L24, R21, R22, R23, R24, R25, \
@@ -206,53 +210,65 @@ LAYOUT_split_5x3_2_info( \
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-[L_ALPHA] = LAYOUT_split_5x3_2(
-    SD_Z,    KC_W,    KC_G,    KC_F,    KC_K,           KC_QUOT, KC_J,    SD_U,    KC_Y,    KC_Q,
+[L_ALPHA] = LAYOUT_532(
+    SD_Z,    KC_W,    KC_G,    KC_F,    KC_K,           KC_QUOT, KC_J,    KC_U,    SD_Y,    KC_Q,
     CT_N,    AT_S,    NV2_T,   NV_H,    KC_V,           KC_DOT,  KC_A,    KC_E,    AT_I,    CT_O,
     GT_P,    ST_C,    KC_M,    MS_D,    KC_B,           SD_COMM, KC_X,    KC_SLSH, ST_TAB,  GT_ENT,
-                               ST_SPC,  KC_ESC,         NU_L,    SY_R
+                               ST_SPC,  MS_ESC,         NU_L,    SY_R
 ),
-/*
- @#$% ^&`"
-{()}| ._;:=
-[<>]\ ,-*!?
-*/
-[L_SYMBOL] = LAYOUT_split_5x3_2(
+[L_SYMBOL] = LAYOUT_532(
     U______, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,        _______, KC_AMPR, KC_GRV,  KC_DQUO, U______,
     KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, KC_PIPE,        _______, KC_UNDS, KC_SCLN, KC_COLN, KC_EQL,
     KC_LBRC, KC_LT,   KC_GT,   KC_RBRC, KC_BSLS,        _______, KC_MINS, KC_ASTR, KC_EXLM, KC_QUES,
                                _______, KC_CIRC,        _______, _______
 ),
-[L_NUMBER] = LAYOUT_split_5x3_2(
+[L_NUMBER] = LAYOUT_532(
     KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,          KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,
     CT_1,    AT_2,    KC_3,    NV_4,    KC_5,           KC_6,    KC_7,    KC_8,    AT_9,    CT_0,
     KC_F11,  ST_F12,  KC_CAPS, CW_TOGG, KC_INS,         U______, KC_MINS, KC_PLUS, ST_____, KC_PERC,
                                _______, KC_5,           U______, KC_6
 ),
-[L_NAVI] = LAYOUT_split_5x3_2(
-    KC_MCTL, U______, U______, U______, U______,        U______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
+[L_NAVI] = LAYOUT_532(
+    KC_MCTL, CA_DOWN, CA_UP,   U______, U______,        U______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
     KC_LCTL, Ct_Z,    Ct_Y,    U______, U______,        U______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,
-    KC_LGUI, Ct_SLSH, U______, U______, U______,        U______, Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT,
-                               ST_____, Ct_DEL,         Ct_BSPC, KC_END
+    KC_LGUI, U______, U______, U______, U______,        U______, Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT,
+                               ST_____, U______,        Ct_BSPC, Ct_BSPC
 ),
-[L_NAVI2] = LAYOUT_split_5x3_2(
+[L_NAVI2] = LAYOUT_532(
     U______, U______, U______, U______, U______,        U______, U______, U______, U______, U______,
     U______, U______, U______, U______, U______,        U______, Ct_PGUP, CA_DOWN, CA_UP,   Ct_PGDN,
     U______, U______, U______, U______, U______,        U______, U______, U______, U______, U______,
                                ST_____, U______,        U______, U______
 ),
-[L_MOUSE] = LAYOUT_split_5x3_2(
+[L_MOUSE] = LAYOUT_532(
     U______, U______, U______, U______, U______,        U______, U______, KC_BTN1, KC_BTN2, U______,
-    CT_BTN3, AT_BTN2, KC_BTN1, U______, U______,        U______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,
+    CT_BTN3, AT_BTN2, KC_BTN1, KC_BTN1, U______,        U______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,
     U______, U______, U______, U______, U______,        U______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R,
                                ST_____, U______,        U______, U______
-
 ),
-[L_SOUND] = LAYOUT_split_5x3_2(
-    U______, U______, U______, U______, U______,        KC_MPRV, KC_MRWD, U______, KC_MFFD, KC_MNXT,
-    U______, U______, U______, U______, U______,        U______, KC_VOLU, U______, U______, U______,
+[L_SOUND] = LAYOUT_532(
+
+    U______, U______, U______, U______, U______,        KC_MPRV, KC_VOLU, KC_MPLY, U______, KC_MNXT,
+    U______, U______, U______, U______, U______,        U______, KC_VOLD, U______, U______, U______,
     U______, U______, U______, U______, U______,        U______, U______, U______, U______, U______,
-                               U______, U______,        KC_MPLY, KC_VOLD
+                               U______, U______,        KC_MRWD, KC_MFFD
+
+/*
+_,_,_,s,_
+_,_,_,_,_
+_,_,_,_,_
+_,_
+
+rwd, fwd, prv, nxt, volu, vold, ply
+freq: y, u-d, r-f, p-n
+
+p,r,f,s,n
+_,u,_,_,_
+_,d,_,_,_
+y,y
+
+*/
+
 ),
 };
 
