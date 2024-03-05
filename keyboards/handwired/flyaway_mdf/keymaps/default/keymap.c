@@ -249,9 +249,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [L_SOUND] = LAYOUT_532(
 
     U______, U______, U______, U______, U______,        KC_MPRV, KC_VOLU, KC_MPLY, U______, KC_MNXT,
-    U______, U______, U______, U______, U______,        U______, KC_VOLD, U______, U______, U______,
-    U______, U______, U______, U______, U______,        U______, U______, U______, U______, U______,
-                               U______, U______,        KC_MRWD, KC_MFFD
+    KC_1,    KC_2,    KC_3,    KC_4,    U______,        U______, KC_VOLD, U______, U______, U______,
+    KC_6,    KC_7,    KC_8,    KC_9,    U______,        U______, U______, U______, U______, U______,
+                               KC_0,    KC_5,           KC_MRWD, KC_MFFD
 
 /*
 _,_,_,s,_
