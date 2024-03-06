@@ -8,6 +8,7 @@
 enum layer {
     // base
     L_ALPHA = 0,
+    L_GAME,
     L_SYMBOL,
     L_NUMBER,
     L_FN,
@@ -216,8 +217,38 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     GT_P,    ST_C,    KC_M,    MS_D,    KC_B,           SD_COMM, KC_X,    KC_SLSH, ST_TAB,  GT_ENT,
                                ST_SPC,  MS_ESC,         NU_L,    SY_R
 ),
+/*
+standard
+tab  q w e r t
+caps a s d f g
+shft z x c v b
+ctrl
+
+meee
+        +---+
+    +---+ x +---+---+
++---+ q +---+ e | r |
+|tab+---+ w +---+---+
++---+ a +---+ d | f |
+|sft+---+ s +---+---+
++---+ z +---+ c | v |
+|ctl+---+   +---+---+
++---+
+
+the w is brought down to the home row,
+s is shifted down
+x is wrapped up onto the top of the column
+*/
+
+[L_GAME] = LAYOUT_532(
+    KC_TAB,  KC_Q,    KC_X,    KC_E,    KC_R,           U______, U______, U______, U______, U______,
+    KC_LSFT, KC_A,    KC_W,    KC_D,    KC_F,           U______, U______, U______, U______, U______,
+    GT_P,    KC_Z,    KC_S,    KC_C,    KC_V,           U______, U______, U______, U______, U______,
+                               KC_SPC,  U______,        U______, SY_R
+),
+
 [L_SYMBOL] = LAYOUT_532(
-    U______, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,        _______, KC_AMPR, KC_GRV,  KC_DQUO, U______,
+ TG(L_GAME), KC_AT,   KC_HASH, KC_DLR,  KC_PERC,        _______, KC_AMPR, KC_GRV,  KC_DQUO, U______,
     KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, KC_PIPE,        _______, KC_UNDS, KC_SCLN, KC_COLN, KC_EQL,
     KC_LBRC, KC_LT,   KC_GT,   KC_RBRC, KC_BSLS,        _______, KC_MINS, KC_ASTR, KC_EXLM, KC_QUES,
                                _______, KC_CIRC,        _______, _______
