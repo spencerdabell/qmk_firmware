@@ -219,21 +219,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 /*
 standard
-tab  q w e r t
-caps a s d f g
-shft z x c v b
-ctrl
+tab  q w e r   t y u o i     p
+shft a s d f   g h j k l     ;
+ctrl z x c v   b n m _ ent   /
+     spc esc   ___ ___
 
-meee
-        +---+
-    +---+ x +---+---+
-+---+ q +---+ e | r |
-|tab+---+ w +---+---+
-+---+ a +---+ d | f |
-|sft+---+ s +---+---+
-+---+ z +---+ c | v |
-|ctl+---+   +---+---+
-+---+
+        +---+                      +---+
+    +---+ x +---+---+      +---+---+   +---+---+
++---+ q +---+ e | r |      |   |   +---+   |   +---+
+|tab+---+ w +---+---+      +---+---+   +---+---|   |
++---+ a +---+ d | f |      |   |   +---+   |   +---+
+|sft+---+ s +---+---+      +---+---+   +---+---|   |
++---+ z +---+ c | v |      |   |   +---+   |   +---+
+|ctl+---+   +---+---+      +---+---+   +---+---|   |
++---+                                          +---+
+            +---+---+      +---+---+
+            |   |   |      |   |   |
+            +---+---+      +---+---+
+
+
 
 the w is brought down to the home row,
 s is shifted down
@@ -241,17 +245,16 @@ x is wrapped up onto the top of the column
 */
 
 [L_GAME] = LAYOUT_532(
-    KC_TAB,  KC_Q,    KC_X,    KC_E,    KC_R,           U______, U______, U______, U______, U______,
-    KC_LSFT, KC_A,    KC_W,    KC_D,    KC_F,           U______, U______, U______, U______, U______,
-    GT_P,    KC_Z,    KC_S,    KC_C,    KC_V,           U______, U______, U______, U______, U______,
-                               KC_SPC,  U______,        U______, SY_R
+    KC_TAB,  KC_Q,    KC_X,    KC_E,    KC_R,           KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,
+    KC_LSFT, KC_A,    KC_W,    KC_D,    KC_F,           KC_G,    KC_H,    KC_J,    KC_K,    KC_L,
+    KC_LCTL, KC_Z,    KC_S,    KC_C,    KC_V,           KC_B,    KC_N,    KC_M,    U______, KC_ENT,
+                               KC_SPC,  NU_ESC,         KC_P,    SY__
 ),
-
 [L_SYMBOL] = LAYOUT_532(
- TG(L_GAME), KC_AT,   KC_HASH, KC_DLR,  KC_PERC,        _______, KC_AMPR, KC_GRV,  KC_DQUO, U______,
+ TG(L_GAME), KC_AT,   KC_HASH, KC_DLR,  KC_PERC,        KC_CIRC, KC_AMPR, KC_GRV,  KC_DQUO, _______,
     KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, KC_PIPE,        _______, KC_UNDS, KC_SCLN, KC_COLN, KC_EQL,
     KC_LBRC, KC_LT,   KC_GT,   KC_RBRC, KC_BSLS,        _______, KC_MINS, KC_ASTR, KC_EXLM, KC_QUES,
-                               _______, KC_CIRC,        _______, _______
+                               _______, _______,        _______, _______
 ),
 [L_NUMBER] = LAYOUT_532(
     KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,          KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,
@@ -335,8 +338,8 @@ uint16_t COMBO_LEN = CB_LENGTH;
 
 COMBO_3(BOOT,      KC_G, KC_F, KC_K);
 COMBO_2(PassLinux, NV_H, CT_N);
-COMBO_2(Name,      KC_M, CT_N);
-COMBO_2(Email,     GT_M, KC_L);
+COMBO_2(Name,      AT_S, GT_P);
+COMBO_2(Email,     KC_M, NU_L);
 COMBO_2(Tilde,     KC_SLSH, ST_TAB);
 // COMBO_2(Escape,    AT_S, NV2_T);
 // COMBO_2(Enter,     KC_E, AT_I);
@@ -385,3 +388,39 @@ reference
 https://docs.qmk.fm/#/feature_caps_word
 
 */
+
+
+
+
+/*
+greek layer
+
+a    Α   α  alpha
+b    Β   β  beta
+g    Γ   γ  gamma
+d    Δ   δ  delta
+e    Ε   ε  epsilon
+z    Ζ   ζ  zeta
+h    Η   η  eta
+th   Θ   θ  theta
+i    Ι   ι  iota
+k    Κ   κ  kappa
+l    Λ   λ  lamda
+m    Μ   μ  mu
+n    Ν   ν  nu
+ks   Ξ   ξ  xi
+o    Ο   ο  omicron
+p    Π   π  pi
+r    Ρ   ρ  rho
+s    Σ  σ/ς sigma
+t    Τ   τ  tau
+y    Υ   υ  upsilon
+ph   Φ   φ  phi
+x    Χ   χ  chi
+ps   Ψ   ψ  psi
+w    Ω   ω  omega
+
+*/
+
+
+
