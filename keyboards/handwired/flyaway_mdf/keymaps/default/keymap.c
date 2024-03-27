@@ -272,7 +272,6 @@ x is wrapped up onto the top of the column
                                KC_F11,  KC_F12,         HOLD___, U______
 ),
 
-
 [L_NAVI] = LAYOUT_532(
     KC_MCTL, CA_DOWN, CA_UP,   U______, U______,        U______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
     KC_LCTL, Ct_Z,    Ct_Y,    U______, U______,        U______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,
@@ -306,11 +305,21 @@ enum combos {
     , CB_Email
     , CB_PassLinux
     , CB_Tilde
+
+    // , CB_Caps
+    // , CB_CapsWord
+    // , CB_OneShotShift
+
+    // hmmmmmm
     // , CB_Escape
     // , CB_Enter
     // , CB_Tab
+
+    // inner column
     // , CB_P
     // , CB_K
+
+    // greek
     // , CB_Omega
     // , CB_Micro
     // , CB_Degree
