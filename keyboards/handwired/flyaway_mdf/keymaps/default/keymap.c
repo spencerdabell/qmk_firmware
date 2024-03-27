@@ -14,8 +14,7 @@ enum layer {
     L_FN,
     L_NAVI,
     L_NAVI2,
-    L_MOUSE,
-    L_SOUND
+    L_MOUSE
 };
 
 // LAYER SWITCHING
@@ -131,6 +130,7 @@ enum layer {
 #define NU_ESC LT(L_NUMBER, KC_ESC)
 
 // fn
+#define FN_L LT(L_FN, KC_L)
 #define FN_ENT LT(L_FN, KC_ENT)
 #define FN_ESC LT(L_FN, KC_ESC)
 
@@ -150,19 +150,10 @@ enum layer {
 #define SY_ESC LT(L_SYMBOL, KC_ESC)
 
 // sound
-#define SD_MPLY LT(L_SOUND, KC_MPLY)
-#define SD_F LT(L_SOUND, KC_F)
-#define SD_L LT(L_SOUND, KC_L)
-#define SD_Q LT(L_SOUND, KC_Q)
-#define SD_R LT(L_SOUND, KC_R)
-#define SD_U LT(L_SOUND, KC_U)
-#define SD_Y LT(L_SOUND, KC_Y)
-#define SD_Z LT(L_SOUND, KC_Z)
-#define SD_ESC LT(L_SOUND, KC_ESC)
-#define SD_COMM LT(L_SOUND, KC_COMM)
+// #define SD_L LT(L_SOUND, KC_L)
+// #define SD_ESC LT(L_SOUND, KC_ESC)
 
 // nav
-
 #define Gu_GRV G(KC_GRV)
 #define At_TAB A(KC_TAB)
 #define AS_TAB LSA(KC_TAB)
@@ -216,10 +207,10 @@ LAYOUT_split_5x3_2_info( \
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [L_ALPHA] = LAYOUT_532(
-    SD_Z,    KC_W,    KC_G,    KC_F,    KC_K,           KC_QUOT, KC_J,    KC_U,    KC_Y,    KC_Q,
+    KC_Z,    KC_W,    KC_G,    KC_F,    KC_K,           KC_QUOT, KC_J,    KC_U,    KC_Y,    KC_Q,
     CT_N,    AT_S,    NV2_T,   NV_H,    KC_V,           KC_DOT,  KC_A,    KC_E,    AT_I,    CT_O,
-    GT_P,    ST_C,    KC_M,    MS_D,    KC_B,           SD_COMM, KC_X,    KC_SLSH, ST_TAB,  GT_ENT,
-                               ST_SPC,  NU_ESC,         SD_L,    SY_R
+    GT_P,    ST_C,    KC_M,    MS_D,    KC_B,           KC_COMM, KC_X,    KC_SLSH, ST_TAB,  GT_ENT,
+                               ST_SPC,  NU_ESC,         FN_L,    SY_R
 ),
 /*
 standard
@@ -299,33 +290,6 @@ x is wrapped up onto the top of the column
     CT_BTN3, AT_BTN2, KC_BTN1, KC_BTN1, U______,        U______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,
     U______, U______, U______, U______, U______,        U______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R,
                                ST_____, U______,        U______, U______
-),
-[L_SOUND] = LAYOUT_532(
-    // U______, U______, U______, U______, U______,        KC_MPRV, KC_VOLU, KC_MPLY, U______, KC_MNXT,
-    // KC_1,    KC_2,    KC_3,    KC_4,    U______,        U______, KC_VOLD, U______, U______, U______,
-    // KC_6,    KC_7,    KC_8,    KC_9,    U______,        U______, U______, U______, U______, U______,
-    //                            KC_0,    KC_5,           KC_MRWD, KC_MFFD
-    U______, U______, U______, U______, U______,        U______, U______, KC_MPLY, U______, U______,
-    U______, U______, U______, U______, U______,        U______, KC_MRWD, KC_VOLD, KC_VOLU, KC_MFFD,
-    U______, U______, U______, U______, U______,        U______, KC_MPRV, U______, U______, KC_MNXT,
-                               U______, U______,        U______, U______
-
-/*
-_,_,_,s,_
-_,_,_,_,_
-_,_,_,_,_
-_,_
-
-rwd, fwd, prv, nxt, volu, vold, ply
-freq: y, u-d, r-f, p-n
-
-p,r,f,s,n
-_,u,_,_,_
-_,d,_,_,_
-y,y
-
-*/
-
 ),
 };
 
