@@ -308,8 +308,8 @@ enum combos {
     , CB_PassLinux
     , CB_Tilde
 
-    // , CB_Caps
-    // , CB_CapsWord
+    , CB_Caps
+    , CB_CapsWord
     // , CB_OneShotShift
 
     // hmmmmmm
@@ -339,6 +339,9 @@ COMBO_2(PassLinux, KC_J, KC_Q);
 COMBO_2(Name,      AT_S, GT_P);
 COMBO_2(Email,     KC_M, NU_L);
 COMBO_2(Tilde,     KC_SLSH, ST_TAB);
+COMBO_2(Caps,      ST_T, ST_E);
+COMBO_2(CapsWord,  ST_T, KC_A);
+
 // COMBO_2(Escape,    AT_S, NV2_T);
 // COMBO_2(Enter,     KC_E, AT_I);
 // COMBO_2(Tab,       KC_U, KC_Y);
@@ -348,6 +351,7 @@ COMBO_2(Tilde,     KC_SLSH, ST_TAB);
 // COMBO_2(K_MICRO,   ST_SPC, KC_M);
 // COMBO_2(K_Degree,  ST_SPC, MS_D);
 
+
 // combo behavior
 combo_t key_combos[] = {
     [CB_BOOT] =         COMBO(BOOT, QK_BOOTLOADER),
@@ -355,6 +359,8 @@ combo_t key_combos[] = {
     [CB_Name] =         COMBO_ACTION(Name),
     [CB_Email] =        COMBO_ACTION(Email),
     [CB_Tilde] =        COMBO(Tilde, KC_TILD),
+    [CB_Caps] =         COMBO(Caps, KC_CAPS),
+    [CB_CapsWord] =     COMBO(CapsWord, CW_TOGG),
     // [CB_Escape] =       COMBO(Escape, KC_ESC),
     // [CB_Enter] =        COMBO(Enter, KC_ENT),
     // [CB_Tab] =          COMBO(Tab, KC_TAB),
