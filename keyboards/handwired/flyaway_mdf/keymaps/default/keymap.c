@@ -261,10 +261,10 @@ x is wrapped up onto the top of the column
 ),
 
 [L_SYMNUM] = LAYOUT_532(
-    U______, U______, U______, U______, U______,        U______, U______, U______, U______, U______,
-    U______, U______, U______, U______, U______,        _______, KC_MINS, KC_PLUS, KC_ASTR, KC_SLSH,
-    KC_1,    AT_2,    ST_3,    NV_4,    KC_5,           KC_6,    KC_7,    ST_8,    AT_9,    CT_0,
-                               _______, KC_5,           KC_6,    U______
+    U______, U______, U______, U______, U______,        U______, KC_ASTR, KC_MINS, KC_PLUS, U______,
+    KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, U______,        _______, U______, U______, U______, KC_SLSH,
+    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,           KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
+                               KC_UNDS, KC_BSLS,           KC_6,    U______
 ),
 
 [L_FN] = LAYOUT_532(
