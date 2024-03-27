@@ -11,6 +11,7 @@ enum layer {
     // L_GAME,
     L_SYMBOL,
     L_NUMBER,
+    L_SYMNUM,
     L_FN,
     L_NAVI,
     L_NAVI2,
@@ -259,7 +260,7 @@ x is wrapped up onto the top of the column
                                _______, ___H___,        U______, KC_6
 ),
 
-// [L_NUMBER] = LAYOUT_532(
+// [L_SYMNUM] = LAYOUT_532(
 //     U______, U______, U______, U______, U______,        U______, U______, U______, U______, U______,
 //     CT_1,    AT_2,    ST_3,    NV_4,    KC_5,           KC_6,    KC_7,    ST_8,    AT_9,    CT_0,
 //     U______, U______, U______, U______, U______,        _______, KC_MINS, KC_PLUS, KC_ASTR, KC_SLSH,
@@ -268,7 +269,7 @@ x is wrapped up onto the top of the column
 
 [L_FN] = LAYOUT_532(
     U______, U______, U______, KC_PSCR, U______,        U______, KC_MPRV, KC_MPLY, KC_MNXT, U______,
-    U______, U______, KC_CAPS, CW_TOGG, U______,        U______, KC_MRWD, KC_VOLD, KC_VOLU, KC_MFFD,
+    U______, U______, CW_TOGG, KC_CAPS, U______,        U______, KC_MRWD, KC_VOLD, KC_VOLU, KC_MFFD,
     KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,          KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,
                                KC_F11,  KC_F12,         ___H___, U______
 ),
@@ -339,8 +340,8 @@ COMBO_2(PassLinux, KC_J, KC_Q);
 COMBO_2(Name,      AT_S, GT_P);
 COMBO_2(Email,     KC_M, NU_L);
 COMBO_2(Tilde,     KC_SLSH, KC_TAB);
-COMBO_2(Caps,      ST_T, ST_E);
-COMBO_2(CapsWord,  ST_T, KC_A);
+COMBO_2(Caps,      ST_T, KC_A);
+COMBO_2(CapsWord,  ST_T, ST_E);
 
 // COMBO_2(Escape,    AT_S, NV2_T);
 // COMBO_2(Enter,     KC_E, AT_I);
