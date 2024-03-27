@@ -334,7 +334,7 @@ uint16_t COMBO_LEN = CB_LENGTH;
 #define COMBO_3(NAME, KEY1, KEY2, KEY3)  const uint16_t PROGMEM NAME[] = {KEY1, KEY2, KEY3, COMBO_END};
 
 COMBO_3(BOOT,      KC_G, KC_F, KC_K);
-COMBO_2(PassLinux, KC_J, KC_Y);
+COMBO_2(PassLinux, KC_J, KC_Q);
 COMBO_2(Name,      AT_S, GT_P);
 COMBO_2(Email,     KC_M, NU_L);
 COMBO_2(Tilde,     KC_SLSH, ST_TAB);
