@@ -8,7 +8,7 @@
 enum layer {
     // base
     L_ALPHA = 0,
-    L_GAME,
+    // L_GAME,
     L_SYMBOL,
     L_NUMBER,
     L_FN,
@@ -83,8 +83,11 @@ enum layer {
 #define NV_F4 LT(L_NAVI, KC_F4)
 #define NV__ LT(L_NAVI, KC_NO)
 
+#define NV2_A LT(L_NAVI2, KC_A)
+#define NV2_C LT(L_NAVI2, KC_C)
 #define NV2_D LT(L_NAVI2, KC_D)
 #define NV2_T LT(L_NAVI2, KC_T)
+#define NV2_V LT(L_NAVI2, KC_V)
 
 // mouse
 #define MS_A LT(L_MOUSE, KC_A)
@@ -128,7 +131,8 @@ enum layer {
 #define NU_ESC LT(L_NUMBER, KC_ESC)
 
 // fn
-// #define FN_ENT  LT(L_FN, KC_ENT)
+#define FN_ENT LT(L_FN, KC_ENT)
+#define FN_ESC LT(L_FN, KC_ESC)
 
 // symbol
 #define SY_C LT(L_SYMBOL, KC_C)
@@ -212,10 +216,10 @@ LAYOUT_split_5x3_2_info( \
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [L_ALPHA] = LAYOUT_532(
-    SD_Z,    KC_W,    KC_G,    KC_F,    KC_K,           KC_QUOT, KC_J,    KC_U,    SD_Y,    KC_Q,
+    SD_Z,    KC_W,    KC_G,    KC_F,    KC_K,           KC_QUOT, KC_J,    KC_U,    KC_Y,    KC_Q,
     CT_N,    AT_S,    NV2_T,   NV_H,    KC_V,           KC_DOT,  KC_A,    KC_E,    AT_I,    CT_O,
     GT_P,    ST_C,    KC_M,    MS_D,    KC_B,           SD_COMM, KC_X,    KC_SLSH, ST_TAB,  GT_ENT,
-                               ST_SPC,  MS_ESC,         NU_L,    SY_R
+                               ST_SPC,  NU_ESC,         SD_L,    SY_R
 ),
 /*
 standard
@@ -244,14 +248,14 @@ s is shifted down
 x is wrapped up onto the top of the column
 */
 
-[L_GAME] = LAYOUT_532(
-    KC_TAB,  KC_Q,    KC_X,    KC_E,    KC_R,           KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,
-    KC_LSFT, KC_A,    KC_W,    KC_D,    KC_F,           KC_G,    KC_H,    KC_J,    KC_K,    KC_L,
-    KC_LCTL, KC_Z,    KC_S,    KC_C,    KC_V,           KC_B,    KC_N,    KC_M,    U______, KC_ENT,
-                               KC_SPC,  NU_ESC,         KC_P,    SY__
-),
+// [L_GAME] = LAYOUT_532(
+//     KC_TAB,  KC_Q,    KC_X,    KC_E,    KC_R,           KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,
+//     KC_LSFT, KC_A,    KC_W,    KC_D,    KC_F,           KC_G,    KC_H,    KC_J,    KC_K,    KC_L,
+//     KC_LCTL, KC_Z,    KC_S,    KC_C,    KC_V,           KC_B,    KC_N,    KC_M,    U______, KC_ENT,
+//                                KC_SPC,  NU_ESC,         KC_P,    SY__
+// ),
 [L_SYMBOL] = LAYOUT_532(
- TG(L_GAME), KC_AT,   KC_HASH, KC_DLR,  KC_PERC,        KC_CIRC, KC_AMPR, KC_GRV,  KC_DQUO, _______,
+    _______, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,        KC_CIRC, KC_AMPR, KC_GRV,  KC_DQUO, _______,
     KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, KC_PIPE,        _______, KC_UNDS, KC_SCLN, KC_COLN, KC_EQL,
     KC_LBRC, KC_LT,   KC_GT,   KC_RBRC, KC_BSLS,        _______, KC_MINS, KC_ASTR, KC_EXLM, KC_QUES,
                                _______, _______,        _______, _______
@@ -262,6 +266,21 @@ x is wrapped up onto the top of the column
     KC_F11,  ST_F12,  KC_CAPS, CW_TOGG, KC_INS,         U______, KC_MINS, KC_PLUS, ST_____, KC_PERC,
                                _______, KC_5,           U______, KC_6
 ),
+
+// [L_NUMBER] = LAYOUT_532(
+//     U______, U______, U______, U______, U______,        U______, U______, U______, U______, U______,
+//     CT_1,    AT_2,    ST_3,    NV_4,    KC_5,           KC_6,    KC_7,    ST_8,    AT_9,    CT_0,
+//     U______, U______, U______, U______, U______,        _______, KC_MINS, KC_PLUS, KC_ASTR, KC_SLSH,
+//                                _______, KC_5,           KC_6,    U______
+// ),
+// [L_FN] = LAYOUT_532(
+//     U______, U______, U______, U______, U______,        U______, U______, U______, U______, U______,
+//     CT_F1,   AT_F2,   ST_F3,   KC_F4,   KC_F5,          KC_F6,   KC_F7,   ST_F8,   AT_F9,   CT_F10,
+//     KC_F11,  KC_F12,  U______, U______, U______,        U______, U______, U______, U______, U______,
+//                                _______, KC_F5,          KC_F6,   _______
+// ),
+
+
 [L_NAVI] = LAYOUT_532(
     KC_MCTL, CA_DOWN, CA_UP,   U______, U______,        U______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
     KC_LCTL, Ct_Z,    Ct_Y,    U______, U______,        U______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,
@@ -270,8 +289,8 @@ x is wrapped up onto the top of the column
 ),
 [L_NAVI2] = LAYOUT_532(
     U______, U______, U______, U______, U______,        U______, U______, U______, U______, U______,
-    U______, U______, U______, U______, U______,        U______, Ct_PGUP, CA_DOWN, CA_UP,   Ct_PGDN,
-    U______, U______, U______, U______, U______,        U______, U______, U______, U______, U______,
+    U______, Ct_PGUP, CA_UP,   Ct_PGDN, U______,        U______, Ct_PGUP, CA_DOWN, CA_UP,   Ct_PGDN,
+    U______, U______, CA_DOWN, U______, U______,        U______, U______, U______, U______, U______,
                                ST_____, U______,        U______, U______
 ),
 [L_MOUSE] = LAYOUT_532(
@@ -281,11 +300,14 @@ x is wrapped up onto the top of the column
                                ST_____, U______,        U______, U______
 ),
 [L_SOUND] = LAYOUT_532(
-
-    U______, U______, U______, U______, U______,        KC_MPRV, KC_VOLU, KC_MPLY, U______, KC_MNXT,
-    KC_1,    KC_2,    KC_3,    KC_4,    U______,        U______, KC_VOLD, U______, U______, U______,
-    KC_6,    KC_7,    KC_8,    KC_9,    U______,        U______, U______, U______, U______, U______,
-                               KC_0,    KC_5,           KC_MRWD, KC_MFFD
+    // U______, U______, U______, U______, U______,        KC_MPRV, KC_VOLU, KC_MPLY, U______, KC_MNXT,
+    // KC_1,    KC_2,    KC_3,    KC_4,    U______,        U______, KC_VOLD, U______, U______, U______,
+    // KC_6,    KC_7,    KC_8,    KC_9,    U______,        U______, U______, U______, U______, U______,
+    //                            KC_0,    KC_5,           KC_MRWD, KC_MFFD
+    U______, U______, U______, U______, U______,        U______, U______, KC_MPLY, U______, U______,
+    U______, U______, U______, U______, U______,        U______, KC_MRWD, KC_VOLD, KC_VOLU, KC_MFFD,
+    U______, U______, U______, U______, U______,        U______, KC_MPRV, U______, U______, KC_MNXT,
+                               U______, U______,        U______, U______
 
 /*
 _,_,_,s,_
@@ -337,7 +359,7 @@ uint16_t COMBO_LEN = CB_LENGTH;
 #define COMBO_3(NAME, KEY1, KEY2, KEY3)  const uint16_t PROGMEM NAME[] = {KEY1, KEY2, KEY3, COMBO_END};
 
 COMBO_3(BOOT,      KC_G, KC_F, KC_K);
-COMBO_2(PassLinux, NV_H, CT_N);
+COMBO_2(PassLinux, KC_J, KC_Y);
 COMBO_2(Name,      AT_S, GT_P);
 COMBO_2(Email,     KC_M, NU_L);
 COMBO_2(Tilde,     KC_SLSH, ST_TAB);
