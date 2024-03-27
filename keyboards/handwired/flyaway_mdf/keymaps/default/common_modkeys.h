@@ -1,4 +1,5 @@
 #define U______ KC_NO
+#define HOLD___ KC_NO
 
 // control
 #define CT_A LCTL_T(KC_A)
