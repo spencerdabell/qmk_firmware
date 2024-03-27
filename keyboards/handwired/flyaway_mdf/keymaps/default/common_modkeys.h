@@ -35,6 +35,7 @@
 #define CT_Z LCTL_T(KC_Z)
 #define CT_SCLN LCTL_T(KC_SCLN)
 #define CT_ESC LCTL_T(KC_ESC)
+#define CT_BSPC LCTL_T(KC_BSPC)
 #define CT_1 LCTL_T(KC_1)
 #define CT_F1 LCTL_T(KC_F1)
 #define CT_0 RCTL_T(KC_0)
@@ -159,6 +160,9 @@
 #define GT_3 GUI_T(KC_3)
 // #define GT_F3   GUI_T(KC_F3)
 #define GT_8 GUI_T(KC_8)
+
+#define Gu_HOME GUI_T(KC_HOME)
+#define Gu_END GUI_T(KC_END)
 
 // shift
 #define ST_A SFT_T(KC_A)

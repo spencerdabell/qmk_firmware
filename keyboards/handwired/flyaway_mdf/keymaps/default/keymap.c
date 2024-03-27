@@ -256,7 +256,7 @@ x is wrapped up onto the top of the column
     KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,          KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,
     CT_1,    AT_2,    ST_3,    NV_4,    KC_5,           KC_6,    KC_7,    ST_8,    AT_9,    CT_0,
     KC_F11,  KC_F12,  KC_CAPS, CW_TOGG, KC_INS,         U______, KC_MINS, KC_PLUS, U______, KC_PERC,
-                               _______, KC_5,           U______, KC_6
+                               _______, ___H___,        U______, KC_6
 ),
 
 // [L_NUMBER] = LAYOUT_532(
@@ -274,13 +274,14 @@ x is wrapped up onto the top of the column
 ),
 
 [L_NAVI] = LAYOUT_532(
-    KC_MCTL, CA_DOWN, CA_UP,   U______, U______,        U______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
-    KC_LCTL, Ct_Z,    Ct_Y,    ___H___, U______,        U______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,
-    KC_LGUI, U______, U______, U______, U______,        U______, Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT,
-                               ST_____, U______,        Ct_BSPC, Ct_BSPC
+    U______, KC_MCTL, U______, U______, U______,        U______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
+    CT_BSPC, Ct_Z,    Ct_Y,    ___H___, U______,        U______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,
+    Ct_BSPC, U______, U______, U______, U______,        U______, Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT,
+                               ST_____, U______,        Ct_BSPC, KC_BSPC
 ),
+
 [L_NAVI2] = LAYOUT_532(
-    U______, U______, U______, U______, U______,        U______, U______, U______, U______, U______,
+    U______, U______, U______, U______, U______,        U______, U______, Gu_END,  Gu_HOME, U______,
     U______, U______, U______, U______, U______,        U______, Ct_PGUP, CA_DOWN, CA_UP,   Ct_PGDN,
     U______, U______, U______, U______, U______,        U______, U______, U______, U______, U______,
                                ___H___, U______,        U______, U______
