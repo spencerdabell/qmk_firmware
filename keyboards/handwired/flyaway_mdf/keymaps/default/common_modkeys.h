@@ -1,5 +1,6 @@
 #define U______ KC_NO
 #define H______ KC_NO
+#define ___H___ KC_NO
 #define HD_____ KC_NO
 #define HOLD___ KC_NO
 #define HHHHHHH KC_NO
