@@ -262,7 +262,7 @@ x is wrapped up onto the top of the column
 
 [L_SYMNUM] = LAYOUT_532(
     U______, U______, U______, U______, U______,        U______, KC_ASTR, KC_MINS, KC_PLUS, U______,
-    KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, U______,        _______, U______, U______, U______, KC_SLSH,
+    CT_LCBR, AT_LPRN, ST_RPRN, KC_RCBR, U______,        _______, U______, U______, U______, KC_SLSH,
     KC_1,    KC_2,    KC_3,    KC_4,    KC_5,           KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
                                KC_UNDS, KC_BSLS,           KC_6,    U______
 ),
@@ -339,7 +339,7 @@ COMBO_3(BOOT,      KC_G, KC_F, KC_K);
 COMBO_2(PassLinux, KC_J, KC_Q);
 COMBO_2(Name,      AT_S, GT_P);
 COMBO_2(Email,     KC_M, NU_L);
-COMBO_2(Tilde,     KC_SLSH, KC_TAB);
+COMBO_2(Tilde,     KC_SLSH, GT_TAB);
 COMBO_2(Caps,      NV_H, ST_E);
 COMBO_2(CapsWord,  ST_T, ST_E);
 // COMBO_2(Escape,    AT_S, NV2_T);
