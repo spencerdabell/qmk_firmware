@@ -87,6 +87,7 @@ enum layer {
 #define NV2_D LT(L_NAVI2, KC_D)
 #define NV2_T LT(L_NAVI2, KC_T)
 #define NV2_V LT(L_NAVI2, KC_V)
+#define NV2_SPC LT(L_NAVI2, KC_SPC)
 
 // mouse
 #define MS_A LT(L_MOUSE, KC_A)
@@ -208,9 +209,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [L_ALPHA] = LAYOUT_532(
     KC_Z,    KC_W,    KC_G,    KC_F,    KC_K,           KC_QUOT, KC_J,    KC_U,    KC_Y,    KC_Q,
-    CT_N,    AT_S,    NV2_T,   NV_H,    KC_V,           KC_DOT,  KC_A,    KC_E,    AT_I,    CT_O,
-    GT_P,    ST_C,    KC_M,    MS_D,    KC_B,           KC_COMM, KC_X,    KC_SLSH, ST_TAB,  GT_ENT,
-                               ST_SPC,  NU_ESC,         FN_L,    SY_R
+    CT_N,    AT_S,    ST_T,    NV_H,    KC_V,           KC_DOT,  KC_A,    ST_E,    AT_I,    CT_O,
+    GT_P,    ST_C,    KC_M,    MS_D,    KC_B,           KC_COMM, KC_X,    KC_SLSH, KC_TAB,  GT_ENT,
+                               NV2_SPC, NU_ESC,         FN_L,    SY_R
 ),
 /*
 standard
@@ -253,8 +254,8 @@ x is wrapped up onto the top of the column
 ),
 [L_NUMBER] = LAYOUT_532(
     KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,          KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,
-    CT_1,    AT_2,    KC_3,    NV_4,    KC_5,           KC_6,    KC_7,    KC_8,    AT_9,    CT_0,
-    KC_F11,  ST_F12,  KC_CAPS, CW_TOGG, KC_INS,         U______, KC_MINS, KC_PLUS, ST_____, KC_PERC,
+    CT_1,    AT_2,    ST_3,    NV_4,    KC_5,           KC_6,    KC_7,    ST_8,    AT_9,    CT_0,
+    KC_F11,  KC_F12,  KC_CAPS, CW_TOGG, KC_INS,         U______, KC_MINS, KC_PLUS, U______, KC_PERC,
                                _______, KC_5,           U______, KC_6
 ),
 
@@ -269,25 +270,25 @@ x is wrapped up onto the top of the column
     U______, U______, U______, U______, U______,        U______, KC_MPRV, KC_MPLY, KC_MNXT, U______,
     U______, U______, KC_CAPS, CW_TOGG, U______,        U______, KC_MRWD, KC_VOLD, KC_VOLU, KC_MFFD,
     KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,          KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,
-                               KC_F11,  KC_F12,         HOLD___, U______
+                               KC_F11,  KC_F12,         H______, U______
 ),
 
 [L_NAVI] = LAYOUT_532(
     KC_MCTL, CA_DOWN, CA_UP,   U______, U______,        U______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
-    KC_LCTL, Ct_Z,    Ct_Y,    U______, U______,        U______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,
+    KC_LCTL, Ct_Z,    Ct_Y,    H______, U______,        U______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,
     KC_LGUI, U______, U______, U______, U______,        U______, Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT,
                                ST_____, U______,        Ct_BSPC, Ct_BSPC
 ),
 [L_NAVI2] = LAYOUT_532(
     U______, U______, U______, U______, U______,        U______, U______, U______, U______, U______,
-    U______, Ct_PGUP, CA_UP,   Ct_PGDN, U______,        U______, Ct_PGUP, CA_DOWN, CA_UP,   Ct_PGDN,
-    U______, U______, CA_DOWN, U______, U______,        U______, U______, U______, U______, U______,
-                               ST_____, U______,        U______, U______
+    U______, U______, U______, U______, U______,        U______, Ct_PGUP, CA_DOWN, CA_UP,   Ct_PGDN,
+    U______, U______, U______, U______, U______,        U______, U______, U______, U______, U______,
+                               H______, U______,        U______, U______
 ),
 [L_MOUSE] = LAYOUT_532(
     U______, U______, U______, U______, U______,        U______, U______, KC_BTN1, KC_BTN2, U______,
     CT_BTN3, AT_BTN2, KC_BTN1, KC_BTN1, U______,        U______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,
-    U______, U______, U______, U______, U______,        U______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R,
+    U______, U______, U______, H______, U______,        U______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R,
                                ST_____, U______,        U______, U______
 ),
 };
