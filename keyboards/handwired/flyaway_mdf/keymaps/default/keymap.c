@@ -210,7 +210,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [L_ALPHA] = LAYOUT_532(
     KC_Z,    KC_W,    KC_G,    KC_F,    KC_K,           KC_QUOT, KC_J,    KC_U,    KC_Y,    KC_Q,
     CT_N,    AT_S,    ST_T,    NV_H,    KC_V,           KC_DOT,  KC_A,    ST_E,    AT_I,    CT_O,
-    MS_P,    GT_C,    KC_M,    MS_D,    KC_B,           KC_COMM, KC_X,    KC_SLSH, GT_TAB,  KC_ENT,
+    MS_P,    GT_C,    MS_M,    MS_D,    KC_B,           KC_COMM, KC_X,    KC_SLSH, GT_TAB,  KC_ENT,
                                NV2_SPC, NU_ESC,         FN_L,    SY_R
 ),
 /*
@@ -275,8 +275,8 @@ x is wrapped up onto the top of the column
 
 [L_NAVI] = LAYOUT_532(
     U______, KC_MCTL, U______, U______, U______,        U______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
-    CT_BSPC, Ct_Z,    Ct_Y,    ___H___, U______,        U______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,
-    Ct_BSPC, U______, U______, U______, U______,        U______, Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT,
+    Ct_BSPC, Ct_Z,    Ct_Y,    ___H___, U______,        U______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,
+    U______, U______, U______, U______, U______,        U______, Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT,
                                ST_____, U______,        Ct_BSPC, KC_BSPC
 ),
 
@@ -289,8 +289,8 @@ x is wrapped up onto the top of the column
 [L_MOUSE] = LAYOUT_532(
     U______, U______, U______, U______, U______,        U______, U______, KC_BTN1, KC_BTN2, U______,
     U______, AT_BTN3, ST_BTN2, KC_BTN1, U______,        U______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,
-    ___H___, U______, U______, KC_BTN1, U______,        U______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R,
-                               KC_BTN1, U______,        U______, U______
+    ___H___, KC_BTN3, KC_BTN2, KC_BTN1, U______,        U______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R,
+                               KC_BTN1, KC_BTN2,        U______, U______
 ),
 };
 
