@@ -17,10 +17,6 @@ enum layer {
 // LAYER SWITCHING
 #define TO_ALPH TO(L_ALPHA)
 #define TO_MOUS TO(L_MOUSE)
-#define TO_QT TO(L_QT)
-#define TG_LY TG(L_LAYER)
-// #define TG_PT TG(L_SYMBOL)
-// #define OSL_PT OSL(L_SYMBOL)
 #define TG_NV TG(L_NAVI)
 #define TG_MS TG(L_MOUSE)
 
@@ -66,16 +62,7 @@ enum layer {
 // make compiler warnings go away
 
 // clang-format off
-
 #include "layout.h"
-
-// LAYOUT_5x3_2
-// LAYOUT_532
-
-
-
-
-
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -85,75 +72,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     GT_P,    GT_C,    NV_M,    MS_D,    KC_B,           KC_COMM, KC_X,    KC_SLSH, GT_TAB,  GT_ENT,
                                NV2_SPC, KC_ESC,         FN_L,    SN_R
 ),
-/*
-standard
-tab  q w e r   t y u o i     p
-shft a s d f   g h j k l     ;
-ctrl z x c v   b n m _ ent   /
-     spc esc   ___ ___
-
-        +---+                      +---+
-    +---+ x +---+---+      +---+---+   +---+---+
-+---+ q +---+ e | r |      |   |   +---+   |   +---+
-|tab+---+ w +---+---+      +---+---+   +---+---|   |
-+---+ a +---+ d | f |      |   |   +---+   |   +---+
-|sft+---+ s +---+---+      +---+---+   +---+---|   |
-+---+ z +---+ c | v |      |   |   +---+   |   +---+
-|ctl+---+   +---+---+      +---+---+   +---+---|   |
-+---+                                          +---+
-            +---+---+      +---+---+
-            |   |   |      |   |   |
-            +---+---+      +---+---+
-
-
-
-the w is brought down to the home row,
-s is shifted down
-x is wrapped up onto the top of the column
-*/
-
-// [L_GAME] = LAYOUT_532(
-//     KC_TAB,  KC_Q,    KC_X,    KC_E,    KC_R,           KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,
-//     KC_LSFT, KC_A,    KC_W,    KC_D,    KC_F,           KC_G,    KC_H,    KC_J,    KC_K,    KC_L,
-//     KC_LCTL, KC_Z,    KC_S,    KC_C,    KC_V,           KC_B,    KC_N,    KC_M,    U______, KC_ENT,
-//                                KC_SPC,  NU_ESC,         KC_P,    SY__
-// ),
-// [L_SYMBOL] = LAYOUT_532(
-//     _______, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,        KC_CIRC, KC_AMPR, KC_GRV,  KC_DQUO, _______,
-//     KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, KC_PIPE,        _______, KC_UNDS, KC_SCLN, KC_COLN, KC_EQL,
-//     KC_LBRC, KC_LT,   KC_GT,   KC_RBRC, KC_BSLS,        _______, KC_MINS, KC_ASTR, KC_EXLM, KC_QUES,
-//                                _______, _______,        _______, ___H___
-// ),
-// [L_NUMBER] = LAYOUT_532(
-//     KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,          KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,
-//     CT_1,    AT_2,    ST_3,    NV_4,    KC_5,           KC_6,    KC_7,    ST_8,    AT_9,    CT_0,
-//     KC_F11,  KC_F12,  KC_CAPS, CW_TOGG, KC_INS,         U______, KC_MINS, KC_PLUS, U______, KC_PERC,
-//                                _______, ___H___,        U______, KC_6
-// ),
-
 [L_SYMNUM] = LAYOUT_532(
     KC_LBRC, KC_LT,   KC_GT,   KC_RBRC, KC_DLR,         KC_PLUS, KC_AMPR, KC_HASH, KC_DQUO, KC_GRV,
-    // CT_LCBR, AT_LPRN, ST_RPRN, KC_RCBR, KC_PIPE,        KC_EXLM, KC_MINS, ST_COLN, AT_SCLN, CT_EQL,
     KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, KC_PIPE,        KC_EXLM, KC_MINS, KC_COLN, KC_SCLN, KC_EQL,
     KC_1,    KC_2,    KC_3,    KC_4,    KC_5,           KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
                                KC_UNDS, KC_BSLS,        U______, ___H___
 ),
-
-
 [L_FN] = LAYOUT_532(
     U______, U______, U______, KC_PSCR, U______,        U______, KC_MPRV, KC_MPLY, KC_MNXT, U______,
     U______, U______, CW_TOGG, KC_CAPS, U______,        U______, KC_MRWD, KC_VOLD, KC_VOLU, KC_MFFD,
     KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,          KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,
                                KC_F11,  KC_F12,         ___H___, U______
 ),
-
 [L_NAVI] = LAYOUT_532(
     U______, KC_MCTL, U______, U______, U______,        U______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
     Ct_BSPC, Ct_Z,    Ct_Y,    ___H___, U______,        U______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,
     U______, U______, U______, U______, U______,        U______, Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT,
                                ST_____, U______,        Ct_BSPC, KC_BSPC
 ),
-
 [L_NAVI2] = LAYOUT_532(
     U______, U______, U______, U______, U______,        U______, U______, Gu_END,  Gu_HOME, U______,
     U______, U______, U______, U______, U______,        U______, Ct_PGUP, CA_DOWN, CA_UP,   Ct_PGDN,
@@ -169,79 +105,34 @@ x is wrapped up onto the top of the column
 };
 
 
-
-
-
-
-
-// combo indexes
 enum combos {
     CB_BOOT
     , CB_Name
     , CB_Email
     , CB_PassLinux
     , CB_Tilde
-
     , CB_Caps
     , CB_CapsWord
-    // , CB_OneShotShift
-
-    // hmmmmmm
-    // , CB_Escape
-    // , CB_Enter
-    // , CB_Tab
-
-    // inner column
-    // , CB_P
-    // , CB_K
-
-    // greek
-    // , CB_Omega
-    // , CB_Micro
-    // , CB_Degree
     , CB_LENGTH
 };
-
 uint16_t COMBO_LEN = CB_LENGTH;
-
-// combo key combinations
 #define COMBO_2(NAME, KEY1, KEY2)  const uint16_t PROGMEM NAME[] = {KEY1, KEY2, COMBO_END};
 #define COMBO_3(NAME, KEY1, KEY2, KEY3)  const uint16_t PROGMEM NAME[] = {KEY1, KEY2, KEY3, COMBO_END};
-
 COMBO_3(BOOT,      KC_G, KC_F, KC_K);
-COMBO_2(PassLinux, KC_J, KC_Q);
 COMBO_2(Name,      AT_S, GT_P);
 COMBO_2(Email,     NV_M, FN_L);
+COMBO_2(PassLinux, KC_J, KC_Q);
 COMBO_2(Tilde,     KC_SLSH, GT_TAB);
 COMBO_2(Caps,      NV_H, ST_E);
 COMBO_2(CapsWord,  ST_T, ST_E);
-// COMBO_2(Escape,    AT_S, NV2_T);
-// COMBO_2(Enter,     KC_E, AT_I);
-// COMBO_2(Tab,       KC_U, KC_Y);
-// COMBO_2(K_P,       KC_G, KC_F);
-// COMBO_2(K_K,       KC_M, MS_D);
-// COMBO_2(K_OMEGA,   ST_SPC, CT_O);
-// COMBO_2(K_MICRO,   ST_SPC, KC_M);
-// COMBO_2(K_Degree,  ST_SPC, MS_D);
-
-
-// combo behavior
 combo_t key_combos[] = {
     [CB_BOOT] =         COMBO(BOOT, QK_BOOTLOADER),
-    [CB_PassLinux] =    COMBO_ACTION(PassLinux),
     [CB_Name] =         COMBO_ACTION(Name),
     [CB_Email] =        COMBO_ACTION(Email),
+    [CB_PassLinux] =    COMBO_ACTION(PassLinux),
     [CB_Tilde] =        COMBO(Tilde, KC_TILD),
     [CB_Caps] =         COMBO(Caps, KC_CAPS),
     [CB_CapsWord] =     COMBO(CapsWord, CW_TOGG),
-    // [CB_Escape] =       COMBO(Escape, KC_ESC),
-    // [CB_Enter] =        COMBO(Enter, KC_ENT),
-    // [CB_Tab] =          COMBO(Tab, KC_TAB),
-    // [CB_P] =            COMBO(K_P, KC_P),
-    // [CB_K] =            COMBO(K_K, KC_K),
-    // [CB_Omega] =        COMBO_ACTION(K_OMEGA),
-    // [CB_Micro] =        COMBO_ACTION(K_MICRO),
-    // [CB_Degree] =       COMBO_ACTION(K_Degree),
 };
 
 #define UNICODEZ(UCODE) SEND_STRING( SS_DOWN(X_LEFT_CTRL)SS_DOWN(X_LEFT_SHIFT)"u"  SS_DELAY(50)SS_UP(X_LEFT_CTRL)SS_UP(X_LEFT_SHIFT) SS_DELAY(100) UCODE SS_TAP(X_ENTER));
@@ -252,52 +143,6 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
     case CB_PassLinux: if (pressed) { SEND_STRING(PW_LINUX); } break;
     case CB_Name:      if (pressed) { SEND_STRING("spencerdabell"); } break;
     case CB_Email:     if (pressed) { SEND_STRING("spencerdabell@gmail.com"); } break;
-    // case CB_Omega:     if (pressed) { UNICODEZ("03a9"); } break;
-    // case CB_Micro:     if (pressed) { UNICODEZ("03bc"); } break;
-    // case CB_Degree:     if (pressed) { UNICODEZ("00b0"); } break;
     default: break;
   }
 }
-
-
-/*
-reference
-https://docs.qmk.fm/#/feature_caps_word
-
-*/
-
-
-
-
-/*
-greek layer
-
-a    Α   α  alpha
-b    Β   β  beta
-g    Γ   γ  gamma
-d    Δ   δ  delta
-e    Ε   ε  epsilon
-z    Ζ   ζ  zeta
-h    Η   η  eta
-th   Θ   θ  theta
-i    Ι   ι  iota
-k    Κ   κ  kappa
-l    Λ   λ  lamda
-m    Μ   μ  mu
-n    Ν   ν  nu
-ks   Ξ   ξ  xi
-o    Ο   ο  omicron
-p    Π   π  pi
-r    Ρ   ρ  rho
-s    Σ  σ/ς sigma
-t    Τ   τ  tau
-y    Υ   υ  upsilon
-ph   Φ   φ  phi
-x    Χ   χ  chi
-ps   Ψ   ψ  psi
-w    Ω   ω  omega
-
-*/
-
-
-
