@@ -6,11 +6,8 @@
 #include "password.h"
 
 enum layer {
-    // base
     L_ALPHA = 0,
     // L_GAME,
-    // L_SYMBOL,
-    // L_NUMBER,
     L_SYMNUM,
     L_FN,
     L_NAVI,
@@ -27,61 +24,10 @@ enum layer {
 // #define OSL_PT OSL(L_SYMBOL)
 #define TG_NV TG(L_NAVI)
 #define TG_MS TG(L_MOUSE)
-// #define TG_NU TG(L_NUMBER)
-
-// #define TG_NU TG(L_NUMBER)
-
-// #define MO_PT MO(L_SYMBOL)
-
-// #define LY_E LT(L_LAYER, KC_E)
-// #define LY_H LT(L_LAYER, KC_H)
-// #define LY_J LT(L_LAYER, KC_J)
-// #define LY_L LT(L_LAYER, KC_L)
-// #define LY_M LT(L_LAYER, KC_M)
-// #define LY_Q LT(L_LAYER, KC_Q)
-// #define LY_R LT(L_LAYER, KC_R)
-// #define LY_U LT(L_LAYER, KC_U)
-// #define LY_Y LT(L_LAYER, KC_Y)
-// #define LY_Z LT(L_LAYER, KC_Z)
-// #define LY_6 LT(L_LAYER, KC_6)
-// #define LY_9 LT(L_LAYER, KC_9)
-// #define LY_ENT LT(L_LAYER, KC_ENT)
-// #define LY_TAB LT(L_LAYER, KC_TAB)
-// #define LY_ESC LT(L_LAYER, KC_ESC)
-// // #define LY__ LT(L_LAYER, KC_NO)
-// #define LY_____ LT(L_LAYER, KC_NO)
 
 // nav
-#define NV_A LT(L_NAVI, KC_A)
-#define NV_B LT(L_NAVI, KC_B)
-#define NV_C LT(L_NAVI, KC_C)
-#define NV_D LT(L_NAVI, KC_D)
-#define NV_E LT(L_NAVI, KC_E)
-#define NV_F LT(L_NAVI, KC_F)
-#define NV_G LT(L_NAVI, KC_G)
 #define NV_H LT(L_NAVI, KC_H)
-#define NV_I LT(L_NAVI, KC_I)
-#define NV_J LT(L_NAVI, KC_J)
-#define NV_K LT(L_NAVI, KC_K)
-#define NV_L LT(L_NAVI, KC_L)
 #define NV_M LT(L_NAVI, KC_M)
-#define NV_N LT(L_NAVI, KC_N)
-#define NV_O LT(L_NAVI, KC_O)
-#define NV_P LT(L_NAVI, KC_P)
-#define NV_Q LT(L_NAVI, KC_Q)
-#define NV_R LT(L_NAVI, KC_R)
-#define NV_S LT(L_NAVI, KC_S)
-#define NV_T LT(L_NAVI, KC_T)
-#define NV_U LT(L_NAVI, KC_U)
-#define NV_V LT(L_NAVI, KC_V)
-#define NV_W LT(L_NAVI, KC_W)
-#define NV_X LT(L_NAVI, KC_X)
-#define NV_Y LT(L_NAVI, KC_Y)
-#define NV_Z LT(L_NAVI, KC_Z)
-#define NV_0 LT(L_NAVI, KC_0)
-#define NV_4 LT(L_NAVI, KC_4)
-#define NV_F4 LT(L_NAVI, KC_F4)
-#define NV__ LT(L_NAVI, KC_NO)
 
 #define NV2_A LT(L_NAVI2, KC_A)
 #define NV2_C LT(L_NAVI2, KC_C)
