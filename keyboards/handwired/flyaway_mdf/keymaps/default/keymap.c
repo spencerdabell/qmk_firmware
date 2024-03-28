@@ -5,9 +5,8 @@
 #include "password.h"
 
 enum layer {
-    L_ALPHA = 0,
-    // L_GAME,
-    L_SYMNUM,
+    L_ALPHA = 0, //
+    L_NUMSYM,
     L_FN,
     L_NAVI,
     L_NAVI2,
@@ -20,27 +19,19 @@ enum layer {
 #define TG_NV TG(L_NAVI)
 #define TG_MS TG(L_MOUSE)
 
-// nav
 #define NV_H LT(L_NAVI, KC_H)
 #define NV_M LT(L_NAVI, KC_M)
 
-#define NV2_A LT(L_NAVI2, KC_A)
-#define NV2_C LT(L_NAVI2, KC_C)
 #define NV2_D LT(L_NAVI2, KC_D)
-#define NV2_T LT(L_NAVI2, KC_T)
-#define NV2_V LT(L_NAVI2, KC_V)
 #define NV2_SPC LT(L_NAVI2, KC_SPC)
 
-// mouse
 #define MS_D LT(L_MOUSE, KC_D)
 #define MS_ESC LT(L_MOUSE, KC_ESC)
 
-// fn
 #define FN_L LT(L_FN, KC_L)
 #define FN_ESC LT(L_FN, KC_ESC)
 
-// numsym
-#define SN_R LT(L_SYMNUM, KC_R)
+#define NS_R LT(L_NUMSYM, KC_R)
 
 // nav
 #define CA_LEFT LCA(KC_LEFT)
@@ -70,9 +61,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_Z,    KC_W,    KC_G,    KC_F,    KC_K,           KC_QUOT, KC_J,    KC_U,    KC_Y,    KC_Q,
     CT_N,    AT_S,    ST_T,    NV_H,    KC_V,           KC_DOT,  KC_A,    ST_E,    AT_I,    CT_O,
     GT_P,    GT_C,    NV_M,    MS_D,    KC_B,           KC_COMM, KC_X,    KC_SLSH, GT_TAB,  GT_ENT,
-                               NV2_SPC, KC_ESC,         FN_L,    SN_R
+                               NV2_SPC, KC_ESC,         FN_L,    NS_R
 ),
-[L_SYMNUM] = LAYOUT_532(
+[L_NUMSYM] = LAYOUT_532(
     KC_LBRC, KC_LT,   KC_GT,   KC_RBRC, KC_DLR,         KC_PLUS, KC_AMPR, KC_HASH, KC_DQUO, KC_GRV,
     KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, KC_PIPE,        KC_EXLM, KC_MINS, KC_COLN, KC_SCLN, KC_EQL,
     KC_1,    KC_2,    KC_3,    KC_4,    KC_5,           KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
