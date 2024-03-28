@@ -16,21 +16,17 @@ enum layer {
 // LAYER SWITCHING
 #define TO_ALPH TO(L_ALPHA)
 #define TO_MOUS TO(L_MOUSE)
+#define TO_NAVI TO(L_NAVI)
 #define TG_NV TG(L_NAVI)
 #define TG_MS TG(L_MOUSE)
-
 #define NV_H LT(L_NAVI, KC_H)
 #define NV_M LT(L_NAVI, KC_M)
-
 #define NV2_D LT(L_NAVI2, KC_D)
 #define NV2_SPC LT(L_NAVI2, KC_SPC)
-
 #define MS_D LT(L_MOUSE, KC_D)
 #define MS_ESC LT(L_MOUSE, KC_ESC)
-
 #define FN_L LT(L_FN, KC_L)
 #define FN_ESC LT(L_FN, KC_ESC)
-
 #define NS_R LT(L_NUMSYM, KC_R)
 
 // nav

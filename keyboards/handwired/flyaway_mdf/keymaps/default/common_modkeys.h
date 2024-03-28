@@ -1,11 +1,6 @@
 #define U_ KC_NO
 #define U______ KC_NO
-#define H______ KC_NO
 #define ___H___ KC_NO
-#define HD_____ KC_NO
-#define HOLD___ KC_NO
-#define HHHHHHH KC_NO
-#define hhhhhhh KC_NO
 
 // control
 #define CT_A LCTL_T(KC_A)
@@ -86,9 +81,6 @@
 #define Ct_BSPC C(KC_BSPC)
 #define Ct_SLSH C(KC_SLSH)
 
-// shift + key
-#define St_TAB S(KC_TAB)
-
 // alt
 #define AT_A ALT_T(KC_A)
 #define AT_B ALT_T(KC_B)
@@ -167,8 +159,8 @@
 // #define GT_F3   GUI_T(KC_F3)
 #define GT_8 GUI_T(KC_8)
 
-#define Gu_HOME GUI_T(KC_HOME)
-#define Gu_END GUI_T(KC_END)
+#define Gu_HOME G(KC_HOME)
+#define Gu_END G(KC_END)
 
 // shift
 #define ST_A SFT_T(KC_A)
@@ -234,19 +226,12 @@
 #define ST_BTN2 SFT_T(KC_BTN2)
 #define ST_BTN3 SFT_T(KC_BTN3)
 
+// shift + key
+#define St_TAB S(KC_TAB)
+
 // one shot mod
 #define OSM_LST OSM(MOD_LSFT)
 #define OSM_RST OSM(MOD_RSFT)
 
 // ctrl alt, trans
 #define CTAT___ MT(MOD_LCTL | MOD_LALT, _______)
-
-// switch back to last application
-// ctrl+tab
-// switch ctrl+shift+tab
-// app fwrd, app_back
-// #define APP_FWD GUI_T(C(KC_TAB))
-// #define APP_BCK ALT_T(C(S(KC_TAB)))
-// not working, switch off for now
-// #define APP_FWD KC_LGUI
-// #define APP_BCK KC_LALT
