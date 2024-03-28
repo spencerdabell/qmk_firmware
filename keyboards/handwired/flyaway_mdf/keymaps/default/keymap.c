@@ -261,8 +261,8 @@ x is wrapped up onto the top of the column
 ),
 
 [L_SYMNUM] = LAYOUT_532(
-    U______, U______, U______, U______, U______,        U______, KC_ASTR, KC_MINS, KC_PLUS, U______,
-    CT_LCBR, AT_LPRN, ST_RPRN, KC_RCBR, U______,        _______, U______, U______, U______, KC_SLSH,
+    U______, U______, U______, U______, U______,        KC_GRV,  U______, KC_ASTR, U______, KC_GRV,
+    CT_LCBR, AT_LPRN, ST_RPRN, KC_RCBR, U______,        KC_PLUS, KC_MINS, ST_COLN, AT_SCLN, CT_EQL,
     KC_1,    KC_2,    KC_3,    KC_4,    KC_5,           KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
                                KC_UNDS, KC_BSLS,           KC_6,    U______
 ),
