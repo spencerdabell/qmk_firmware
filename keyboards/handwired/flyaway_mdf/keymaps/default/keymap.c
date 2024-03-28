@@ -1,7 +1,6 @@
 // #include "keycodes.h"
 #include "send_string_keycodes.h"
 #include QMK_KEYBOARD_H
-
 #include "common_modkeys.h"
 #include "password.h"
 
@@ -37,77 +36,20 @@ enum layer {
 #define NV2_SPC LT(L_NAVI2, KC_SPC)
 
 // mouse
-#define MS_A LT(L_MOUSE, KC_A)
-#define MS_B LT(L_MOUSE, KC_B)
-#define MS_C LT(L_MOUSE, KC_C)
 #define MS_D LT(L_MOUSE, KC_D)
-#define MS_E LT(L_MOUSE, KC_E)
-#define MS_F LT(L_MOUSE, KC_F)
-#define MS_G LT(L_MOUSE, KC_G)
-#define MS_H LT(L_MOUSE, KC_H)
-#define MS_I LT(L_MOUSE, KC_I)
-#define MS_J LT(L_MOUSE, KC_J)
-#define MS_K LT(L_MOUSE, KC_K)
-#define MS_L LT(L_MOUSE, KC_L)
-#define MS_M LT(L_MOUSE, KC_M)
-#define MS_N LT(L_MOUSE, KC_N)
-#define MS_O LT(L_MOUSE, KC_O)
-#define MS_P LT(L_MOUSE, KC_P)
-#define MS_Q LT(L_MOUSE, KC_Q)
-#define MS_R LT(L_MOUSE, KC_R)
-#define MS_S LT(L_MOUSE, KC_S)
-#define MS_T LT(L_MOUSE, KC_T)
-#define MS_U LT(L_MOUSE, KC_U)
-#define MS_V LT(L_MOUSE, KC_V)
-#define MS_W LT(L_MOUSE, KC_W)
-#define MS_X LT(L_MOUSE, KC_X)
-#define MS_Y LT(L_MOUSE, KC_Y)
-#define MS_Z LT(L_MOUSE, KC_Z)
-#define MS__ LT(L_MOUSE, KC_NO)
 #define MS_ESC LT(L_MOUSE, KC_ESC)
-
-// number
-// #define NU_E LT(L_NUMBER, KC_E)
-// #define NU_I LT(L_NUMBER, KC_I)
-// #define NU_L LT(L_NUMBER, KC_L)
-// #define NU_N LT(L_NUMBER, KC_N)
-// #define NU_R LT(L_NUMBER, KC_R)
-// #define NU_U LT(L_NUMBER, KC_U)
-// #define NU_TAB LT(L_NUMBER, KC_TAB)
-// #define NU_SPC LT(L_NUMBER, KC_SPC)
-// #define NU_ESC LT(L_NUMBER, KC_ESC)
 
 // fn
 #define FN_L LT(L_FN, KC_L)
-#define FN_ENT LT(L_FN, KC_ENT)
 #define FN_ESC LT(L_FN, KC_ESC)
 
 // numsym
 #define SN_R LT(L_SYMNUM, KC_R)
 
-// symbol
-#define SY_C LT(L_SYMBOL, KC_C)
-#define SY_E LT(L_SYMBOL, KC_E)
-#define SY_H LT(L_SYMBOL, KC_H)
-#define SY_O LT(L_SYMBOL, KC_O)
-#define SY_R LT(L_SYMBOL, KC_R)
-#define SY_X LT(L_SYMBOL, KC_X)
-#define SY__ LT(L_SYMBOL, KC_NO)
-#define SY_5 LT(L_SYMBOL, KC_5)
-#define SY_F12 LT(L_SYMBOL, KC_F12)
-#define SY_BSPC LT(L_SYMBOL, KC_BSPC)
-#define SY_SPC LT(L_SYMBOL, KC_SPC)
-#define SY_TAB LT(L_SYMBOL, KC_TAB)
-#define SY_ESC LT(L_SYMBOL, KC_ESC)
-
-// sound
-// #define SD_L LT(L_SOUND, KC_L)
-// #define SD_ESC LT(L_SOUND, KC_ESC)
-
 // nav
-#define Gu_GRV G(KC_GRV)
-#define At_TAB A(KC_TAB)
-#define AS_TAB LSA(KC_TAB)
+// #define Gu_GRV G(KC_GRV)
+// #define At_TAB A(KC_TAB)
+// #define AS_TAB LSA(KC_TAB)
 // ctrl+alt [up, down]
 #define CA_LEFT LCA(KC_LEFT)
 #define CA_DOWN LCA(KC_DOWN)
