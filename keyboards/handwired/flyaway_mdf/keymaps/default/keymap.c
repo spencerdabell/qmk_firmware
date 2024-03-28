@@ -59,8 +59,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                FN_SPC,  KC_ESC,         KC_L,    NS_R
 ),
 [L_NUMSYM] = LAYOUT_532(
-    KC_LBRC, KC_LT,   KC_GT,   KC_RBRC, KC_DLR,         KC_PLUS, KC_AMPR, KC_HASH, KC_DQUO, KC_GRV,
-    KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, KC_PIPE,        KC_EXLM, KC_MINS, KC_COLN, KC_SCLN, KC_EQL,
+    KC_LBRC, KC_LT,   KC_GT,   KC_RBRC, KC_DLR,         KC_ASTR, KC_AMPR, KC_HASH, KC_DQUO, KC_GRV,
+    KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, KC_PIPE,        KC_PLUS, KC_MINS, KC_COLN, KC_SCLN, KC_EQL,
     KC_1,    KC_2,    KC_3,    KC_4,    KC_5,           KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
                                KC_UNDS, KC_BSLS,        U______, ___H___
 ),
