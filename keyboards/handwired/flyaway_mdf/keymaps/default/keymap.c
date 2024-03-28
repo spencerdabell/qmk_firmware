@@ -8,7 +8,7 @@
 enum layer {
     // base
     L_ALPHA = 0,
-    // L_GAME,
+    L_GAME,
     L_SYMBOL,
     L_NUMBER,
     L_SYMNUM,
@@ -136,6 +136,9 @@ enum layer {
 #define FN_ENT LT(L_FN, KC_ENT)
 #define FN_ESC LT(L_FN, KC_ESC)
 
+// numsym
+#define SN_R LT(L_SYMNUM, KC_R)
+
 // symbol
 #define SY_C LT(L_SYMBOL, KC_C)
 #define SY_E LT(L_SYMBOL, KC_E)
@@ -212,7 +215,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_Z,    KC_W,    KC_G,    KC_F,    KC_K,           KC_QUOT, KC_J,    KC_U,    KC_Y,    KC_Q,
     CT_N,    AT_S,    ST_T,    NV_H,    KC_V,           KC_DOT,  KC_A,    ST_E,    AT_I,    CT_O,
     GT_P,    GT_C,    NV_M,    MS_D,    KC_B,           KC_COMM, KC_X,    KC_SLSH, GT_TAB,  GT_ENT,
-                               NV2_SPC, NU_ESC,         FN_L,    SY_R
+                               NV2_SPC, KC_ESC,         FN_L,    SN_R
 ),
 /*
 standard
@@ -241,12 +244,12 @@ s is shifted down
 x is wrapped up onto the top of the column
 */
 
-// [L_GAME] = LAYOUT_532(
-//     KC_TAB,  KC_Q,    KC_X,    KC_E,    KC_R,           KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,
-//     KC_LSFT, KC_A,    KC_W,    KC_D,    KC_F,           KC_G,    KC_H,    KC_J,    KC_K,    KC_L,
-//     KC_LCTL, KC_Z,    KC_S,    KC_C,    KC_V,           KC_B,    KC_N,    KC_M,    U______, KC_ENT,
-//                                KC_SPC,  NU_ESC,         KC_P,    SY__
-// ),
+[L_GAME] = LAYOUT_532(
+    KC_TAB,  KC_Q,    KC_X,    KC_E,    KC_R,           KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,
+    KC_LSFT, KC_A,    KC_W,    KC_D,    KC_F,           KC_G,    KC_H,    KC_J,    KC_K,    KC_L,
+    KC_LCTL, KC_Z,    KC_S,    KC_C,    KC_V,           KC_B,    KC_N,    KC_M,    U______, KC_ENT,
+                               KC_SPC,  NU_ESC,         KC_P,    SY__
+),
 [L_SYMBOL] = LAYOUT_532(
     _______, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,        KC_CIRC, KC_AMPR, KC_GRV,  KC_DQUO, _______,
     KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, KC_PIPE,        _______, KC_UNDS, KC_SCLN, KC_COLN, KC_EQL,
@@ -261,11 +264,13 @@ x is wrapped up onto the top of the column
 ),
 
 [L_SYMNUM] = LAYOUT_532(
-    U______, U______, U______, U______, U______,        KC_GRV,  U______, KC_ASTR, U______, KC_GRV,
-    CT_LCBR, AT_LPRN, ST_RPRN, KC_RCBR, U______,        KC_PLUS, KC_MINS, ST_COLN, AT_SCLN, CT_EQL,
+    KC_LBRC, KC_LT,   KC_GT,   KC_RBRC, KC_DLR,         KC_PLUS, KC_AMPR, KC_HASH, KC_DQUO, KC_GRV,
+    // CT_LCBR, AT_LPRN, ST_RPRN, KC_RCBR, KC_PIPE,        KC_EXLM, KC_MINS, ST_COLN, AT_SCLN, CT_EQL,
+    KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, KC_PIPE,        KC_EXLM, KC_MINS, KC_COLN, KC_SCLN, KC_EQL,
     KC_1,    KC_2,    KC_3,    KC_4,    KC_5,           KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
-                               KC_UNDS, KC_BSLS,           KC_6,    U______
+                               KC_UNDS, KC_BSLS,        U______, ___H___
 ),
+
 
 [L_FN] = LAYOUT_532(
     U______, U______, U______, KC_PSCR, U______,        U______, KC_MPRV, KC_MPLY, KC_MNXT, U______,
