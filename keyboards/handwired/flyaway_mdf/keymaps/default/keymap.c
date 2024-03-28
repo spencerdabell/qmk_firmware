@@ -8,9 +8,9 @@
 enum layer {
     // base
     L_ALPHA = 0,
-    L_GAME,
-    L_SYMBOL,
-    L_NUMBER,
+    // L_GAME,
+    // L_SYMBOL,
+    // L_NUMBER,
     L_SYMNUM,
     L_FN,
     L_NAVI,
@@ -27,7 +27,7 @@ enum layer {
 // #define OSL_PT OSL(L_SYMBOL)
 #define TG_NV TG(L_NAVI)
 #define TG_MS TG(L_MOUSE)
-#define TG_NU TG(L_NUMBER)
+// #define TG_NU TG(L_NUMBER)
 
 // #define TG_NU TG(L_NUMBER)
 
@@ -121,15 +121,15 @@ enum layer {
 #define MS_ESC LT(L_MOUSE, KC_ESC)
 
 // number
-#define NU_E LT(L_NUMBER, KC_E)
-#define NU_I LT(L_NUMBER, KC_I)
-#define NU_L LT(L_NUMBER, KC_L)
-#define NU_N LT(L_NUMBER, KC_N)
-#define NU_R LT(L_NUMBER, KC_R)
-#define NU_U LT(L_NUMBER, KC_U)
-#define NU_TAB LT(L_NUMBER, KC_TAB)
-#define NU_SPC LT(L_NUMBER, KC_SPC)
-#define NU_ESC LT(L_NUMBER, KC_ESC)
+// #define NU_E LT(L_NUMBER, KC_E)
+// #define NU_I LT(L_NUMBER, KC_I)
+// #define NU_L LT(L_NUMBER, KC_L)
+// #define NU_N LT(L_NUMBER, KC_N)
+// #define NU_R LT(L_NUMBER, KC_R)
+// #define NU_U LT(L_NUMBER, KC_U)
+// #define NU_TAB LT(L_NUMBER, KC_TAB)
+// #define NU_SPC LT(L_NUMBER, KC_SPC)
+// #define NU_ESC LT(L_NUMBER, KC_ESC)
 
 // fn
 #define FN_L LT(L_FN, KC_L)
@@ -244,24 +244,24 @@ s is shifted down
 x is wrapped up onto the top of the column
 */
 
-[L_GAME] = LAYOUT_532(
-    KC_TAB,  KC_Q,    KC_X,    KC_E,    KC_R,           KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,
-    KC_LSFT, KC_A,    KC_W,    KC_D,    KC_F,           KC_G,    KC_H,    KC_J,    KC_K,    KC_L,
-    KC_LCTL, KC_Z,    KC_S,    KC_C,    KC_V,           KC_B,    KC_N,    KC_M,    U______, KC_ENT,
-                               KC_SPC,  NU_ESC,         KC_P,    SY__
-),
-[L_SYMBOL] = LAYOUT_532(
-    _______, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,        KC_CIRC, KC_AMPR, KC_GRV,  KC_DQUO, _______,
-    KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, KC_PIPE,        _______, KC_UNDS, KC_SCLN, KC_COLN, KC_EQL,
-    KC_LBRC, KC_LT,   KC_GT,   KC_RBRC, KC_BSLS,        _______, KC_MINS, KC_ASTR, KC_EXLM, KC_QUES,
-                               _______, _______,        _______, ___H___
-),
-[L_NUMBER] = LAYOUT_532(
-    KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,          KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,
-    CT_1,    AT_2,    ST_3,    NV_4,    KC_5,           KC_6,    KC_7,    ST_8,    AT_9,    CT_0,
-    KC_F11,  KC_F12,  KC_CAPS, CW_TOGG, KC_INS,         U______, KC_MINS, KC_PLUS, U______, KC_PERC,
-                               _______, ___H___,        U______, KC_6
-),
+// [L_GAME] = LAYOUT_532(
+//     KC_TAB,  KC_Q,    KC_X,    KC_E,    KC_R,           KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,
+//     KC_LSFT, KC_A,    KC_W,    KC_D,    KC_F,           KC_G,    KC_H,    KC_J,    KC_K,    KC_L,
+//     KC_LCTL, KC_Z,    KC_S,    KC_C,    KC_V,           KC_B,    KC_N,    KC_M,    U______, KC_ENT,
+//                                KC_SPC,  NU_ESC,         KC_P,    SY__
+// ),
+// [L_SYMBOL] = LAYOUT_532(
+//     _______, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,        KC_CIRC, KC_AMPR, KC_GRV,  KC_DQUO, _______,
+//     KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, KC_PIPE,        _______, KC_UNDS, KC_SCLN, KC_COLN, KC_EQL,
+//     KC_LBRC, KC_LT,   KC_GT,   KC_RBRC, KC_BSLS,        _______, KC_MINS, KC_ASTR, KC_EXLM, KC_QUES,
+//                                _______, _______,        _______, ___H___
+// ),
+// [L_NUMBER] = LAYOUT_532(
+//     KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,          KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,
+//     CT_1,    AT_2,    ST_3,    NV_4,    KC_5,           KC_6,    KC_7,    ST_8,    AT_9,    CT_0,
+//     KC_F11,  KC_F12,  KC_CAPS, CW_TOGG, KC_INS,         U______, KC_MINS, KC_PLUS, U______, KC_PERC,
+//                                _______, ___H___,        U______, KC_6
+// ),
 
 [L_SYMNUM] = LAYOUT_532(
     KC_LBRC, KC_LT,   KC_GT,   KC_RBRC, KC_DLR,         KC_PLUS, KC_AMPR, KC_HASH, KC_DQUO, KC_GRV,
@@ -343,7 +343,7 @@ uint16_t COMBO_LEN = CB_LENGTH;
 COMBO_3(BOOT,      KC_G, KC_F, KC_K);
 COMBO_2(PassLinux, KC_J, KC_Q);
 COMBO_2(Name,      AT_S, GT_P);
-COMBO_2(Email,     KC_M, NU_L);
+COMBO_2(Email,     NV_M, FN_L);
 COMBO_2(Tilde,     KC_SLSH, GT_TAB);
 COMBO_2(Caps,      NV_H, ST_E);
 COMBO_2(CapsWord,  ST_T, ST_E);
