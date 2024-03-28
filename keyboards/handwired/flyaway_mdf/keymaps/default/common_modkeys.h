@@ -1,3 +1,4 @@
+#define U_ KC_NO
 #define U______ KC_NO
 #define H______ KC_NO
 #define ___H___ KC_NO

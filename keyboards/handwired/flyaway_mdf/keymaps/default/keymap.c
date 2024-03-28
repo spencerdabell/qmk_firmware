@@ -47,32 +47,17 @@ enum layer {
 #define SN_R LT(L_SYMNUM, KC_R)
 
 // nav
-// #define Gu_GRV G(KC_GRV)
-// #define At_TAB A(KC_TAB)
-// #define AS_TAB LSA(KC_TAB)
-// ctrl+alt [up, down]
 #define CA_LEFT LCA(KC_LEFT)
 #define CA_DOWN LCA(KC_DOWN)
 #define CA_UP LCA(KC_UP)
 #define CA_RGHT LCA(KC_RGHT)
 
-#define ACA_DOWN ALT_T(LCA(KC_DOWN))
-// #define CA_UP LCA(KC_UP)
-
-// shortcuts for, wait these don't work
-#define A_CtPUP ALT_T(Ct_PGUP)
-#define S_CtPDN SFT_T(Ct_PGDN)
-#define DESK_LT LCTL(LGUI(KC_LEFT))
-#define DESK_RT LCTL(LGUI(KC_RGHT))
-
-#define U_ KC_NO
-
 // make compiler warnings go away
 #ifndef MATRIX_COLS
-#    define MATRIX_COLS 6
+#    define MATRIX_COLS
 #endif
 #ifndef MATRIX_ROWS
-#    define MATRIX_ROWS 6
+#    define MATRIX_ROWS
 #endif
 #ifndef LAYOUT_split_5x3_2_info
 #    define LAYOUT_split_5x3_2_info(L00, L01, L02, L03, L04, L05, R00, R01, R02, R03, R04, R05, L10, L11, L12, L13, L14, L15, R10, R11, R12, R13, R14, R15, L20, L21, L22, L23, L24, L25, R20, R21, R22, R23, R24, R25) \
@@ -82,20 +67,15 @@ enum layer {
 
 // clang-format off
 
+#include "layout.h"
+
 // LAYOUT_5x3_2
 // LAYOUT_532
 
-#define LAYOUT_532( \
-    L00, L01, L02, L03, L04, R01, R02, R03, R04, R05, \
-    L10, L11, L12, L13, L14, R11, R12, R13, R14, R15, \
-    L20, L21, L22, L23, L24, R21, R22, R23, R24, R25, \
-                   L25, L15, R10, R20   \
-    ) \
-LAYOUT_split_5x3_2_info( \
-    L00, L01, L02, L03, L04, U_,  U_,  R01, R02, R03, R04, R05, \
-    L10, L11, L12, L13, L14, L15, R10, R11, R12, R13, R14, R15, \
-    L20, L21, L22, L23, L24, L25, R20, R21, R22, R23, R24, R25 \
-    ) \
+
+
+
+
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
