@@ -130,9 +130,11 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
 
 const key_override_t left_angle_bracket_override  = ko_make_basic(MOD_MASK_SHIFT, KC_COMM, S(KC_SLSH));
 const key_override_t right_angle_bracket_override = ko_make_basic(MOD_MASK_SHIFT, KC_DOT, S(KC_1));
+const key_override_t ctrl_q_accident_override = ko_make_basic(MOD_BIT(KC_RIGHT_CTRL), KC_Q, KC_NO);
 
 const key_override_t **key_overrides = (const key_override_t *[]){
     &left_angle_bracket_override,
     &right_angle_bracket_override,
+    &ctrl_q_accident_override,
     NULL
 };
