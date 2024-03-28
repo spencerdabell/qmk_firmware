@@ -1,4 +1,10 @@
 #define U______ KC_NO
+#define H______ KC_NO
+#define ___H___ KC_NO
+#define HD_____ KC_NO
+#define HOLD___ KC_NO
+#define HHHHHHH KC_NO
+#define hhhhhhh KC_NO
 
 // control
 #define CT_A LCTL_T(KC_A)
@@ -29,10 +35,16 @@
 #define CT_Z LCTL_T(KC_Z)
 #define CT_SCLN LCTL_T(KC_SCLN)
 #define CT_ESC LCTL_T(KC_ESC)
+#define CT_BSPC LCTL_T(KC_BSPC)
+#define CT_SLSH LCTL_T(KC_SLSH)
+#define CT_EQL LCTL_T(KC_EQL)
+#define CT_LCBR LCTL_T(KC_LCBR)
 #define CT_1 LCTL_T(KC_1)
 #define CT_F1 LCTL_T(KC_F1)
 #define CT_0 RCTL_T(KC_0)
 #define CT_F10 RCTL_T(KC_F10)
+#define CT_BTN1 LCTL_T(KC_BTN1)
+#define CT_BTN2 LCTL_T(KC_BTN2)
 #define CT_BTN3 LCTL_T(KC_BTN3)
 
 // control + the key
@@ -125,10 +137,15 @@
 #define AT_F0 ALT_T(KC_F0)
 #define AT_ESC ALT_T(KC_ESC)
 #define AT_TAB ALT_T(KC_TAB)
+#define AT_LPRN ALT_T(KC_LPRN)
+#define AT_SCLN ALT_T(KC_SCLN)
+#define AT_BTN1 ALT_T(KC_BTN1)
 #define AT_BTN2 ALT_T(KC_BTN2)
+#define AT_BTN3 ALT_T(KC_BTN3)
 
 // gui
 #define GT_B GUI_T(KC_B)
+#define GT_C GUI_T(KC_C)
 #define GT_D GUI_T(KC_D)
 #define GT_E GUI_T(KC_E)
 #define GT_F GUI_T(KC_F)
@@ -141,12 +158,16 @@
 #define GT_W GUI_T(KC_W)
 #define GT_Y GUI_T(KC_Y)
 #define GT_Z GUI_T(KC_Z)
+#define GT_TAB RGUI_T(KC_TAB)
 #define GT_ENT RGUI_T(KC_ENT)
 #define GT_ESC GUI_T(KC_ESC)
 #define GT_SLSH GUI_T(KC_SLSH)
 #define GT_3 GUI_T(KC_3)
 // #define GT_F3   GUI_T(KC_F3)
 #define GT_8 GUI_T(KC_8)
+
+#define Gu_HOME GUI_T(KC_HOME)
+#define Gu_END GUI_T(KC_END)
 
 // shift
 #define ST_A SFT_T(KC_A)
@@ -180,8 +201,10 @@
 #define ST_ESC SFT_T(KC_ESC)
 #define ST_SPC SFT_T(KC_SPC)
 #define ST_TAB SFT_T(KC_TAB)
+#define ST_RPRN SFT_T(KC_RPRN)
 #define ST_UNDS SFT_T(KC_UNDS)
 #define ST_SLSH SFT_T(KC_SLSH)
+#define ST_COLN SFT_T(KC_COLN)
 #define ST_ASTR SFT_T(KC_ASTR)
 #define ST_1 SFT_T(KC_1)
 #define ST_2 SFT_T(KC_2)
@@ -206,6 +229,9 @@
 #define ST_F11 SFT_T(KC_F11)
 #define ST_F12 SFT_T(KC_F12)
 #define ST_____ SFT_T(KC_NO)
+#define ST_BTN1 SFT_T(KC_BTN1)
+#define ST_BTN2 SFT_T(KC_BTN2)
+#define ST_BTN3 SFT_T(KC_BTN3)
 
 // one shot mod
 #define OSM_LST OSM(MOD_LSFT)

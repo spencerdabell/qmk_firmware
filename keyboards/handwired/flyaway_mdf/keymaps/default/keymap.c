@@ -8,14 +8,14 @@
 enum layer {
     // base
     L_ALPHA = 0,
-    L_GAME,
-    L_SYMBOL,
-    L_NUMBER,
+    // L_GAME,
+    // L_SYMBOL,
+    // L_NUMBER,
+    L_SYMNUM,
     L_FN,
     L_NAVI,
     L_NAVI2,
-    L_MOUSE,
-    L_SOUND
+    L_MOUSE
 };
 
 // LAYER SWITCHING
@@ -27,7 +27,7 @@ enum layer {
 // #define OSL_PT OSL(L_SYMBOL)
 #define TG_NV TG(L_NAVI)
 #define TG_MS TG(L_MOUSE)
-#define TG_NU TG(L_NUMBER)
+// #define TG_NU TG(L_NUMBER)
 
 // #define TG_NU TG(L_NUMBER)
 
@@ -83,8 +83,12 @@ enum layer {
 #define NV_F4 LT(L_NAVI, KC_F4)
 #define NV__ LT(L_NAVI, KC_NO)
 
+#define NV2_A LT(L_NAVI2, KC_A)
+#define NV2_C LT(L_NAVI2, KC_C)
 #define NV2_D LT(L_NAVI2, KC_D)
 #define NV2_T LT(L_NAVI2, KC_T)
+#define NV2_V LT(L_NAVI2, KC_V)
+#define NV2_SPC LT(L_NAVI2, KC_SPC)
 
 // mouse
 #define MS_A LT(L_MOUSE, KC_A)
@@ -117,18 +121,23 @@ enum layer {
 #define MS_ESC LT(L_MOUSE, KC_ESC)
 
 // number
-#define NU_E LT(L_NUMBER, KC_E)
-#define NU_I LT(L_NUMBER, KC_I)
-#define NU_L LT(L_NUMBER, KC_L)
-#define NU_N LT(L_NUMBER, KC_N)
-#define NU_R LT(L_NUMBER, KC_R)
-#define NU_U LT(L_NUMBER, KC_U)
-#define NU_TAB LT(L_NUMBER, KC_TAB)
-#define NU_SPC LT(L_NUMBER, KC_SPC)
-#define NU_ESC LT(L_NUMBER, KC_ESC)
+// #define NU_E LT(L_NUMBER, KC_E)
+// #define NU_I LT(L_NUMBER, KC_I)
+// #define NU_L LT(L_NUMBER, KC_L)
+// #define NU_N LT(L_NUMBER, KC_N)
+// #define NU_R LT(L_NUMBER, KC_R)
+// #define NU_U LT(L_NUMBER, KC_U)
+// #define NU_TAB LT(L_NUMBER, KC_TAB)
+// #define NU_SPC LT(L_NUMBER, KC_SPC)
+// #define NU_ESC LT(L_NUMBER, KC_ESC)
 
 // fn
-// #define FN_ENT  LT(L_FN, KC_ENT)
+#define FN_L LT(L_FN, KC_L)
+#define FN_ENT LT(L_FN, KC_ENT)
+#define FN_ESC LT(L_FN, KC_ESC)
+
+// numsym
+#define SN_R LT(L_SYMNUM, KC_R)
 
 // symbol
 #define SY_C LT(L_SYMBOL, KC_C)
@@ -146,19 +155,10 @@ enum layer {
 #define SY_ESC LT(L_SYMBOL, KC_ESC)
 
 // sound
-#define SD_MPLY LT(L_SOUND, KC_MPLY)
-#define SD_F LT(L_SOUND, KC_F)
-#define SD_L LT(L_SOUND, KC_L)
-#define SD_Q LT(L_SOUND, KC_Q)
-#define SD_R LT(L_SOUND, KC_R)
-#define SD_U LT(L_SOUND, KC_U)
-#define SD_Y LT(L_SOUND, KC_Y)
-#define SD_Z LT(L_SOUND, KC_Z)
-#define SD_ESC LT(L_SOUND, KC_ESC)
-#define SD_COMM LT(L_SOUND, KC_COMM)
+// #define SD_L LT(L_SOUND, KC_L)
+// #define SD_ESC LT(L_SOUND, KC_ESC)
 
 // nav
-
 #define Gu_GRV G(KC_GRV)
 #define At_TAB A(KC_TAB)
 #define AS_TAB LSA(KC_TAB)
@@ -212,10 +212,10 @@ LAYOUT_split_5x3_2_info( \
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [L_ALPHA] = LAYOUT_532(
-    SD_Z,    KC_W,    KC_G,    KC_F,    KC_K,           KC_QUOT, KC_J,    KC_U,    SD_Y,    KC_Q,
-    CT_N,    AT_S,    NV2_T,   NV_H,    KC_V,           KC_DOT,  KC_A,    KC_E,    AT_I,    CT_O,
-    GT_P,    ST_C,    KC_M,    MS_D,    KC_B,           SD_COMM, KC_X,    KC_SLSH, ST_TAB,  GT_ENT,
-                               ST_SPC,  MS_ESC,         NU_L,    SY_R
+    KC_Z,    KC_W,    KC_G,    KC_F,    KC_K,           KC_QUOT, KC_J,    KC_U,    KC_Y,    KC_Q,
+    CT_N,    AT_S,    ST_T,    NV_H,    KC_V,           KC_DOT,  KC_A,    ST_E,    AT_I,    CT_O,
+    GT_P,    GT_C,    NV_M,    MS_D,    KC_B,           KC_COMM, KC_X,    KC_SLSH, GT_TAB,  GT_ENT,
+                               NV2_SPC, KC_ESC,         FN_L,    SN_R
 ),
 /*
 standard
@@ -244,65 +244,59 @@ s is shifted down
 x is wrapped up onto the top of the column
 */
 
-[L_GAME] = LAYOUT_532(
-    KC_TAB,  KC_Q,    KC_X,    KC_E,    KC_R,           KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,
-    KC_LSFT, KC_A,    KC_W,    KC_D,    KC_F,           KC_G,    KC_H,    KC_J,    KC_K,    KC_L,
-    KC_LCTL, KC_Z,    KC_S,    KC_C,    KC_V,           KC_B,    KC_N,    KC_M,    U______, KC_ENT,
-                               KC_SPC,  NU_ESC,         KC_P,    SY__
+// [L_GAME] = LAYOUT_532(
+//     KC_TAB,  KC_Q,    KC_X,    KC_E,    KC_R,           KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,
+//     KC_LSFT, KC_A,    KC_W,    KC_D,    KC_F,           KC_G,    KC_H,    KC_J,    KC_K,    KC_L,
+//     KC_LCTL, KC_Z,    KC_S,    KC_C,    KC_V,           KC_B,    KC_N,    KC_M,    U______, KC_ENT,
+//                                KC_SPC,  NU_ESC,         KC_P,    SY__
+// ),
+// [L_SYMBOL] = LAYOUT_532(
+//     _______, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,        KC_CIRC, KC_AMPR, KC_GRV,  KC_DQUO, _______,
+//     KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, KC_PIPE,        _______, KC_UNDS, KC_SCLN, KC_COLN, KC_EQL,
+//     KC_LBRC, KC_LT,   KC_GT,   KC_RBRC, KC_BSLS,        _______, KC_MINS, KC_ASTR, KC_EXLM, KC_QUES,
+//                                _______, _______,        _______, ___H___
+// ),
+// [L_NUMBER] = LAYOUT_532(
+//     KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,          KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,
+//     CT_1,    AT_2,    ST_3,    NV_4,    KC_5,           KC_6,    KC_7,    ST_8,    AT_9,    CT_0,
+//     KC_F11,  KC_F12,  KC_CAPS, CW_TOGG, KC_INS,         U______, KC_MINS, KC_PLUS, U______, KC_PERC,
+//                                _______, ___H___,        U______, KC_6
+// ),
+
+[L_SYMNUM] = LAYOUT_532(
+    KC_LBRC, KC_LT,   KC_GT,   KC_RBRC, KC_DLR,         KC_PLUS, KC_AMPR, KC_HASH, KC_DQUO, KC_GRV,
+    // CT_LCBR, AT_LPRN, ST_RPRN, KC_RCBR, KC_PIPE,        KC_EXLM, KC_MINS, ST_COLN, AT_SCLN, CT_EQL,
+    KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, KC_PIPE,        KC_EXLM, KC_MINS, KC_COLN, KC_SCLN, KC_EQL,
+    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,           KC_6,    KC_7,    KC_8,    KC_9,    KC_0,
+                               KC_UNDS, KC_BSLS,        U______, ___H___
 ),
-[L_SYMBOL] = LAYOUT_532(
- TG(L_GAME), KC_AT,   KC_HASH, KC_DLR,  KC_PERC,        KC_CIRC, KC_AMPR, KC_GRV,  KC_DQUO, _______,
-    KC_LCBR, KC_LPRN, KC_RPRN, KC_RCBR, KC_PIPE,        _______, KC_UNDS, KC_SCLN, KC_COLN, KC_EQL,
-    KC_LBRC, KC_LT,   KC_GT,   KC_RBRC, KC_BSLS,        _______, KC_MINS, KC_ASTR, KC_EXLM, KC_QUES,
-                               _______, _______,        _______, _______
-),
-[L_NUMBER] = LAYOUT_532(
+
+
+[L_FN] = LAYOUT_532(
+    U______, U______, U______, KC_PSCR, U______,        U______, KC_MPRV, KC_MPLY, KC_MNXT, U______,
+    U______, U______, CW_TOGG, KC_CAPS, U______,        U______, KC_MRWD, KC_VOLD, KC_VOLU, KC_MFFD,
     KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,          KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,
-    CT_1,    AT_2,    KC_3,    NV_4,    KC_5,           KC_6,    KC_7,    KC_8,    AT_9,    CT_0,
-    KC_F11,  ST_F12,  KC_CAPS, CW_TOGG, KC_INS,         U______, KC_MINS, KC_PLUS, ST_____, KC_PERC,
-                               _______, KC_5,           U______, KC_6
+                               KC_F11,  KC_F12,         ___H___, U______
 ),
+
 [L_NAVI] = LAYOUT_532(
-    KC_MCTL, CA_DOWN, CA_UP,   U______, U______,        U______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
-    KC_LCTL, Ct_Z,    Ct_Y,    U______, U______,        U______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,
-    KC_LGUI, U______, U______, U______, U______,        U______, Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT,
-                               ST_____, U______,        Ct_BSPC, Ct_BSPC
+    U______, KC_MCTL, U______, U______, U______,        U______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
+    Ct_BSPC, Ct_Z,    Ct_Y,    ___H___, U______,        U______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,
+    U______, U______, U______, U______, U______,        U______, Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT,
+                               ST_____, U______,        Ct_BSPC, KC_BSPC
 ),
+
 [L_NAVI2] = LAYOUT_532(
-    U______, U______, U______, U______, U______,        U______, U______, U______, U______, U______,
+    U______, U______, U______, U______, U______,        U______, U______, Gu_END,  Gu_HOME, U______,
     U______, U______, U______, U______, U______,        U______, Ct_PGUP, CA_DOWN, CA_UP,   Ct_PGDN,
     U______, U______, U______, U______, U______,        U______, U______, U______, U______, U______,
-                               ST_____, U______,        U______, U______
+                               ___H___, U______,        U______, U______
 ),
 [L_MOUSE] = LAYOUT_532(
     U______, U______, U______, U______, U______,        U______, U______, KC_BTN1, KC_BTN2, U______,
-    CT_BTN3, AT_BTN2, KC_BTN1, KC_BTN1, U______,        U______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,
-    U______, U______, U______, U______, U______,        U______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R,
+    KC_BTN3, KC_BTN2, KC_BTN1, KC_BTN1, U______,        U______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,
+    KC_BTN3, KC_BTN2, KC_BTN1, KC_BTN1, U______,        U______, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R,
                                ST_____, U______,        U______, U______
-),
-[L_SOUND] = LAYOUT_532(
-
-    U______, U______, U______, U______, U______,        KC_MPRV, KC_VOLU, KC_MPLY, U______, KC_MNXT,
-    KC_1,    KC_2,    KC_3,    KC_4,    U______,        U______, KC_VOLD, U______, U______, U______,
-    KC_6,    KC_7,    KC_8,    KC_9,    U______,        U______, U______, U______, U______, U______,
-                               KC_0,    KC_5,           KC_MRWD, KC_MFFD
-
-/*
-_,_,_,s,_
-_,_,_,_,_
-_,_,_,_,_
-_,_
-
-rwd, fwd, prv, nxt, volu, vold, ply
-freq: y, u-d, r-f, p-n
-
-p,r,f,s,n
-_,u,_,_,_
-_,d,_,_,_
-y,y
-
-*/
-
 ),
 };
 
@@ -319,11 +313,21 @@ enum combos {
     , CB_Email
     , CB_PassLinux
     , CB_Tilde
+
+    , CB_Caps
+    , CB_CapsWord
+    // , CB_OneShotShift
+
+    // hmmmmmm
     // , CB_Escape
     // , CB_Enter
     // , CB_Tab
+
+    // inner column
     // , CB_P
     // , CB_K
+
+    // greek
     // , CB_Omega
     // , CB_Micro
     // , CB_Degree
@@ -337,10 +341,12 @@ uint16_t COMBO_LEN = CB_LENGTH;
 #define COMBO_3(NAME, KEY1, KEY2, KEY3)  const uint16_t PROGMEM NAME[] = {KEY1, KEY2, KEY3, COMBO_END};
 
 COMBO_3(BOOT,      KC_G, KC_F, KC_K);
-COMBO_2(PassLinux, NV_H, CT_N);
+COMBO_2(PassLinux, KC_J, KC_Q);
 COMBO_2(Name,      AT_S, GT_P);
-COMBO_2(Email,     KC_M, NU_L);
-COMBO_2(Tilde,     KC_SLSH, ST_TAB);
+COMBO_2(Email,     NV_M, FN_L);
+COMBO_2(Tilde,     KC_SLSH, GT_TAB);
+COMBO_2(Caps,      NV_H, ST_E);
+COMBO_2(CapsWord,  ST_T, ST_E);
 // COMBO_2(Escape,    AT_S, NV2_T);
 // COMBO_2(Enter,     KC_E, AT_I);
 // COMBO_2(Tab,       KC_U, KC_Y);
@@ -350,6 +356,7 @@ COMBO_2(Tilde,     KC_SLSH, ST_TAB);
 // COMBO_2(K_MICRO,   ST_SPC, KC_M);
 // COMBO_2(K_Degree,  ST_SPC, MS_D);
 
+
 // combo behavior
 combo_t key_combos[] = {
     [CB_BOOT] =         COMBO(BOOT, QK_BOOTLOADER),
@@ -357,6 +364,8 @@ combo_t key_combos[] = {
     [CB_Name] =         COMBO_ACTION(Name),
     [CB_Email] =        COMBO_ACTION(Email),
     [CB_Tilde] =        COMBO(Tilde, KC_TILD),
+    [CB_Caps] =         COMBO(Caps, KC_CAPS),
+    [CB_CapsWord] =     COMBO(CapsWord, CW_TOGG),
     // [CB_Escape] =       COMBO(Escape, KC_ESC),
     // [CB_Enter] =        COMBO(Enter, KC_ENT),
     // [CB_Tab] =          COMBO(Tab, KC_TAB),
