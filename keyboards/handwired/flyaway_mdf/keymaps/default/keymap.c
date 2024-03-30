@@ -66,9 +66,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                KC_UNDS, KC_5,           U______, ___H___
 ),
 [L_NAVI] = LAYOUT_532(
-    U______, KC_MCTL, U______, U______, U______,        U______, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
+    U______, KC_MCTL, U______, U______, U______,        Ct_HOME, KC_HOME, KC_PGDN, KC_PGUP, KC_END,
     Ct_BSPC, Ct_Z,    Ct_Y,    ___H___, U______,        U______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,
-    U______, Ct_DEL,  U______, U______, U______,        U______, Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT,
+    U______, Ct_DEL,  U______, U______, U______,        Ct_END,  Ct_LEFT, KC_BSPC, KC_DEL,  Ct_RGHT,
                                ST_____, U______,        Ct_BSPC, KC_BSPC
 ),
 [L_FN] = LAYOUT_532(
@@ -93,6 +93,10 @@ enum combos {
     , CB_Tilde
     // , CB_Caps
     // , CB_CapsWord
+    , CB_RL
+    // , CB_UE
+    // , CB_SC
+    , CB_SW
     , CB_LENGTH
 };
 uint16_t COMBO_LEN = CB_LENGTH;
@@ -105,12 +109,16 @@ COMBO_2(PassLinux, KC_J, KC_Y);
 COMBO_2(Tilde,     KC_SLSH, GT_TAB);
 // COMBO_2(Caps,      KC_J, KC_Q);
 // COMBO_2(CapsWord,  KC_J, KC_Y);
+COMBO_2(BigramRL,  KC_L, NS_R);
+COMBO_2(BigramSW,  KC_W, AT_S);
 combo_t key_combos[] = {
     [CB_BOOT] =         COMBO(BOOT, QK_BOOTLOADER),
     [CB_Name] =         COMBO_ACTION(Name),
     [CB_Email] =        COMBO_ACTION(Email),
     [CB_PassLinux] =    COMBO_ACTION(PassLinux),
     [CB_Tilde] =        COMBO(Tilde, KC_TILD),
+    [CB_RL] =           COMBO_ACTION(BigramRL),
+    [CB_SW] =           COMBO_ACTION(BigramSW),
     // [CB_Caps] =         COMBO(Caps, KC_CAPS),
     // [CB_CapsWord] =     COMBO(CapsWord, CW_TOGG),
 };
@@ -123,6 +131,8 @@ void process_combo_event(uint16_t combo_index, bool pressed) {
     case CB_PassLinux: if (pressed) { SEND_STRING(PW_LINUX); } break;
     case CB_Name:      if (pressed) { SEND_STRING("spencerdabell"); } break;
     case CB_Email:     if (pressed) { SEND_STRING("spencerdabell@gmail.com"); } break;
+    case CB_RL:        if (pressed) { SEND_STRING("rl"); } break;
+    case CB_SW:        if (pressed) { SEND_STRING("sw"); } break;
     default: break;
   }
 }
