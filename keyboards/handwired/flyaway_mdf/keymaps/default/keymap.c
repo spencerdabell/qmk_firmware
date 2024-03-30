@@ -91,8 +91,8 @@ enum combos {
     , CB_Email
     , CB_PassLinux
     , CB_Tilde
-    , CB_Caps
-    , CB_CapsWord
+    // , CB_Caps
+    // , CB_CapsWord
     , CB_LENGTH
 };
 uint16_t COMBO_LEN = CB_LENGTH;
@@ -101,18 +101,18 @@ uint16_t COMBO_LEN = CB_LENGTH;
 COMBO_3(BOOT,      KC_G, KC_F, KC_K);
 COMBO_2(Name,      AT_S, GT_P);
 COMBO_2(Email,     NV_M, KC_L);
-COMBO_2(PassLinux, KC_J, KC_Q);
+COMBO_2(PassLinux, KC_J, KC_Y);
 COMBO_2(Tilde,     KC_SLSH, GT_TAB);
-COMBO_2(Caps,      NV_H, ST_E);
-COMBO_2(CapsWord,  ST_T, ST_E);
+// COMBO_2(Caps,      KC_J, KC_Q);
+// COMBO_2(CapsWord,  KC_J, KC_Y);
 combo_t key_combos[] = {
     [CB_BOOT] =         COMBO(BOOT, QK_BOOTLOADER),
     [CB_Name] =         COMBO_ACTION(Name),
     [CB_Email] =        COMBO_ACTION(Email),
     [CB_PassLinux] =    COMBO_ACTION(PassLinux),
     [CB_Tilde] =        COMBO(Tilde, KC_TILD),
-    [CB_Caps] =         COMBO(Caps, KC_CAPS),
-    [CB_CapsWord] =     COMBO(CapsWord, CW_TOGG),
+    // [CB_Caps] =         COMBO(Caps, KC_CAPS),
+    // [CB_CapsWord] =     COMBO(CapsWord, CW_TOGG),
 };
 
 #define UNICODEZ(UCODE) SEND_STRING( SS_DOWN(X_LEFT_CTRL)SS_DOWN(X_LEFT_SHIFT)"u"  SS_DELAY(50)SS_UP(X_LEFT_CTRL)SS_UP(X_LEFT_SHIFT) SS_DELAY(100) UCODE SS_TAP(X_ENTER));
