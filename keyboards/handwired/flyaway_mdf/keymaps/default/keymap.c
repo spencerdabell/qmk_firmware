@@ -54,9 +54,9 @@ enum layer {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [L_ALPHA] = LAYOUT_532(
-    KC_B,    KC_W,    KC_G,    KC_F,    KC_Z,           KC_QUOT, KC_J,    KC_U,    KC_Y,    KC_Q,
+    KC_Z,    KC_W,    KC_G,    KC_F,    KC_Q,           KC_QUOT, KC_J,    KC_U,    KC_Y,    KC_K,
     CT_N,    AT_S,    ST_T,    NV_H,    KC_V,           KC_DOT,  KC_A,    ST_E,    AT_I,    CT_O,
-    GT_P,    GT_C,    NV_M,    MS_D,    KC_K,           KC_COMM, KC_X,    KC_SLSH, GT_TAB,  GT_ENT,
+    GT_P,    GT_C,    NV_M,    MS_D,    KC_B,           KC_COMM, KC_X,    KC_SLSH, GT_TAB,  GT_ENT,
                                FN_SPC,  KC_ESC,         KC_L,    NS_R
 ),
 [L_NUMSYM] = LAYOUT_532(
