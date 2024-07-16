@@ -17,7 +17,7 @@
 #define CT_L LCTL_T(KC_L)
 #define CT_M LCTL_T(KC_M)
 #define CT_N LCTL_T(KC_N)
-#define CT_O RCTL_T(KC_O)
+#define CT_O LCTL_T(KC_O)
 #define CT_P LCTL_T(KC_P)
 #define CT_Q LCTL_T(KC_Q)
 #define CT_R LCTL_T(KC_R)
@@ -137,6 +137,7 @@
 #define AT_BTN3 ALT_T(KC_BTN3)
 
 // gui
+#define GT_A GUI_T(KC_A)
 #define GT_B GUI_T(KC_B)
 #define GT_C GUI_T(KC_C)
 #define GT_D GUI_T(KC_D)
@@ -235,3 +236,4 @@
 
 // ctrl alt, trans
 #define CTAT___ MT(MOD_LCTL | MOD_LALT, _______)
+
